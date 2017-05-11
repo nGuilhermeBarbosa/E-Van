@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Public.master.cs" Inherits="pages_Public" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>E-Van</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/evs.css" rel="stylesheet" />
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div class="page">
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Entre com seu usuário</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" placeholder="E-Mail" TextMode="Email" required="required"></asp:TextBox><br />
+                                    <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" placeholder="Senha" TextMode="Password" required="required"></asp:TextBox><br />
+                                    <asp:Button ID="Button2" runat="server" Text="Entrar" CssClass="btn btn-success" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <!-- Trabalha a responsividade do menu (COLLAPSE)-->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand glyphicon glyphicon-road" href="index.aspx">E-Van</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="about.aspx">Sobre a Plataforma</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"  data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <br />
+            <br />
+            <footer class="container-fluid text-center">
+                <div class="row">
+                    <div class="col-lg-3">Ajuda</div>
+                    <div class="col-lg-3">Perguntas Frequêntes</div>
+                    <div class="col-lg-3">Termos de Uso</div>
+                    <div class="col-lg-3">
+                        Fale Conosco
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </form>
+</body>
+</html>
