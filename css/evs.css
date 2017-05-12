@@ -98,11 +98,6 @@ body {
     margin: 10px;
 }
 
-.page {
-    position: relative;
-    min-height: 515px;
-}
-
 footer {
     position: fixed;
     right: 0;
@@ -138,15 +133,16 @@ footer {
 }
 
 .serviceBox {
-    width: auto;
+    width: 300px;
     height: auto;
     background: #fda913;
     border: 0;
-    margin: 10px 0 10px 10px;
+    margin:10px;
+    float:left;
 }
 
-a{
-    color:none !important;
+.row > a{
+    color: inherit !important;
     text-decoration: none !important;
 }
 
@@ -191,9 +187,10 @@ a{
     cursor: pointer;
 }
 
-.serviceBox > h1 {
+.serviceBox > .padding > h1 {
     font-size: 30px;
-    margin-left: 10%;
+    text-align: center;
+    margin:0;
 }
 
 .newButton{

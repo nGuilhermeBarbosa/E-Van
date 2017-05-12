@@ -6,58 +6,46 @@
     <div class="row">
         <div class="col-lg-9">
             <div class="title text-center">Principais Serviços</div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="serviceBox">
-                        <div class="padding">
-                            <h1>Claudemir</h1>
-                            <hr />
-                            <b>Local de chegada</b>
-                            <p>Praia Grande</p>
-                            <b>Origem</b>
-                            <p>Guaratinguetá</p>
-                            <b>Destino</b>
-                            <p>Ubatuba</p>
-                        </div>
-                        <p class="text-center">9/5/2017</p>
+            <a href="serviceInfo.aspx">
+                <div class="serviceBox">
+                    <div class="padding">
+                        <h1>Claudemir</h1>
+                        <hr />
+                        Destino: Praia Grande<br />
+                        Cidade: Ubatuba<br />
+                        Parte de: Guaratinguetá<br />
                     </div>
-                    
+                    <p class="text-center">9/5/2017</p>
                 </div>
-                <div class="col-lg-3">
-                    <div class="serviceBox Free">
-                        <div class="padding">
-                            <h1>Claudemir</h1>
-                            <hr />
-                            <b>Local de chegada</b>
-                            <p>Praia Grande</p>
-                            <b>Origem</b>
-                            <p>Guaratinguetá</p>
-                            <b>Destino</b>
-                            <p>Ubatuba</p>
-                        </div>
-                        <p class="text-center">9/5/2017</p>
+            </a>
+
+            <a href="serviceInfo.aspx">
+                <div class="serviceBox Free">
+                    <div class="padding">
+                        <h1>Claudemir</h1>
+                        <hr />
+                        Destino: Praia Grande<br />
+                        Cidade: Ubatuba<br />
+                        Parte de: Guaratinguetá<br />
                     </div>
+                    <p class="text-center">9/5/2017</p>
                 </div>
-                <div class="col-lg-4">
-                    
-                </div>
-            </div>
+            </a>
+
         </div>
         <div class="col-lg-3">
             <div class="title text-center">Motoristas mais bem avaliados</div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="serviceBox userAvaliate padding">
-                        Nome: Claudemir<br />
-                        Cidade: Guaratinguetá<br />
-                        Número de avaliadores: 5<br />
-                        [AVALIAÇÃO]
-                    </div>
-                    <div class="serviceBox userAvaliate padding">
-                        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                    </div>
-                    <asp:Button ID="Button1" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" />
+            <div class="col-lg-12">
+                <div class="serviceBox userAvaliate padding">
+                    Nome: Claudemir<br />
+                    Cidade: Guaratinguetá<br />
+                    Número de avaliadores: 5<br />
+                    [AVALIAÇÃO]
                 </div>
+                <div class="serviceBox userAvaliate padding">
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                </div>
+                <asp:Button ID="Button1" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" />
             </div>
         </div>
     </div>

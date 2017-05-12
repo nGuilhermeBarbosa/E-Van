@@ -6,98 +6,18 @@
     <div class="row">
         <div class="title text-center">Serviços</div>
         <div class="col-lg-12">
-            <div class="col-lg-2">
-                <a href="serviceInfo.aspx">
-                    <div class="serviceBox">
-                        <div class="padding">
-                            <h1>Claudemir</h1>
-                            <hr />
-                            <b>Local de chegada</b>
-                            <p>Praia Grande</p>
-                            <b>Origem</b>
-                            <p>Guaratinguetá</p>
-                            <b>Destino</b>
-                            <p>Ubatuba</p>
-                        </div>
-                        <p class="text-center">9/5/2017</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2">
+            <a href="serviceInfo.aspx">
                 <div class="serviceBox">
                     <div class="padding">
                         <h1>Claudemir</h1>
                         <hr />
-                        <b>Local de chegada</b>
-                        <p>Praia Grande</p>
-                        <b>Origem</b>
-                        <p>Guaratinguetá</p>
-                        <b>Destino</b>
-                        <p>Ubatuba</p>
+                        Destino: Praia Grande<br />
+                        Origem: Guaratinguetá<br />
+                        Destino: Ubatuba<br />
                     </div>
                     <p class="text-center">9/5/2017</p>
                 </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="serviceBox">
-                    <div class="padding">
-                        <h1>Claudemir</h1>
-                        <hr />
-                        <b>Local de chegada</b>
-                        <p>Praia Grande</p>
-                        <b>Origem</b>
-                        <p>Guaratinguetá</p>
-                        <b>Destino</b>
-                        <p>Ubatuba</p>
-                    </div>
-                    <p class="text-center">9/5/2017</p>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="serviceBox Free">
-                    <div class="padding">
-                        <h1>Claudemir</h1>
-                        <hr />
-                        <b>Local de chegada</b>
-                        <p>Praia Grande</p>
-                        <b>Origem</b>
-                        <p>Guaratinguetá</p>
-                        <b>Destino</b>
-                        <p>Ubatuba</p>
-                    </div>
-                    <p class="text-center">9/5/2017</p>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="serviceBox Free">
-                    <div class="padding">
-                        <h1>Claudemir</h1>
-                        <hr />
-                        <b>Local de chegada</b>
-                        <p>Praia Grande</p>
-                        <b>Origem</b>
-                        <p>Guaratinguetá</p>
-                        <b>Destino</b>
-                        <p>Ubatuba</p>
-                    </div>
-                    <p class="text-center">9/5/2017</p>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="serviceBox Free">
-                    <div class="padding">
-                        <h1>Claudemir</h1>
-                        <hr />
-                        <b>Local de chegada</b>
-                        <p>Praia Grande</p>
-                        <b>Origem</b>
-                        <p>Guaratinguetá</p>
-                        <b>Destino</b>
-                        <p>Ubatuba</p>
-                    </div>
-                    <p class="text-center">9/5/2017</p>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 </asp:Content>
