@@ -141,7 +141,7 @@ footer {
     float:left;
 }
 
-.row > a{
+.serviceBox > a{
     color: inherit !important;
     text-decoration: none !important;
 }
