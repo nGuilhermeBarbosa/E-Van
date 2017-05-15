@@ -130,6 +130,8 @@ footer {
     background: #384357;
     color: #f3fffd;
     font-weight: bold;
+    text-align: center;
+    float: left;
 }
 
 .serviceBox {

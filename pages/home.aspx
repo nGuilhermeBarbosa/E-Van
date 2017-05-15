@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
         <div class="col-lg-9">
-            <div class="title text-center">Principais Serviços</div>
+            <div class="title">Principais Serviços</div>
             <a href="serviceInfo.aspx">
                 <div class="serviceBox">
                     <div class="padding">
@@ -28,13 +28,13 @@
                         Cidade: Ubatuba<br />
                         Parte de: Guaratinguetá<br />
                     </div>
-                    <p class="text-center">9/5/2017</p>
+                    <p>9/5/2017</p>
                 </div>
             </a>
 
         </div>
         <div class="col-lg-3">
-            <div class="title text-center">Motoristas mais bem avaliados</div>
+            <div class="title">Motoristas mais bem avaliados</div>
             <div class="col-lg-12">
                 <div class="serviceBox userAvaliate padding">
                     Nome: Claudemir<br />

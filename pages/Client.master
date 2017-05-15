@@ -23,7 +23,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand glyphicon glyphicon-road" href="home.aspx">E-Van</a>
+                    <a class="navbar-brand glyphicon glyphicon-road" href="home.aspx">&nbsp E-Van</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">

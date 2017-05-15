@@ -24,7 +24,9 @@
                 <p class="glyphicon glyphicon-plus"></p>
             </div>
 
-            <asp:Button ID="Button1" runat="server" Text="Adicionar" CssClass="btn btn-success" />
+            <a href="addRequest.aspx">
+                <asp:Button ID="addRequestBtn" runat="server" Text="Adicionar" CssClass="btn btn-success" />
+            </a>
         </div>
     </div>
 </asp:Content>

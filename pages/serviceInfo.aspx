@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
         <div class="col-lg-4">
-            <div class="title text-center">Serviço</div>
+            <div class="title">Serviço</div>
             <div class="serviceBox info noMargin">
                 <div class="padding">
                     Local: Praia Grande
@@ -17,9 +17,8 @@
                 </div>
                 <p>Data da viagem: 06/07</p>
             </div>
-            <br />
-
-            <div class="title text-center">Veículo</div>
+            
+            <div class="title">Veículo</div>
             <div class="serviceBox info noMargin">
                 <div class="padding">
                     001<br />
@@ -36,7 +35,7 @@
             <br />
         </div>
         <div class="col-lg-4">
-            <div class="title text-center">Contatos</div>
+            <div class="title">Contatos</div>
             <div class="serviceBox info noMargin padding">
                 Telefone: (12)3152-6361<br />
                 Celular: (12)98162-6478<br />
@@ -45,7 +44,7 @@
             </div>
             <br />
 
-            <div class="title text-center">Motorista</div>
+            <div class="title">Motorista</div>
             <div class="serviceBox info noMargin padding">
                 Nome: Claudemir da Silva<br />
                 CNH: 358185016<br />
@@ -59,7 +58,7 @@
             <br />
         </div>
         <div class="col-lg-4">
-            <div class="title text-center">Fotos do Veículo</div>
+            <div class="title">Fotos do Veículo</div>
         </div>
     </div>
 </asp:Content>
