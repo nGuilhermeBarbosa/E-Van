@@ -111,6 +111,24 @@ footer {
     padding: 1rem;
 }
 
+.innerFooterLeft{
+    float:left;
+    text-align:justify
+}
+
+.innerFooterRight{
+    float:right;
+    text-align:right;
+}
+
+.innerFooterLeft > p{
+    margin: 5px 0 0 5px;
+}
+
+.innerFooterRight > p{
+    margin: 5px 0 0 5px;
+}
+
 .glyphicon {
     font-family: inherit;
 }
