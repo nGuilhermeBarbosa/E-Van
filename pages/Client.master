@@ -78,30 +78,36 @@
         <br />
         <br />
         <footer class="container-fluid text-center">
-            <div class="innerFooterLeft">
-                <p>Ajuda</p>
-                <p>
-                    Perguntas Frequêntes
-                </p>
-                <p>
-                    Termos de Uso
-                </p>
-                <p>
-                    Fale Conosco
-                </p>
-            </div>
-            <div class="innerFooterRight">
-                <b>Desenvolvido por</b>
-                <p>
-                    Guilherme Cunha
-                </p>
-                <p>
-                    João Guilherme
-                </p>
-                <p>
-                    Laura Siqueira
-                </p>
-                <p>Thiago Julien</p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="innerFooterLeft">
+                        <p>Ajuda</p>
+                        <p>
+                            Perguntas Frequêntes
+                        </p>
+                        <p>
+                            Termos de Uso
+                        </p>
+                        <p>
+                            Fale Conosco
+                        </p>
+                    </div>
+                </div><br />
+                <div class="col-lg-6">
+                    <div class="innerFooterRight">
+                        <b>Desenvolvido por</b>
+                        <p>
+                            Guilherme Cunha
+                        </p>
+                        <p>
+                            João Guilherme
+                        </p>
+                        <p>
+                            Laura Siqueira
+                        </p>
+                        <p>Thiago Julien</p>
+                    </div>
+                </div>
             </div>
         </footer>
     </form>

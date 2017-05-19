@@ -23,7 +23,7 @@
     .navbar-default .navbar-nav > li > a {
         color: #f3fffd;
         margin-top: 15px;
-        padding-bottom:0;
+        padding-bottom: 0;
     }
 
         .navbar-default .navbar-nav > li > a:hover,
@@ -91,6 +91,16 @@
     }
 }
 
+@media (max-width: 1197px) {
+    .innerFooterLeft {
+        text-align: center !important;
+    }
+
+    .innerFooterRight {
+        text-align: center !important;
+    }
+}
+
 body {
     margin-top: 100px;
     min-height: 100%;
@@ -111,21 +121,19 @@ footer {
     padding: 1rem;
 }
 
-.innerFooterLeft{
-    float:left;
-    text-align:justify
+.innerFooterLeft {
+    text-align: justify;
 }
 
-.innerFooterRight{
-    float:right;
-    text-align:right;
+.innerFooterRight {
+    text-align: right;
 }
 
-.innerFooterLeft > p{
+.innerFooterLeft > p {
     margin: 5px 0 0 5px;
 }
 
-.innerFooterRight > p{
+.innerFooterRight > p {
     margin: 5px 0 0 5px;
 }
 
@@ -133,13 +141,13 @@ footer {
     font-family: inherit;
 }
 
-.logo{
-    font-size:40px;
+.logo {
+    font-size: 40px;
 }
 
-    .glyphicon:before {
-        font-family: 'Glyphicons Halflings';
-    }
+.glyphicon:before {
+    font-family: 'Glyphicons Halflings';
+}
 
 .searchNav {
     width: 500px;
@@ -165,35 +173,35 @@ footer {
     height: auto;
     background: #dad2c3;
     border: 0;
-    margin:10px;
-    float:left;
+    margin: 10px;
+    float: left;
 }
 
-.photoGallery{
+.photoGallery {
     border: 1px solid #009ffb;
-    width:100px;
+    width: 100px;
     height: 50px;
-    float:left;
+    float: left;
 }
 
-.mainPhoto{
-    width:400px;
-    height:200px;
-    float:inherit;
+.mainPhoto {
+    width: 400px;
+    height: 200px;
+    float: inherit;
 }
 
-.serviceBox > padding > a{
+.serviceBox > padding > a {
     color: inherit !important;
     text-decoration: none !important;
 }
 
-.serviceBox > padding > a:hover{
-    color: inherit !important;
-    text-decoration: none !important;
-}
+    .serviceBox > padding > a:hover {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
 
-.noMargin{
-    margin:0;
+.noMargin {
+    margin: 0;
 }
 
 .requestBox {
@@ -214,11 +222,11 @@ footer {
     padding: 10px;
     background: #384357;
     color: #f3fffd;
-    text-align:center;
+    text-align: center;
 }
 
-.info{
-    background:#01e7ff;
+.info {
+    background: #01e7ff;
 }
 
 .tittle > span {
@@ -229,20 +237,20 @@ footer {
 
 .serviceBox > .padding > h2 {
     font-size: 30px;
-    margin:0;
+    margin: 0;
     margin-bottom: 10px;
 }
 
-.newButton{
+.newButton {
     font-size: 64px;
     background: #384357;
-    color:#f3fffd;
+    color: #f3fffd;
 }
 
-.windows{
-    background:black;
-    color:white;
-    height:auto;
+.windows {
+    background: black;
+    color: white;
+    height: auto;
 }
 
 .buttonShowAll {
@@ -278,7 +286,7 @@ footer {
     border-bottom: 1px solid #e5e5e5;
     background: #384357;
     color: #f3fffd;
-    border-radius:5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
 }
 
     .modal-header .close {
