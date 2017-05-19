@@ -15,18 +15,18 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+                <img src="../images/banner.png" / alt="Busque por transporte">
                 <div class="carousel-caption">
-                    <h3>Você motorista</h3>
-                    <p>Divulgue seu serviço</p>
+                    <h3>Motorista</h3>
+                    <p>Divulgue seu serviço de forma simples e rápida</p>
                 </div>
             </div>
 
             <div class="item">
                 <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
                 <div class="carousel-caption">
-                    <h3>More Sell $</h3>
-                    <p>Lorem ipsum...</p>
+                    <h3>Procurando por transporte coletivo?</h3>
+                    <p>Encontre ou solicite transporte para o evento que desejar</p>
                 </div>
             </div>
         </div>

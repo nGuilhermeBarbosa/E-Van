@@ -9,21 +9,7 @@
             <a href="serviceInfo.aspx">
                 <div class="serviceBox">
                     <div class="padding">
-                        <h1>Claudemir</h1>
-                        <hr />
-                        Destino: Praia Grande<br />
-                        Cidade: Ubatuba<br />
-                        Parte de: Guaratinguetá<br />
-                    </div>
-                    <p class="text-center">9/5/2017</p>
-                </div>
-            </a>
-
-            <a href="serviceInfo.aspx">
-                <div class="serviceBox Free">
-                    <div class="padding">
-                        <h1>Claudemir</h1>
-                        <hr />
+                        <h2>Claudemir</h2>
                         Destino: Praia Grande<br />
                         Cidade: Ubatuba<br />
                         Parte de: Guaratinguetá<br />

@@ -8,6 +8,7 @@
     right: 0;
     left: 0;
     z-index: 9999;
+    padding: 25px;
 }
     /* Title */
     .navbar-default .navbar-brand {
@@ -21,6 +22,8 @@
     /* Link */
     .navbar-default .navbar-nav > li > a {
         color: #f3fffd;
+        margin-top: 15px;
+        padding-bottom:0;
     }
 
         .navbar-default .navbar-nav > li > a:hover,
@@ -89,9 +92,9 @@
 }
 
 body {
-    margin-top: 50px;
-    height: 100%;
-    margin-bottom: 80px;
+    margin-top: 100px;
+    min-height: 100%;
+    margin-bottom: 6rem;
 }
 
 .margin {
@@ -99,17 +102,21 @@ body {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;
     background: #384357;
     color: #f3fffd;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .glyphicon {
     font-family: inherit;
+}
+
+.logo{
+    font-size:40px;
 }
 
     .glyphicon:before {
@@ -126,24 +133,43 @@ footer {
 
 .title {
     width: 100%;
-    height: 25px;
+    height: 40px;
     background: #384357;
     color: #f3fffd;
     font-weight: bold;
     text-align: center;
     float: left;
+    padding: 10px;
 }
 
 .serviceBox {
     width: 300px;
     height: auto;
-    background: #fda913;
+    background: #dad2c3;
     border: 0;
     margin:10px;
     float:left;
 }
 
-.serviceBox > a{
+.photoGallery{
+    border: 1px solid #009ffb;
+    width:100px;
+    height: 50px;
+    float:left;
+}
+
+.mainPhoto{
+    width:400px;
+    height:200px;
+    float:inherit;
+}
+
+.serviceBox > padding > a{
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.serviceBox > padding > a:hover{
     color: inherit !important;
     text-decoration: none !important;
 }
@@ -156,24 +182,18 @@ footer {
     width: 300px;
 }
 
-.Free {
-    background: #009ffb;
-}
-
 .userAvaliate {
     width: 300px;
-}
-
-.novaclasse > p {
+    background: #f9b946;
 }
 
 .padding {
-    padding: 10px;
+    padding: 30px;
 }
 
 .serviceBox > p {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     background: #384357;
     color: #f3fffd;
     text-align:center;
@@ -189,10 +209,10 @@ footer {
     cursor: pointer;
 }
 
-.serviceBox > .padding > h1 {
+.serviceBox > .padding > h2 {
     font-size: 30px;
-    text-align: center;
     margin:0;
+    margin-bottom: 10px;
 }
 
 .newButton{
@@ -218,7 +238,7 @@ footer {
     position: relative;
     width: 300px;
     margin: 10px;
-    margin-top: 60px;
+    margin-top: 120px;
     float: right;
 }
 
@@ -240,6 +260,7 @@ footer {
     border-bottom: 1px solid #e5e5e5;
     background: #384357;
     color: #f3fffd;
+    border-radius:5px 5px 0 0;
 }
 
     .modal-header .close {

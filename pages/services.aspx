@@ -10,7 +10,6 @@
                 <div class="serviceBox">
                     <div class="padding">
                         <h1>Claudemir</h1>
-                        <hr />
                         Destino: Praia Grande<br />
                         Origem: Guaratinguetá<br />
                         Destino: Ubatuba<br />
