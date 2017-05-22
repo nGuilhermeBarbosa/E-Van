@@ -199,6 +199,10 @@ footer {
     float: left;
 }
 
+.serviceBox:first-child{
+    margin-left:30px;
+}
+
 .photoGallery {
     border: 1px solid #009ffb;
     width: 100px;
@@ -399,4 +403,11 @@ footer {
         position: relative;
         top: 2px;
         left: 2px;
+    }
+
+    .photoDriver{
+        width:100px;
+        height:100px;
+        float:right;
+        padding:0;
     }
