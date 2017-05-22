@@ -11,11 +11,11 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
         </ol>
-
+        
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active backgroundC">
-                <img src="../images/banner.png" / alt="Busque por transporte">
+                <img src="../images/banner.png" / alt="Divulgue seu serviço">
                 <div class="carousel-caption">
                     <h3>Motorista</h3>
                     <p>Divulgue seu serviço de forma simples e rápida</p>
@@ -23,7 +23,7 @@
             </div>
 
             <div class="item backgroundC">
-                <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+                <img src="../images/banner.png" / alt="Busque por transporte">
                 <div class="carousel-caption">
                     <h3>Procurando por transporte coletivo?</h3>
                     <p>Encontre ou solicite transporte para o evento que desejar</p>

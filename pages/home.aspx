@@ -29,10 +29,7 @@
                     [AVALIAÇÃO]
                 </div>
                 <div class="serviceBox userAvaliate padding">
-                    Nome: Claudemir<br />
-                    Cidade: Guaratinguetá<br />
-                    Número de avaliadores: 5<br />
-                    [AVALIAÇÃO]
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
                 </div>
                 <asp:Button ID="Button1" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" />
             </div>
