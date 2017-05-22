@@ -199,9 +199,9 @@ footer {
     float: left;
 }
 
-.serviceBox:first-child{
-    margin-left:30px;
-}
+    .serviceBox:first-child {
+        margin-left: 30px;
+    }
 
 .photoGallery {
     border: 1px solid #009ffb;
@@ -241,7 +241,7 @@ footer {
     background: #384357;
     color: #f3fffd;
     text-align: center;
-    margin-top:85px;
+    margin-top: 85px;
 }
 
 .info {
@@ -282,9 +282,16 @@ footer {
 .modal-dialog {
     position: relative;
     width: 300px;
-    margin: 10px;
     margin-top: 120px;
     float: right;
+
+}
+
+.modal-a {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    margin-top:120px !important;
 }
 
 .modal-content {
@@ -325,8 +332,8 @@ footer {
     margin-left: 20px;
 }
 
-.form-control {
-    margin-left: 20px;
+.controle {
+    margin-left: 20px !important;
 }
 
 .qualquer {
@@ -406,9 +413,9 @@ footer {
         left: 2px;
     }
 
-    .photoDriver{
-        width:100px;
-        height:100px;
-        float:right;
-        padding:0;
-    }
+.photoDriver {
+    width: 100px;
+    height: 100px;
+    float: right;
+    padding: 0;
+}

@@ -9,31 +9,31 @@
             <br />
             <br />
             <asp:Label ID="lblOrigem" runat="server" Text="Origem" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtOrigem" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtOrigem" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="lblDestino" runat="server" Text="Destino" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtDestino" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtDestino" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="lblLocal" runat="server" Text="Local" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtLocal" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtLocal" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <div class="row">
                 <div class="col-lg-6">
                     <asp:Label ID="lblData" runat="server" Text="Data" CssClass="margem"></asp:Label>
-                    <asp:TextBox ID="txtData" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtData" runat="server" TextMode="Date" CssClass="form-control controle"></asp:TextBox>
                 </div>
                 <div class="col-lg-6">
                     <asp:Label ID="lblHorario" runat="server" Text="Horário" CssClass="margem"></asp:Label>
-                    <asp:TextBox ID="txtHora" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtHora" runat="server" CssClass="form-control controle"></asp:TextBox>
                 </div>
             </div>
             <br />
             <br />
             <asp:Label ID="lblDescricao" runat="server" Text="Descrição" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtDescricao" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtDescricao" runat="server" TextMode="MultiLine" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-default margem" />
