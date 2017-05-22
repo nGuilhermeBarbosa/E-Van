@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
         <div class="col-lg-8">
-            <div class="title">Claudemir</div>
-            <div class="serviceBox info">
+            <div class="title">João</div>
+            <div class="serviceBox">
                 <div class="title">Serviço</div>
                 <div class="padding">
                     Local: Praia Grande
@@ -19,7 +19,7 @@
                 <p>Data da viagem: 06/07</p>
             </div>
 
-            <div class="serviceBox info">
+            <div class="serviceBox">
                 <div class="title">Veículo</div>
                 <div class="padding">
                     001<br />
@@ -34,7 +34,7 @@
                 <p>Lugares Disponíveis: 5/15</p>
             </div>
 
-            <div class="serviceBox info">
+            <div class="serviceBox">
                 <div class="title">Contatos</div>
                 <div class="padding">
                     Telefone: (12)3152-6361<br />
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="serviceBox info">
+            <div class="serviceBox">
                 <div class="title w3">Motorista</div>
                 <div class="padding">
                     Nome: Claudemir da Silva<br />
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="serviceBox padding Free">
+            <div class="serviceBox info padding Free">
                 Você tem interesse nesse serviço?
         <br />
                 <asp:CheckBox ID="CheckBox1" runat="server" Text="Sim" />
@@ -63,12 +63,12 @@
         <div class="col-lg-4">
             <div class="title">Fotos do Veículo</div>
             <div class="photoGallery mainPhoto">
-
             </div>
             <div class="photoGallery"></div>
             <div class="photoGallery"></div>
             <div class="photoGallery"></div>
         </div>
+
     </div>
 </asp:Content>
 

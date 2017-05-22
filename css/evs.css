@@ -103,8 +103,11 @@
 
 body {
     margin-top: 100px;
-    min-height: 100%;
-    margin-bottom: 6rem;
+}
+
+.dblock{
+    display:block;
+    color:inherit !important;
 }
 
 .margin {
@@ -119,14 +122,22 @@ footer {
     background: #384357;
     color: #f3fffd;
     padding: 1rem;
+    z-index:0;
+    box-sizing:border-box;
 }
 
 .innerFooterLeft {
     text-align: justify;
+    margin-left:20px;
 }
 
 .innerFooterRight {
     text-align: right;
+    margin-right:20px;
+}
+
+.backgroundC{
+    background:#384357;
 }
 
 .innerFooterLeft > p {
@@ -182,23 +193,15 @@ footer {
     width: 100px;
     height: 50px;
     float: left;
+    margin-left: 10px;
 }
 
 .mainPhoto {
-    width: 400px;
+    margin: 10px 0 0 10px;
+    width: 100%;
     height: 200px;
-    float: inherit;
+    float: left;
 }
-
-.serviceBox > padding > a {
-    color: inherit !important;
-    text-decoration: none !important;
-}
-
-    .serviceBox > padding > a:hover {
-        color: inherit !important;
-        text-decoration: none !important;
-    }
 
 .noMargin {
     margin: 0;

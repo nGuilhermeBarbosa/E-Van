@@ -6,15 +6,15 @@
     <div class="row">
         <div class="title text-center">Serviços</div>
         <div class="col-lg-12">
-            <a href="serviceInfo.aspx">
+            <a href="serviceInfo.aspx" class="dblock">
                 <div class="serviceBox">
                     <div class="padding">
-                        <h1>Claudemir</h1>
+                        <h2>João</h2>
                         Destino: Praia Grande<br />
-                        Origem: Guaratinguetá<br />
-                        Destino: Ubatuba<br />
+                        Cidade: Ubatuba<br />
+                        Parte de: Guaratinguetá<br />
                     </div>
-                    <p class="text-center">9/5/2017</p>
+                    <p>9/5/2017</p>
                 </div>
             </a>
         </div>

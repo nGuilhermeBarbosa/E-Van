@@ -14,7 +14,7 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
+            <div class="item active backgroundC">
                 <img src="../images/banner.png" / alt="Busque por transporte">
                 <div class="carousel-caption">
                     <h3>Motorista</h3>
@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="item">
+            <div class="item backgroundC">
                 <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
                 <div class="carousel-caption">
                     <h3>Procurando por transporte coletivo?</h3>
