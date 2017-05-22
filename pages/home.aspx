@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-9">
             <div class="title">Principais Serviços</div>
-            
+
             <a href="serviceInfo.aspx" class="dblock">
                 <div class="serviceBox">
                     <div class="title">João</div>
@@ -36,13 +36,21 @@
                     Nome: Claudemir<br />
                     Cidade: Guaratinguetá<br />
                     Número de avaliadores: 5<br />
-                    [AVALIAÇÃO]
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star-empty"></div>
                 </div>
                 <div class="serviceBox userAvaliate padding">
                     Nome: Claudemir<br />
                     Cidade: Guaratinguetá<br />
                     Número de avaliadores: 5<br />
-                    [AVALIAÇÃO]
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="glyphicon glyphicon-star-empty"></div>
                 </div>
                 <asp:Button ID="Button1" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" />
             </div>
