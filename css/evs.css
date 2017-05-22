@@ -98,10 +98,12 @@
     }
 
     .innerFooterRight {
+        margin-top:20px;
         text-align: center !important;
         margin-left: 20px;
     }
 }
+
 
 p > a {
     color: inherit !important;
@@ -197,6 +199,7 @@ footer {
     border: 0;
     margin: 10px;
     float: left;
+    color:#384357;
 }
 
     .serviceBox:first-child {
@@ -227,8 +230,9 @@ footer {
 }
 
 .userAvaliate {
-    width: 300px;
+    width: 270px;
     background: #f9b946;
+    margin-left: 0 !important;
 }
 
 .padding {
@@ -241,11 +245,11 @@ footer {
     background: #384357;
     color: #f3fffd;
     text-align: center;
-    margin-top: 85px;
+    margin-top:85px;
 }
 
 .info {
-    background: #01e7ff;
+    background: #7af2ff;
 }
 
 .tittle > span {
@@ -277,6 +281,7 @@ footer {
     margin-top: 10px;
     border-radius: 0;
     box-shadow: 1px 1px 5px #000;
+    margin-right: 20px;
 }
 
 .modal-dialog {
@@ -380,7 +385,6 @@ footer {
         font-size: 200%;
         line-height: 1.2;
         color: #ddd;
-        text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
     }
 
         .rating:not(:checked) > label:before {
@@ -389,13 +393,11 @@ footer {
 
     .rating > input:checked ~ label {
         color: #f70;
-        text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
     }
 
     .rating:not(:checked) > label:hover,
     .rating:not(:checked) > label:hover ~ label {
         color: gold;
-        text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
     }
 
     .rating > input:checked + label:hover,
@@ -404,7 +406,6 @@ footer {
     .rating > input:checked ~ label:hover ~ label,
     .rating > label:hover ~ input:checked ~ label {
         color: #ea0;
-        text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
     }
 
     .rating > label:active {
@@ -413,9 +414,9 @@ footer {
         left: 2px;
     }
 
-.photoDriver {
-    width: 100px;
-    height: 100px;
-    float: right;
-    padding: 0;
-}
+    .photoDriver{
+        width:100px;
+        height:100px;
+        float:right;
+        padding:0;
+    }
