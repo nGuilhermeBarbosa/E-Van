@@ -98,10 +98,12 @@
     }
 
     .innerFooterRight {
+        margin-top:20px;
         text-align: center !important;
         margin-left: 20px;
     }
 }
+
 
 p > a {
     color: inherit !important;
@@ -197,11 +199,12 @@ footer {
     border: 0;
     margin: 10px;
     float: left;
+    color:#384357;
 }
 
-.serviceBox:first-child{
-    margin-left:30px;
-}
+    .serviceBox:first-child {
+        margin-left: 30px;
+    }
 
 .photoGallery {
     border: 1px solid #009ffb;
@@ -227,8 +230,9 @@ footer {
 }
 
 .userAvaliate {
-    width: 300px;
+    width: 270px;
     background: #f9b946;
+    margin-left: 0 !important;
 }
 
 .padding {
@@ -244,7 +248,7 @@ footer {
 }
 
 .info {
-    background: #01e7ff;
+    background: #7af2ff;
 }
 
 .tittle > span {
@@ -276,6 +280,7 @@ footer {
     margin-top: 10px;
     border-radius: 0;
     box-shadow: 1px 1px 5px #000;
+    margin-right: 20px;
 }
 
 .modal-dialog {
@@ -405,9 +410,10 @@ footer {
         left: 2px;
     }
 
-    .photoDriver{
-        width:100px;
-        height:100px;
-        float:right;
-        padding:0;
-    }
+.photoDriver {
+    width: 100px;
+    height: 100px;
+    float: right;
+    padding: 0;
+    margin-top:10px;
+}
