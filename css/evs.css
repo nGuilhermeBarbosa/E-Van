@@ -249,6 +249,7 @@ footer {
     background: #384357;
     color: #f3fffd;
     text-align: center;
+    margin-top:85px;
 }
 
 .title > b{
@@ -294,10 +295,16 @@ footer {
 .modal-dialog {
     position: relative;
     width: 300px;
-    margin: 10px;
     margin-top: 120px;
     float: right;
-    padding:10px;
+
+}
+
+.modal-a {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    margin-top:120px !important;
 }
 
 .modal-content {
@@ -335,6 +342,10 @@ footer {
 }
 
 .margem {
+    margin-left: 20px;
+}
+
+.form-control {
     margin-left: 20px;
 }
 
@@ -411,10 +422,9 @@ footer {
         left: 2px;
     }
 
-.photoDriver {
-    width: 100px;
-    height: 100px;
-    float: right;
-    padding: 0;
-    margin-top:10px;
-}
+    .photoDriver{
+        width:100px;
+        height:100px;
+        float:right;
+        padding:0;
+    }

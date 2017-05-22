@@ -4,12 +4,35 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+    <div id="meuModal" class="modal fade" role="dialog">
+        <div class="modal-a">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            Tem certeza que deseja excluir ?
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span class="glyphicon glyphicon-edit">Editar</span>
-                    <span class="glyphicon glyphicon-remove">Excluir</span>
+                     <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
+                    <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Local de Chegada: 
@@ -20,6 +43,57 @@
                 <br />
                 Destino: 
         <asp:Label ID="lblLugares" runat="server" Text="---"></asp:Label>
+                <br />
+                <p>05/17</p>
+            </div>
+            <div class="serviceBox">
+                <div class="title text-right">
+                     <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
+                    <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                </div>
+                <div class="fotoveiculo"></div>
+                Local de Chegada: 
+        <asp:Label ID="Label1" runat="server" Text="---"></asp:Label>
+                <br />
+                Origem:
+        <asp:Label ID="Label2" runat="server" Text="---"></asp:Label>
+                <br />
+                Destino: 
+        <asp:Label ID="Label3" runat="server" Text="---"></asp:Label>
+                <br />
+                <p>05/17</p>
+            </div>
+            <div class="serviceBox">
+                <div class="title text-right">
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
+                    <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                </div>
+                <div class="fotoveiculo"></div>
+                Local de Chegada: 
+        <asp:Label ID="Label4" runat="server" Text="---"></asp:Label>
+                <br />
+                Origem:
+        <asp:Label ID="Label5" runat="server" Text="---"></asp:Label>
+                <br />
+                Destino: 
+        <asp:Label ID="Label6" runat="server" Text="---"></asp:Label>
+                <br />
+                <p>05/17</p>
+            </div>
+            <div class="serviceBox">
+                <div class="title text-right">
+                     <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
+                    <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                </div>
+                <div class="fotoveiculo"></div>
+                Local de Chegada: 
+        <asp:Label ID="Label7" runat="server" Text="---"></asp:Label>
+                <br />
+                Origem:
+        <asp:Label ID="Label8" runat="server" Text="---"></asp:Label>
+                <br />
+                Destino: 
+        <asp:Label ID="Label9" runat="server" Text="---"></asp:Label>
                 <br />
                 <p>05/17</p>
             </div>
