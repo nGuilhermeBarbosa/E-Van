@@ -94,24 +94,35 @@
 @media (max-width: 1199px) {
     .innerFooterLeft {
         text-align: center !important;
+        margin-right: 20px;
     }
 
     .innerFooterRight {
         text-align: center !important;
+        margin-left: 20px;
     }
+}
+
+p > a {
+    color: inherit !important;
+    text-decoration: none !important;
 }
 
 body {
     margin-top: 100px;
 }
 
-.dblock{
-    display:block;
-    color:inherit !important;
+.dblock {
+    display: block;
+    color: inherit !important;
 }
 
 .margin {
     margin: 10px;
+}
+
+.justificado {
+    text-align: justify;
 }
 
 footer {
@@ -122,22 +133,22 @@ footer {
     background: #384357;
     color: #f3fffd;
     padding: 1rem;
-    z-index:0;
-    box-sizing:border-box;
+    z-index: 0;
+    box-sizing: border-box;
 }
 
 .innerFooterLeft {
     text-align: justify;
-    margin-left:20px;
+    margin-left: 20px;
 }
 
 .innerFooterRight {
     text-align: right;
-    margin-right:20px;
+    margin-right: 20px;
 }
 
-.backgroundC{
-    background:#384357;
+.backgroundC {
+    background: #384357;
 }
 
 .innerFooterLeft > p {
