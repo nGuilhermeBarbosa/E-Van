@@ -98,7 +98,7 @@
     }
 
     .innerFooterRight {
-        margin-top:20px;
+        margin-top: 20px;
         text-align: center !important;
         margin-left: 20px;
     }
@@ -199,7 +199,7 @@ footer {
     border: 0;
     margin: 10px;
     float: left;
-    color:#384357;
+    color: #384357;
 }
 
     .serviceBox:first-child {
@@ -245,7 +245,7 @@ footer {
     background: #384357;
     color: #f3fffd;
     text-align: center;
-    margin-top:85px;
+    margin-top: 85px;
 }
 
 .info {
@@ -289,14 +289,13 @@ footer {
     width: 300px;
     margin-top: 120px;
     float: right;
-
 }
 
 .modal-a {
     position: relative;
     width: 600px;
     margin: auto;
-    margin-top:120px !important;
+    margin-top: 120px !important;
 }
 
 .modal-content {
@@ -414,9 +413,19 @@ footer {
         left: 2px;
     }
 
-    .photoDriver{
-        width:100px;
-        height:100px;
-        float:right;
-        padding:0;
+.photoDriver {
+    width: 100px;
+    height: 100px;
+    float: right;
+    padding: 0;
+}
+
+.margemDentro {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+    .margemDentro > p {
+        margin-left: -10px !important;
+        margin-top:20px!important;
     }
