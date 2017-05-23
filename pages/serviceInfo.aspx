@@ -20,6 +20,24 @@
             </div>
 
             <div class="serviceBox">
+                <div class="title">Contatos</div>
+                <div class="padding">
+                    Telefone: (12)3152-6361<br />
+                    Celular: (12)98162-6478<br />
+                    Whatsapp: (12)98162-6478<br />
+                    E-Mail: demirvans@outlook.com<br />
+                </div>
+            </div>
+
+            <div class="serviceBox">
+                <div class="title w3">Motorista</div>
+                <div class="padding">
+                    Nome: João da Silva<br />
+                    CNH: 358185016<br />
+                </div>
+            </div>
+
+            <div class="serviceBox">
                 <div class="title">Veículo</div>
                 <div class="padding">
                     001<br />
@@ -42,24 +60,6 @@
                     </table>
                 </div>
                 <p>Lugares Disponíveis: 5/15</p>
-            </div>
-
-            <div class="serviceBox">
-                <div class="title">Contatos</div>
-                <div class="padding">
-                    Telefone: (12)3152-6361<br />
-                    Celular: (12)98162-6478<br />
-                    Whatsapp: (12)98162-6478<br />
-                    E-Mail: demirvans@outlook.com<br />
-                </div>
-            </div>
-
-            <div class="serviceBox">
-                <div class="title w3">Motorista</div>
-                <div class="padding">
-                    Nome: João da Silva<br />
-                    CNH: 358185016<br />
-                </div>
             </div>
 
             <div class="serviceBox info padding Free">

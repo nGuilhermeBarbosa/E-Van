@@ -23,7 +23,7 @@
             </div>
 
             <div class="item backgroundC">
-                <img src="../images/banner.png" / alt="Busque por transporte">
+                <img src="../images/banner2.png" / alt="Busque por transporte">
                 <div class="carousel-caption">
                     <h3>Procurando por transporte coletivo?</h3>
                     <p>Encontre ou solicite transporte para o evento que desejar</p>
