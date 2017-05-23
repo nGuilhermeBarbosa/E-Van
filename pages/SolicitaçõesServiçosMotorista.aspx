@@ -54,7 +54,7 @@
                 <p>05/17</p>
 
             </div>
-            <div class="serviceBox margemDentro">
+            <div class="serviceBox ">
                 Nome: 
         <asp:Label ID="Label1" runat="server" Text="---"></asp:Label>
                 <br />
@@ -79,7 +79,7 @@
 
             </div>
 
-            <div class="serviceBox margemDentro">
+            <div class="serviceBox ">
                 Nome: 
         <asp:Label ID="Label7" runat="server" Text="---"></asp:Label>
                 <br />
@@ -104,7 +104,7 @@
 
             </div>
 
-            <div class="serviceBox margemDentro">
+            <div class="serviceBox ">
                 Nome: 
         <asp:Label ID="Label13" runat="server" Text="---"></asp:Label>
                 <br />
@@ -129,7 +129,7 @@
 
             </div>
 
-            <div class="serviceBox margemDentro">
+            <div class="serviceBox ">
                 Nome: 
         <asp:Label ID="Label19" runat="server" Text="---"></asp:Label>
                 <br />
