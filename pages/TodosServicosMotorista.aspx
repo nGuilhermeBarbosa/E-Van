@@ -29,9 +29,9 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="serviceBox">
+            <div class="serviceBox margemDentro">
                 <div class="title text-right">
-                     <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
@@ -46,9 +46,9 @@
                 <br />
                 <p>05/17</p>
             </div>
-            <div class="serviceBox">
+            <div class="serviceBox margemDentro">
                 <div class="title text-right">
-                     <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
@@ -63,7 +63,7 @@
                 <br />
                 <p>05/17</p>
             </div>
-            <div class="serviceBox">
+            <div class="serviceBox margemDentro">
                 <div class="title text-right">
                     <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
@@ -80,9 +80,9 @@
                 <br />
                 <p>05/17</p>
             </div>
-            <div class="serviceBox">
+            <div class="serviceBox margemDentro">
                 <div class="title text-right">
-                     <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
                 </div>
                 <div class="fotoveiculo"></div>

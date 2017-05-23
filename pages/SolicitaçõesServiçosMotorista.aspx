@@ -30,7 +30,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="serviceBox margemDentro">
+            <div class="serviceBox">
                 Nome: 
         <asp:Label ID="lblTipo" runat="server" Text="---"></asp:Label>
                 <br />
