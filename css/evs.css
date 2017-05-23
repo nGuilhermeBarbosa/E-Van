@@ -249,7 +249,6 @@ footer {
     background: #384357;
     color: #f3fffd;
     text-align: center;
-    margin-top:85px;
 }
 
 .title > b{
@@ -297,7 +296,6 @@ footer {
     width: 300px;
     margin-top: 120px;
     float: right;
-
 }
 
 .modal-a {
@@ -342,10 +340,6 @@ footer {
 }
 
 .margem {
-    margin-left: 20px;
-}
-
-.form-control {
     margin-left: 20px;
 }
 
@@ -427,4 +421,5 @@ footer {
         height:100px;
         float:right;
         padding:0;
+        margin-top:10px;
     }

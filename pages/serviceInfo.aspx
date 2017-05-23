@@ -30,7 +30,7 @@
                             <tr>
                                 <td>
                                     <div class="photoDriver border">
-                                        Foto ABNT
+                                        Foto ANTT
                                     </div>
                                 </td>
                                 <td>
