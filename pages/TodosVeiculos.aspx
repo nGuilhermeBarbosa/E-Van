@@ -31,8 +31,8 @@
         <div class="col-lg-12">
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 
@@ -53,8 +53,8 @@
 
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Tipo de Veiculo: 
@@ -78,8 +78,8 @@
 
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Tipo de Veiculo: 
@@ -101,8 +101,8 @@
             </div>
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Tipo de Veiculo: 
@@ -123,8 +123,8 @@
             </div>
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
 
@@ -146,8 +146,8 @@
             </div>
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
 
@@ -169,8 +169,8 @@
             </div>
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
 
@@ -192,8 +192,8 @@
             </div>
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarVeiculos.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
 
