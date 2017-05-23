@@ -26,10 +26,20 @@
                     Tipo: Van<br />
                     Complementos: Wi-fi<br />
                     Lugares: 15
-                <div class="row">
-                    <div class="col-lg-6">Foto ABNT</div>
-                    <div class="col-lg-6">Foto ARTESP</div>
-                </div>
+                    <table>
+                            <tr>
+                                <td>
+                                    <div class="photoDriver border">
+                                        Foto ANTT
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="photoDriver border">
+                                        Foto ARTESP
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                 </div>
                 <p>Lugares Disponíveis: 5/15</p>
             </div>
@@ -47,7 +57,7 @@
             <div class="serviceBox">
                 <div class="title w3">Motorista</div>
                 <div class="padding">
-                    Nome: Claudemir da Silva<br />
+                    Nome: João da Silva<br />
                     CNH: 358185016<br />
                 </div>
             </div>
@@ -64,9 +74,12 @@
             <div class="title">Fotos do Veículo</div>
             <div class="photoGallery mainPhoto">
             </div>
-            <div class="photoGallery"></div>
-            <div class="photoGallery"></div>
-            <div class="photoGallery"></div>
+            <div class="galleryField">
+                <div class="photoGallery"></div>
+                <div class="photoGallery"></div>
+                <div class="photoGallery"></div>
+            </div>
+
         </div>
 
     </div>

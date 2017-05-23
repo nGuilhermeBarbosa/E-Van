@@ -5,7 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row page">
         <div class="col-lg-12">
-            <div class="title text-center">Gerencimento de Solicitações</div>
+            <div class="title text-center">
+                Gerencimento de Solicitações
+                <span class="glyphicon glyphicon-plus glyphiconBar"><a href="addRequest.aspx">&nbsp;Adicionar</a></span>
+            </div>
             <div class="serviceBox">
                 <div class="title text-right">
                     <span class="glyphicon glyphicon-edit">Editar</span>
@@ -20,13 +23,6 @@
                 <p class="text-center">Data da viagem: 05/10/2017</p>
             </div>
 
-            <div class="serviceBox">
-                <p class="glyphicon glyphicon-plus"></p>
-            </div>
-
-            <a href="addRequest.aspx">
-                <asp:Button ID="addRequestBtn" runat="server" Text="Adicionar" CssClass="btn btn-success" />
-            </a>
         </div>
     </div>
 </asp:Content>
