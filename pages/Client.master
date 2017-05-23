@@ -36,7 +36,7 @@
                                 <li><a href="r_management.aspx">Solicitações</a></li>
                                 <li><a href="savedServices.aspx">Serviços Salvos</a></li>
                                 <li><a href="#">Contatos</a></li>
-                                <li><a href="#">Histórico</a></li>
+                                <li><a href="Historico.aspx">Histórico</a></li>
                             </ul>
                         </li>
                     </ul>

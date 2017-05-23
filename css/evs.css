@@ -202,10 +202,6 @@ footer {
     color:#384357;
 }
 
-    .serviceBox:first-child {
-        margin-left: 30px;
-    }
-
 .galleryField{
     width:90%;
     margin-left:10px;
@@ -255,6 +251,10 @@ footer {
     float:left;
 }
 
+.glyphiconBar{
+    margin-right:40px !important;
+}
+
 .info {
     background: #7af2ff;
 }
@@ -263,6 +263,11 @@ footer {
     float: right;
     margin: 5px;
     cursor: pointer;
+}
+
+.title > span > a{
+    color:inherit !important;
+    text-decoration:none !important;
 }
 
 .serviceBox > .padding > h2 {
