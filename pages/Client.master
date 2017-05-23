@@ -29,7 +29,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="services.aspx">Serviços</a></li>
                         <li><a href="sRequirement.aspx">Solicitações de Serviços</a></li>
-                        <li><a href="#">Motoristas</a></li>
+                        <li><a href="TodosMotoristas.aspx">Motoristas</a></li>
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Gerenciar <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -37,7 +37,7 @@
                                 <li><a href="savedServices.aspx">Serviços Salvos</a></li>
                                 <li><a href="Historico.aspx">Histórico</a></li>
                             </ul>
-                        </li>
+                        </li> 
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -68,7 +68,7 @@
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp Perfil </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Meu Perfil</a></li>
+                                <li><a href="motorista.aspx">Meu Perfil</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="index.aspx">Sair</a></li>
                             </ul>
@@ -87,15 +87,20 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="innerFooterLeft">
-                        <p>Ajuda</p>
                         <p>
-                            Perguntas Frequêntes
+                            <a href="help.aspx">Ajuda
+                            </a>
+                        </p>
+                        <p>
+                            <a href="perguntasFreq.aspx">Perguntas Frequêntes
+                            </a>
                         </p>
                         <p>
                             <a href="termsOfUse.aspx">Termos de Uso</a>
                         </p>
                         <p>
-                            Fale Conosco
+                            <a href="faleConosco.aspx">Fale Conosco
+                            </a>
                         </p>
                     </div>
                 </div>

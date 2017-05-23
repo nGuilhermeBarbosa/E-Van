@@ -29,15 +29,15 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Serviços</a></li>
-                            <li><a href="#">Solicitações de Serviços</a></li>
-                            <li><a href="#">Motoristas</a></li>
+                            <li><a href="services.aspx">Serviços</a></li>
+                            <li><a href="sRequirement.aspx">Solicitações de Serviços</a></li>
+                            <li><a href="TodosMotoristas.aspx">Motoristas</a></li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Gerenciar <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Usuários</a></li>
-                                    <li><a href="#">Denúncias</a></li>
-                                    <li><a href="#">Administradores</a></li>
+                                    <li><a href="Report.aspx">Denúncias</a></li>
+                                    <li><a href="allAdmin.aspx">Administradores</a></li>
                                     <li><a href="#">Mensagens</a></li>
                                 </ul>
                             </li>
@@ -90,15 +90,20 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="innerFooterLeft">
-                            <p>Ajuda</p>
                             <p>
-                                Perguntas Frequêntes
+                                <a href="help.aspx">Ajuda
+                                </a>
                             </p>
                             <p>
-                                Termos de Uso
+                                <a href="perguntasFreq.aspx">Perguntas Frequêntes
+                                </a>
                             </p>
                             <p>
-                                Fale Conosco
+                                <a href="termsOfUse.aspx">Termos de Uso</a>
+                            </p>
+                            <p>
+                                <a href="faleConosco.aspx">Fale Conosco
+                                </a>
                             </p>
                         </div>
                     </div>
