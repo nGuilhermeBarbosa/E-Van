@@ -89,6 +89,10 @@
     .searchNav {
         width: 100%;
     }
+
+    .modal-content{
+        margin-top: 100px;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -125,6 +129,10 @@ body {
 
 .justificado {
     text-align: justify;
+}
+
+.getDown{
+    margin-top: 100px;
 }
 
 footer {

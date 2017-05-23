@@ -6,7 +6,7 @@
     <div class="row">
         <div class="title text-center">Serviços</div>
         <div class="col-lg-12">
-            
+
             <a href="serviceInfo.aspx" class="dblock">
                 <div class="serviceBox">
                     <div class="title">João</div>
@@ -26,9 +26,8 @@
                     </div>
                     <p>9/5/2017</p>
                 </div>
-            </a>
-
         </div>
     </div>
+    <div class="getDown"></div>
 </asp:Content>
 

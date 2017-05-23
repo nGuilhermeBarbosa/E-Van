@@ -4,10 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="row">
-        <div class="title text-center">
-            Denúncias
-            <span class="glyphicon glyphicon-trash glyphiconBar">&nbsp;Limpar</span>
-        </div>  
+        <div class="title text-center">Denúncias</div>  
         <div class="col-lg-12">
             <div class=" serviceBox">
                 <!-- --><div class="padding">
