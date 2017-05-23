@@ -11,7 +11,7 @@
                     <span class="glyphicon glyphicon-edit">Editar</span>
                     <span class="glyphicon glyphicon-remove">Excluir</span>
                 </div>
-                <div class="fotoveiculo"></div>
+                <div class="fotoveiculo">HAHAHAH</div>
                 
                     Tipo de Veiculo: 
         <asp:Label ID="lblTipo" runat="server" Text="Van"></asp:Label>
