@@ -4,11 +4,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">    
     <div class="row">
-        <div class="title text-center">Todos Administradores</div>
+        <div class="title text-center">
+            Todos Administradores
+            <span class="glyphicon glyphicon-plus glyphiconBar">&nbsp;Adicionar Administrador</span>
+        </div>
         <div class="col-lg-12">            
                 <div class="serviceBox ">
                     <div class="title text-right">
                         <span class="glyphicon glyphicon-remove">Excluir</span>
+                        <span class="glyphicon glyphicon-edit">Editar</span>
                     </div>
                     <div class="padding">
                         Administrador A<br />
@@ -18,10 +22,6 @@
                         E-mail: demirvans@outlook.com
                     </div>
                 </div>
-            <div class="col-lg-12">
-                <br />
-                <asp:Button ID="btnAddAmin" runat="server" Text="Adicionar Administrador" CssClass="btn btn-success" />
-            </div>
         </div>
     </div>
 </asp:Content>

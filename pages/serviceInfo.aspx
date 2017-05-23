@@ -20,31 +20,6 @@
             </div>
 
             <div class="serviceBox">
-                <div class="title">Veículo</div>
-                <div class="padding">
-                    001<br />
-                    Tipo: Van<br />
-                    Complementos: Wi-fi<br />
-                    Lugares: 15
-                    <table>
-                            <tr>
-                                <td>
-                                    <div class="photoDriver border">
-                                        Foto ANTT
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="photoDriver border">
-                                        Foto ARTESP
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                </div>
-                <p>Lugares Disponíveis: 5/15</p>
-            </div>
-
-            <div class="serviceBox">
                 <div class="title">Contatos</div>
                 <div class="padding">
                     Telefone: (12)3152-6361<br />
@@ -60,6 +35,31 @@
                     Nome: João da Silva<br />
                     CNH: 358185016<br />
                 </div>
+            </div>
+
+            <div class="serviceBox">
+                <div class="title">Veículo</div>
+                <div class="padding">
+                    001<br />
+                    Tipo: Van<br />
+                    Complementos: Wi-fi<br />
+                    Lugares: 15
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="photoDriver border">
+                                    Foto ANTT
+                                </div>
+                            </td>
+                            <td>
+                                <div class="photoDriver border">
+                                    Foto ARTESP
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Lugares Disponíveis: 5/15</p>
             </div>
 
             <div class="serviceBox info padding Free">
