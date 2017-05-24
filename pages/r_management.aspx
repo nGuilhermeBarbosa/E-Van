@@ -11,8 +11,8 @@
             </div>
             <div class="serviceBox">
                 <div class="title text-right">
-                    <span class="glyphicon glyphicon-edit">Editar</span>
                     <span class="glyphicon glyphicon-remove">Excluir</span>
+                    <span class="glyphicon glyphicon-edit">Editar</span>
                 </div>
                 <div class="padding">
                     Nome: Eduardo<br />

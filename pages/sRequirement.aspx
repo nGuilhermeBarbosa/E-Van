@@ -7,8 +7,8 @@
         <div class="col-lg-12">
             <div class="title text-center">Solicitações de Serviços</div>
             <div class="serviceBox requestBox">
+                <div class="title">Eduardo</div>
                 <div class="padding">
-                    Nome: Eduardo<br />
                     Cidade: Aparecida<br />
                     Destino: Rio de Janeiro<br />
                     Mensagem: Boa tarde, gostaria de fechar uma van para o Rock in Rio
@@ -16,9 +16,9 @@
                 <p class="text-center">Data da viagem: 05/10/2017</p>
             </div>
 
-            <div class="serviceBox requestBox Free">
+            <div class="serviceBox requestBox">
+                <div class="title">Eduardo</div>
                 <div class="padding">
-                    Nome: Eduardo<br />
                     Cidade: Aparecida<br />
                     Destino: Rio de Janeiro<br />
                     Mensagem: Boa tarde, gostaria de fechar uma van para o Rock in Rio
@@ -27,9 +27,5 @@
             </div>
         </div>
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    <div class="getDown"></div>
 </asp:Content>

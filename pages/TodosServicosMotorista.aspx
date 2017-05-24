@@ -16,6 +16,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             Tem certeza que deseja excluir ?
+                       
                         </div>
                     </div>
                 </div>
@@ -31,69 +32,81 @@
         <div class="col-lg-12">
             <div class="serviceBox margemDentro">
                 <div class="title text-right">
-                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Local de Chegada: 
-        <asp:Label ID="lblTipo" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="lblTipo" runat="server" Text="---"></asp:Label>
                 <br />
                 Origem:
-        <asp:Label ID="lblModelo" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="lblModelo" runat="server" Text="---"></asp:Label>
                 <br />
                 Destino: 
-        <asp:Label ID="lblLugares" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="lblLugares" runat="server" Text="---"></asp:Label>
                 <br />
                 <p>05/17</p>
             </div>
             <div class="serviceBox margemDentro">
                 <div class="title text-right">
-                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Local de Chegada: 
-        <asp:Label ID="Label1" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label1" runat="server" Text="---"></asp:Label>
                 <br />
                 Origem:
-        <asp:Label ID="Label2" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label2" runat="server" Text="---"></asp:Label>
                 <br />
                 Destino: 
-        <asp:Label ID="Label3" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label3" runat="server" Text="---"></asp:Label>
                 <br />
                 <p>05/17</p>
             </div>
             <div class="serviceBox margemDentro">
                 <div class="title text-right">
-                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Local de Chegada: 
-        <asp:Label ID="Label4" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label4" runat="server" Text="---"></asp:Label>
                 <br />
                 Origem:
-        <asp:Label ID="Label5" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label5" runat="server" Text="---"></asp:Label>
                 <br />
                 Destino: 
-        <asp:Label ID="Label6" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label6" runat="server" Text="---"></asp:Label>
                 <br />
                 <p>05/17</p>
             </div>
             <div class="serviceBox margemDentro">
                 <div class="title text-right">
-                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
+                    <span><a href="AlterarServiço.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp Editar</a></span>
                 </div>
                 <div class="fotoveiculo"></div>
                 Local de Chegada: 
-        <asp:Label ID="Label7" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label7" runat="server" Text="---"></asp:Label>
                 <br />
                 Origem:
-        <asp:Label ID="Label8" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label8" runat="server" Text="---"></asp:Label>
                 <br />
                 Destino: 
-        <asp:Label ID="Label9" runat="server" Text="---"></asp:Label>
+       
+                <asp:Label ID="Label9" runat="server" Text="---"></asp:Label>
                 <br />
                 <p>05/17</p>
             </div>
