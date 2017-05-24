@@ -35,10 +35,10 @@
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Gerenciar <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Usuários</a></li>
+                                    <li><a href="Profilecliente.aspx">Usuários</a></li>
                                     <li><a href="Report.aspx">Denúncias</a></li>
                                     <li><a href="allAdmin.aspx">Administradores</a></li>
-                                    <li><a href="#">Mensagens</a></li>
+                                    <li><a href="mensagem.aspx">Mensagens</a></li>
                                 </ul>
                             </li>
                         </ul>
