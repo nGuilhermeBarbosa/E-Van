@@ -33,7 +33,7 @@
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-pencil">&nbsp;Gerenciar <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="r_management.aspx" class="glyphicon glyphicon-pencil">&nbsp;Solicitações</a></li>
+                                <li><a href="r_management.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações</a></li>
                                 <li><a href="savedServices.aspx" class="glyphicon glyphicon-floppy-disk">&nbsp;Serviços Salvos</a></li>
                                 <li><a href="Historico.aspx" class="glyphicon glyphicon-time">&nbsp;Histórico</a></li>
                             </ul>
