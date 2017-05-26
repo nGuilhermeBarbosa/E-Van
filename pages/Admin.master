@@ -38,7 +38,7 @@
                                     <li><a href="Profilecliente.aspx" class="glyphicon glyphicon-user">&nbsp;Usuários</a></li>
                                     <li><a href="Report.aspx" class="glyphicon glyphicon-alert">&nbsp;Denúncias</a></li>
                                     <li><a href="allAdmin.aspx" class="glyphicon glyphicon-cog">&nbsp;Administradores</a></li>
-                                    <li><a href="mensagem.aspx" class="glyphicon glyphicon-comment">&nbsp;Mensagens</a></li>
+                                    <li><a href="mensagem.aspx" class="glyphicon glyphicon-envelope">&nbsp;Mensagens</a></li>
                                 </ul>
                             </li>
                         </ul>
