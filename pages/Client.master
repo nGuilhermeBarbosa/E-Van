@@ -70,7 +70,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="motorista.aspx">Meu Perfil</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="index.aspx">Sair</a></li>
+                                <li class="glyphicon glyphicon-log-out"><a href="index.aspx">Sair</a></li>
                             </ul>
                         </li>
                     </ul>
