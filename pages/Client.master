@@ -27,15 +27,15 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="services.aspx">Serviços</a></li>
-                        <li><a href="sRequirement.aspx">Solicitações de Serviços</a></li>
-                        <li><a href="TodosMotoristas.aspx">Motoristas</a></li>
+                        <li><a class="glyphicon glyphicon-book" href="services.aspx">&nbsp;Serviços</a></li>
+                        <li><a href="sRequirement.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
+                        <li><a href="TodosMotoristas.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Gerenciar <b class="caret"></b></a>
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-pencil">&nbsp;Gerenciar <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="r_management.aspx">Solicitações</a></li>
-                                <li><a href="savedServices.aspx">Serviços Salvos</a></li>
-                                <li><a href="Historico.aspx">Histórico</a></li>
+                                <li><a href="r_management.aspx" class="glyphicon glyphicon-pencil">&nbsp;Solicitações</a></li>
+                                <li><a href="savedServices.aspx" class="glyphicon glyphicon-floppy-disk">&nbsp;Serviços Salvos</a></li>
+                                <li><a href="Historico.aspx" class="glyphicon glyphicon-time">&nbsp;Histórico</a></li>
                             </ul>
                         </li> 
                     </ul>
@@ -68,9 +68,9 @@
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp Perfil </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="motorista.aspx">Meu Perfil</a></li>
+                                <li><a href="motorista.aspx"><div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li class="glyphicon glyphicon-log-out"><a href="index.aspx">Sair</a></li>
+                                <li><a href="index.aspx"><div class="glyphicon glyphicon-log-out">&nbsp;Sair</div></a></li>
                             </ul>
                         </li>
                     </ul>

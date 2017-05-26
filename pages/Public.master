@@ -57,7 +57,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="about.aspx">Sobre a Plataforma</a></li>
+                            <li><a href="about.aspx" class="glyphicon glyphicon-book">&nbsp;Sobre a Plataforma</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
