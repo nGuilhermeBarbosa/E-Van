@@ -10,7 +10,7 @@
     <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
     Mensagem
     <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" TextMode="MultiLine" required="required"></asp:TextBox><br />
-    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info" />
+    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-inf" />
     <div class="getDown"></div><br />
 </asp:Content>
 
