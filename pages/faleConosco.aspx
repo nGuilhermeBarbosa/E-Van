@@ -11,6 +11,6 @@
     Mensagem
     <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" TextMode="MultiLine" required="required"></asp:TextBox><br />
     <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info" />
-    <div class="getDown"></div>
+    <div class="getDown"></div><br />
 </asp:Content>
 
