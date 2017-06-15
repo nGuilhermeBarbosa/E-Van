@@ -52,7 +52,7 @@
                     <div class="glyphicon glyphicon-star"></div>
                     <div class="glyphicon glyphicon-star-empty"></div>
                 </div>
-                <asp:Button ID="Button1" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" />
+                <asp:Button ID="btnShowAll" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" OnClick="btnShowAll_Click"/>
             </div>
         </div>
     </div>
