@@ -7,8 +7,9 @@
     <div class="loginBox">
         <asp:TextBox ID="txtEmail" type="Email" runat="server" placeholder="E-Mail" CssClass="form-control"></asp:TextBox><br />
         <asp:TextBox ID="txtSenha" type="Password" runat="server" placeholder="Senha" CssClass="form-control"></asp:TextBox><br />
-        <asp:Button ID="btnEnviar" runat="server" Text="Entrar" CssClass="btn btn-success"/>
-        <asp:Button ID="btnESenha" runat="server" Text="Esqueci a Senha" CssClass="btn btn-warning"/>
+        <asp:Button ID="btnEnviar" runat="server" Text="Entrar" CssClass="btn btn-info form-control"/>
+        <a href="#">Esqueci a senha</a>
+        
     </div>
     <br /><br /><br /><br /><div class="getDown"></div>
 </asp:Content>
