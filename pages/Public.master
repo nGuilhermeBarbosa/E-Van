@@ -17,32 +17,28 @@
     <form id="form1" runat="server">
         <div class="page">
 
-            <!-- Modal -->
+            <!-- Modal 
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
-                    <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <div class="close" data-dismiss="modal">&times;</div>
                             <h4 class="modal-title">Entre com seu usuário</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" placeholder="E-Mail" TextMode="Email" required="required"></asp:TextBox><br />
-                                    <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" placeholder="Senha" TextMode="Password" required="required"></asp:TextBox><br />
-                                    <asp:Button ID="Button2" runat="server" Text="Entrar" CssClass="btn btn-success" />
+                                    <input text="email" name="email" type="email" placeholder="E-mail" class="form-control" /><br />
+                                    <input text="senha" name="senha" type="password" placeholder="Senha" class="form-control" /><br />
+                                    <input type="submit" value="Entrar" class="btn btn-success"/>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
 
                 </div>
-            </div>
+            </div> -->
 
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -61,7 +57,8 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span>&nbsp Entrar</a></li>
+                            <!--<li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span>&nbsp Entrar</a></li>-->
+                            <li><a href="login.aspx"><span class="glyphicon glyphicon-log-in"></span>&nbsp Entrar</a></li>
                         </ul>
                     </div>
                 </div>

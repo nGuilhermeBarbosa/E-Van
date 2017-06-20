@@ -463,3 +463,23 @@ footer {
     margin-left: 30px;
     float: left;
 }
+
+.filtro {
+    width: 100%;
+    background: #dad2c3;
+    margin: auto;
+    padding: 30px;
+}
+
+.loginBox{
+    width:300px;
+    height:auto;
+    margin: auto;
+    box-shadow: 1px 1px 20px #009ffb;
+    /*border: 1px dashed #009ffb;*/
+    padding:10px;
+}
+
+.loginBox > h1{
+    color:#f3fffd;
+}

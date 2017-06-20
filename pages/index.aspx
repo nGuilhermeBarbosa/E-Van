@@ -11,11 +11,11 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
         </ol>
-        
+
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active backgroundC">
-                <img src="../images/banner.png" / alt="Divulgue seu serviço">
+                <img src="../images/banner.png" alt="Divulgue seu serviço" />
                 <div class="carousel-caption">
                     <h3>Motorista</h3>
                     <p>Divulgue seu serviço de forma simples e rápida</p>
@@ -23,7 +23,7 @@
             </div>
 
             <div class="item backgroundC">
-                <img src="../images/banner2.png" / alt="Busque por transporte">
+                <img src="../images/banner2.png" alt="Busque por transporte" />
                 <div class="carousel-caption">
                     <h3>Procurando por transporte coletivo?</h3>
                     <p>Encontre ou solicite transporte para o evento que desejar</p>
@@ -45,7 +45,7 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-sm-6">
-                <h3 class="text-left">Encontre o transporte ideal para você agora mesmo!</h3>
+                <h3 class="text-left">Encontre o transporte ideal para você agora mesmo!</h3><br />
             </div>
             <br />
             <div class="col-sm-6">
@@ -77,15 +77,15 @@
                 <br />
                 <div class="row">
                     <div class="col-sm-9">
-                        <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" />
+                        <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" /><br />
+                        <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
                     </div>
                     <div class="col-sm-2">
-                        <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" />
+                        <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="Button1_Click"/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
 </asp:Content>
 
