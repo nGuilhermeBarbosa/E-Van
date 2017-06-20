@@ -65,7 +65,7 @@
             <asp:TextBox ID="txtEmail" runat="server" Text="SP" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnAlterar" value="0" runat="server" Text="Alterar" CssClass="btn btn-default margem" OnClick="btnAlterar_Click" />
+            <asp:Button ID="btnAlterar" value="0" runat="server" Text="Alterar" CssClass="btn btn-default margem" OnClick="btnAlterar_Click"/>
         </div>
 
         <div class="col-lg-2 qualquer">
@@ -77,7 +77,7 @@
                 <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Ruim">2 stars</label>
                 <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Muito Ruim">1 star</label>
             </fieldset>
-            <asp:Button ID="btnUpload" runat="server" Text="Upload" CssClass="doc" />
+            <asp:Button ID="btnUpload" runat="server" Text="Upload" CssClass="doc"/>
             <asp:Label ID="lblDoc" runat="server" Text="Documento:" CssClass="doc"></asp:Label>
 
 

@@ -13,6 +13,6 @@ public partial class pages_motorista : System.Web.UI.Page
     }
     protected void btnAlterar_Click(object sender, EventArgs e)
     {
-       
+        Response.Redirect("AlterarDadosPessoais.aspx");
     }
 }
