@@ -61,8 +61,8 @@
             <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:Label ID="lblEmail" runat="server" Text="E-mail" CssClass="margem"></asp:Label>
+            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-default margem" />
