@@ -6,9 +6,9 @@ using System.Data;
 /// <summary>
 /// Descrição resumida de adm_administradorDB
 /// </summary>
-public class adm_administradorDB
+public class ser_servicosDB
 {
-    public static int Insert(adm_administrador adm)
+    public static int Insert(ser_servicos ser)
     {
         int retorno = 0;
 
@@ -17,26 +17,26 @@ public class adm_administradorDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "insert into adm_administrador ";
-            sql += "(adm_nome, adm_telefone, adm_sexo, adm_datanascimento, adm_cidade, adm_estado, adm_endereco, adm_cpf, adm_idade, usu_id)";
+            string sql = "insert into ser_servicos ";
+            sql += "(ser_datacadastro, ser_nome, ser_datafim, ser_origem, ser_datainicio, ser_destino, ser_descricao, ser_lugares, mot_id)";
             sql += "values ";
-            sql += "(?adm_nome, ?adm_telefone, ?adm_sexo, ?adm_datanascimento, ?adm_cidade, ?adm_estado, ?adm_endereco, ?adm_cpf, ?adm_idade, ?usu_id)";
+            sql += "(?ser_datacadastro, ?ser_nome, ?ser_datafim, ?ser_origem, ?ser_datainicio, ?ser_destino, ?ser_descricao, ?ser_lugares, ?mot_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_telefone", adm.Adm_telefone));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", adm.Adm_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", adm.Adm_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_idade", adm.Adm_endereco));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_cpf));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_idade));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_datacadastro", ser.Ser_datacadastro));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_nome", ser.Ser_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_datafim", ser.Ser_datafim));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_origem", ser.Ser_origem));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_datainicio", ser.Ser_datainicio));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_destino", ser.Ser_destino));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_descricao", ser.Ser_descricao));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_lugares", ser.Ser_lugares));
+            
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", adm.Usu_id.Usu_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_id", ser.Mot_id.Mot_id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -60,7 +60,7 @@ public class adm_administradorDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from adm_administrador";
+        string sql = "select * from ser_servicos";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
@@ -84,13 +84,13 @@ public class adm_administradorDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from adm_administrador where adm_id = ?adm_id";
+            string sql = "delete from ser_servicos where ser_id = ?ser_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_id", id));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_id", id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -104,7 +104,7 @@ public class adm_administradorDB
         }
         return retorno;
     }
-    public static int Update(adm_administrador adm)
+    public static int Update(ser_servicos ser)
     {
         int retorno = 0;
 
@@ -113,20 +113,19 @@ public class adm_administradorDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update adm_administrador set adm_nome = ?adm_nome, adm_telefone = ?adm_telefone, adm_sexo = ?adm_sexo, adm_datanascimento = ?adm_datanascimento, adm_cidade = ?adm_cidade, adm_estado = ?adm_estado, adm_endereco = ?adm_endereco, adm_cpf = ?adm_cpf, cli_idade = ?cli_idade where adm_id = ?adm_id";
+            string sql = "update ser_servicos set ser_datacadastro = ?ser_datacadastro, ser_nome = ?ser_nome, ser_datafim = ?ser_datafim, ser_origem = ?ser_origem, ser_datainicio = ?ser_datainicio, ser_destino = ?ser_destino, ser_descricao = ?ser_descricao, ser_lugares = ?ser_lugares where ser_id = ?ser_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_telefone", adm.Adm_telefone));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", adm.Adm_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", adm.Adm_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_idade", adm.Adm_endereco));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_cpf));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_idade));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_datacadastro", ser.Ser_datacadastro));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_nome", ser.Ser_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_datafim", ser.Ser_datafim));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_origem", ser.Ser_origem));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_datainicio", ser.Ser_datainicio));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_destino", ser.Ser_destino));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_descricao", ser.Ser_descricao));
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_lugares", ser.Ser_lugares));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

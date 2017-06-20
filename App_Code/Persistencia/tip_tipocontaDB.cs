@@ -6,9 +6,9 @@ using System.Data;
 /// <summary>
 /// Descrição resumida de doc_documento
 /// </summary>
-public class rec_recursosDB
+public class tip_tipocontaDB
 {
-    public static int Insert(rec_recursos rec)
+    public static int Insert(tip_tipoconta tip)
     {
         int retorno = 0;
 
@@ -17,16 +17,16 @@ public class rec_recursosDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "insert into rec_recursos ";
-            sql += "(rec_descricao)";
+            string sql = "insert into tip_tipoconta ";
+            sql += "(tip_descricao)";
             sql += "values ";
-            sql += "(?rec_descricao)";
+            sql += "(?tip_descricao)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?rec_descricao", rec.Rec_descricao));
-            
+            objCommand.Parameters.Add(Mapped.Parameter("?tip_descricao", tip.Tip_descricao));
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -50,7 +50,7 @@ public class rec_recursosDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from rec_recursos";
+        string sql = "select * from tip_tipoconta";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
@@ -74,14 +74,14 @@ public class rec_recursosDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from rec_recursos where rec_id = ?rec_id";
+            string sql = "delete from tip_tipoconta where tip_id = ?tip_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?rec_id", id));
-            
+            objCommand.Parameters.Add(Mapped.Parameter("?tip_id", id));
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -95,7 +95,7 @@ public class rec_recursosDB
         }
         return retorno;
     }
-    public static int Update(rec_recursos rec)
+    public static int Update(tip_tipoconta tip)
     {
         int retorno = 0;
 
@@ -104,12 +104,12 @@ public class rec_recursosDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update rec_recursos set rec_descricao = ?rec_descricao";
+            string sql = "update tip_tipoconta set tip_descricao = ?tip_descricao";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("rec_descricao", rec.Rec_descricao));
+            objCommand.Parameters.Add(Mapped.Parameter("tip_descricao", tip.Tip_descricao));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Data;
 /// <summary>
-/// Descrição resumida de doc_documento
+/// Descrição resumida de txm_transporte_motorista
 /// </summary>
-public class rec_recursosDB
+public class txm_transporte_motoristaDB
 {
-    public static int Insert(rec_recursos rec)
+    public static int Insert(txm_transporte_motorista txm)
     {
         int retorno = 0;
 
@@ -17,16 +17,18 @@ public class rec_recursosDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "insert into rec_recursos ";
-            sql += "(rec_descricao)";
+            string sql = "insert into adm_administrador ";
+            sql += "(mot_id, tra_id)";
             sql += "values ";
-            sql += "(?rec_descricao)";
+            sql += "(?mot_id, ?tra_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?rec_descricao", rec.Rec_descricao));
             
+            // Chave estrangeira
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_id", txm.Mot_id.Mot_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?tra_id", txm.Tra_id.Tra_id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -50,7 +52,7 @@ public class rec_recursosDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from rec_recursos";
+        string sql = "select * from txm_transporte_motorista";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
@@ -74,14 +76,14 @@ public class rec_recursosDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from rec_recursos where rec_id = ?rec_id";
+            string sql = "delete from txm_transporte_motorista";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?rec_id", id));
-            
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_id", id));
+            objCommand.Parameters.Add(Mapped.Parameter("?tra_id", id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -95,32 +97,5 @@ public class rec_recursosDB
         }
         return retorno;
     }
-    public static int Update(rec_recursos rec)
-    {
-        int retorno = 0;
-
-        try
-        {
-            //Correto
-            IDbConnection objConexao; //Abrir a conexão
-            IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update rec_recursos set rec_descricao = ?rec_descricao";
-
-            objConexao = Mapped.Connection();
-            objCommand = Mapped.Command(sql, objConexao);
-
-            objCommand.Parameters.Add(Mapped.Parameter("rec_descricao", rec.Rec_descricao));
-
-            objCommand.ExecuteNonQuery();
-            objConexao.Close();
-            objConexao.Dispose();
-            objCommand.Dispose();
-        }
-        catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }
-        return retorno;
-    }
+    
 }

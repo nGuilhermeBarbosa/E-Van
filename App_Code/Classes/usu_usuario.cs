@@ -11,6 +11,7 @@ public class usu_usuario
     private int usu_id;
     private string usu_email;
     private string usu_senha;
+    private con_conta con_id;
 
     public int Usu_id
     {
@@ -30,5 +31,18 @@ public class usu_usuario
     {
         get { return usu_senha; }
         set { usu_senha = value; }
+    }
+
+    public global::con_conta Con_id
+    {
+        get
+        {
+            return con_id;
+        }
+
+        set
+        {
+            con_id = value;
+        }
     }
 }
