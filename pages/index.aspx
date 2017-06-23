@@ -80,10 +80,17 @@
                     </div>
                 </div>
                 <br />
+                <asp:RadioButtonList ID="rbConta" runat="server"></asp:RadioButtonList>
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-5">
                         <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" /><br />
                         <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
+                    </div>
+                    <div class="col-sm-4">
+                        <asp:DropDownList ID="DropDownList4" runat="server" CssClass="form-control">
+                            <asp:ListItem Selected="True" Value="1">Passageiro</asp:ListItem>
+                            <asp:ListItem Value="2">Motorista</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <div class="col-sm-2">
                         <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="Button1_Click" />
