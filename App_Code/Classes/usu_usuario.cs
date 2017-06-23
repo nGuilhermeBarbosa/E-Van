@@ -11,6 +11,7 @@ public class usu_usuario
     private int usu_id;
     private string usu_email;
     private string usu_senha;
+    
 
     public int Usu_id
     {
@@ -31,4 +32,6 @@ public class usu_usuario
         get { return usu_senha; }
         set { usu_senha = value; }
     }
+
+    
 }
