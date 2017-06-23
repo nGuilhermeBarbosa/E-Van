@@ -22,10 +22,10 @@
                     <asp:ListItem Value="6">Exibir todas as op&#231;&#245;es</asp:ListItem>
                 </asp:DropDownList>
                 <br />
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-info"/>
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-info" />
             </div>
-
-            <div class="title">Principais Serviços</div>
+            <br />
+            <div class="title">Principais Motoristas</div>
             <a href="serviceInfo.aspx" class="dblock">
                 <div class="serviceBox">
                     <div class="title">João</div>
@@ -54,7 +54,7 @@
                 <div class="serviceBox userAvaliate padding">
                     Nome: Claudemir<br />
                     Cidade: Guaratinguetá<br />
-                    Número de avaliadores: 5<br />
+                    Avaliação: 5<br />
                     <div class="glyphicon glyphicon-star"></div>
                     <div class="glyphicon glyphicon-star"></div>
                     <div class="glyphicon glyphicon-star"></div>
@@ -64,17 +64,16 @@
                 <div class="serviceBox userAvaliate padding">
                     Nome: Claudemir<br />
                     Cidade: Guaratinguetá<br />
-                    Número de avaliadores: 5<br />
+                    Avaliação: 5<br />
                     <div class="glyphicon glyphicon-star"></div>
                     <div class="glyphicon glyphicon-star"></div>
                     <div class="glyphicon glyphicon-star"></div>
                     <div class="glyphicon glyphicon-star"></div>
                     <div class="glyphicon glyphicon-star-empty"></div>
                 </div>
-                <asp:Button ID="btnShowAll" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" OnClick="btnShowAll_Click"/>
+                <asp:Button ID="btnShowAll" runat="server" Text="Ver todas as avaliações" CssClass="btn btn-default buttonShowAll" OnClick="btnShowAll_Click" />
             </div>
         </div>
     </div>
-   
 </asp:Content>
 
