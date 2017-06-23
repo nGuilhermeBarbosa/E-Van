@@ -33,7 +33,7 @@
             <div class="title">Motoristas mais bem avaliados</div>
             <div class="col-lg-12">
                 <div class="serviceBox userAvaliate padding">
-                    Nome: Claudemir<br />
+                    Nome: João<br />
                     Cidade: Guaratinguetá<br />
                     Número de avaliadores: 5<br />
                     <div class="glyphicon glyphicon-star"></div>
@@ -43,7 +43,7 @@
                     <div class="glyphicon glyphicon-star-empty"></div>
                 </div>
                 <div class="serviceBox userAvaliate padding">
-                    Nome: Claudemir<br />
+                    Nome: Luis<br />
                     Cidade: Guaratinguetá<br />
                     Número de avaliadores: 5<br />
                     <div class="glyphicon glyphicon-star"></div>
