@@ -8,31 +8,12 @@
 
             <div class="title">Busca</div>
             <div class="filtro">
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col-lg-6">
-                        <asp:Label ID="Label1" runat="server" CssClass="texthome" Text="Origem: "></asp:Label>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control caixatexto"></asp:TextBox><br />
-                    </div>
-                    <div class="col-lg-6">
-                        <asp:Label ID="Label2" runat="server" CssClass="texthome" Text="Destino: "></asp:Label>
-                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control caixatexto" ></asp:TextBox><br />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <asp:Label ID="lbl" runat="server" CssClass="texthome" Text="Data de saída: "></asp:Label>
-                        <asp:TextBox ID="TextBox3" runat="server" type="date" CssClass="form-control caixatexto"></asp:TextBox><br />
-                    </div>
-                    <div class="col-lg-6">
-                        <asp:Label ID="lbl2" runat="server" CssClass="texthome" Text="Data de retorno: "></asp:Label>
-                        <asp:TextBox ID="TextBox4" runat="server" type="date" CssClass="form-control caixatexto"></asp:TextBox><br />
-                    </div>
-                </div>
-                <asp:Label ID="Label3" runat="server" CssClass="texthome" Text="Avaliação: "></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control caixatexto">
-                    <asp:ListItem Value="null">Estrelas</asp:ListItem>
+                <br /><br />
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Sua cidade"></asp:TextBox><br />
+                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" placeholder="Para onde deseja ir?"></asp:TextBox><br />
+                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" placeholder="Quando quer ir?"></asp:TextBox><br />
+                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
+                    <asp:ListItem Value="null">Nível de avaliação do motorista</asp:ListItem>
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
