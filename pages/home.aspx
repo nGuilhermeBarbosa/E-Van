@@ -13,7 +13,7 @@
                 <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" placeholder="Para onde deseja ir?"></asp:TextBox><br />
                 <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" placeholder="Quando quer ir?"></asp:TextBox><br />
                 <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
-                    <asp:ListItem Value="null">Estrelas</asp:ListItem>
+                    <asp:ListItem Value="null">Nível de avaliação do motorista</asp:ListItem>
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
@@ -49,7 +49,7 @@
 
         </div>
         <div class="col-lg-3">
-            <div class="title">Motoristas mais bem avaliados</div>
+            <div class="title">Ranking</div>
             <div class="col-lg-12">
                 <div class="serviceBox userAvaliate padding">
                     Nome: Claudemir<br />
