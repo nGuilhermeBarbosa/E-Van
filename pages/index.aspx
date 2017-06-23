@@ -53,7 +53,7 @@
                 <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                 <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
                 <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                <asp:TextBox ID="txtCnpj" runat="server" placeholder="Cnpj" CssClass="form-control" required="required"></asp:TextBox><br />
+                <%--<asp:TextBox ID="txtCnpj" runat="server" placeholder="Cnpj" CssClass="form-control" required="required"></asp:TextBox><br />--%>
 
                 <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
                     <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
@@ -104,7 +104,7 @@
                         <asp:BoundField DataField="mot_sexo" HeaderText="Sexo" />
                         <asp:BoundField DataField="mot_cidade" HeaderText="Cidade" />
                         <asp:BoundField DataField="mot_estado" HeaderText="Estado" />
-                        <asp:BoundField DataField="mot_cnpj" HeaderText="Cnpj" />
+                        <%--<asp:BoundField DataField="mot_cnpj" HeaderText="Cnpj" />--%>
 
 
 

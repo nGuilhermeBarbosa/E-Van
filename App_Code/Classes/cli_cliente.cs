@@ -15,20 +15,15 @@ public class cli_cliente
     private string cli_datanascimento;
     private string cli_cidade;
     private string cli_estado;
-    private int cli_idade;
     private usu_usuario usu_id;
 
-    public global:: usu_usuario Usu_id
+    public global::usu_usuario Usu_id
     {
         get { return usu_id; }
         set { usu_id = value; }
     }
 
-    public int Cli_idade
-    {
-        get { return cli_idade; }
-        set { cli_idade = value; }
-    }
+
 
     public string Cli_estado
     {
