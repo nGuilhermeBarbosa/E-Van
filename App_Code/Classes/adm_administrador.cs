@@ -6,7 +6,7 @@ using System.Web;
 /// <summary>
 /// Summary description for adm_administrador
 /// </summary>
-public class adm_administrador
+public class Adm_Administrador
 {
     private int adm_id;
     private string adm_nome;
