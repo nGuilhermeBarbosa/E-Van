@@ -88,7 +88,8 @@
                     </div>
                     <div class="col-sm-4">
                         <asp:DropDownList ID="DropDownList4" runat="server" CssClass="form-control">
-                            <asp:ListItem Selected="True" Value="1">Passageiro</asp:ListItem>
+                            <asp:ListItem Selected="True" Value="null">Selecione</asp:ListItem>
+                            <asp:ListItem Value="2">Motorista</asp:ListItem>
                             <asp:ListItem Value="2">Motorista</asp:ListItem>
                         </asp:DropDownList>
                     </div>

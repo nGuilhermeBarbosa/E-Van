@@ -48,6 +48,7 @@ public partial class pages_index : System.Web.UI.Page
             //Código do botão aqui
             Label1.Visible = false;
         }
+
         usu_usuario usu = new usu_usuario();
         usu.Usu_email = txtEmail.Text;
         usu.Usu_senha = txtSenha.Text;
@@ -68,7 +69,7 @@ public partial class pages_index : System.Web.UI.Page
         mot.Mot_sexo = ddlSexo.SelectedValue;
         mot.Mot_cidade = ddlCidade.SelectedValue;
         mot.Mot_estado = ddlEstado.SelectedValue;
-        mot.Mot_cnpj = txtCnpj.Text;
+        //mot.Mot_cnpj = txtCnpj.Text;
         ////joga o email pra uma variavel
         string email = txtEmail.Text;
 
