@@ -53,7 +53,7 @@
                 <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                 <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
                 <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                <%--<asp:TextBox ID="txtCnpj" runat="server" placeholder="Cnpj" CssClass="form-control" required="required"></asp:TextBox><br />--%>
+
 
                 <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
                     <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
@@ -99,12 +99,12 @@
                 <asp:GridView ID="gridUsuario" runat="server" CssClass="table" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <asp:BoundField DataField="mot_nome" HeaderText="Nome" />
-                        <%--<asp:BoundField DataField="usu_email" HeaderText="Email" />
-                        <asp:BoundField DataField="usu_senha" HeaderText="Senha" />--%>
+                        
+                       
                         <asp:BoundField DataField="mot_sexo" HeaderText="Sexo" />
                         <asp:BoundField DataField="mot_cidade" HeaderText="Cidade" />
                         <asp:BoundField DataField="mot_estado" HeaderText="Estado" />
-                        <%--<asp:BoundField DataField="mot_cnpj" HeaderText="Cnpj" />--%>
+                      
 
 
 
