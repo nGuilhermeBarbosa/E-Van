@@ -18,20 +18,20 @@ public class cli_clienteDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into cli_cliente ";
-            sql += "(cli_nome, cli_sexo, cli_datanascimento, cli_cidade, cli_estado, cli_cpf, usu_id)";
+            sql += "(cli_nome, cli_cpf, cli_sexo, cli_datanascimento, cli_cidade, cli_estado, usu_id)";
             sql += "values ";
-            sql += "(?cli_nome, ?cli_sexo, ?cli_datanascimento, ?cli_cidade, ?cli_estado, ?cli_cpf, ?usu_id)";
+            sql += "(?cli_nome, ?cli_cpf, ?cli_sexo, ?cli_datanascimento, ?cli_cidade, ?cli_estado, ?usu_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
             objCommand.Parameters.Add(Mapped.Parameter("?cli_nome", cli.Cli_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_cpf", cli.Cli_cpf));
             objCommand.Parameters.Add(Mapped.Parameter("?cli_sexo", cli.Cli_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_nome", cli.Cli_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_sexo", cli.Cli_cpf));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_datanascimento", cli.Cli_datanascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_estado));
 
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?usu_id", cli.Usu_id.Usu_id));

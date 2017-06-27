@@ -59,9 +59,12 @@ public partial class pages_index : System.Web.UI.Page
                         //Insere o Usuario
                         cli_cliente cli = new cli_cliente();
                         cli.Cli_nome = txtNome.Text;
+                        cli.Cli_cpf = txtCpf.Text;
                         cli.Cli_sexo = ddlSexo.SelectedValue;
+                        cli.Cli_datanascimento = txtNascimentoP.Text;
                         cli.Cli_cidade = ddlCidade.SelectedValue;
                         cli.Cli_estado = ddlEstado.SelectedValue;
+                        
                         ////joga o email pra uma variavel
 
                         string emai = txtEmail.Text;

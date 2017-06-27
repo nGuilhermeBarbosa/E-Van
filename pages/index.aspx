@@ -67,6 +67,8 @@
                     <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
+                    Data de Nascimento
+                    <asp:TextBox ID="txtNascimentoP" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
 
                     <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
                         <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
