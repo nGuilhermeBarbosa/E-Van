@@ -18,5 +18,16 @@ public partial class pages_addAdmin : System.Web.UI.Page
     protected void btnConfirmaCadastro_Click(object sender, EventArgs e)
     {
 
+
+        txtNome.Text = "";
+        txtNomeUsuario.Text = "";
+        txtTelAdm.Text = "";
+        txtEmail.Text = "";
+        txtSenha.Text = "";
+        txtConfirmarSenha.Text = "";
+        txtCpf.Text = "";
+        dataNasc.Text = "";
+        txtEnd.Text = "";
+        
     }
 }
