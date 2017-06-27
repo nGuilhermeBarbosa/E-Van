@@ -44,13 +44,13 @@
 
     <div class="container text-center">
         <div class="row">
-            <div class="col-sm-6">
-                <h3 class="text-left">Encontre o transporte ideal para você agora mesmo!</h3>
+            <div class="col-lg-6">
+                <h3 class="text-left">Encontre o transporte ideal para você agora melgo!</h3>
                 <br />
             </div>
             <br />
-            <div class="col-sm-6">
-                <div class="col-sm-6">
+            <div class="col-lg-6">
+                <div class="col-lg-6">
                     <asp:Label ID="Label2" runat="server" Text="---" Visible="false" CssClass="alert-danger"></asp:Label>
                     <asp:DropDownList ID="ddlPM" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPM_SelectedIndexChanged">
                         <asp:ListItem Selected="True" Value="0">Selecione o tipo de conta</asp:ListItem>
@@ -74,7 +74,7 @@
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-lg-8">
                             <asp:DropDownList ID="ddlCidade" runat="server" CssClass="form-control dropdown">
                                 <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
                                 <asp:ListItem>Lorena</asp:ListItem>
@@ -85,7 +85,7 @@
                                 <asp:ListItem>Pindamonhangaba</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-lg-4">
                             <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control dropdown">
                                 <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
                                 <asp:ListItem>SP</asp:ListItem>
@@ -109,7 +109,7 @@
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-lg-8">
                             <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control dropdown">
                                 <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
                                 <asp:ListItem>Lorena</asp:ListItem>
@@ -120,7 +120,7 @@
                                 <asp:ListItem>Pindamonhangaba</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-lg-4">
                             <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control dropdown">
                                 <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
                                 <asp:ListItem>SP</asp:ListItem>
@@ -132,11 +132,11 @@
 
                 <br />
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-lg-9">
                         <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" /><br />
 
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-lg-2">
                         <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="Button1_Click" />
                     </div>
                 </div>
