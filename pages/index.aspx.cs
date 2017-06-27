@@ -49,7 +49,7 @@ public partial class pages_index : System.Web.UI.Page
             else
             {
 
-                switch (ddlPM.Text)
+                switch (ddlPM.SelectedItem.Value)
                 {
                     case "1":
                         usu_usuario us = new usu_usuario();
