@@ -27,7 +27,7 @@ public partial class pages_index : System.Web.UI.Page
             gridUsuario.DataBind();
             //--------------------------
             gridUsuario.Visible = true;
-            //lbl.Text = "Foram emcontrados " + qtd + " de regisros!";
+            //lbl.Text = "Foram emcontrados " + qtd + " de registros!";
         }
         else
         {
@@ -39,15 +39,27 @@ public partial class pages_index : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        if (txtSenha.Text == txtSenha2.Text && txtSenhaCM.Text == txtSenhaM.Text)
-        {
-            if (CheckBox1.Checked == false)
-            {
-                Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
-                Label1.Visible = true;
-            }
-            else
-            {
+        //if (CheckBox1.Checked == false)
+        //{
+        //    Label1.Visible = true;
+        //}
+        //else
+        //{
+        //    //Código do botão aqui
+        //    Label1.Visible = false;
+        //}
+
+
+                //usu_usuario us = new usu_usuario();
+                //us.Usu_email = txtEmail.Text;
+                //us.Usu_senha = txtSenha.Text;
+
+
+                //cli_cliente cli = new cli_cliente();
+                //cli.Cli_nome = txtNome.Text;
+                //cli.Cli_sexo = ddlSexo.SelectedValue;
+                //cli.Cli_cidade = ddlCidade.SelectedValue;
+                //cli.Cli_estado = ddlEstado.SelectedValue;
 
                 switch (ddlPM.SelectedItem.Value)
                 {
@@ -83,7 +95,14 @@ public partial class pages_index : System.Web.UI.Page
                         ////e joga pro Usu.id
                         us.Usu_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
-                        cli.Usu_id = us;
+                //switch (cli_clienteDB.Insert(cli))
+                //{
+                //    case 0:
+                //        lbl.Text = "<<<   OK  >>>";
+                //        break;
+                //    case -2:
+                //        lbl.Text = "<<<  ERRO  >>";
+                //        break;
 
                         switch (cli_clienteDB.Insert(cli))
                         {

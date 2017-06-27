@@ -9,7 +9,8 @@
             <br />
             <div class="row">
                 <div class="col-lg-7">
-                    E-mail: <asp:TextBox ID="txtEmailRec" runat="server" CssClass="form-control" required="required"></asp:TextBox>
+                    E-mail: <asp:TextBox ID="txtEmailRec" runat="server" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox>
+                    <asp:button ID="RecConta" runat="server" text="Enviar E-mail" cssClass="btn btn-lg" OnClick="RecConta_Click" />
                 </div>
             </div>
 
