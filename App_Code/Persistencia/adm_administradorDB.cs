@@ -28,13 +28,13 @@ public class adm_administradorDB
 
             objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?adm_telefone", adm.Adm_telefone));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", adm.Adm_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", adm.Adm_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_idade", adm.Adm_endereco));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_cpf));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_idade));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_sexo", adm.Adm_sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_datanascimento", adm.Adm_datanascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_cidade", adm.Adm_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_estado", adm.Adm_estado));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_endereco", adm.Adm_endereco));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_cpf", adm.Adm_cpf));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_idade", adm.Adm_idade));
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?usu_id", adm.Usu_id.Usu_id));
 
