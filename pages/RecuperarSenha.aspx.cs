@@ -11,4 +11,9 @@ public partial class pages_RecuperarSenha : System.Web.UI.Page
     {
 
     }
+
+    protected void RecConta_Click(object sender, EventArgs e)
+    {
+
+    }
 }
