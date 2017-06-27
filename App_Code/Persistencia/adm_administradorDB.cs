@@ -8,7 +8,7 @@ using System.Data;
 /// </summary>
 public class adm_administradorDB
 {
-    public static int Insert(adm_administrador adm)
+    public static int Insert(Adm_Administrador adm)
     {
         int retorno = 0;
 
@@ -104,7 +104,7 @@ public class adm_administradorDB
         }
         return retorno;
     }
-    public static int Update(adm_administrador adm)
+    public static int Update(Adm_Administrador adm)
     {
         int retorno = 0;
 
