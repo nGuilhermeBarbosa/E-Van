@@ -50,53 +50,101 @@
             </div>
             <br />
             <div class="col-sm-6">
-                <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
-                <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
-                <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                <%--<asp:TextBox ID="txtCnpj" runat="server" placeholder="Cnpj" CssClass="form-control" required="required"></asp:TextBox><br />--%>
-
-                <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
-                    <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
-                    <asp:ListItem Value="M">Masculino</asp:ListItem>
-                    <asp:ListItem Value="F">Feminino</asp:ListItem>
-                </asp:DropDownList><br />
-                <div class="row">
-                    <div class="col-sm-8">
-                        <asp:DropDownList ID="ddlCidade" runat="server" CssClass="form-control dropdown">
-                            <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
-                            <asp:ListItem>Lorena</asp:ListItem>
-                            <asp:ListItem>Guaratinguetá</asp:ListItem>
-                            <asp:ListItem>Taubaté</asp:ListItem>
-                            <asp:ListItem>Aparecida</asp:ListItem>
-                            <asp:ListItem>Canas</asp:ListItem>
-                            <asp:ListItem>Pindamonhangaba</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                    <div class="col-sm-4">
-                        <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control dropdown">
-                            <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
-                            <asp:ListItem>SP</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
+                <div class="col-sm-6">
+                    <asp:Label ID="Label2" runat="server" Text="---" Visible="false" CssClass="alert-danger"></asp:Label>
+                    <asp:DropDownList ID="ddlPM" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPM_SelectedIndexChanged">
+                        <asp:ListItem Selected="True" Value="0">Selecione o tipo de conta</asp:ListItem>
+                        <asp:ListItem Value="1">Passageiro</asp:ListItem>
+                        <asp:ListItem Value="2">Motorista</asp:ListItem>
+                    </asp:DropDownList>
+                    <br />
                 </div>
                 <br />
-                <asp:RadioButtonList ID="rbConta" runat="server"></asp:RadioButtonList>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" /><br />
-                        <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
+
+                <asp:Panel ID="pPassageiro" runat="server" Visible="true">
+                    <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
+
+                    <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
+                        <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
+                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Value="F">Feminino</asp:ListItem>
+                    </asp:DropDownList><br />
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="ddlCidade" runat="server" CssClass="form-control dropdown">
+                                <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
+                                <asp:ListItem>Lorena</asp:ListItem>
+                                <asp:ListItem>Guaratinguetá</asp:ListItem>
+                                <asp:ListItem>Taubaté</asp:ListItem>
+                                <asp:ListItem>Aparecida</asp:ListItem>
+                                <asp:ListItem>Canas</asp:ListItem>
+                                <asp:ListItem>Pindamonhangaba</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-sm-4">
+                            <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control dropdown">
+                                <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
+                                <asp:ListItem>SP</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <asp:DropDownList ID="DropDownList4" runat="server" CssClass="form-control">
-                            <asp:ListItem Selected="True" Value="null">Selecione</asp:ListItem>
-                            <asp:ListItem Value="2">Motorista</asp:ListItem>
-                            <asp:ListItem Value="2">Motorista</asp:ListItem>
-                        </asp:DropDownList>
+                </asp:Panel>
+
+                <asp:Panel ID="pMotorista" runat="server" Visible="false">
+                    <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required"></asp:TextBox><br />
+                    Data de Nascimento
+                    <asp:TextBox ID="txtNascimento" placeholder="Nascimento" TextMode="Date" runat="server" CssClass="form-control"></asp:TextBox><br />
+
+                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="dropdown form-control">
+                        <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
+                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Value="F">Feminino</asp:ListItem>
+                    </asp:DropDownList><br />
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control dropdown">
+                                <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
+                                <asp:ListItem>Lorena</asp:ListItem>
+                                <asp:ListItem>Guaratinguetá</asp:ListItem>
+                                <asp:ListItem>Taubaté</asp:ListItem>
+                                <asp:ListItem>Aparecida</asp:ListItem>
+                                <asp:ListItem>Canas</asp:ListItem>
+                                <asp:ListItem>Pindamonhangaba</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-sm-4">
+                            <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control dropdown">
+                                <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
+                                <asp:ListItem>SP</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                </asp:Panel>
+
+
+                <br />
+                <div class="row">
+                    <div class="col-sm-9">
+                        <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" /><br />
+
                     </div>
                     <div class="col-sm-2">
                         <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="Button1_Click" />
                     </div>
                 </div>
+                <div class="col-lg-12">
+                    <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
+                </div>
+                <br />
+                <br />
                 <asp:GridView ID="gridUsuario" runat="server" CssClass="table" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <asp:BoundField DataField="mot_nome" HeaderText="Nome" />
@@ -106,9 +154,6 @@
                         <asp:BoundField DataField="mot_cidade" HeaderText="Cidade" />
                         <asp:BoundField DataField="mot_estado" HeaderText="Estado" />
                         <%--<asp:BoundField DataField="mot_cnpj" HeaderText="Cnpj" />--%>
-
-
-
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
