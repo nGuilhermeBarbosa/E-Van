@@ -18,9 +18,9 @@ public class adm_administradorDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into adm_administrador ";
-            sql += "(adm_nome, adm_telefone, adm_sexo, adm_datanascimento, adm_cidade, adm_estado, adm_endereco, adm_cpf, adm_idade, usu_id)";
+            sql += "(adm_nome, adm_telefone, adm_sexo, adm_nascimento, adm_cidade, adm_estado, adm_cpf, usu_id)";
             sql += "values ";
-            sql += "(?adm_nome, ?adm_telefone, ?adm_sexo, ?adm_datanascimento, ?adm_cidade, ?adm_estado, ?adm_endereco, ?adm_cpf, ?adm_idade, ?usu_id)";
+            sql += "(?adm_nome, ?adm_telefone, ?adm_sexo, ?adm_nascimento, ?adm_cidade, ?adm_estado, ?adm_cpf, ?usu_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
@@ -29,12 +29,10 @@ public class adm_administradorDB
             objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?adm_telefone", adm.Adm_telefone));
             objCommand.Parameters.Add(Mapped.Parameter("?adm_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_datanascimento", adm.Adm_datanascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_nascimento", adm.Adm_nascimento));
             objCommand.Parameters.Add(Mapped.Parameter("?adm_cidade", adm.Adm_cidade));
             objCommand.Parameters.Add(Mapped.Parameter("?adm_estado", adm.Adm_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_endereco", adm.Adm_endereco));
             objCommand.Parameters.Add(Mapped.Parameter("?adm_cpf", adm.Adm_cpf));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_idade", adm.Adm_idade));
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?usu_id", adm.Usu_id.Usu_id));
 
@@ -121,12 +119,12 @@ public class adm_administradorDB
             objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?adm_telefone", adm.Adm_telefone));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_datanascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_nascimento));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", adm.Adm_cidade));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", adm.Adm_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_idade", adm.Adm_endereco));
+            
             objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_cpf));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", adm.Adm_idade));
+             
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

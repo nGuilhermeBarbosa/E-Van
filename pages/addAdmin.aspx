@@ -20,9 +20,6 @@
                     <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                 </div>
                 <div class="col-lg-5">
-                    <asp:TextBox ID="txtNomeUsuario" runat="server" placeholder="Nome de Usuário" CssClass="form-control" required="required"></asp:TextBox><br />
-                </div>
-                <div class="col-lg-5">
                     <asp:TextBox ID="txtTelAdm" runat="server" placeholder="Telefone" CssClass="form-control" TextMode="Phone" required="required"></asp:TextBox><br />
                 </div>
                 <div class="col-lg-7">
@@ -41,17 +38,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
-                </div>
+                </div>           
                 <div class="col-lg-6">
                     <asp:TextBox ID="dataNasc" runat="server" placeholder="Data de Nascimento" CssClass="form-control" TextMode="Date" required="required"></asp:TextBox><br />
                 </div>
             </div>
             <div class="row">
-
-                <div class="col-lg-6">
-                    <asp:TextBox ID="txtEnd" runat="server" placeholder="Endereço" CssClass="form-control" required="required"></asp:TextBox>
-                    <br />
-                </div>
                 <div class="col-lg-6">
                     <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control dropdown">
                         <asp:ListItem Selected="True" Value="null">Estado...</asp:ListItem>
@@ -88,10 +80,8 @@
                     <asp:BoundField DataField="adm_sexo" HeaderText="Sexo" />
                     <asp:BoundField DataField="adm_datanascimento" HeaderText="Data de Nascimento" />
                     <asp:BoundField DataField="adm_cidade" HeaderText="Cidade" />
-                    <asp:BoundField DataField="adm_estado" HeaderText="Estado" />
-                    <asp:BoundField DataField="adm_endereco" HeaderText="Endereço" />
-                    <asp:BoundField DataField="adm_cpf" HeaderText="CPF" />
-                    <asp:BoundField DataField="adm_idade" HeaderText="Idade" />
+                    <asp:BoundField DataField="adm_estado" HeaderText="Estado" />               
+                    <asp:BoundField DataField="adm_cpf" HeaderText="CPF" />                    
                 </Columns>
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -104,8 +94,8 @@
 
             </asp:GridView>
 
-            <asp:Label ID="lblCofirma" runat="server" Text="Cadastro Efetuado"></asp:Label>
-            <asp:Label ID="lblCancela" runat="server" Text="Cadastro Cancelado"></asp:Label>
+            <asp:Label ID="lblTeste" runat="server" Text="Cadastro Efetuado"></asp:Label>
+            
 
         </div>
     </div>
