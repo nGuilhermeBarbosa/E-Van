@@ -49,12 +49,14 @@ public partial class pages_index : System.Web.UI.Page
             else
             {
 
-                switch (ddlPM.Text)
+                switch (ddlPM.SelectedItem.Value)
                 {
                     case "1":
                         usu_usuario us = new usu_usuario();
                         us.Usu_email = txtEmail.Text;
                         us.Usu_senha = txtSenha.Text;
+
+                        usu_usuarioDB.Insert(us);
 
                         //Insere o Usuario
                         cli_cliente cli = new cli_cliente();
