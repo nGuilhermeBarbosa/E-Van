@@ -24,7 +24,8 @@
         </asp:Panel>
         <asp:Panel ID="Premium" runat="server" Visible="false">
             A contra premium oferece prioridade na divulgação do seu serviço.
-
+            <div class="plano">Mensal</div>
+            <div class="plano">Semanal</div>
         </asp:Panel>
     </div>
     <div class="getDown"></div>

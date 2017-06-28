@@ -493,3 +493,10 @@ footer {
 .texthome{
     font:bold 15px arial;
 }
+
+.plano{
+    height:100px;
+    width:100px;
+    border-radius:5px;
+    box-shadow: 1px 1px 1px 1px #000;
+}
