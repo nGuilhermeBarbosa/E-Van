@@ -18,14 +18,31 @@
         <hr />
         <asp:Panel ID="Free" runat="server" Visible="true">
             A conta comum é totalmente gratuita, e não requer nenhum tipo de transação financeira para ser utilizada.
-            <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control" placeholder="CPF"></asp:TextBox><br />
-            <asp:TextBox ID="txtNascimento" runat="server" CssClass="form-control" TextMode="date"></asp:TextBox><br />
+            <br /><br />
             <asp:Button ID="btnCadastro" runat="server" Text="Cadastrar" CssClass="btn btn-success" />
         </asp:Panel>
         <asp:Panel ID="Premium" runat="server" Visible="false">
             A contra premium oferece prioridade na divulgação do seu serviço.
-            <div class="plano">Mensal</div>
-            <div class="plano">Semanal</div>
+            <div class="plano">
+                
+                <div class="title">
+                    Mensal
+                    <asp:RadioButton ID="rbM" runat="server" value="1"  OnCheckedChanged="rbM_CheckedChanged" AutoPostBack="true" CssClass="radio"/>
+                </div><br />
+                Com o plano mensal você paga o valor de R$ 14,90 e pode usufruir de uma maior
+                divulgação do seu serviço dentro da nossa plataforma pelo período de um mês.
+            </div><br />
+            <div class="plano">
+                <div class="title">
+                    Anual
+                    <asp:RadioButton ID="rbA" runat="server" value="2" OnCheckedChanged="rbA_CheckedChanged" AutoPostBack="true" CssClass="radio"/>
+                </div><br />
+                Considerado como o melhor plano, com o plano anual você paga o valor de R$ 139,90
+                e pode usufruir de uma maior divulgação do seu serviço dentro da nossa plataforma
+                pelo período de um ano.
+            </div>
+            <br />
+            <asp:Button ID="btnNext" runat="server" Text="Próximo" CssClass="btn btn-info" />
         </asp:Panel>
     </div>
     <div class="getDown"></div>

@@ -94,6 +94,10 @@
     .modal-content{
         margin-top: 100px;
     }
+
+    .signupBox {
+        width: 300px !important;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -495,8 +499,17 @@ footer {
 }
 
 .plano{
-    height:100px;
-    width:100px;
+    height:200px;
+    width:100%;
     border-radius:5px;
-    box-shadow: 1px 1px 1px 1px #000;
+    border: 1px solid #7af2ff;
+    padding:20px;
+}
+
+.plano:hover{
+    box-shadow: 1px 1px 30px #7af2ff;
+}
+
+.plano:active{
+    box-shadow: 1px 1px 30px #384357;
 }

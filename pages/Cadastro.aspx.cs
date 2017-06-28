@@ -25,4 +25,30 @@ public partial class pages_Cadastro : System.Web.UI.Page
             Premium.Visible = true;
         }
     }
+
+    protected void rbM_CheckedChanged(object sender, EventArgs e)
+    {
+        if(rbM.Checked != false)
+        {
+            rbA.Checked = false;
+            rbM.Checked = true;
+        }else{
+            rbM.Checked = false;
+            rbA.Checked = true;
+        }
+    }
+
+    protected void rbA_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbA.Checked != false)
+        {
+            rbM.Checked = false;
+            rbA.Checked = true;
+        }
+        else
+        {
+            rbA.Checked = false;
+            rbM.Checked = true;
+        }
+    }
 }
