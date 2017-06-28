@@ -37,12 +37,6 @@ public class cli_cliente
         set { cli_cidade = value; }
     }
 
-    public string Cli_datanascimento
-    {
-        get { return cli_datanascimento; }
-        set { cli_datanascimento = value; }
-    }
-
     public string Cli_sexo
     {
         get { return cli_sexo; }
@@ -66,5 +60,18 @@ public class cli_cliente
     {
         get { return cli_id; }
         set { cli_id = value; }
+    }
+
+    public string Cli_datanascimento
+    {
+        get
+        {
+            return cli_datanascimento;
+        }
+
+        set
+        {
+            cli_datanascimento = value;
+        }
     }
 }

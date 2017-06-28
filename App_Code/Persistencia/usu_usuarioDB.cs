@@ -104,12 +104,12 @@ public class usu_usuarioDB
         IDbCommand objCommand;
 
         IDataAdapter objDataAdapter;
-        string sql = "select usu_id from usu_usuario where usu_email = ?email";
+        string sql = "select usu_id from usu_usuario where usu_email = ?usu_email";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
 
-        objCommand.Parameters.Add(Mapped.Parameter("?email", email));
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
