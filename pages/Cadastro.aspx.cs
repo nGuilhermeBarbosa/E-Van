@@ -12,7 +12,7 @@ public partial class pages_Cadastro : System.Web.UI.Page
 
     }
 
-    protected void rbTipoConta_SelectedIndexChanged(object sender, EventArgs e)
+    protected void ddlTipoConta_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (Free.Visible != true)
         {
@@ -24,7 +24,5 @@ public partial class pages_Cadastro : System.Web.UI.Page
             Free.Visible = false;
             Premium.Visible = true;
         }
-        
-
     }
 }
