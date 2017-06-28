@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 public class Adm_Administrador
 {
-    private int adm_id;
+    private int adm_id; 
     private string adm_nome;
     private int adm_telefone;
     private string adm_sexo;
