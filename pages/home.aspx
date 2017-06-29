@@ -23,7 +23,6 @@
                 </asp:DropDownList>
                 <br />
                 <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-info" />
-                <asp:Label ID="lbl" runat="server" Text="Label"></asp:Label>
             </div>
             <br />
             <div class="title">Principais Motoristas</div>

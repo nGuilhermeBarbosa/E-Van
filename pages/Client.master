@@ -49,11 +49,11 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp Perfil </span><b class="caret"></b></a>
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp <asp:Label ID="lblSessao" runat="server" Text="---"></asp:Label></span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="motorista.aspx"><div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="index.aspx"><div class="glyphicon glyphicon-log-out">&nbsp;Sair</div></a></li>
+                                <li><a href="index.aspx"><div class="glyphicon glyphicon-log-out">&nbsp;<asp:Button ID="btnSair" runat="server" Text="Sair" OnClick="btnSair_Click" /></div></a></li>
                             </ul>
                         </li>
                     </ul>

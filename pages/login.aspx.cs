@@ -60,13 +60,24 @@ public partial class pages_login : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count == 1)
         {
-            
+
             Session["nome"] = ds.Tables[0].Rows[0]["usu_email"].ToString();
-            //Session["perfil"] = ds.Tables[0].Rows[0]["per_codigo"].ToString();
-            //int perfil = Convert.ToInt32(Session["perfil"]);
+            Session["perfil"] = ds.Tables[0].Rows[0]["usu_tipo"].ToString();
+            string perfil = Convert.ToString(Session["perfil"]);
 
 
-            Response.Redirect("home.aspx");
+            switch (perfil)
+            {
+                case "Cliente":
+                    Response.Redirect("home.aspx");
+                    break;
+                case "Motorista":
+                    Response.Redirect("home.aspx");
+                    break;
+                case "Administrador":
+                    Response.Redirect("allAdmin.aspx");
+                    break;
+            }
 
         }
         else

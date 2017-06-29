@@ -9,19 +9,10 @@ public partial class pages_home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["nome"] == null)
-        {
-            lbl.Text = "ERRO";
-        }
-        else
-        {
-            lbl.Text = Session["nome"].ToString();
-        }
     }
 
     protected void btnShowAll_Click(object sender, EventArgs e)
     {
-        Session.Remove("nome");
-        lbl.Text = "";
+        
     }
 }

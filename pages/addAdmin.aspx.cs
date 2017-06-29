@@ -11,21 +11,16 @@ public partial class pages_addAdmin : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            CarregarGrid();
+            
         }
-    }
-    private void CarregarGrid()
-    {
-        DataSet ds = adm_administradorDB.SelectAll();
-        int qtd = ds.Tables[0].Rows.Count;
-
     }
 
     protected void btnConfirmaCadastro_Click(object sender, EventArgs e)
     {
-        
+
 
         //Insere o Usuario
+        string nome = "Administrador";
 
         Adm_Administrador adm = new Adm_Administrador();
         adm.Adm_nome = txtNome.Text;
@@ -33,6 +28,7 @@ public partial class pages_addAdmin : System.Web.UI.Page
         usu_usuario us = new usu_usuario();
         us.Usu_email = txtEmail.Text;
         us.Usu_senha = txtSenha.Text;
+        us.Usu_tipo = nome;
         adm.Adm_cidade = ddlCidade.SelectedValue;
         adm.Adm_estado = ddlEstado.SelectedValue;
         //adm.Adm_cpf = txtCpf.Text;
