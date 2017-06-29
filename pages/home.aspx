@@ -9,9 +9,13 @@
             <div class="title">Busca</div>
             <div class="filtro">
                 <br /><br />
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Sua cidade"></asp:TextBox><br />
-                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" placeholder="Para onde deseja ir?"></asp:TextBox><br />
-                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" placeholder="Quando quer ir?"></asp:TextBox><br />
+                Sua Cidade
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox><br />
+                Para onde deseja ir?
+                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox><br />
+                Quando quer ir?
+                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox><br />
+                Avaliação do Motorista
                 <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
                     <asp:ListItem Value="null">Nível de avaliação do motorista</asp:ListItem>
                     <asp:ListItem>1</asp:ListItem>
