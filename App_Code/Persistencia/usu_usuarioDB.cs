@@ -120,6 +120,31 @@ public class usu_usuarioDB
 
         return ds;
     }
+    public static DataSet SelectLOGIN(string email, string senha)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select * from usu_usuario where usu_email = ?usu_email and usu_senha = ?usu_senha";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", senha));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
     public static int Update(usu_usuario usu)
     {
         int retorno = 0;
