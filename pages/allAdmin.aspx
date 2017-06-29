@@ -6,8 +6,9 @@
     <div class="row">
         <div class="title text-center">
             Todos Administradores
-            <span class="glyphicon glyphicon-plus glyphiconBar">&nbsp;Adicionar Administrador</span>
+            <a href="addAdmin.aspx" class="glyphicon glyphicon-plus glyphiconBar">&nbsp;Adicionar Administrador</a>
         </div>
+
         <div class="col-lg-12">
             <div class="serviceBox ">
                 <div class="title text-right">
@@ -26,6 +27,7 @@
             </div>
         </div>
     </div>
-    <br /><div class="getDown"></div>
+    <br />
+    <div class="getDown"></div>
 </asp:Content>
 

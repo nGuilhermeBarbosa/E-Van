@@ -12,7 +12,7 @@ public partial class pages_Cadastro : System.Web.UI.Page
 
     }
 
-    protected void rbTipoConta_SelectedIndexChanged(object sender, EventArgs e)
+    protected void ddlTipoConta_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (Free.Visible != true)
         {
@@ -24,7 +24,31 @@ public partial class pages_Cadastro : System.Web.UI.Page
             Free.Visible = false;
             Premium.Visible = true;
         }
-        
+    }
 
+    protected void rbM_CheckedChanged(object sender, EventArgs e)
+    {
+        if(rbM.Checked != false)
+        {
+            rbA.Checked = false;
+            rbM.Checked = true;
+        }else{
+            rbM.Checked = false;
+            rbA.Checked = true;
+        }
+    }
+
+    protected void rbA_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbA.Checked != false)
+        {
+            rbM.Checked = false;
+            rbA.Checked = true;
+        }
+        else
+        {
+            rbA.Checked = false;
+            rbM.Checked = true;
+        }
     }
 }

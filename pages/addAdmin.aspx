@@ -19,8 +19,11 @@
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList>
                 </div>
+                <div class="col-lg-7">
+                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                </div>
             </div>
-            <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+
             <div class="row">
                 <div class="col-lg-6">
                     <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
@@ -49,6 +52,7 @@
                     </asp:DropDownList>
                 </div>
             </div>
+            <br />
             <div class="row">
                 <div class="center">
                     <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-danger" />
@@ -56,6 +60,32 @@
                     <asp:Label ID="lbl" runat="server" Text="Label"></asp:Label>
                 </div>
             </div>
+            <br />
+
+            <asp:GridView ID="gridAdmin" runat="server" CssClass="table" AutoGenerateColumns="false" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                <Columns>
+                    <asp:BoundField DataField="adm_nome" HeaderText="Nome" />
+                    <asp:BoundField DataField="adm_telefone" HeaderText="Telefone" />
+                    <asp:BoundField DataField="adm_sexo" HeaderText="Sexo" />
+                    <asp:BoundField DataField="adm_datanascimento" HeaderText="Data de Nascimento" />
+                    <asp:BoundField DataField="adm_cidade" HeaderText="Cidade" />
+                    <asp:BoundField DataField="adm_estado" HeaderText="Estado" />               
+                    <asp:BoundField DataField="adm_cpf" HeaderText="CPF" />                    
+                </Columns>
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
+
+            </asp:GridView>
+
+            <asp:Label ID="lblTeste" runat="server" Text="Cadastro Efetuado"></asp:Label>
+            
+
         </div>
     </div>
 </asp:Content>

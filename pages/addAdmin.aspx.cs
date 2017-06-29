@@ -9,6 +9,15 @@ public partial class pages_addAdmin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+            CarregarGrid();
+        }
+    }
+    private void CarregarGrid()
+    {
+        DataSet ds = adm_administradorDB.SelectAll();
+        int qtd = ds.Tables[0].Rows.Count;
 
     }
 
