@@ -11,7 +11,6 @@ public class mot_motorista
     private int mot_id;
     private string mot_nome;
     private string mot_cnpj;
-    private int mot_idade;
     private string mot_sexo;
     private string mot_cidade;
     private string mot_estado;
@@ -41,12 +40,6 @@ public class mot_motorista
         set { mot_sexo = value; }
     }
 
-    public int Mot_idade
-    {
-        get { return mot_idade; }
-        set { mot_idade = value; }
-    }
-
     public string Mot_cnpj
     {
         get { return mot_cnpj; }
@@ -64,4 +57,7 @@ public class mot_motorista
         get { return mot_id; }
         set { mot_id = value; }
     }
+
+    
 }
+

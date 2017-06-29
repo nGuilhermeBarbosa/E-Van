@@ -32,6 +32,7 @@ public class cli_clienteDB
             objCommand.Parameters.Add(Mapped.Parameter("?cli_datanascimento", cli.Cli_datanascimento));
             objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_cidade));
             objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_estado));
+            
 
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?usu_id", cli.Usu_id.Usu_id));

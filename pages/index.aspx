@@ -67,9 +67,6 @@
                     <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
-                    Data de Nascimento
-                    <asp:TextBox ID="txtNascimentoP" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
-
                     <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
                         <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
                         <asp:ListItem Value="M">Masculino</asp:ListItem>
@@ -93,6 +90,7 @@
                                 <asp:ListItem>SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
+                        <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
                     </div>
                 </asp:Panel>
 
@@ -102,17 +100,16 @@
                     <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required"></asp:TextBox><br />
-                    Data de Nascimento
-                    <asp:TextBox ID="txtNascimento" placeholder="Nascimento" TextMode="Date" runat="server" CssClass="form-control"></asp:TextBox><br />
 
-                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="dropdown form-control">
+
+                    <asp:DropDownList ID="ddlSexoM" runat="server" CssClass="dropdown form-control">
                         <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
                         <asp:ListItem Value="M">Masculino</asp:ListItem>
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
                     <div class="row">
-                        <div class="col-lg-8">
-                            <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control dropdown">
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="ddlCidadeM" runat="server" CssClass="form-control dropdown">
                                 <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
                                 <asp:ListItem>Lorena</asp:ListItem>
                                 <asp:ListItem>Guaratinguetá</asp:ListItem>
@@ -122,12 +119,13 @@
                                 <asp:ListItem>Pindamonhangaba</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div class="col-lg-4">
-                            <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control dropdown">
+                        <div class="col-sm-4">
+                            <asp:DropDownList ID="ddlEstadoM" runat="server" CssClass="form-control dropdown">
                                 <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
                                 <asp:ListItem>SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
+                        <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
                     </div>
                 </asp:Panel>
 
@@ -138,9 +136,9 @@
                         <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" /><br />
 
                     </div>
-                    <div class="col-lg-2">
+                    <%--<div class="col-sm-2">
                         <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="Button1_Click" />
-                    </div>
+                    </div>--%>
                 </div>
                 <div class="col-lg-12">
                     <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
