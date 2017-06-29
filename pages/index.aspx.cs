@@ -168,6 +168,7 @@ public partial class pages_index : System.Web.UI.Page
             Label1.Visible = true;
         }
 
+        Server.Transfer("Cadastro.aspx", true);
         CarregarGrid();
     }
 
