@@ -51,6 +51,9 @@
             <br />
             <div class="col-lg-6">
                 <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
+                    </div>
                     <asp:Label ID="Label2" runat="server" Text="---" Visible="false" CssClass="alert-danger"></asp:Label>
                     <asp:DropDownList ID="ddlPM" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPM_SelectedIndexChanged">
                         <asp:ListItem Selected="True" Value="0">Selecione o tipo de conta</asp:ListItem>
@@ -91,7 +94,8 @@
                             </asp:DropDownList>
                         </div>
                         <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
-                    </div><br />
+                    </div>
+                    <br />
                 </asp:Panel>
 
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
@@ -123,7 +127,8 @@
                             <asp:DropDownList ID="ddlEstadoM" runat="server" CssClass="form-control dropdown">
                                 <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
-                        </div><br />
+                        </div>
+                        <br />
                         <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
                     </div>
                 </asp:Panel>
@@ -139,9 +144,7 @@
                         <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="Button1_Click" />
                     </div>--%>
                 </div>
-                <div class="col-lg-12">
-                    <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
-                </div>
+
                 <br />
                 <br />
                 <asp:GridView ID="gridUsuario" runat="server" CssClass="table" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
