@@ -29,6 +29,7 @@ public partial class pages_addAdmin : System.Web.UI.Page
             usu_usuario us = new usu_usuario();
             us.Usu_email = txtEmail.Text;
             us.Usu_senha = txtSenha.Text;
+            us.Usu_tipo = "Administrador";
             adm.Adm_cidade = ddlCidade.SelectedValue;
             adm.Adm_estado = ddlEstado.SelectedValue;
             //adm.Adm_cpf = txtCpf.Text;
