@@ -10,7 +10,7 @@
         <asp:Button ID="btnEnviar" runat="server" Text="Entrar" CssClass="btn btn-info form-control" OnClick="btnEnviar_Click"/>
         <a href="#">Esqueci a senha</a>
         <br />
-        <asp:Label ID="lbl" runat="server" Text="---"></asp:Label>
+        <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
     </div>
     <br /><br /><br /><br /><div class="getDown"></div>
 </asp:Content>

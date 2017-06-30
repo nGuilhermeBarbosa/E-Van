@@ -19,7 +19,7 @@
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-12">
                     <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
                 </div>
             </div>
@@ -27,6 +27,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
+                    <asp:Label ID="lblCS" runat="server" Text="---" Visible="false" CssClass="alert-danger"></asp:Label><br />
                 </div>
                 <div class="col-lg-6">
                     <asp:TextBox ID="txtConfirmarSenha" runat="server" placeholder="Confirme a Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />

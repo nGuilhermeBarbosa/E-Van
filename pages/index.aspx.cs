@@ -14,6 +14,11 @@ public partial class pages_index : System.Web.UI.Page
         {
             CarregarGrid();
         }
+        if (Session["nome"] != null)
+        {
+            Server.Transfer("home.aspx", true);
+            //lbl.Text = "ERRO";
+        }
     }
 
     private void CarregarGrid()
@@ -67,6 +72,11 @@ public partial class pages_index : System.Web.UI.Page
                 Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
                 Label1.Visible = true;
             }
+            else if(Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
+            {
+                Label2.Text = "Por favor selecione uma opção para proseguir com o cadastro";
+                Label2.Visible = true;
+            }
             else
             {
 
@@ -101,7 +111,7 @@ public partial class pages_index : System.Web.UI.Page
 
                 cli_clienteDB.Insert(cli);
 
-
+                Server.Transfer("Cadastro.aspx", true);
             }
 
             Label1.Visible = false;
@@ -113,6 +123,7 @@ public partial class pages_index : System.Web.UI.Page
             Label1.Visible = true;
         }
 
+        
         CarregarGrid();
     }
 
