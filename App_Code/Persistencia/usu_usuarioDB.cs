@@ -18,9 +18,9 @@ public class usu_usuarioDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into usu_usuario ";
-            sql += "(usu_email, usu_senha)";
+            sql += "(usu_email, usu_senha, usu_tipo)";
             sql += "values ";
-            sql += "(?usu_email, ?usu_senha)";
+            sql += "(?usu_email, ?usu_senha, ?usu_tipo)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
@@ -28,8 +28,9 @@ public class usu_usuarioDB
 
             objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
             objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
+            objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
             // Chave estrangeira
-            
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -134,6 +135,7 @@ public class usu_usuarioDB
 
         objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
         objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", senha));
+        //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", tipo));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
@@ -154,13 +156,14 @@ public class usu_usuarioDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update usu_usuario set usu_email = ?usu_email, usu_senha = ?usu_senha where usu_id = ?usu_id";
+            string sql = "update usu_usuario set usu_email = ?usu_email, usu_senha = ?usu_senha, usu_tipo = ?usu_tipo where usu_id = ?usu_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_senha", usu.Usu_senha));
+            objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
+            objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
             objCommand.ExecuteNonQuery();
             objConexao.Close();
             objConexao.Dispose();

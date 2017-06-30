@@ -11,7 +11,8 @@ public partial class pages_home : System.Web.UI.Page
     {
         if (Session["nome"] == null)
         {
-            lbl.Text = "ERRO";
+            Server.Transfer("Error.aspx", true);
+            //lbl.Text = "ERRO";
         }
         else
         {

@@ -78,6 +78,7 @@ public partial class pages_index : System.Web.UI.Page
                 usu_usuario us = new usu_usuario();
                 us.Usu_email = txtEmail.Text;
                 us.Usu_senha = txtSenha.Text;
+                us.Usu_tipo = ddlPM.SelectedValue;
 
                 usu_usuarioDB.Insert(us);
 
@@ -136,6 +137,7 @@ public partial class pages_index : System.Web.UI.Page
                 usu_usuario usu = new usu_usuario();
                 usu.Usu_email = txtEmailM.Text;
                 usu.Usu_senha = txtSenhaM.Text;
+                usu.Usu_tipo = ddlPM.SelectedValue;
 
 
                 switch (usu_usuarioDB.Insert(usu))

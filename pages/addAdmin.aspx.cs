@@ -25,7 +25,7 @@ public partial class pages_addAdmin : System.Web.UI.Page
     {
 
 
-        if (txtSenha == txtConfirmarSenha)
+        if (txtSenha.Text == txtConfirmarSenha.Text)
         {
             //Insere o Usuario
 
@@ -59,12 +59,18 @@ public partial class pages_addAdmin : System.Web.UI.Page
             {
                 case 0:
                     lbl.Text = "OK";
+
+                    lblCS.Visible = false;
+                    txtNome.Text = "";
+                    txtEmail.Text = "";
+                    txtSenha.Text = "";
+
                     break;
                 case -2:
                     lbl.Text = "ERRO";
                     break;
             }
-            lblCS.Visible = false;
+            
         }
         else
         {

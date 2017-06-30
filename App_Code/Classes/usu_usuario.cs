@@ -11,7 +11,8 @@ public class usu_usuario
     private int usu_id;
     private string usu_email;
     private string usu_senha;
-    
+    private string usu_tipo;
+    //outra coisa
 
     public int Usu_id
     {
@@ -33,5 +34,16 @@ public class usu_usuario
         set { usu_senha = value; }
     }
 
-    
+    public string Usu_tipo
+    {
+        get
+        {
+            return usu_tipo;
+        }
+
+        set
+        {
+            usu_tipo = value;
+        }
+    }
 }

@@ -45,7 +45,7 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-left">Encontre o transporte ideal para você agora melgo!</h3>
+                <h3 class="text-left">Encontre o transporte ideal para você agora mesmo!</h3>
                 <br />
             </div>
             <br />
@@ -91,7 +91,7 @@
                             </asp:DropDownList>
                         </div>
                         <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
-                    </div>
+                    </div><br />
                 </asp:Panel>
 
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
@@ -124,7 +124,7 @@
                                 <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
                                 <asp:ListItem>SP</asp:ListItem>
                             </asp:DropDownList>
-                        </div>
+                        </div><br />
                         <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
                     </div>
                 </asp:Panel>
