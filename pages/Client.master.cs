@@ -11,7 +11,7 @@ public partial class pages_Client : System.Web.UI.MasterPage
     {
         if (Session["nome"] == null || Session["perfil"] == null)
         {
-            Response.Redirect("Erro.aspx");
+            Response.Redirect("error.aspx");
         }
         else
         {
@@ -23,8 +23,9 @@ public partial class pages_Client : System.Web.UI.MasterPage
             }
             else
             {
-                Response.Redirect("Erro.aspx");
+                Response.Redirect("error.aspx");
             }
+
         }
     }
 
@@ -32,6 +33,6 @@ public partial class pages_Client : System.Web.UI.MasterPage
     {
         Session.Remove("nome");
         Session.Remove("perfil");
-        Response.Redirect("login.aspx");
+        Response.Redirect("index.aspx");
     }
 }

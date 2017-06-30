@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Admin.master" AutoEventWireup="true" CodeFile="allAdmin.aspx.cs" Inherits="pages_allAdmin" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
         <div class="title text-center">
             Todos Administradores
-            <a href="addAdmin.aspx" class="glyphicon glyphicon-plus glyphiconBar">&nbsp;Adicionar Administrador</a>
+            <span class="glyphicon glyphicon-plus glyphiconBar">&nbsp;<a href="addAdmin.aspx">Adicionar Administrador</a></span>
         </div>
 
         <div class="col-lg-12">
@@ -25,7 +26,7 @@
             <div class="col-lg-12">
                 <br />
             </div>
-        </div>
+        </div>       
     </div>
     <br />
     <div class="getDown"></div>

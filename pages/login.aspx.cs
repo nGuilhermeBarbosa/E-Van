@@ -45,6 +45,13 @@ public partial class pages_login : System.Web.UI.Page
          /  
          
          */
+
+        if (Session["nome"] != null)
+        {
+            Server.Transfer("homeCliente.aspx", true);
+            //lbl.Text = "ERRO";
+        }
+
     }
 
     protected void btnEnviar_Click(object sender, EventArgs e)
@@ -73,11 +80,14 @@ public partial class pages_login : System.Web.UI.Page
                     Response.Redirect("allAdmin.aspx");
                     break;
             }
+            lbl.Visible = false;
 
         }
         else
         {
-            Response.Write("ERRO");
+            Response.Write("");
+            lbl.Visible = true;
+            lbl.Text = "Email ou Senha Incorretos";
         }
     }
 }

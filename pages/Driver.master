@@ -57,7 +57,7 @@
                                     </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="index.aspx">
-                                        <div class="glyphicon glyphicon-log-out">&nbsp;<asp:Button ID="btn" runat="server" Text="Sair" onclick="btn_Click"/></div>
+                                        <asp:Button ID="btn" runat="server" Text="Sair" onclick="btn_Click" CssClass="noButtableButton"/>
                                     </a></li>
                                 </ul>
                             </li>

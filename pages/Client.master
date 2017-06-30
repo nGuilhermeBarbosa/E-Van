@@ -11,6 +11,7 @@
     <link href="../css/evs.css" rel="stylesheet" />
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/evs.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -53,7 +54,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="DadosCliente.aspx"><div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="index.aspx"><div class="glyphicon glyphicon-log-out">&nbsp;<asp:Button ID="btnSair" runat="server" Text="Sair" OnClick="btnSair_Click" /></div></a></li>
+                                <li><asp:Button ID="btnSair" runat="server" Text="Sair" OnClick="btnSair_Click" CssClass="noButtableButton" /></li>
                             </ul>
                         </li>
                     </ul>

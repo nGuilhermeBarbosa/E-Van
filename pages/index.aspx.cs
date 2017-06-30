@@ -16,7 +16,7 @@ public partial class pages_index : System.Web.UI.Page
         }
         if (Session["nome"] != null)
         {
-            Server.Transfer("home.aspx", true);
+            Server.Transfer("homeCliente.aspx", true);
             //lbl.Text = "ERRO";
         }
     }
@@ -71,11 +71,12 @@ public partial class pages_index : System.Web.UI.Page
             {
                 Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
                 Label1.Visible = true;
-            }
-            else if(Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
-            {
-                Label2.Text = "Por favor selecione uma opção para proseguir com o cadastro";
-                Label2.Visible = true;
+
+                if (Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
+                {
+                    Label2.Text = "Por favor selecione uma opção para proseguir com o cadastro";
+                    Label2.Visible = true;
+                }
             }
             else
             {
@@ -111,10 +112,11 @@ public partial class pages_index : System.Web.UI.Page
 
                 cli_clienteDB.Insert(cli);
 
-                Server.Transfer("Cadastro.aspx", true);
-            }
+                Label1.Visible = false;
 
-            Label1.Visible = false;
+                Server.Transfer("login.aspx", true);
+            }
+            
         }
 
         else
@@ -123,7 +125,7 @@ public partial class pages_index : System.Web.UI.Page
             Label1.Visible = true;
         }
 
-        
+
         CarregarGrid();
     }
 
@@ -147,10 +149,10 @@ public partial class pages_index : System.Web.UI.Page
                 switch (usu_usuarioDB.Insert(usu))
                 {
                     case 0:
-                        lbl.Text = "OK";
+                        lbl.Text = "Cadastrado com Sucesso";
                         break;
                     case -2:
-                        lbl.Text = "ERRO";
+                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
 
                         break;
                 }
@@ -175,16 +177,9 @@ public partial class pages_index : System.Web.UI.Page
 
                 mot.Usu_id = usu;
 
-                switch (mot_motoristaDB.Insert(mot))
-                {
-                    case 0:
-                        lbl.Text = "OK";
-                        break;
-                    case -2:
-                        lbl.Text = "ERRO";
+                mot_motoristaDB.Insert(mot);
 
-                        break;
-                }
+                Server.Transfer("Cadastro.aspx", true);
 
 
             }
