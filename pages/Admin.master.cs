@@ -17,7 +17,7 @@ public partial class pages_Admin : System.Web.UI.MasterPage
         {
             string perfil = Convert.ToString(Session["perfil"]);
 
-            if (perfil == "Cliente")
+            if (perfil == "Administrador")
             {
                 lblAdmin.Text = Session["nome"].ToString();
             }
@@ -27,5 +27,12 @@ public partial class pages_Admin : System.Web.UI.MasterPage
             }
 
         }
+    }
+
+    protected void btnSair_Click(object sender, EventArgs e)
+    {
+        Session.Remove("nome");
+        Session.Remove("perfil");
+        Response.Redirect("index.aspx");
     }
 }

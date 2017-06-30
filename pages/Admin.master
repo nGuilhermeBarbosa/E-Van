@@ -56,7 +56,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="#" class="glyphicon glyphicon-user">&nbsp;Meu Perfil</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="index.aspx" class="glyphicon glyphicon-log-out">&nbsp;Sair</a></li>
+                                    <li><asp:Button ID="btnSair" runat="server" Text="Sair" OnClick="btnSair_Click" CssClass="noButtableButton" /></li>
                                 </ul>
                             </li>
                         </ul>
