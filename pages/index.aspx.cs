@@ -112,9 +112,9 @@ public partial class pages_index : System.Web.UI.Page
 
                 cli_clienteDB.Insert(cli);
 
-                Server.Transfer("Cadastro.aspx", true);
-
                 Label1.Visible = false;
+
+                Server.Transfer("login.aspx", true);
             }
             
         }
@@ -177,16 +177,9 @@ public partial class pages_index : System.Web.UI.Page
 
                 mot.Usu_id = usu;
 
-                switch (mot_motoristaDB.Insert(mot))
-                {
-                    case 0:
-                        lbl.Text = "OK";
-                        break;
-                    case -2:
-                        lbl.Text = "ERRO";
+                mot_motoristaDB.Insert(mot);
 
-                        break;
-                }
+                Server.Transfer("Cadastro.aspx", true);
 
 
             }
