@@ -25,6 +25,7 @@ public partial class pages_Client : System.Web.UI.MasterPage
             {
                 Response.Redirect("error.aspx");
             }
+
         }
     }
 
