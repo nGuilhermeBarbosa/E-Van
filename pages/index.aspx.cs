@@ -146,7 +146,6 @@ public partial class pages_index : System.Web.UI.Page
                 usu.Usu_senha = txtSenhaM.Text;
                 usu.Usu_tipo = ddlPM.SelectedValue;
 
-
                 switch (usu_usuarioDB.Insert(usu))
                 {
                     case 0:

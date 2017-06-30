@@ -109,16 +109,17 @@ public class adm_administradorDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update adm_administrador set adm_nome = ?adm_nome, adm_sexo = ?adm_sexo, adm_datanascimento = ?adm_datanascimento, adm_cidade = ?adm_cidade, adm_estado = ?adm_estado, adm_cpf = ?adm_cpf where adm_id = ?adm_id";
+            string sql = "update adm_administrador set adm_nome = ?adm_nome, adm_sexo = ?adm_sexo, adm_nascimento = ?adm_nascimento, adm_cidade = ?adm_cidade, adm_estado = ?adm_estado where adm_id = ?adm_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", adm.Adm_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", adm.Adm_estado));
-            
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_sexo", adm.Adm_sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_nascimento", adm.Adm_nascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_cidade", adm.Adm_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?adm_estado", adm.Adm_estado));
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

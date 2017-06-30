@@ -11,14 +11,8 @@ public partial class pages_addAdmin : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            CarregarGrid();
+            
         }
-    }
-    private void CarregarGrid()
-    {
-        DataSet ds = adm_administradorDB.SelectAll();
-        int qtd = ds.Tables[0].Rows.Count;
-
     }
 
     protected void btnConfirmaCadastro_Click(object sender, EventArgs e)

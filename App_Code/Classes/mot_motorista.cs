@@ -12,6 +12,7 @@ public class mot_motorista
     private string mot_nome;
     private string mot_cnpj;
     private string mot_sexo;
+    private string mot_dataNascimento;
     private string mot_cidade;
     private string mot_estado;
     private usu_usuario usu_id;
@@ -58,6 +59,17 @@ public class mot_motorista
         set { mot_id = value; }
     }
 
-    
+    public string Mot_dataNascimento
+    {
+        get
+        {
+            return mot_dataNascimento;
+        }
+
+        set
+        {
+            mot_dataNascimento = value;
+        }
+    }
 }
 

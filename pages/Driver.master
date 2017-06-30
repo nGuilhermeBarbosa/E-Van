@@ -25,13 +25,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand glyphicon glyphicon-road logo" href="home.aspx">&nbsp E-Van</a>
+                        <a class="navbar-brand glyphicon glyphicon-road logo" href="homeMotorista.aspx">&nbsp E-Van</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a class="glyphicon glyphicon-book" href="services.aspx">&nbsp;Serviços</a></li>
-                            <li><a href="sRequirement.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
-                            <li><a href="TodosMotoristas.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
+                            <li><a class="glyphicon glyphicon-book" href="servicesMotoristas.aspx">&nbsp;Serviços</a></li>
+                            <li><a href="SolicitaçõesServiçosMotorista.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
+                            <li><a href="TodosMotoristasMotoristas.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-pencil">&nbsp;Gerenciar <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -50,14 +50,14 @@
                             </li>
 
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">Perfil </span><b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"> <asp:Label ID="lbl" runat="server" Text="---"></asp:Label></span><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="motorista.aspx">
                                         <div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div>
                                     </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="index.aspx">
-                                        <div class="glyphicon glyphicon-log-out">&nbsp;Sair</div>
+                                        <div class="glyphicon glyphicon-log-out">&nbsp;<asp:Button ID="btn" runat="server" Text="Sair" onclick="btn_Click"/></div>
                                     </a></li>
                                 </ul>
                             </li>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Driver.master" AutoEventWireup="true" CodeFile="AlterarDadosPessoais.aspx.cs" Inherits="pages_AlterarDadosPessoais" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Client.master" AutoEventWireup="true" CodeFile="AlterarDadosCliente.aspx.cs" Inherits="pages_AlterarDadosCliente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -14,30 +14,14 @@
             <br />
             <div class="row">
                 <div class="col-lg-6">
-                    <asp:Label ID="lblCnpj" runat="server" Text="CNPJ" CssClass="margem"></asp:Label>
-                    <asp:TextBox ID="txtCNPJ" runat="server" CssClass="form-control controle"></asp:TextBox>
+                    <asp:Label ID="lblCPF" runat="server" Text="CNPJ" CssClass="margem"></asp:Label>
+                    <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control controle"></asp:TextBox>
                 </div>
                 <div class="col-lg-6">
                     <asp:Label ID="lblSexo" runat="server" Text="Sexo" CssClass="margem"></asp:Label>
                     <asp:TextBox ID="txtSexo" runat="server" CssClass="form-control controle"></asp:TextBox>
                 </div>
             </div>
-            <br />
-            <br />
-            <div class="row">
-                <div class="col-lg-6">
-                    <asp:Label ID="lblEndereco" runat="server" Text="Endereço" CssClass="margem"></asp:Label>
-                    <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control controle"></asp:TextBox>
-                </div>
-                <div class="col-lg-6">
-                    <asp:Label ID="lblBairro" runat="server" Text="Bairro" CssClass="margem"></asp:Label>
-                    <asp:TextBox ID="txtBairro" runat="server" CssClass="form-control controle"></asp:TextBox>
-                </div>
-            </div>
-            <br />
-            <br />
-            <asp:Label ID="lblComplemento" runat="server" Text="Complemento" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <div class="row">
@@ -50,15 +34,6 @@
                     <asp:TextBox ID="txtEstado" runat="server" CssClass="form-control controle"></asp:TextBox>
                 </div>
             </div>
-
-            <br />
-            <br />
-            <asp:Label ID="lblTelefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control controle"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="lblCelular" runat="server" Text="Celular" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="lblEmail" runat="server" Text="E-mail" CssClass="margem"></asp:Label>
@@ -70,8 +45,6 @@
         </div>
         <div class="col-lg-2 qualquer">
             <div class="foto"></div>
-            <asp:Button ID="btnUp" runat="server" Text="Upload" CssClass="doc" />
-            <asp:Label ID="lblDoc" runat="server" Text="Documento:" CssClass="doc"></asp:Label>
         </div>
 
     </div>
