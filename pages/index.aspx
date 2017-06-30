@@ -50,10 +50,10 @@
             </div>
             <br />
             <div class="col-lg-6">
+                <div class="col-lg-12">
+                    <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
+                </div>
                 <div class="col-lg-6">
-                    <div class="col-lg-12">
-                        <asp:Label ID="Label1" runat="server" Text="Você deve concordar com os termos de uso para prosseguir com o cadastro" CssClass="alert-danger" Visible="false"></asp:Label>
-                    </div>
                     <asp:Label ID="Label2" runat="server" Text="---" Visible="false" CssClass="alert-danger"></asp:Label>
                     <asp:DropDownList ID="ddlPM" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPM_SelectedIndexChanged">
                         <asp:ListItem Selected="True" Value="0">Selecione o tipo de conta</asp:ListItem>
