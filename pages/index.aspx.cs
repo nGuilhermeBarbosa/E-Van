@@ -14,6 +14,11 @@ public partial class pages_index : System.Web.UI.Page
         {
             CarregarGrid();
         }
+        if (Session["nome"] != null)
+        {
+            Server.Transfer("home.aspx", true);
+            //lbl.Text = "ERRO";
+        }
     }
 
     private void CarregarGrid()

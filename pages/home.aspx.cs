@@ -24,5 +24,6 @@ public partial class pages_home : System.Web.UI.Page
     {
         Session.Remove("nome");
         lbl.Text = "";
+        Server.Transfer("index.aspx", true);
     }
 }

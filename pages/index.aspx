@@ -67,27 +67,27 @@
                     <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
+                    Sexo
                     <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
-                        <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
-                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="M">Masculino</asp:ListItem>
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
                     <div class="row">
                         <div class="col-lg-8">
+                            Cidade
                             <asp:DropDownList ID="ddlCidade" runat="server" CssClass="form-control dropdown">
-                                <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
                                 <asp:ListItem>Lorena</asp:ListItem>
-                                <asp:ListItem>Guaratinguetá</asp:ListItem>
-                                <asp:ListItem>Taubaté</asp:ListItem>
+                                <asp:ListItem Selected="True">Guaratinguet&#225;</asp:ListItem>
+                                <asp:ListItem>Taubat&#233;</asp:ListItem>
                                 <asp:ListItem>Aparecida</asp:ListItem>
                                 <asp:ListItem>Canas</asp:ListItem>
                                 <asp:ListItem>Pindamonhangaba</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="col-lg-4">
+                            Estado
                             <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control dropdown">
-                                <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
-                                <asp:ListItem>SP</asp:ListItem>
+                                <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
@@ -101,28 +101,27 @@
                     <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required"></asp:TextBox><br />
 
-
+                    Sexo
                     <asp:DropDownList ID="ddlSexoM" runat="server" CssClass="dropdown form-control">
-                        <asp:ListItem Selected="True" Value="null">Sexo</asp:ListItem>
-                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="M">Masculino</asp:ListItem>
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
                     <div class="row">
                         <div class="col-sm-8">
+                            Cidade
                             <asp:DropDownList ID="ddlCidadeM" runat="server" CssClass="form-control dropdown">
-                                <asp:ListItem Selected="True" Value="null">Cidade</asp:ListItem>
                                 <asp:ListItem>Lorena</asp:ListItem>
-                                <asp:ListItem>Guaratinguetá</asp:ListItem>
-                                <asp:ListItem>Taubaté</asp:ListItem>
+                                <asp:ListItem Selected="True">Guaratinguet&#225;</asp:ListItem>
+                                <asp:ListItem>Taubat&#233;</asp:ListItem>
                                 <asp:ListItem>Aparecida</asp:ListItem>
                                 <asp:ListItem>Canas</asp:ListItem>
                                 <asp:ListItem>Pindamonhangaba</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="col-sm-4">
+                            Estado
                             <asp:DropDownList ID="ddlEstadoM" runat="server" CssClass="form-control dropdown">
-                                <asp:ListItem Selected="true" Value="null">Estado</asp:ListItem>
-                                <asp:ListItem>SP</asp:ListItem>
+                                <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div><br />
                         <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
