@@ -166,7 +166,7 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
-                <asp:Label ID="lbl" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@ public partial class pages_index : System.Web.UI.Page
         }
         if (Session["nome"] != null)
         {
-            Server.Transfer("home.aspx", true);
+            Server.Transfer("homeCliente.aspx", true);
             //lbl.Text = "ERRO";
         }
     }
@@ -149,10 +149,10 @@ public partial class pages_index : System.Web.UI.Page
                 switch (usu_usuarioDB.Insert(usu))
                 {
                     case 0:
-                        lbl.Text = "OK";
+                        lbl.Text = "Cadastrado com Sucesso";
                         break;
                     case -2:
-                        lbl.Text = "ERRO";
+                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
 
                         break;
                 }

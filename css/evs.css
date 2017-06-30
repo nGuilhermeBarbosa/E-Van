@@ -513,3 +513,16 @@ footer {
 .plano:active{
     box-shadow: 1px 1px 30px #384357;
 }
+
+.noButtableButton{
+    border:0 !important;
+    color:#262626 !important;
+    text-decoration:double !important;
+    width:200px !important;
+    background:none;
+    padding: 0;
+}
+
+.noButtableButton:hover{
+    background:#f5f5f5;
+}

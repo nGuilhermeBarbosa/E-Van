@@ -9,6 +9,11 @@ public partial class pages_home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["nome"] == null)
+        {
+            Server.Transfer("error.aspx", true);
+            //lbl.Text = "ERRO";
+        }
     }
 
     protected void btnShowAll_Click(object sender, EventArgs e)
