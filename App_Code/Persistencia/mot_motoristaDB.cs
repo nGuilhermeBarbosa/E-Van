@@ -116,18 +116,19 @@ public class mot_motoristaDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update tip_tipoempresa set tip_descricao = ?tip_descricao where tip_id = ?tip_id";
+            string sql = "update mot_motorista set mot_nome = ?mot_nome, mot_cpf = ?mot_cpf, mot_sexo = ?mot_sexo, mot_datanascimento = ?mot_datanascimento, mot_cidade = ?mot_cidade, mot_estado = ?mot_estado where mot_id = ?mot_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", mot.Mot_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cpf", mot.Mot_cnpj));
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_cnpj", mot.Mot_cnpj));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", mot.Mot_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", mot.Mot_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_datanascimento", mot.Mot_dataNascimento));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", mot.Mot_estado));
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", mot.Mot_cidade));
 
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", mot.Usu_id.Usu_id));
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -141,4 +142,29 @@ public class mot_motoristaDB
         }
         return retorno;
     }
+
+    public static DataSet Select(mot_motorista mot)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select mot_nome, mot_cnpj, mot_sexo, mot_cidade, mot_estado, usu_email from mot_motorista inner join usu_usuario where mot_id = ?mot_id";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?mot_id", mot.Mot_id));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
 }

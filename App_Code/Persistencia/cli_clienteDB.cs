@@ -118,11 +118,12 @@ public class cli_clienteDB
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?cli_nome", cli.Cli_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_cpf", cli.Cli_cpf));
             objCommand.Parameters.Add(Mapped.Parameter("?cli_sexo", cli.Cli_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_nome", cli.Cli_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_sexo", cli.Cli_cpf));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_datanascimento", cli.Cli_datanascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_estado));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_cidade));
+            
             
 
             objCommand.ExecuteNonQuery();

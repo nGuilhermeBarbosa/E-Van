@@ -69,10 +69,10 @@ public partial class pages_login : System.Web.UI.Page
             switch (perfil)
             {
                 case "Cliente":
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("homeCliente.aspx");
                     break;
                 case "Motorista":
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("homeMotorista.aspx");
                     break;
                 case "Administrador":
                     Response.Redirect("allAdmin.aspx");

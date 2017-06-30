@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Driver.master" AutoEventWireup="true" CodeFile="AlterarServiço.aspx.cs" Inherits="pages_AlterarServiço" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Client.master" AutoEventWireup="true" CodeFile="AlterarServiçoCliente.aspx.cs" Inherits="pages_AlterarServiçoCliente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="title text-center"> Alterar Serviço</div>
+        <div class="title text-center"> Alterar Solicitação de Serviço</div>
     <div class="row">
         <div class="col-lg-6">
             <br />
@@ -40,5 +40,6 @@
             <asp:Button ID="btnCancel" runat="server" Text="Cancelar" CssClass="btn btn-default margem" />
         </div>
     </div>
+
 </asp:Content>
 
