@@ -7,7 +7,7 @@
     <div class="row">
         <div class="title text-center">
             Todos Administradores
-            <a href="addAdmin.aspx" class="glyphicon glyphicon-plus glyphiconBar">&nbsp;Adicionar Administrador</a>
+            <span class="glyphicon glyphicon-plus glyphiconBar">&nbsp;<a href="addAdmin.aspx">Adicionar Administrador</a></span>
         </div>
 
         <div class="col-lg-12">

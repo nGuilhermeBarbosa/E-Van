@@ -57,14 +57,11 @@
             <br />
             <div class="row">
                 <div class="center">
-                    <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-danger" />
+                    <a href="allAdmin.aspx"><asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-danger" /></a>
                     <asp:Button ID="Button2" runat="server" Text="Cadastrar" CssClass="btn btn-success" OnClick="btnConfirmaCadastro_Click" />
-                    <asp:Label ID="lbl" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
                 </div>
             </div>
-            <br />
-            <asp:Label ID="lblTeste" runat="server" Text="Cadastro Efetuado"></asp:Label>
-            
 
         </div>
     </div>

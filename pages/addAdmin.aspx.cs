@@ -53,7 +53,7 @@ public partial class pages_addAdmin : System.Web.UI.Page
             switch (adm_administradorDB.Insert(adm))
             {
                 case 0:
-                    lbl.Text = "OK";
+                    lbl.Text = "Cadastrado com sucesso";
 
                     lblCS.Visible = false;
                     txtNome.Text = "";
@@ -62,7 +62,7 @@ public partial class pages_addAdmin : System.Web.UI.Page
 
                     break;
                 case -2:
-                    lbl.Text = "ERRO";
+                    lbl.Text = "Erro, verifique os campos acima e tente novamente";
                     break;
             }
             
