@@ -35,7 +35,7 @@ public class mot_motoristaDB
 
 
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", mot.Usu_id.Usu_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", mot.Usuario.Usu_id));
 
             
             

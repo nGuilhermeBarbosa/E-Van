@@ -121,21 +121,21 @@ public class usu_usuarioDB
 
         return ds;
     }
-    public static DataSet SelectLOGIN(string email, string senha)
+    public static DataSet SelectLOGIN(usu_usuario usu)
     {
         DataSet ds = new DataSet();
         IDbConnection objConexao;
         IDbCommand objCommand;
 
         IDataAdapter objDataAdapter;
-        string sql = "select * from usu_usuario where usu_email = ?usu_email and usu_senha = ?usu_senha";
+        string sql = "select usu_id, usu_email, usu_senha from usu_usuario where usu_email = ?usu_email and usu_senha = ?usu_senha";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
 
-        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
-        objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", senha));
-        //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", tipo));
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
+        //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
@@ -163,7 +163,7 @@ public class usu_usuarioDB
 
             objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
             objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
+            //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
             objCommand.ExecuteNonQuery();
             objConexao.Close();
             objConexao.Dispose();

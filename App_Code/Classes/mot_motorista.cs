@@ -15,12 +15,12 @@ public class mot_motorista
     private string mot_dataNascimento;
     private string mot_cidade;
     private string mot_estado;
-    private usu_usuario usu_id;
+    private usu_usuario Usu;
 
-    public global:: usu_usuario Usu_id
+    public global:: usu_usuario Usuario
     {
-        get { return usu_id; }
-        set { usu_id = value; }
+        get { return Usu; }
+        set { Usu = value; }
     }
 
     public string Mot_estado

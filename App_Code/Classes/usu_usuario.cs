@@ -12,7 +12,6 @@ public class usu_usuario
     private string usu_email;
     private string usu_senha;
     private string usu_tipo;
-    //outra coisa
 
     public int Usu_id
     {

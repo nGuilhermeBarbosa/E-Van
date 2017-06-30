@@ -49,12 +49,7 @@ public partial class pages_login : System.Web.UI.Page
 
     protected void btnEnviar_Click(object sender, EventArgs e)
     {
-        // login e senha.
-        // captcha .aspx
-        // Select que pega os dados e salva em um objeto
-        // compara a senha digitada com a senha do banco
-        // se a senha estiver correta você salva em uma sessão
-        // ex: Session["USUARIO"] = [objeto do banco] pessoa
+        usu_usuario usu = new usu_usuario();
 
         DataSet ds = usu_usuarioDB.SelectLOGIN(txtEmail.Text, txtSenha.Text);
 
