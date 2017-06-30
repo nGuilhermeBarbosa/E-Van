@@ -20,7 +20,7 @@
                     Cidade: Lorena<br />
                     Telefone: 3152-6361<br />
                     CPF: 937.203.987-40<br />
-                    E-mail: demirvans@outlook.com
+                    E-mail: joao@outlook.com
                 </div>
             </div>
             <div class="col-lg-12">
