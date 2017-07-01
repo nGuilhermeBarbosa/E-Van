@@ -71,12 +71,11 @@ public partial class pages_index : System.Web.UI.Page
             {
                 Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
                 Label1.Visible = true;
-
-                if (Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
-                {
-                    Label2.Text = "Por favor selecione uma opção para proseguir com o cadastro";
-                    Label2.Visible = true;
-                }
+            }
+            else if (Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
+            {
+                Label2.Text = "Por favor selecione uma opção para proseguir com o cadastro";
+                Label2.Visible = true;
             }
             else
             {
@@ -177,7 +176,6 @@ public partial class pages_index : System.Web.UI.Page
         }
 
 
-        CarregarGrid();
     }
 
 //    protected void btnCadastrarMotorista_Click(object sender, EventArgs e)
