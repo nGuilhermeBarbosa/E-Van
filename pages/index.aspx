@@ -93,7 +93,6 @@
                                 <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <%--                        <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />--%>
                     </div>
                 </asp:Panel>
 
