@@ -12,7 +12,7 @@ public partial class pages_index : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            CarregarGrid();
+            
         }
         if (Session["nome"] != null)
         {
@@ -80,112 +80,95 @@ public partial class pages_index : System.Web.UI.Page
             }
             else
             {
-
-                usu_usuario us = new usu_usuario();
-                us.Usu_email = txtEmail.Text;
-                us.Usu_senha = txtSenha.Text;
-                us.Usu_tipo = ddlPM.SelectedValue;
-
-                usu_usuarioDB.Insert(us);
-
-                //Insere o Usuario
-
-                cli_cliente cli = new cli_cliente();
-                cli.Cli_nome = txtNome.Text;
-                cli.Cli_sexo = ddlSexo.SelectedValue;
-                cli.Cli_cidade = ddlCidade.SelectedValue;
-                cli.Cli_estado = ddlEstado.SelectedValue;
-                cli.Cli_cpf = txtCpf.Text;
-                ////joga o email pra uma variavel
-                string email = txtEmail.Text;
-
-                ////cria um dataset, pois o SelectByEmail retorna um dataset
-                DataSet id = new DataSet();
-
-
-                id = usu_usuarioDB.SelectByEmail(email);
-
-
-                us.Usu_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
-
-                cli.Usu_id = us;
-
-                cli_clienteDB.Insert(cli);
-
-                Label1.Visible = false;
-
-                Server.Transfer("login.aspx", true);
-            }
-            
-        }
-
-        else
-        {
-            Label1.Text = "As senhas estão diferentes!";
-            Label1.Visible = true;
-        }
-
-
-        CarregarGrid();
-    }
-
-    protected void btnCadastrarMotorista_Click(object sender, EventArgs e)
-    {
-        if (txtSenhaCM.Text == txtSenhaM.Text)
-        {
-            if (CheckBox1.Checked == false)
-            {
-                Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
-                Label1.Visible = true;
-            }
-            else
-            {
-
-                usu_usuario usu = new usu_usuario();
-                usu.Usu_email = txtEmailM.Text;
-                usu.Usu_senha = txtSenhaM.Text;
-                usu.Usu_tipo = ddlPM.SelectedValue;
-
-                switch (usu_usuarioDB.Insert(usu))
+                switch (ddlPM.Text)
                 {
-                    case 0:
-                        lbl.Text = "Cadastrado com Sucesso";
-                        break;
-                    case -2:
-                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
+                    case "1":
+                        usu_usuario us = new usu_usuario();
+                        us.Usu_email = txtEmail.Text;
+                        us.Usu_senha = txtSenha.Text;
+                        us.Usu_tipo = ddlPM.SelectedValue;
 
+                        usu_usuarioDB.Insert(us);
+
+                        //Insere o Usuario
+
+                        cli_cliente cli = new cli_cliente();
+                        cli.Cli_nome = txtNome.Text;
+                        cli.Cli_sexo = ddlSexo.SelectedValue;
+                        cli.Cli_cidade = ddlCidade.SelectedValue;
+                        cli.Cli_estado = ddlEstado.SelectedValue;
+                        cli.Cli_cpf = txtCpf.Text;
+                        ////joga o email pra uma variavel
+                        string email = txtEmail.Text;
+
+                        ////cria um dataset, pois o SelectByEmail retorna um dataset
+                        DataSet id = new DataSet();
+
+
+                        id = usu_usuarioDB.SelectByEmail(email);
+
+
+                        us.Usu_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+
+                        cli.Usu_id = us;
+
+                        cli_clienteDB.Insert(cli);
+
+                        Label1.Visible = false;
+
+                        txtNome.Text = "";
+                        txtEmail.Text = "";
+                        txtSenha.Text = "";
+                        txtSenha2.Text = "";
+                        txtCpf.Text = "";
+
+                        //Server.Transfer("login.aspx", true);
+                        break;
+                    case "2":
+                        usu_usuario usu = new usu_usuario();
+                        usu.Usu_email = txtEmailM.Text;
+                        usu.Usu_senha = txtSenhaM.Text;
+                        usu.Usu_tipo = ddlPM.SelectedValue;
+
+                        switch (usu_usuarioDB.Insert(usu))
+                        {
+                            case 0:
+                                lbl.Text = "Cadastrado com Sucesso";
+                                break;
+                            case -2:
+                                lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
+
+                                break;
+                        }
+
+                        mot_motorista mot = new mot_motorista();
+                        mot.Mot_nome = txtNomeM.Text;
+                        mot.Mot_sexo = ddlSexoM.SelectedValue;
+                        mot.Mot_cidade = ddlCidadeM.SelectedValue;
+                        mot.Mot_estado = ddlEstadoM.SelectedValue;
+                        mot.Mot_cnpj = txtCnpj.Text;
+                        ////joga o email pra uma variavel
+                        string emai = txtEmail.Text;
+
+                        ////cria um dataset, pois o SelectByEmail retorna um dataset
+                        DataSet ds = new DataSet();
+
+
+                        ds = usu_usuarioDB.SelectByEmailMoto(emai);
+
+
+                        usu.Usu_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+
+                        mot.Usu_id = usu;
+
+                        mot_motoristaDB.Insert(mot);
+
+                        Server.Transfer("Cadastro.aspx", true);
                         break;
                 }
-
-                mot_motorista mot = new mot_motorista();
-                mot.Mot_nome = txtNomeM.Text;
-                mot.Mot_sexo = ddlSexoM.SelectedValue;
-                mot.Mot_cidade = ddlCidadeM.SelectedValue;
-                mot.Mot_estado = ddlEstadoM.SelectedValue;
-                mot.Mot_cnpj = txtCnpj.Text;
-                ////joga o email pra uma variavel
-                string emai = txtEmail.Text;
-
-                ////cria um dataset, pois o SelectByEmail retorna um dataset
-                DataSet codigo = new DataSet();
-
-
-                codigo = usu_usuarioDB.SelectByEmail(emai);
-
-
-                usu.Usu_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
-
-                mot.Usu_id = usu;
-
-                mot_motoristaDB.Insert(mot);
-
-                Server.Transfer("Cadastro.aspx", true);
-
-
             }
-
-            Label1.Visible = false;
         }
+
 
         else
         {
@@ -193,7 +176,75 @@ public partial class pages_index : System.Web.UI.Page
             Label1.Visible = true;
         }
 
+
         CarregarGrid();
     }
+
+//    protected void btnCadastrarMotorista_Click(object sender, EventArgs e)
+//{
+//    if (txtSenhaCM.Text == txtSenhaM.Text)
+//    {
+//        if (CheckBox1.Checked == false)
+//        {
+//            Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
+//            Label1.Visible = true;
+//        }
+//        else
+//        {
+
+//            usu_usuario usu = new usu_usuario();
+//            usu.Usu_email = txtEmailM.Text;
+//            usu.Usu_senha = txtSenhaM.Text;
+//            usu.Usu_tipo = ddlPM.SelectedValue;
+
+//            switch (usu_usuarioDB.Insert(usu))
+//            {
+//                case 0:
+//                    lbl.Text = "Cadastrado com Sucesso";
+//                    break;
+//                case -2:
+//                    lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
+
+//                    break;
+//            }
+
+//            mot_motorista mot = new mot_motorista();
+//            mot.Mot_nome = txtNomeM.Text;
+//            mot.Mot_sexo = ddlSexoM.SelectedValue;
+//            mot.Mot_cidade = ddlCidadeM.SelectedValue;
+//            mot.Mot_estado = ddlEstadoM.SelectedValue;
+//            mot.Mot_cnpj = txtCnpj.Text;
+//            ////joga o email pra uma variavel
+//            string emai = txtEmail.Text;
+
+//            ////cria um dataset, pois o SelectByEmail retorna um dataset
+//            DataSet ds = new DataSet();
+
+
+//            ds = usu_usuarioDB.SelectByEmailMoto(emai);
+
+
+//            usu.Usu_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+
+//            mot.Usu_id = usu;
+
+//            mot_motoristaDB.Insert(mot);
+
+//            Server.Transfer("Cadastro.aspx", true);
+
+
+//        }
+
+//        Label1.Visible = false;
+//    }
+
+//    else
+//    {
+//        Label1.Text = "As senhas estão diferentes!";
+//        Label1.Visible = true;
+//    }
+
+//    CarregarGrid();
+//}
 }
 

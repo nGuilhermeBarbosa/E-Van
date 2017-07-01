@@ -94,7 +94,7 @@
                             </asp:DropDownList>
                         </div>
                         <div class="getDown"></div>
-                        <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
+                        <%--                        <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />--%>
                     </div>
                     <br />
                 </asp:Panel>
@@ -130,7 +130,7 @@
                             </asp:DropDownList>
                         </div>
                         <div class="getDown"></div>
-                        <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
+                        <%--                        <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />--%>
                     </div>
                 </asp:Panel>
 
@@ -141,9 +141,9 @@
                         <asp:CheckBox ID="CheckBox1" runat="server" Text="Li e concordo com os Termos de Uso." CssClass="checkbox" /><br />
 
                     </div>
-                    <%--<div class="col-sm-2">
-                        <asp:Button ID="Button1" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="Button1_Click" />
-                    </div>--%>
+                    <div class="col-sm-2">
+                        <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
+                    </div>
                 </div>
 
                 <br />
