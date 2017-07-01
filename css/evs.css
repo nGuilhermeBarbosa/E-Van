@@ -526,3 +526,11 @@ footer {
 .noButtableButton:hover{
     background:#f5f5f5;
 }
+
+.signupBox > p{
+    text-align:justify;
+}
+
+.signupBox > p > a{
+    color: #009ffb !important;
+}
