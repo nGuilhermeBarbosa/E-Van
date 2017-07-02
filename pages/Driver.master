@@ -11,12 +11,35 @@
     <link href="../css/evs.css" rel="stylesheet" />
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/evjs.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="page">
 
-            <nav class="navbar navbar-default">
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="close" data-dismiss="modal">&times;</div>
+                            <h4 class="modal-title">Opções de Acessibidade</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input type="button" value="Modo daltônico" onclick="mudaBackground()" class="auxButton" />
+                                    <input type="button" value="Restaurar" onclick="undoBg()" class="undo" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <nav id="bgChange" class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <!-- Trabalha a responsividade do menu (COLLAPSE)-->
@@ -54,6 +77,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="motorista.aspx">
                                         <div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div>
+                                        <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp Acessibilidade</a></li>
                                     </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="index.aspx">

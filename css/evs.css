@@ -9,7 +9,6 @@
     left: 0;
     z-index: 9999;
     padding: 25px;
-
 }
     /* Title */
     .navbar-default .navbar-brand {
@@ -91,7 +90,7 @@
         width: 100%;
     }
 
-    .modal-content{
+    .modal-content {
         margin-top: 100px;
     }
 
@@ -136,7 +135,7 @@ body {
     text-align: justify;
 }
 
-.getDown{
+.getDown {
     margin-top: 100px;
 }
 
@@ -445,7 +444,6 @@ footer {
 
 
 .margemDentro > p {
-    
     margin-top: 85px !important;
 }
 
@@ -467,70 +465,109 @@ footer {
     margin-left: 30px;
     float: left;
 }
-.caixatexto{
-    border:1px solid;
+
+.caixatexto {
+    border: 1px solid;
 }
+
 .filtro {
     width: 100%;
-    background:white;
+    background: white;
     margin: auto;
     padding: 30px;
 }
 
-.loginBox{
-    width:300px;
-    height:auto;
+.loginBox {
+    width: 300px;
+    height: auto;
     margin: auto;
     box-shadow: 1px 1px 20px #009ffb;
     /*border: 1px dashed #009ffb;*/
-    padding:20px;
+    padding: 20px;
 }
 
-.signupBox{
-    width:600px;
-    height:auto;
-    margin:auto;
+.signupBox {
+    width: 600px;
+    height: auto;
+    margin: auto;
     box-shadow: 1px 1px 20px #009ffb;
-    padding:20px;
+    padding: 20px;
 }
 
-.texthome{
-    font:bold 15px arial;
+.texthome {
+    font: bold 15px arial;
 }
 
-.plano{
-    height:200px;
-    width:100%;
-    border-radius:5px;
+.plano {
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
     border: 1px solid #7af2ff;
-    padding:20px;
+    padding: 20px;
 }
 
-.plano:hover{
-    box-shadow: 1px 1px 30px #7af2ff;
-}
+    .plano:hover {
+        box-shadow: 1px 1px 30px #7af2ff;
+    }
 
-.plano:active{
-    box-shadow: 1px 1px 30px #384357;
-}
+    .plano:active {
+        box-shadow: 1px 1px 30px #384357;
+    }
 
-.noButtableButton{
-    border:0 !important;
-    color:#262626 !important;
-    text-decoration:double !important;
-    width:200px !important;
-    background:none;
+.noButtableButton {
+    border: 0 !important;
+    color: #262626 !important;
+    text-decoration: double !important;
+    width: 200px !important;
+    background: none;
     padding: 0;
 }
 
-.noButtableButton:hover{
-    background:#f5f5f5;
+    .noButtableButton:hover {
+        background: #f5f5f5;
+    }
+
+.signupBox > p {
+    text-align: justify;
 }
 
-.signupBox > p{
-    text-align:justify;
+    .signupBox > p > a {
+        color: #009ffb !important;
+    }
+
+#bgChange {
+    color: white;
+    font-size: 10pt;
+    background-color: #009ffb;
+    border: 0;
 }
 
-.signupBox > p > a{
-    color: #009ffb !important;
+.auxButton {
+    height: 25px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #384357;
+    color: #fff;
+    border: 1px solid #f3fffd;
+    float:left;
 }
+
+    .auxButton:hover {
+        background: #f9b946;
+        color: #f3fffd;
+    }
+
+.undo {
+    height: 25px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #384357;
+    color: #fff;
+    border: 1px solid #f3fffd;
+    float:left;
+}
+
+    .undo:hover {
+        background: #009ffb;
+        color: #f3fffd;
+    }
