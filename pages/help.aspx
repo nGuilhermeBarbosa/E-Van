@@ -4,7 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="title text-center">Ajuda</div>
-    O cadastro deve ser concluído após o login ser realizado, isso pode ser feito clicando em algum serviço ou modificando
+    <br /><br /><br />
+    <div class="signupBox">
+        O cadastro deve ser concluído após o login ser realizado, isso pode ser feito clicando em algum serviço ou modificando
     em "Meu Perfil"
     <br /><br />
     <div class="glyphicon glyphicon-remove">- Ícone que indica remoção de algo.</div>
@@ -13,11 +15,11 @@
     <br />
     <div class="glyphicon glyphicon-plus">- Ícone que indica cadastro de algo.</div>
     <br />
-    <div class="glyphicon glyphicon-search">- Ícone que indica busca e exibe a barra para buscar algo dentro do sistema.</div>
-    <br />
     <div class="glyphicon glyphicon-bell">- Ícone que indica notificações.</div>
     <br />
     Outras dúvidas, <a href="faleConosco.aspx">fale conosco!</a>
-    <br /><br /><div class="getDown"></div><br /><div class="getDown"></div>
+    </div>
+    
+    <br /><br /><div class="getDown"></div>
 </asp:Content>
 

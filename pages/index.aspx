@@ -94,10 +94,7 @@
                                 <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div class="getDown"></div>
-                        <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
                     </div>
-                    <br />
                 </asp:Panel>
 
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
@@ -132,10 +129,9 @@
                             </asp:DropDownList>
                         </div>
                         <div class="getDown"></div>
-                        <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
+                        <%--                        <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />--%>
                     </div>
                 </asp:Panel>
-
 
                 <br />
                 <div class="row">

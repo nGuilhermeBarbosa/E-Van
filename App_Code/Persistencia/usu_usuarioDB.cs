@@ -120,7 +120,7 @@ public class usu_usuarioDB
 
         return ds;
     }
-    public static DataSet SelectLOGIN(usu_usuario usu)
+    public static DataSet SelectLOGIN(string email, string senha)
     {
         DataSet ds = new DataSet();
         IDbConnection objConexao;

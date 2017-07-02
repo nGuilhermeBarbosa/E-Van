@@ -89,7 +89,7 @@ public partial class pages_login : System.Web.UI.Page
         {
             Response.Write("");
             lbl.Visible = true;
-            lbl.Text = "Email ou Senha Incorretos";
+            lbl.Text = "Erro, verifique os campos acima e tente novamente";
         }
     }
 }

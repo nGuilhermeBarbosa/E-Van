@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="title text-center">Meus Serviços</div>
+    <div class="title text-center">
+        Meus Serviços
+        <a href="CadastroServiçoMotorista.aspx" class="glyphicon glyphicon-plus glyphiconBar">&nbsp Cadastrar Novo serviço</a>
+    </div>
     <div id="meuModal" class="modal fade" role="dialog">
         <div class="modal-a">
 

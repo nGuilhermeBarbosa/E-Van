@@ -4,13 +4,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="title text-center">Fale Conosco</div>
-    Nome
+    <br /><br /><br />
+    <div class="signupBox">
+        Nome
     <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" required="required"></asp:TextBox><br />
-    E-mail
+        E-mail
     <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
-    Mensagem
+        Mensagem
     <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" TextMode="MultiLine" required="required"></asp:TextBox><br />
-    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info" />
-    <div class="getDown"></div><br />
+        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info" />
+    </div>
+    <br />
 </asp:Content>
 

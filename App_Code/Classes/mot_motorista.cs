@@ -82,5 +82,18 @@ public class mot_motorista
             mot_dataNascimento = value;
         }
     }
+
+    public usu_usuario Usu_id
+    {
+        get
+        {
+            return usu_id;
+        }
+
+        set
+        {
+            usu_id = value;
+        }
+    }
 }
 
