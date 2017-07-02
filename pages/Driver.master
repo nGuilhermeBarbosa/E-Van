@@ -30,7 +30,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <input type="button" value="Modo daltônico" onclick="mudaBackground()" class="auxButton" />
-                                    <input type="button" value="Restaurar" onclick="undoBg()" class="undo" />
+                                    <input type="button" value="Restaurar" onclick="undoBg()" class="auxButton undo" />
                                 </div>
                             </div>
                         </div>
