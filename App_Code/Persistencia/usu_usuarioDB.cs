@@ -132,8 +132,8 @@ public class usu_usuarioDB
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
 
-        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
-        objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", senha));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
