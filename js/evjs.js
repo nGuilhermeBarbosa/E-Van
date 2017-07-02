@@ -10,15 +10,3 @@ function mudaBackground() {
 function undoBg() {
     document.getElementById("bgChange").style.backgroundColor = "#009ffb";
 }
-
-function mudaItalico() {
-    document.getElementById("teste").style.fontStyle = "italic";
-}
-
-function escondeDiv() {
-    document.getElementById("teste").style.display = "none";
-}
-
-function reapareceDiv() {
-    document.getElementById("teste").style.display = "block";
-}
