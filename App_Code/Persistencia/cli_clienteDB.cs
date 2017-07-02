@@ -110,7 +110,7 @@ public class cli_clienteDB
         IDbCommand objComando;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        string query = "select cli_id, cli_nome, cli_cpf, cli_sexo, cli_datanascimento, cli_cidade, cli_cidade, cli_estado, usu_email from usu_usuario usu inner join cli_cliente cli on cli.usu_id = usu.usu_id where cli_id = ?id";
+        string query = "select cli_id, cli_nome, cli_cpf, cli_sexo, cli_datanascimento, cli_cidade, cli_estado, usu_email from usu_usuario usu inner join cli_cliente cli on cli.usu_id = usu.usu_id where cli_id = ?id";
         objComando = Mapped.Command(query, objConexao);
         objComando.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objComando);

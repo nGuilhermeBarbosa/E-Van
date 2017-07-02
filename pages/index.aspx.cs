@@ -79,9 +79,7 @@ public partial class pages_index : System.Web.UI.Page
             }
             else
             {
-                switch (ddlPM.Text)
-                {
-                    case "1":
+                
                         usu_usuario us = new usu_usuario();
                         us.Usu_email = txtEmail.Text;
                         us.Usu_senha = txtSenha.Text;
