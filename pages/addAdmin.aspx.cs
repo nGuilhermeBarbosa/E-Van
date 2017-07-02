@@ -19,27 +19,27 @@ public partial class pages_addAdmin : System.Web.UI.Page
     {
 
 
-        if (txtSenha.Text == txtConfirmarSenha.Text)
+        if (txtSenhaA.Text == txtConfirmarSenha.Text)
         {
             //Insere o Usuario
             //string tipo = "Administrador";
 
             Adm_Administrador adm = new Adm_Administrador();
-            adm.Adm_nome = txtNome.Text;
-            adm.Adm_sexo = ddlSexo.SelectedValue;
+            adm.Adm_nome = txtNomeA.Text;
+            adm.Adm_sexo = ddlSexoA.SelectedValue;
             usu_usuario us = new usu_usuario();
-            us.Usu_email = txtEmail.Text;
-            us.Usu_senha = txtSenha.Text;
+            us.Usu_email = txtEmailA.Text;
+            us.Usu_senha = txtSenhaA.Text;
             us.Usu_tipo = "Administrador";
-            adm.Adm_cidade = ddlCidade.SelectedValue;
-            adm.Adm_estado = ddlEstado.SelectedValue;
+            adm.Adm_cidade = ddlCidadeA.SelectedValue;
+            adm.Adm_estado = ddlEstadoA.SelectedValue;
+            adm.Adm_nascimento = Convert.ToDateTime(txtDataNasc.Text);
             //adm.Adm_cpf = txtCpf.Text;
 
 
             usu_usuarioDB.Insert(us);
             ////joga o email pra uma variavel
-            string email = txtEmail.Text;
-
+            string email = txtEmailA.Text;
             ////cria um dataset, pois o SelectByEmail retorna um dataset
             DataSet id = new DataSet();
 
@@ -57,9 +57,9 @@ public partial class pages_addAdmin : System.Web.UI.Page
                     lbl.Text = "Cadastrado com sucesso";
 
                     lblCS.Visible = false;
-                    txtNome.Text = "";
-                    txtEmail.Text = "";
-                    txtSenha.Text = "";
+                    txtNomeA.Text = "";
+                    txtEmailA.Text = "";
+                    txtSenhaA.Text = "";
 
                     break;
                 case -2:

@@ -8,6 +8,8 @@
         <div class="col-lg-6">
             <br />
             <br />
+            <asp:HiddenField ID="hdf1" runat="server" />
+            <asp:HiddenField ID="hdfID" runat="server" />
             <asp:Label ID="lblNome" runat="server" Text="Nome" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtNome" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
@@ -36,18 +38,18 @@
             </div>
             <br />
             <br />
-            <asp:Label ID="lblDataNascimento" runat="server" Text="Celular" CssClass="margem"></asp:Label>
+            <asp:Label ID="lblDataNascimento" runat="server" Text="Data de Nascimento" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtDataNascimento" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="lblTelefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
+            <%--<asp:Label ID="lblTelefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtTelefone" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="lblCelular" runat="server" Text="Celular" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtCelular" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
-            <br />
+            <br />--%>
             <asp:Label ID="lblEmail" runat="server" Text="E-mail" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtEmail" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />

@@ -12,7 +12,7 @@ public class cli_cliente
     private string cli_nome;
     private string cli_cpf;
     private string cli_sexo;
-    private string cli_datanascimento;
+    private DateTime cli_datanascimento;
     private string cli_cidade;
     private string cli_estado;
     private usu_usuario usu_id;
@@ -61,8 +61,9 @@ public class cli_cliente
         get { return cli_id; }
         set { cli_id = value; }
     }
+    
 
-    public string Cli_datanascimento
+    public DateTime Cli_datanascimento
     {
         get
         {

@@ -8,6 +8,7 @@
         <div class="col-lg-6">
             <br />
             <br />
+            
             <asp:Label ID="lblNome" runat="server" Text="Nome" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtNome" runat="server" CssClass="form-control controle"></asp:TextBox>
             <br />

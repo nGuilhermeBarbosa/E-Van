@@ -103,6 +103,23 @@ public class cli_clienteDB
         }
         return retorno;
     }
+    public static DataSet SelectDados(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select cli_id, cli_nome, cli_cpf, cli_sexo, cli_datanascimento, cli_cidade, cli_cidade, cli_estado, usu_email from usu_usuario usu inner join cli_cliente cli on cli.usu_id = usu.usu_id where cli_id = ?id";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
+        return ds;
+    }
     public static int Update(cli_cliente cli)
     {
         int retorno = 0;
@@ -121,10 +138,11 @@ public class cli_clienteDB
             objCommand.Parameters.Add(Mapped.Parameter("?cli_cpf", cli.Cli_cpf));
             objCommand.Parameters.Add(Mapped.Parameter("?cli_sexo", cli.Cli_sexo));
             objCommand.Parameters.Add(Mapped.Parameter("?cli_datanascimento", cli.Cli_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_estado));
             objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_cidade));
-            
-            
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_estado));
+            objCommand.Parameters.Add(Mapped.Parameter("?cli_id", cli.Cli_id));
+
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
