@@ -12,16 +12,11 @@ public class mot_motorista
     private string mot_nome;
     private string mot_cnpj;
     private string mot_sexo;
-    private string mot_dataNascimento;
+    private DateTime mot_dataNascimento;
     private string mot_cidade;
     private string mot_estado;
-    private usu_usuario Usu;
+    private usu_usuario usu_id;
 
-    public global:: usu_usuario Usuario
-    {
-        get { return Usu; }
-        set { Usu = value; }
-    }
 
     public string Mot_estado
     {
@@ -59,7 +54,23 @@ public class mot_motorista
         set { mot_id = value; }
     }
 
-    public string Mot_dataNascimento
+    
+    
+
+    public global::usu_usuario Usu_id
+    {
+        get
+        {
+            return usu_id;
+        }
+
+        set
+        {
+            usu_id = value;
+        }
+    }
+
+    public DateTime Mot_dataNascimento
     {
         get
         {

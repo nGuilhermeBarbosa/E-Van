@@ -6,6 +6,7 @@
         <div class="title text-center">Dados Pessoais</div>
     <div class="row">
         <div class="col-lg-6">
+            <asp:HiddenField ID="hdfID" runat="server" />
             <br />
             <br />
             <asp:Label ID="lblNome" runat="server" Text="Nome" CssClass="margem"></asp:Label>
@@ -15,7 +16,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <asp:Label ID="lblCnpj" runat="server" Text="CPF" CssClass="margem"></asp:Label>
-                    <asp:TextBox ID="txtCNPJ" runat="server"  ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
+                    <asp:TextBox ID="txtCpf" runat="server"  ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
                 </div>
                 <div class="col-lg-6">
                     <asp:Label ID="lblSexo" runat="server" Text="Sexo" CssClass="margem"></asp:Label>
@@ -36,7 +37,7 @@
             </div>
             <br />
             <br />
-            <asp:Label ID="lblDataNascimento" runat="server" Text="Celular" CssClass="margem"></asp:Label>
+            <asp:Label ID="lblDataNascimento" runat="server" Text="Data de Nascimento" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtDataNascimento" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
@@ -46,7 +47,7 @@
             <br />
             <asp:Button ID="btnAlterar" runat="server" Text="Alterar" CssClass="btn btn-default margem" OnClick="btnAlterar_Click"/>
         </div>
-
+        <asp:HiddenField ID="hdf" runat="server" />
         <div class="col-lg-2 qualquer">
             <div class="foto"></div>
         </div>

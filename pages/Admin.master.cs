@@ -23,9 +23,8 @@ public partial class pages_Admin : System.Web.UI.MasterPage
             }
             else
             {
-                Response.Redirect("error.aspx");
+                Response.Redirect("Erro.aspx");
             }
-
         }
     }
 

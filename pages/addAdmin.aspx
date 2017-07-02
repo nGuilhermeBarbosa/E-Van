@@ -10,23 +10,23 @@
             <br />
             <div class="row">
                 <div class="col-lg-6">
-                    <br /><asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
+                    <br /><asp:TextBox ID="txtNomeA" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                 </div>
                 <div class="col-lg-6">
                     Sexo
-                    <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control">
+                    <asp:DropDownList ID="ddlSexoA" runat="server" CssClass="form-control">
                         <asp:ListItem Selected="True" Value="M">Masculino</asp:ListItem>
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
                 </div>
                 <div class="col-lg-12">
-                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtEmailA" runat="server" placeholder="E-mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-6">
-                    <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtSenhaA" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:Label ID="lblCS" runat="server" Text="---" Visible="false" CssClass="alert-danger"></asp:Label><br />
                 </div>
                 <div class="col-lg-6">
@@ -34,18 +34,18 @@
                 </div>
             </div>
             Data de Nascimento
-            <asp:TextBox ID="dataNasc" runat="server" TextMode="Date" placeholder="Data de Nascimento" CssClass="form-control" required="required"></asp:TextBox><br />
+            <asp:TextBox ID="txtDataNasc" runat="server" TextMode="Date" placeholder="Data de Nascimento" CssClass="form-control" required="required"></asp:TextBox><br />
 
             <div class="row">
                 <div class="col-lg-6">
                     Estado
-                    <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control dropdown">
+                    <asp:DropDownList ID="ddlEstadoA" runat="server" CssClass="form-control dropdown">
                         <asp:ListItem Selected="True">SP</asp:ListItem>
                     </asp:DropDownList><br />
                 </div>
                 <div class="col-lg-6">
                     Cidade
-                    <asp:DropDownList ID="ddlCidade" runat="server" CssClass="form-control dropdown">
+                    <asp:DropDownList ID="ddlCidadeA" runat="server" CssClass="form-control dropdown">
                         <asp:ListItem>Aparecida</asp:ListItem>
                         <asp:ListItem Selected="True">Guaratinguet&#225;</asp:ListItem>
                         <asp:ListItem>Lorena</asp:ListItem>

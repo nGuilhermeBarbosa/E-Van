@@ -11,7 +11,7 @@ public class Adm_Administrador
     private int adm_id; 
     private string adm_nome;
     private string adm_sexo;
-    private string adm_nascimento;
+    private DateTime adm_nascimento;
     private string adm_cidade;
     private string adm_estado;
     private usu_usuario usu_id;
@@ -35,11 +35,7 @@ public class Adm_Administrador
         set { adm_cidade = value; }
     }
 
-    public string Adm_nascimento
-    {
-        get { return adm_nascimento; }
-        set { adm_nascimento = value; }
-    }
+    
 
     public string Adm_sexo
     {
@@ -57,5 +53,18 @@ public class Adm_Administrador
     {
         get { return adm_id; }
         set { adm_id = value; }
+    }
+
+    public DateTime Adm_nascimento
+    {
+        get
+        {
+            return adm_nascimento;
+        }
+
+        set
+        {
+            adm_nascimento = value;
+        }
     }
 }

@@ -11,6 +11,7 @@ public partial class pages_Driver : System.Web.UI.MasterPage
     {
         if (Session["nome"] == null || Session["perfil"] == null)
         {
+
             Response.Redirect("error.aspx");
         }
         else
@@ -19,11 +20,14 @@ public partial class pages_Driver : System.Web.UI.MasterPage
 
             if (perfil == "Motorista")
             {
-                lbl.Text = Session["nome"].ToString();
+                Sessão usu = (Sessão)Session["nome"];
+                lbl.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
+                //lbl.Text = Session["nome"].ToString();
             }
             else
             {
-                Response.Redirect("error.aspx");
+                Response.Redirect("Erro.aspx");
             }
         }
     }

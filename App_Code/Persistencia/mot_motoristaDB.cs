@@ -19,9 +19,9 @@ public class mot_motoristaDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into mot_motorista ";
-            sql += "(mot_nome, mot_cnpj, mot_sexo, mot_cidade, mot_estado, usu_id)";
+            sql += "(mot_nome, mot_cnpj, mot_sexo, mot_dataNascimento, mot_cidade, mot_estado, usu_id)";
             sql += "values ";
-            sql += "(?mot_nome, ?mot_cnpj, ?mot_sexo, ?mot_cidade, ?mot_estado, ?usu_id)";
+            sql += "(?mot_nome, ?mot_cnpj, ?mot_sexo, ?mot_dataNascimento, ?mot_cidade, ?mot_estado, ?usu_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
@@ -30,12 +30,13 @@ public class mot_motoristaDB
             objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", mot.Mot_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_cnpj", mot.Mot_cnpj));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", mot.Mot_sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_dataNascimento", mot.Mot_dataNascimento));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", mot.Mot_cidade));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", mot.Mot_estado));
 
 
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", mot.Usuario.Usu_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", mot.Usu_id.Usu_id));
 
             
             
@@ -142,7 +143,23 @@ public class mot_motoristaDB
         }
         return retorno;
     }
-
+    public static DataSet SelectDados(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select mot_id, mot_nome, mot_cnpj, mot_sexo, mot_datanascimento, mot_cidade, mot_estado, usu_email from usu_usuario usu inner join mot_motorista mot on mot.usu_id = usu.usu_id where mot_id = ?id";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
+        return ds;
+    }
     public static DataSet Select(mot_motorista mot)
     {
         DataSet ds = new DataSet();

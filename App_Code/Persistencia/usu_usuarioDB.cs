@@ -111,7 +111,6 @@ public class usu_usuarioDB
         objCommand = Mapped.Command(sql, objConexao);
 
         objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
-
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
 
@@ -128,14 +127,13 @@ public class usu_usuarioDB
         IDbCommand objCommand;
 
         IDataAdapter objDataAdapter;
-        string sql = "select usu_id, usu_email, usu_senha from usu_usuario where usu_email = ?usu_email and usu_senha = ?usu_senha";
+        string sql = "select usu_id, usu_email, usu_senha, usu_tipo from usu_usuario where usu_email = ?usu_email and usu_senha = ?usu_senha";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
 
         objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
         objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
-        //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
@@ -175,5 +173,46 @@ public class usu_usuarioDB
             retorno = -2;
         }
         return retorno;
+    }
+    public static DataSet SelectByEmailMoto(string email)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select usu_id from usu_usuario where usu_email = ?usu_email";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectLast(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select cli_id, cli_nome, cli_cnpj, cli_sexo, cli_cidade, usu_email, cli_cidade, cli_estado from usu_usuario usu inner join cli_cliente cli on usu.usu_id = cli.cli_id where mot_id = ?id;";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
+        return ds;
     }
 }

@@ -96,9 +96,10 @@ public partial class pages_index : System.Web.UI.Page
                 cli.Cli_cidade = ddlCidade.SelectedValue;
                 cli.Cli_estado = ddlEstado.SelectedValue;
                 cli.Cli_cpf = txtCpf.Text;
+                cli.Cli_datanascimento = Convert.ToDateTime(txtData.Text);
                 ////joga o email pra uma variavel
                 string email = txtEmail.Text;
-
+               
                 ////cria um dataset, pois o SelectByEmail retorna um dataset
                 DataSet id = new DataSet();
 
@@ -110,14 +111,29 @@ public partial class pages_index : System.Web.UI.Page
 
                 cli.Usu_id = us;
 
-                cli_clienteDB.Insert(cli);
 
-                Label1.Visible = false;
+                switch (cli_clienteDB.Insert(cli))
+                {
+                    case 0:
+                        lbl.Text = "Cadastrado com Sucesso";
+                        txtEmail.Text = "";
+                        txtNome.Text = "";
+                        txtCpf.Text = "";
+                        Label1.Visible = false;
+                        break;
+                    case -2:
+                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
 
-                Server.Transfer("login.aspx", true);
+                        break;
+                }
+
+                
+
+                //Server.Transfer("login.aspx", true);
+
             }
-            
         }
+
 
         else
         {
@@ -140,22 +156,14 @@ public partial class pages_index : System.Web.UI.Page
             }
             else
             {
-
+                
                 usu_usuario usu = new usu_usuario();
                 usu.Usu_email = txtEmailM.Text;
                 usu.Usu_senha = txtSenhaM.Text;
                 usu.Usu_tipo = ddlPM.SelectedValue;
 
-                switch (usu_usuarioDB.Insert(usu))
-                {
-                    case 0:
-                        lbl.Text = "Cadastrado com Sucesso";
-                        break;
-                    case -2:
-                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
-
-                        break;
-                }
+                usu_usuarioDB.Insert(usu);
+                
 
                 mot_motorista mot = new mot_motorista();
                 mot.Mot_nome = txtNomeM.Text;
@@ -163,23 +171,36 @@ public partial class pages_index : System.Web.UI.Page
                 mot.Mot_cidade = ddlCidadeM.SelectedValue;
                 mot.Mot_estado = ddlEstadoM.SelectedValue;
                 mot.Mot_cnpj = txtCnpj.Text;
+                mot.Mot_dataNascimento = Convert.ToDateTime(txtDataM.Text);
                 ////joga o email pra uma variavel
-                string emai = txtEmail.Text;
-
+                string emai = txtEmailM.Text;
+                
                 ////cria um dataset, pois o SelectByEmail retorna um dataset
-                DataSet codigo = new DataSet();
+                DataSet ds = new DataSet();
 
 
-                codigo = usu_usuarioDB.SelectByEmail(emai);
+                ds = usu_usuarioDB.SelectByEmail(emai);
 
 
-                usu.Usu_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+                usu.Usu_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
 
                 mot.Usu_id = usu;
 
-                mot_motoristaDB.Insert(mot);
+                switch (mot_motoristaDB.Insert(mot))
+                {
+                    case 0:
+                        lbl.Text = "Cadastrado com Sucesso";
+                        txtEmailM.Text = "";
+                        txtNomeM.Text = "";
+                        txtCnpj.Text = "";
+                        break;
+                    case -2:
+                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
 
-                Server.Transfer("Cadastro.aspx", true);
+                        break;
+                }
+
+                //Server.Transfer("Cadastro.aspx", true);
 
 
             }
@@ -193,7 +214,7 @@ public partial class pages_index : System.Web.UI.Page
             Label1.Visible = true;
         }
 
-        CarregarGrid();
+
     }
 }
 

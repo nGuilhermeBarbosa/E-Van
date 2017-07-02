@@ -53,17 +53,19 @@ public partial class pages_login : System.Web.UI.Page
         }
 
     }
-
+        
     protected void btnEnviar_Click(object sender, EventArgs e)
     {
         usu_usuario usu = new usu_usuario();
+        usu.Usu_email = txtEmail.Text;
+        usu.Usu_senha = txtSenha.Text;
 
-        DataSet ds = usu_usuarioDB.SelectLOGIN(txtEmail.Text, txtSenha.Text);
+        DataSet ds = usu_usuarioDB.SelectLOGIN(usu);
 
         if (ds.Tables[0].Rows.Count == 1)
         {
-
-            Session["nome"] = ds.Tables[0].Rows[0]["usu_email"].ToString();
+            Sessão ses = new Sessão(Convert.ToInt32(ds.Tables[0].Rows[0]["usu_id"].ToString()), ds.Tables[0].Rows[0]["usu_email"].ToString());
+            Session["nome"] = ses;
             Session["perfil"] = ds.Tables[0].Rows[0]["usu_tipo"].ToString();
             string perfil = Convert.ToString(Session["perfil"]);
 
