@@ -16,7 +16,7 @@
             <br />
             <div class="row">
                 <div class="col-lg-6">
-                    <asp:Label ID="lblCPF" runat="server" Text="CNPJ" CssClass="margem"></asp:Label>
+                    <asp:Label ID="lblCPF" runat="server" Text="CNPJ" CssClass="margem" readonly="true"></asp:Label>
                     <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control controle"></asp:TextBox>
                 </div>
                 <div class="col-lg-6">

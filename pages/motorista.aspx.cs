@@ -26,8 +26,7 @@ public partial class pages_motorista : System.Web.UI.Page
 
         DataSet ds = mot_motoristaDB.SelectDados(Convert.ToInt32(hdf1.Value));
 
-        if (ds.Tables[0].Rows.Count == 1)
-        {
+        
             hdfID.Value = ds.Tables[0].Rows[0]["mot_id"].ToString();
             txtNome.Text = ds.Tables[0].Rows[0]["mot_nome"].ToString();
             txtCNPJ.Text = ds.Tables[0].Rows[0]["mot_cnpj"].ToString();
@@ -37,11 +36,6 @@ public partial class pages_motorista : System.Web.UI.Page
             txtEstado.Text = ds.Tables[0].Rows[0]["mot_estado"].ToString();
             txtEmail.Text = ds.Tables[0].Rows[0]["usu_email"].ToString();
 
-        }
-        else
-        {
-            Response.Write("ERRO");
-        }
     }
     protected void btnAlterar_Click(object sender, EventArgs e)
     {

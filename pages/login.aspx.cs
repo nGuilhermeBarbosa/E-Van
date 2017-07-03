@@ -46,12 +46,7 @@ public partial class pages_login : System.Web.UI.Page
          
          */
 
-        if (Session["nome"] != null)
-        {
-            Server.Transfer("homeCliente.aspx", true);
-            //lbl.Text = "ERRO";
-        }
-
+        
     }
         
     protected void btnEnviar_Click(object sender, EventArgs e)

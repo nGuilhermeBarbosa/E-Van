@@ -23,8 +23,6 @@ public partial class pages_AlterarDadosCliente : System.Web.UI.Page
     public void CarregarVisualizar()
     {
         usu_usuario usu = new usu_usuario();
-
-
         DataSet ds = cli_clienteDB.SelectDados(Convert.ToInt32(hdf.Value));
 
         if (ds.Tables[0].Rows.Count == 1)
