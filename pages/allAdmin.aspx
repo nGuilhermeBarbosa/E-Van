@@ -35,7 +35,7 @@
         <asp:Label ID="lbl2" runat="server" Text=""></asp:Label>
 
     </div>
-    <br />
+    <div class="getDown"></div><br />
     <div class="getDown"></div>
 </asp:Content>
 
