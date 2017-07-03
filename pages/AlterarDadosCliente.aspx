@@ -16,7 +16,7 @@
             <br />
             <div class="row">
                 <div class="col-lg-6">
-                    <asp:Label ID="lblCPF" runat="server" Text="CNPJ" CssClass="margem" readonly="true"></asp:Label>
+                    <asp:Label ID="lblCPF" runat="server" Text="CPF" CssClass="margem"></asp:Label>
                     <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control controle"></asp:TextBox>
                 </div>
                 <div class="col-lg-6">
@@ -59,11 +59,12 @@
             <br />
             <br />
             <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-default margem" OnClick="btnSalvar_Click" />
-            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-default margem" />
+            <a href="homeCliente.aspx"><asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-default margem" /></a>
         </div>
         <div class="col-lg-2 qualquer">
             <div class="foto"></div>
         </div>
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
     </div>
 </asp:Content>

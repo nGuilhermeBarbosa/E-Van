@@ -53,10 +53,13 @@ public partial class pages_AlterarDadosCliente : System.Web.UI.Page
         switch (cli_clienteDB.Update(cli))
         {
             case 0:
-                Response.Write("OK");
+                //Response.Write("OK");
+                Label1.Text = "Dados Alterados com sucesso";
                 break;
             case -2:
-                Response.Write("ERRO");
+                //Response.Write("ERRO");
+                Label1.Text = "Ocorreu um erro ao atualizar os dados, por favor confira os campos " +
+                    "e tente novamente";
                 break;
         }
     }
