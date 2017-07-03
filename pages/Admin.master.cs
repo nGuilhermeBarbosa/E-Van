@@ -19,11 +19,14 @@ public partial class pages_Admin : System.Web.UI.MasterPage
 
             if (perfil == "Administrador")
             {
-                lblAdmin.Text = Session["nome"].ToString();
+                Sessão usu = (Sessão)Session["nome"];
+                lblAdmin.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
+                //lblSessao.Text = Session["nome"].ToString();
             }
             else
             {
-                Response.Redirect("Erro.aspx");
+                Response.Redirect("error.aspx");
             }
         }
     }
