@@ -10,3 +10,5 @@ function mudaBackground() {
 function undoBg() {
     document.getElementById("bgChange").style.backgroundColor = "#009ffb";
 }
+
+//oi
