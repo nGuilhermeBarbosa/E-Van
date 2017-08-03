@@ -34,7 +34,7 @@
                 </div>
             </div>
             Data de Nascimento
-            <asp:TextBox ID="txtDataNasc" runat="server" TextMode="Date" placeholder="Data de Nascimento" CssClass="form-control" required="required"></asp:TextBox><br />
+            <asp:TextBox ID="txtDataNasc" runat="server" type="date" placeholder="Data de Nascimento" CssClass="form-control" required="required"></asp:TextBox><br />
 
             <div class="row">
                 <div class="col-lg-6">
