@@ -65,6 +65,7 @@ public partial class pages_allAdmin : System.Web.UI.Page
                 break;
 
         }
-        
+        CarregarGrid();
+        CarregarddlAdmin();
     }
 }
