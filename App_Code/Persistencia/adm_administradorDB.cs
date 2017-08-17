@@ -75,8 +75,7 @@ public class adm_administradorDB
     {
         int retorno = 0;
 
-        //try
-        //{
+        
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
@@ -92,12 +91,8 @@ public class adm_administradorDB
             objConexao.Close();
             objConexao.Dispose();
             objCommand.Dispose();
-        //}
-        /*catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }*/
+       
+            
         return retorno;
     }
     public static int Update(Adm_Administrador adm)

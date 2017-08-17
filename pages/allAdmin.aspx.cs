@@ -58,6 +58,7 @@ public partial class pages_allAdmin : System.Web.UI.Page
             case 0:
                 CarregarddlAdmin();
                 lbl2.Text = "Excluido com sucesso";
+                CarregarGrid();
                 break;
             case -2:
                 lbl2.Text = "<<<   ERRO    >>>";

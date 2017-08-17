@@ -51,6 +51,7 @@ public partial class pages_index : System.Web.UI.Page
             {
                 Label2.Text = "Por favor selecione uma opção para proseguir com o cadastro";
                 Label2.Visible = true;
+                Label1.Visible = false;
             }
             else
             {
