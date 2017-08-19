@@ -29,8 +29,8 @@
                 <asp:Label ID="lblDescricao" runat="server" Text="Descrição" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtDescricao" runat="server" TextMode="MultiLine" CssClass="form-control controle"></asp:TextBox>
                 <br />
-                <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-default margem" OnClick="btnCadastrar_Click" />
-                <asp:Label ID="lblMsg" runat="server" Text="---"></asp:Label>
+                <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-info margem" OnClick="btnCadastrar_Click" />
+                <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
             </div>
         </div>
     </div>
