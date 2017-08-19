@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="title text-center">
         Meus Serviços
-        <a href="CadastroServiçoMotorista.aspx" class="glyphicon glyphicon-plus glyphiconBar">&nbsp Cadastrar Novo serviço</a>
+        <span class="glyphicon glyphicon-plus glyphiconBar"><a href="CadastroServiçoMotorista.aspx">&nbsp Cadastrar Novo serviço</a></span>
     </div>
     <div id="meuModal" class="modal fade" role="dialog">
         <div class="modal-a">
