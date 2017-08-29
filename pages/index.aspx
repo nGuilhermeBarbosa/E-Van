@@ -67,7 +67,10 @@
                 <asp:Panel ID="pPassageiro" runat="server" Visible="true">
                     <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength(this.value)"></asp:TextBox><br />
+
+                    <span id="password_strength"></span>
+
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
                     Data de Nascimento

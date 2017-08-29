@@ -10,6 +10,12 @@ public partial class pages_index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (Session["perfil"] != null)
+        {
+            Response.Redirect("homeCliente.aspx");
+        }
+
         if (!IsPostBack)
         {
             

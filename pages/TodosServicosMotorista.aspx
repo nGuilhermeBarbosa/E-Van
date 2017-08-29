@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
+       <!-- <div class="col-lg-12">
             <div class="serviceBox margemDentro">
                 <div class="title text-right">
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
@@ -113,7 +113,10 @@
                 <br />
                 <p>05/17</p>
             </div>
-        </div>
+        </div> -->
+        asNenhum serviço cadastrado.
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
     </div>
     <div class="getDown"></div>
 </asp:Content>
