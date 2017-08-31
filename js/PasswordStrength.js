@@ -34,7 +34,7 @@
     switch (passed) {
         case 0:
         case 1:
-            strength = "Senha Fraca";
+            strength = "A sua senha está fraca, recomendamos melhora-la";
             color = "red";
             break;
         case 2:
@@ -53,4 +53,5 @@
     }
     password_strength.innerHTML = strength;
     password_strength.style.color = color;
+    password_strength.style.fontWeight = "bold";
 }
