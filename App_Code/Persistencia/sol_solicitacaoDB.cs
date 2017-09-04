@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 /// <summary>
-/// Descrição resumida de doc_documento
+/// Summary description for sol_solicitacaoDB
 /// </summary>
 public class sol_solicitacaoDB
 {
@@ -25,13 +25,13 @@ public class sol_solicitacaoDB
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
+
             objCommand.Parameters.Add(Mapped.Parameter("?sol_origem", sol.Sol_origem));
             objCommand.Parameters.Add(Mapped.Parameter("?sol_destino", sol.Sol_destino));
             objCommand.Parameters.Add(Mapped.Parameter("?sol_data", sol.Sol_data));
             objCommand.Parameters.Add(Mapped.Parameter("?sol_qtdpessoas", sol.Sol_qtdpessoas));
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?cli_id", sol.Cli_id.Cli_id));
-            
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -86,7 +86,6 @@ public class sol_solicitacaoDB
 
 
             objCommand.Parameters.Add(Mapped.Parameter("?sol_id", id));
-            
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -100,39 +99,26 @@ public class sol_solicitacaoDB
         }
         return retorno;
     }
-    public static int Update(sol_solicitacao sol)
+    public static DataSet SelectByEmail(string email)
     {
-        int retorno = 0;
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
 
-        try
-        {
-            //Correto
-            IDbConnection objConexao; //Abrir a conexão
-            IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update sol set sol_origem = ?sol_origem, sol_destino = ?sol_destino, sol_data = ?sol_data, sol_qtdpessoas = ?sol_qtdpessoas where sol_id = ?sol_id";
+        IDataAdapter objDataAdapter;
+        string sql = "select usu_id from usu_usuario where usu_email = ?usu_email";
 
-            objConexao = Mapped.Connection();
-            objCommand = Mapped.Command(sql, objConexao);
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?sol_origem", sol.Sol_origem));
-            objCommand.Parameters.Add(Mapped.Parameter("?sol_destino", sol.Sol_destino));
-            objCommand.Parameters.Add(Mapped.Parameter("?sol_data", sol.Sol_data));
-            objCommand.Parameters.Add(Mapped.Parameter("?sol_qtdpessoas", sol.Sol_qtdpessoas));
-            // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_id", sol.Cli_id.Cli_id));
+        objCommand.Parameters.Add(Mapped.Parameter("?usu_email", email));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
 
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
 
-            objCommand.ExecuteNonQuery();
-            objConexao.Close();
-            objConexao.Dispose();
-            objCommand.Dispose();
-        }
-        catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }
-        return retorno;
+        return ds;
     }
-
 }
