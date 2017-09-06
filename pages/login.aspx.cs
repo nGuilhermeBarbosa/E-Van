@@ -9,6 +9,12 @@ public partial class pages_login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (Session["perfil"] != null)
+        {
+            Response.Redirect("homeCliente.aspx");
+        }
+
         /*
          IF (Session["USUARIO"] != null){
 

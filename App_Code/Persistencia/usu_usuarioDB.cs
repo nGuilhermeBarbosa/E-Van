@@ -174,7 +174,7 @@ public class usu_usuarioDB
         }
         return retorno;
     }
-    public static DataSet SelectByEmailMoto(string email)
+   /* public static DataSet SelectByEmailMoto(string email)
     {
         DataSet ds = new DataSet();
         IDbConnection objConexao;
@@ -196,7 +196,7 @@ public class usu_usuarioDB
         objCommand.Dispose();
 
         return ds;
-    }
+    }*/
 
     public static DataSet SelectLast(int id)
     {

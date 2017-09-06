@@ -4,10 +4,10 @@
     <script src="../js/cheet.min.js"></script>
 
     <script>
-                cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
-                    $("#myModal2").modal();
-                });
-            </script>
+        cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+            $("#myModal2").modal();
+        });
+    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

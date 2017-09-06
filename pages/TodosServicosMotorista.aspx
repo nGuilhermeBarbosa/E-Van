@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="title text-center">
         Meus Serviços
-        <a href="CadastroServiçoMotorista.aspx" class="glyphicon glyphicon-plus glyphiconBar">&nbsp Cadastrar Novo serviço</a>
+        <span class="glyphicon glyphicon-plus glyphiconBar"><a href="CadastroServiçoMotorista.aspx">&nbsp Cadastrar Novo serviço</a></span>
     </div>
     <div id="meuModal" class="modal fade" role="dialog">
         <div class="modal-a">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
+       <!-- <div class="col-lg-12">
             <div class="serviceBox margemDentro">
                 <div class="title text-right">
                     <span><a href="#" data-toggle="modal" data-target="#meuModal"><span class="glyphicon glyphicon-remove"></span>&nbsp Excluir</a></span>
@@ -113,7 +113,10 @@
                 <br />
                 <p>05/17</p>
             </div>
-        </div>
+        </div> -->
+        asNenhum serviço cadastrado.
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
     </div>
     <div class="getDown"></div>
 </asp:Content>

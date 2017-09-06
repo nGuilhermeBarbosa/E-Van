@@ -25,7 +25,7 @@
                 <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-info" />
             </div>
             <br />
-            <div class="title">Principais Motoristas</div>
+            <div class="title">Principais Recomendações</div>
             <a href="serviceInfo.aspx" class="dblock">
                 <div class="serviceBox">
                     <div class="title">João</div>

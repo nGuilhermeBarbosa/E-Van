@@ -8,7 +8,7 @@
         <div class="title">
             Acesso Negado!
         </div>
-        Lamentamos o inconveniente, mas é necessário estar logado para acessar essa página, 
+        Lamentamos o inconveniente, mas você não possui permissão para acessar essa página, 
         agradescemos a compreensão.
     </div>
     <br /><br /><br /><br />
