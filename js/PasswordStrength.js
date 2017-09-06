@@ -36,19 +36,27 @@
         case 1:
             strength = "A sua senha está fraca, recomendamos melhora-la";
             color = "red";
+            $("#btnCadastrarPassageiro").prop('disabled', true);
+            $("#btnCadastrarMotorista").prop('disabled', true);
             break;
         case 2:
             strength = "Senha Boa";
             color = "darkorange";
+            $("#btnCadastrarPassageiro").prop('disabled', false);
+            $("#btnCadastrarMotorista").prop('disabled', false);
             break;
         case 3:
         case 4:
             strength = "Senha Forte";
             color = "green";
+            $("#btnCadastrarPassageiro").prop('disabled', false);
+            $("#btnCadastrarMotorista").prop('disabled', false);
             break;
         case 5:
             strength = "Senha Muito Forte";
             color = "darkgreen";
+            $("#btnCadastrarPassageiro").prop('disabled', false);
+            $("#btnCadastrarMotorista").prop('disabled', false);
             break;
     }
     password_strength.innerHTML = strength;

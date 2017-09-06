@@ -99,7 +99,7 @@
                             </asp:DropDownList>
                         </div>
                         <div class="getDown"></div>
-                        <asp:Button ID="btnCadastrarPassageiro" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
+                        <asp:Button ID="btnCadastrarPassageiro" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
 
                     </div>
                 </asp:Panel>
@@ -137,7 +137,7 @@
                             </asp:DropDownList>
                         </div>
                         <div class="getDown"></div>
-                        <asp:Button ID="btnCadastrarMotorista" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
+                        <asp:Button ID="btnCadastrarMotorista" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
                     </div>
                 </asp:Panel>
 
