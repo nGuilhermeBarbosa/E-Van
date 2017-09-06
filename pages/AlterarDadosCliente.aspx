@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-lg-6">
                     <asp:Label ID="lblSexo" runat="server" Text="Sexo" CssClass="margem"></asp:Label>
-                    <asp:DropDownList ID="ddlSexo" runat="server">
+                    <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control controle">
                         <asp:ListItem Value="M">Masculino</asp:ListItem>
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <asp:Label ID="lblCidade" runat="server" Text="Cidade" CssClass="margem"></asp:Label>
-                    <asp:DropDownList ID="ddlCidade" runat="server">
+                    <asp:DropDownList ID="ddlCidade" runat="server" CssClass="form-control controle">
                         <asp:ListItem>Lorena</asp:ListItem>
                         <asp:ListItem Selected="True">Guaratinguet&#225;</asp:ListItem>
                         <asp:ListItem>Taubat&#233;</asp:ListItem>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-lg-6">
                     <asp:Label ID="lblEstado" runat="server" Text="Estado" CssClass="margem"></asp:Label>
-                    <asp:DropDownList ID="ddlEstado" runat="server">
+                    <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control controle">
                         <asp:ListItem Selected="true">SP</asp:ListItem>
                     </asp:DropDownList>
                 </div>
