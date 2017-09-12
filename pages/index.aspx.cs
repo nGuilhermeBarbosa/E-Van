@@ -96,14 +96,14 @@ public partial class pages_index : System.Web.UI.Page
                 switch (cli_clienteDB.Insert(cli))
                 {
                     case 0:
-                        lbl.Text = "Cadastrado com Sucesso";
+                        Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
                         txtEmail.Text = "";
                         txtNome.Text = "";
                         txtCpf.Text = "";
                         Label1.Visible = false;
                         break;
                     case -2:
-                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
+                        Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>");
 
                         break;
                 }
@@ -170,13 +170,13 @@ public partial class pages_index : System.Web.UI.Page
                 switch (mot_motoristaDB.Insert(mot))
                 {
                     case 0:
-                        lbl.Text = "Cadastrado com Sucesso";
+                        Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
                         txtEmailM.Text = "";
                         txtNomeM.Text = "";
                         txtCnpj.Text = "";
                         break;
                     case -2:
-                        lbl.Text = "Ocorreu um erro, por favor verifique os campos e tente novamente";
+                        Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>"); 
 
                         break;
                 }
