@@ -10,8 +10,8 @@
             <span class="glyphicon glyphicon-plus glyphiconBar">&nbsp;<a href="addAdmin.aspx">Adicionar Administrador</a></span>
         </div>
 
-        <div class="col-lg-10">
-            <asp:GridView ID="gridAdmin" runat="server" CssClass="table" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+        <div class="col-lg-9">
+            <asp:GridView ID="gridAdmin" runat="server" Width="50%" CssClass="table" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                 <Columns>
                     <asp:BoundField DataField="adm_nome" HeaderText="Nome" />
                     <asp:BoundField DataField="adm_sexo" HeaderText="Sexo" />
@@ -29,7 +29,7 @@
             </asp:GridView>
             <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
         </div>
-        <%--<div class="col-lg-2">
+        <%--<div class="col-lg-3">
             <asp:DropDownList ID="ddlAdmin" runat="server" OnSelectedIndexChanged="ddlAmdmin_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
         </div>--%>
         <asp:Label ID="lbl2" runat="server" Text=""></asp:Label>
