@@ -6,36 +6,30 @@ using System.Data;
 /// <summary>
 /// Descrição resumida de cli_clienteDB
 /// </summary>
-public class cli_clienteDB
+public class pas_passageiroDB
 {
-    public static int Insert(cli_cliente cli)
+    public static int Insert(pas_passageiro pas)
     {
         int retorno = 0;
 
         try
         {
             //Correto
-            IDbConnection objConexao; //Abrir a conexão
+            IDbConnection objConexao; //Abrir a conexwão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "insert into cli_cliente ";
-            sql += "(cli_nome, cli_cpf, cli_sexo, cli_datanascimento, cli_cidade, cli_estado, usu_id)";
+            string sql = "insert into pas_passageiro ";
+            sql += "(pas_cpf, usu_id)";
             sql += "values ";
-            sql += "(?cli_nome, ?cli_cpf, ?cli_sexo, ?cli_datanascimento, ?cli_cidade, ?cli_estado, ?usu_id)";
+            sql += "(?pas_cpf, ?usu_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_nome", cli.Cli_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_cpf", cli.Cli_cpf));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_sexo", cli.Cli_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_datanascimento", cli.Cli_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_estado));
-            
+            objCommand.Parameters.Add(Mapped.Parameter("?pas_cpf", pas.Pas_cpf));
 
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", cli.Usu_id.Usu_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", pas.Usu_id.Usu_id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -59,7 +53,7 @@ public class cli_clienteDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from cli_cliente";
+        string sql = "select * from pas_passageiro";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
@@ -83,13 +77,13 @@ public class cli_clienteDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from cli_cliente where cli_id = ?cli_id";
+            string sql = "delete from passageiro where pas_id = ?pas_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_id", id));
+            objCommand.Parameters.Add(Mapped.Parameter("?pas_id", id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -110,7 +104,7 @@ public class cli_clienteDB
         IDbCommand objComando;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        string query = "select cli_id, cli_nome, cli_cpf, cli_sexo, cli_datanascimento, cli_cidade, cli_estado, usu_email from usu_usuario usu inner join cli_cliente cli on cli.usu_id = usu.usu_id  where cli.cli_id = ?id";
+        string query = "select pes_id, pes_nome, pas_cpf, pes_sexo, pes_nascimento, pes_cidade, pes_estado, usu_email from usu_usuario usu inner join cli_cliente cli on cli.usu_id = usu.usu_id  where cli.cli_id = ?id";
         objComando = Mapped.Command(query, objConexao);
         objComando.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objComando);
@@ -120,7 +114,7 @@ public class cli_clienteDB
         objComando.Dispose();
         return ds;
     }
-    public static int Update(cli_cliente cli)
+    public static int Update(pas_passageiro pas)
     {
         int retorno = 0;
 
@@ -129,18 +123,13 @@ public class cli_clienteDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update cli_cliente set cli_nome = ?cli_nome, cli_cpf = ?cli_cpf, cli_sexo = ?cli_sexo, cli_datanascimento = ?cli_datanascimento, cli_cidade = ?cli_cidade, cli_estado = ?cli_estado where cli_id = ?cli_id";
+            string sql = "update pas_passageiro set pas_cpf = ?pas_cpf where pas_id = ?pas_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_nome", cli.Cli_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_cpf", cli.Cli_cpf));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_sexo", cli.Cli_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_datanascimento", cli.Cli_datanascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_cidade", cli.Cli_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_estado", cli.Cli_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_id", cli.Cli_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?pas_cpf", pas.Pas_cpf));
+            objCommand.Parameters.Add(Mapped.Parameter("?pas_id", pas.Pas_id));
 
 
 

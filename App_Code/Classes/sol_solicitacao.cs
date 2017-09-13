@@ -13,12 +13,19 @@ public class sol_solicitacao
     private string sol_destino;
     private string sol_data;
     private int sol_qtdpessoas;
-    private cli_cliente cli_id;
+    private pas_passageiro pas_id;
 
-    public global:: cli_cliente Cli_id
+    public global::pas_passageiro Pas_id
     {
-        get { return cli_id; }
-        set { cli_id = value; }
+        get
+        {
+            return pas_id;
+        }
+
+        set
+        {
+            pas_id = value;
+        }
     }
 
     public int Sol_qtdpessoas

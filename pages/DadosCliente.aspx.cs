@@ -28,7 +28,7 @@ public partial class pages_DadosCliente : System.Web.UI.Page
         usu_usuario usu = new usu_usuario();
 
 
-        DataSet ds = cli_clienteDB.SelectDados(Convert.ToInt32(hdf.Value));
+        DataSet ds = pas_passageiroDB.SelectDados(Convert.ToInt32(hdf.Value));
 
         if (ds.Tables[0].Rows.Count == 1)
         {

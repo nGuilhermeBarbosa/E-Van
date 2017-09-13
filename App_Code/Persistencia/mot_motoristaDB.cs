@@ -19,21 +19,16 @@ public class mot_motoristaDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into mot_motorista ";
-            sql += "(mot_nome, mot_cnpj, mot_sexo, mot_dataNascimento, mot_cidade, mot_estado, usu_id)";
+            sql += "(mot_cnpj, usu_id)";
             sql += "values ";
-            sql += "(?mot_nome, ?mot_cnpj, ?mot_sexo, ?mot_dataNascimento, ?mot_cidade, ?mot_estado, ?usu_id)";
+            sql += "(?mot_cnpj, ?usu_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", mot.Mot_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cnpj", mot.Mot_cnpj));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", mot.Mot_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_dataNascimento", mot.Mot_dataNascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", mot.Mot_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", mot.Mot_estado));
 
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_cnpj", mot.Mot_cnpj));
 
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?usu_id", mot.Usu_id.Usu_id));
@@ -117,17 +112,12 @@ public class mot_motoristaDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update mot_motorista set mot_nome = ?mot_nome, mot_cpf = ?mot_cpf, mot_sexo = ?mot_sexo, mot_datanascimento = ?mot_datanascimento, mot_cidade = ?mot_cidade, mot_estado = ?mot_estado where mot_id = ?mot_id";
+            string sql = "update mot_motorista set mot_cpf = ?mot_cpf where mot_id = ?mot_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_nome", mot.Mot_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?mot_cnpj", mot.Mot_cnpj));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_sexo", mot.Mot_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_datanascimento", mot.Mot_dataNascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_estado", mot.Mot_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?mot_cidade", mot.Mot_cidade));
 
 
 

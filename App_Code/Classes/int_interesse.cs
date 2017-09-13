@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 public class int_interesse
 {
-    private cli_cliente cli_id;
+    private pas_passageiro pas_id;
     private ser_servicos ser_id;
 
     public global::ser_servicos Ser_id
@@ -24,16 +24,16 @@ public class int_interesse
         }
     }
 
-    public global::cli_cliente Cli_id
+    public global::pas_passageiro Pas_id
     {
         get
         {
-            return cli_id;
+            return pas_id;
         }
 
         set
         {
-            cli_id = value;
+            pas_id = value;
         }
     }
 }

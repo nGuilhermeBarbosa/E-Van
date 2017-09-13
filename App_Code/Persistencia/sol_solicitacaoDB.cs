@@ -31,7 +31,7 @@ public class sol_solicitacaoDB
             objCommand.Parameters.Add(Mapped.Parameter("?sol_data", sol.Sol_data));
             objCommand.Parameters.Add(Mapped.Parameter("?sol_qtdpessoas", sol.Sol_qtdpessoas));
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_id", sol.Cli_id.Cli_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?pas_id", sol.Pas_id.Pas_id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

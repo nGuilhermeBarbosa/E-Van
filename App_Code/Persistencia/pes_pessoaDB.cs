@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Data;
 /// <summary>
-/// Descrição resumida de adm_administradorDB
+/// Descrição resumida de usu_usuarioDB
 /// </summary>
-public class adm_administradorDB
+public class pes_pessoaDB
 {
-    public static int Insert(Adm_Administrador adm)
+    public static int Insert(pes_pessoa pes)
     {
         int retorno = 0;
 
@@ -17,22 +17,22 @@ public class adm_administradorDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "insert into adm_administrador ";
-            sql += "(adm_nome, adm_sexo, adm_nascimento, adm_estado, adm_cidade, usu_id)";
+            string sql = "insert into pes_pessoa ";
+            sql += "(pes_nome, pes_sexo, pes_nascimento, pes_cidade, pes_estado)";
             sql += "values ";
-            sql += "(?adm_nome, ?adm_sexo, ?adm_nascimento, ?adm_estado, ?adm_cidade, ?usu_id)";
+            sql += "(?pes_nome, ?pes_sexo, ?pes_nascimento, ?pes_cidade, ?pes_estado)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_nascimento", adm.Adm_nascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_estado", adm.Adm_estado));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_cidade", adm.Adm_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", pes.Pes_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", pes.Pes_sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_nascimento", pes.Pes_nascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_cidade", pes.Pes_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_estado", pes.Pes_estado));
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", adm.Usu_id.Usu_id));
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -56,7 +56,7 @@ public class adm_administradorDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from adm_administrador";
+        string sql = "select * from pes_pessoa";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
@@ -75,46 +75,18 @@ public class adm_administradorDB
     {
         int retorno = 0;
 
-        
-            //Correto
-            IDbConnection objConexao; //Abrir a conexão
-            IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from adm_administrador where adm_id = ?adm_id";
-
-            objConexao = Mapped.Connection();
-            objCommand = Mapped.Command(sql, objConexao);
-
-
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_id", id));
-
-            objCommand.ExecuteNonQuery();
-            objConexao.Close();
-            objConexao.Dispose();
-            objCommand.Dispose();
-       
-            
-        return retorno;
-    }
-    public static int Update(Adm_Administrador adm)
-    {
-        int retorno = 0;
-
         try
         {
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update adm_administrador set adm_nome = ?adm_nome, adm_sexo = ?adm_sexo, adm_nascimento = ?adm_nascimento, adm_cidade = ?adm_cidade, adm_estado = ?adm_estado where adm_id = ?adm_id";
+            string sql = "delete from pes_pessoa where pes_id = ?pes_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_nome", adm.Adm_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_sexo", adm.Adm_sexo));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_nascimento", adm.Adm_nascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_cidade", adm.Adm_cidade));
-            objCommand.Parameters.Add(Mapped.Parameter("?adm_estado", adm.Adm_estado));
 
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -127,5 +99,60 @@ public class adm_administradorDB
             retorno = -2;
         }
         return retorno;
+    }
+
+    public static int Update(pes_pessoa pes)
+    {
+        int retorno = 0;
+
+        try
+        {
+            //Correto
+            IDbConnection objConexao; //Abrir a conexão
+            IDbCommand objCommand; // Criar e executar os comandos
+            string sql = "update pes_pessoa set pes_nome = ?pes_nome, pes_sexo = ?pes_sexo, pes_nascimento = ?pes_nascimento, pes_cidade = ?pes_cidade, pes_estado = ?pes_estado where pes_id = ?pes_id";
+
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConexao);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", pes.Pes_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", pes.Pes_sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_nascimento", pes.Pes_nascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_cidade", pes.Pes_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_estado", pes.Pes_estado));
+
+            objCommand.ExecuteNonQuery();
+            objConexao.Close();
+            objConexao.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception)
+        {
+            //erro
+            retorno = -2;
+        }
+        return retorno;
+    }
+    public static DataSet SelectByEmail(string nome)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select pes_id from pes_pessoa where pes_nome = ?pes_nome";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", nome));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
     }
 }

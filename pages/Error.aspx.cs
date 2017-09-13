@@ -11,4 +11,11 @@ public partial class pages_Error : System.Web.UI.Page
     {
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Session.Remove("nome");
+        Session.Remove("perfil");
+        Response.Redirect("index.aspx");
+    }
 }
