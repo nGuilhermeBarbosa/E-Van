@@ -12,6 +12,7 @@ public class usu_usuario
     private string usu_email;
     private string usu_senha;
     private string usu_tipo;
+    private pes_pessoa pes_id;
 
     public int Usu_id
     {
@@ -43,6 +44,19 @@ public class usu_usuario
         set
         {
             usu_tipo = value;
+        }
+    }
+
+    public global::pes_pessoa Pes_id
+    {
+        get
+        {
+            return pes_id;
+        }
+
+        set
+        {
+            pes_id = value;
         }
     }
 }

@@ -27,7 +27,7 @@ public class int_interesseDB
 
             
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?cli_id", inter.Cli_id.Cli_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?pas_id", inter.Pas_id.Pas_id));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_id", inter.Ser_id.Ser_id));
 
             objCommand.ExecuteNonQuery();

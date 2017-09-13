@@ -17,7 +17,7 @@ public partial class pages_Client : System.Web.UI.MasterPage
         {
             string perfil = Convert.ToString(Session["perfil"]);
 
-            if (perfil == "Cliente")
+            if (perfil == "Passageiro")
             {
                 Sessão usu = (Sessão)Session["nome"];
                 lblSessao.Text = usu.email;

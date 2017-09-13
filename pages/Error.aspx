@@ -14,5 +14,6 @@
     <br /><br /><br /><br />
     <div class="getDown"></div>
     <br /><br /><br /><br />
+    <asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click"/>
 </asp:Content>
 

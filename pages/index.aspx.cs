@@ -18,11 +18,11 @@ public partial class pages_index : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            
+
         }
     }
 
-    
+
     protected void ddlPM_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
@@ -61,39 +61,52 @@ public partial class pages_index : System.Web.UI.Page
             }
             else
             {
-                
-                        usu_usuario us = new usu_usuario();
-                        us.Usu_email = txtEmail.Text;
-                        us.Usu_senha = txtSenha.Text;
-                        us.Usu_tipo = ddlPM.SelectedValue;
 
-                        usu_usuarioDB.Insert(us);
+                pes_pessoa pessoa = new pes_pessoa();
+                pessoa.Pes_nome = txtNome.Text;
+                pessoa.Pes_sexo = ddlSexo.SelectedValue;
+                pessoa.Pes_cidade = ddlCidade.SelectedValue;
+                pessoa.Pes_estado = ddlEstado.SelectedValue;
+                pessoa.Pes_sexo = ddlSexo.SelectedValue;
+                pessoa.Pes_nascimento = Convert.ToDateTime(txtData.Text);
+                string name = txtNome.Text;
 
-                        //Insere o Usuario
+                pes_pessoaDB.Insert(pessoa);
 
-                cli_cliente cli = new cli_cliente();
-                cli.Cli_nome = txtNome.Text;
-                cli.Cli_sexo = ddlSexo.SelectedValue;
-                cli.Cli_cidade = ddlCidade.SelectedValue;
-                cli.Cli_estado = ddlEstado.SelectedValue;
-                cli.Cli_cpf = txtCpf.Text;
-                cli.Cli_datanascimento = Convert.ToDateTime(txtData.Text);
+                DataSet codigo = new DataSet();
+
+                codigo = pes_pessoaDB.SelectByEmail(name);
+
+                pessoa.Pes_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+
+                usu_usuario us = new usu_usuario();
+                us.Usu_email = txtEmail.Text;
+                us.Usu_senha = txtSenha.Text;
+                us.Usu_tipo = ddlPM.SelectedValue;
+                us.Pes_id = pessoa;
+
+                usu_usuarioDB.Insert(us);
+
+                //Insere o Usuario
+
+                pas_passageiro passageiro = new pas_passageiro();
+                passageiro.Pas_cpf = txtCpf.Text;
+
                 ////joga o email pra uma variavel
                 string email = txtEmail.Text;
-               
+
                 ////cria um dataset, pois o SelectByEmail retorna um dataset
                 DataSet id = new DataSet();
 
+                id = usu_usuarioDB.SelectByEmail(email);
 
-                        id = usu_usuarioDB.SelectByEmail(email);
+                us.Usu_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
 
-
-                        us.Usu_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
-
-                        cli.Usu_id = us;
+                passageiro.Usu_id = us;
 
 
-                switch (cli_clienteDB.Insert(cli))
+                switch (pas_passageiroDB.Insert(passageiro))
                 {
                     case 0:
                         Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
@@ -104,17 +117,16 @@ public partial class pages_index : System.Web.UI.Page
                         break;
                     case -2:
                         Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>");
-
                         break;
                 }
 
-                
+
 
                 //Server.Transfer("login.aspx", true);
 
             }
         }
-            
+
 
         else
         {
@@ -123,7 +135,7 @@ public partial class pages_index : System.Web.UI.Page
         }
 
 
-        
+
     }
 
     protected void btnCadastrarMotorista_Click(object sender, EventArgs e)
@@ -137,25 +149,39 @@ public partial class pages_index : System.Web.UI.Page
             }
             else
             {
-                
-                usu_usuario usu = new usu_usuario();
-                usu.Usu_email = txtEmailM.Text;
-                usu.Usu_senha = txtSenhaM.Text;
-                usu.Usu_tipo = ddlPM.SelectedValue;
 
-                usu_usuarioDB.Insert(usu);
-                
+                pes_pessoa pes = new pes_pessoa();
+                pes.Pes_nome = txtNomeM.Text;
+                pes.Pes_sexo = ddlSexoM.SelectedValue;
+                pes.Pes_cidade = ddlCidadeM.SelectedValue;
+                pes.Pes_estado = ddlEstadoM.SelectedValue;
+                pes.Pes_nascimento = Convert.ToDateTime(txtDataM.Text);
+
+                pes_pessoaDB.Insert(pes);
+
+                string nome = txtNomeM.Text;
+
+                DataSet cod = new DataSet();
+
+                cod = pes_pessoaDB.SelectByEmail(nome);
+
+                pes.Pes_id = Convert.ToInt32(cod.Tables[0].Rows[0][0]);
+
+
+                usu_usuario us = new usu_usuario();
+                us.Usu_email = txtEmailM.Text;
+                us.Usu_senha = txtSenhaM.Text;
+                us.Usu_tipo = ddlPM.SelectedValue;
+                us.Pes_id = pes;
+
+                usu_usuarioDB.Insert(us);
 
                 mot_motorista mot = new mot_motorista();
-                mot.Mot_nome = txtNomeM.Text;
-                mot.Mot_sexo = ddlSexoM.SelectedValue;
-                mot.Mot_cidade = ddlCidadeM.SelectedValue;
-                mot.Mot_estado = ddlEstadoM.SelectedValue;
                 mot.Mot_cnpj = txtCnpj.Text;
-                mot.Mot_dataNascimento = Convert.ToDateTime(txtDataM.Text);
+
                 ////joga o email pra uma variavel
                 string emai = txtEmailM.Text;
-                
+
                 ////cria um dataset, pois o SelectByEmail retorna um dataset
                 DataSet ds = new DataSet();
 
@@ -163,9 +189,9 @@ public partial class pages_index : System.Web.UI.Page
                 ds = usu_usuarioDB.SelectByEmail(emai);
 
 
-                usu.Usu_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+                us.Usu_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
 
-                        mot.Usu_id = usu;
+                mot.Usu_id = us;
 
                 switch (mot_motoristaDB.Insert(mot))
                 {
@@ -176,7 +202,7 @@ public partial class pages_index : System.Web.UI.Page
                         txtCnpj.Text = "";
                         break;
                     case -2:
-                        Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>"); 
+                        Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>");
 
                         break;
                 }

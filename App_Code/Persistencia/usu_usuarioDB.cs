@@ -18,9 +18,9 @@ public class usu_usuarioDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into usu_usuario ";
-            sql += "(usu_email, usu_senha, usu_tipo)";
+            sql += "(usu_email, usu_senha, usu_tipo, pes_id)";
             sql += "values ";
-            sql += "(?usu_email, ?usu_senha, ?usu_tipo)";
+            sql += "(?usu_email, ?usu_senha, ?usu_tipo, ?pes_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
@@ -30,7 +30,7 @@ public class usu_usuarioDB
             objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
             objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
             // Chave estrangeira
-
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", usu.Pes_id.Pes_id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

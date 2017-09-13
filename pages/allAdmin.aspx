@@ -29,9 +29,9 @@
             </asp:GridView>
             <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
         </div>
-        <div class="col-lg-3">
-            <asp:DropDownList ID="ddlAdmin" runat="server" OnSelectedIndexChanged="ddlAmdmin_SelectedIndexChanged" AutoPostBack="true" CssClass="form-control"></asp:DropDownList>
-        </div>
+        <%--<div class="col-lg-3">
+            <asp:DropDownList ID="ddlAdmin" runat="server" OnSelectedIndexChanged="ddlAmdmin_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+        </div>--%>
         <asp:Label ID="lbl2" runat="server" Text=""></asp:Label>
 
     </div>
