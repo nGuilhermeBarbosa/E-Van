@@ -80,7 +80,7 @@ public class pes_pessoaDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from pes_pessoa where pes_id = ?pes_id";
+            string sql = "delete pes, usu from pes_pessoa pes join usu_usuario usu on pes.pes_id = usu.pes_id where pes.pes_id = ?pes_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
