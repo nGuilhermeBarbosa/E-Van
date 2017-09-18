@@ -19,59 +19,57 @@ public partial class pages_addAdmin : System.Web.UI.Page
     {
 
 
-    //    if (txtSenhaA.Text == txtConfirmarSenha.Text)
-    //    {
-    //        //Insere o Usuario
-    //        //string tipo = "Administrador";
+        if (txtSenhaA.Text == txtConfirmarSenha.Text)
+        {
+            //Insere o Usuario
+            //string tipo = "Administrador";
 
-    //        Adm_Administrador adm = new Adm_Administrador();
-    //        adm.Adm_nome = txtNomeA.Text;
-    //        adm.Adm_sexo = ddlSexoA.SelectedValue;
-    //        usu_usuario us = new usu_usuario();
-    //        us.Usu_email = txtEmailA.Text;
-    //        us.Usu_senha = txtSenhaA.Text;
-    //        us.Usu_tipo = "Administrador";
-    //        adm.Adm_cidade = ddlCidadeA.SelectedValue;
-    //        adm.Adm_estado = ddlEstadoA.SelectedValue;
-    //        adm.Adm_nascimento = Convert.ToDateTime(txtDataNasc.Text);
-    //        //adm.Adm_cpf = txtCpf.Text;
+            pes_pessoa pes = new pes_pessoa();
+            pes.Pes_nome = txtNomeA.Text;
+            pes.Pes_sexo = ddlSexoA.SelectedValue;
+            pes.Pes_cidade = ddlCidadeA.SelectedValue;
+            pes.Pes_estado = ddlEstadoA.SelectedValue;
+            pes.Pes_nascimento = Convert.ToDateTime(txtDataNasc.Text);
 
+            usu_usuario us = new usu_usuario();
+            us.Usu_email = txtEmailA.Text;
+            us.Usu_senha = txtSenhaA.Text;
+            us.Usu_tipo = "Administrador";
+            //adm.Adm_cpf = txtCpf.Text;
 
-    //        usu_usuarioDB.Insert(us);
-    //        ////joga o email pra uma variavel
-    //        string email = txtEmailA.Text;
-    //        ////cria um dataset, pois o SelectByEmail retorna um dataset
-    //        DataSet id = new DataSet();
+            usu_usuarioDB.Insert(us);
+            ////joga o email pra uma variavel
+            string email = txtNomeA.Text;
+            ////cria um dataset, pois o SelectByEmail retorna um dataset
+            DataSet id = new DataSet();
 
+            id = pes_pessoaDB.SelectByEmail(email);
 
-    //        id = usu_usuarioDB.SelectByEmail(email);
+            pes.Pes_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
 
+            us.Pes_id = pes;
 
-    //        us.Usu_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+            switch (pes_pessoaDB.Insert(pes))
+            {
+                case 0:
+                    lbl.Text = "Cadastrado com sucesso";
 
-    //        adm.Usu_id = us;
+                    lblCS.Visible = false;
+                    txtNomeA.Text = "";
+                    txtEmailA.Text = "";
+                    txtSenhaA.Text = "";
 
-    //        switch (adm_administradorDB.Insert(adm))
-    //        {
-    //            case 0:
-    //                lbl.Text = "Cadastrado com sucesso";
+                    break;
+                case -2:
+                    lbl.Text = "Erro, verifique os campos acima e tente novamente";
+                    break;
+            }
 
-    //                lblCS.Visible = false;
-    //                txtNomeA.Text = "";
-    //                txtEmailA.Text = "";
-    //                txtSenhaA.Text = "";
-
-    //                break;
-    //            case -2:
-    //                lbl.Text = "Erro, verifique os campos acima e tente novamente";
-    //                break;
-    //        }
-            
-    //    }
-    //    else
-    //    {
-    //        lblCS.Text = "As senhas devem ser identicas em ambos os campos!";
-    //        lblCS.Visible = true;
-    //    }
+        }
+        else
+        {
+            lblCS.Text = "As senhas devem ser identicas em ambos os campos!";
+            lblCS.Visible = true;
+        }
     }
 }

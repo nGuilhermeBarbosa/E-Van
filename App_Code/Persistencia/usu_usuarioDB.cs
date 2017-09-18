@@ -120,6 +120,7 @@ public class usu_usuarioDB
         }
         return retorno;
     }
+
     public static DataSet SelectByEmail(string email)
     {
         DataSet ds = new DataSet();
@@ -142,6 +143,7 @@ public class usu_usuarioDB
 
         return ds;
     }
+
     public static DataSet SelectLOGIN(usu_usuario usu)
     {
         DataSet ds = new DataSet();
