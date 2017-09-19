@@ -6,7 +6,7 @@ using System.Data;
 /// <summary>
 /// Descrição resumida de doc_documento
 /// </summary>
-public class tpc_tpco_contatoDB
+public class tpc_tipo_contatoDB
 {
     public static int Insert(tpc_tipo_contato tpc)
     {

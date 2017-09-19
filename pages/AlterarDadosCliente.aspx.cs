@@ -23,6 +23,9 @@ public partial class pages_AlterarDadosCliente : System.Web.UI.Page
     public void CarregarVisualizar()
     {
         usu_usuario usu = new usu_usuario();
+        pas_passageiro pas = new pas_passageiro();
+        pes_pessoa pes = new pes_pessoa();
+
         DataSet ds = pas_passageiroDB.SelectDados(Convert.ToInt32(hdf.Value));
 
         if (ds.Tables[0].Rows.Count == 1)
@@ -56,25 +59,24 @@ public partial class pages_AlterarDadosCliente : System.Web.UI.Page
         {
             case 0:
                 //Response.Write("OK");
-                Label1.Text = "Dados Alterados com sucesso";
+                Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
                 break;
             case -2:
                 //Response.Write("ERRO");
-                Label1.Text = "Ocorreu um erro ao atualizar os dados, por favor confira os campos " +
-                    "e tente novamente";
+                Response.Write("<script>alert('Ocorreu um Erro');</script>");
                 break;
         }
-        switch (pas_passageiroDB.Update(cli))
-        {
-            case 0:
-                //Response.Write("OK");
-                Label1.Text = "Dados Alterados com sucesso";
-                break;
-            case -2:
-                //Response.Write("ERRO");
-                Label1.Text = "Ocorreu um erro ao atualizar os dados, por favor confira os campos " +
-                    "e tente novamente";
-                break;
-        }
+        // switch (pas_passageiroDB.Update(cli))
+        //{
+        //    case 0:
+        //        //Response.Write("OK");
+        //        Label1.Text = "Dados Alterados com sucesso";
+        //        break;
+        //    case -2:
+        //        //Response.Write("ERRO");
+        //        Label1.Text = "Ocorreu um erro ao atualizar os dados, por favor confira os campos
+        //            "e tente novamente";
+        //        break;
+        //}
     }
 }

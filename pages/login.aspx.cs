@@ -62,6 +62,7 @@ public partial class pages_login : System.Web.UI.Page
         usu.Usu_senha = txtSenha.Text;
 
         DataSet ds = usu_usuarioDB.SelectLOGIN(usu);
+        // mot_motorista mot = new mot_motorista();
 
         if (ds.Tables[0].Rows.Count == 1)
         {
@@ -73,7 +74,7 @@ public partial class pages_login : System.Web.UI.Page
 
             switch (perfil)
             {
-                case "Cliente":
+                case "Passageiro":
                     Response.Redirect("homeCliente.aspx");
                     break;
                 case "Motorista":

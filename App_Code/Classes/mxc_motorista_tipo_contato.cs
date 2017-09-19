@@ -10,6 +10,7 @@ public class mxc_motorista_tipo_contato
 {
     private mot_motorista mot_id;
     private tpc_tipo_contato tpc_id;
+    private string mxc_descricao; 
 
     public global::mot_motorista Mot_id
     {
@@ -34,6 +35,19 @@ public class mxc_motorista_tipo_contato
         set
         {
             tpc_id = value;
+        }
+    }
+
+    public string Mxc_descricao
+    {
+        get
+        {
+            return mxc_descricao;
+        }
+
+        set
+        {
+            mxc_descricao = value;
         }
     }
 }

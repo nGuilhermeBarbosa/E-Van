@@ -104,7 +104,7 @@ public class pas_passageiroDB
         IDbCommand objComando;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        string query = "select pes_id, pes_nome, pas_cpf, pes_sexo, pes_nascimento, pes_cidade, pes_estado, usu_email from usu_usuario usu inner join cli_cliente cli on cli.usu_id = usu.usu_id  where cli.cli_id = ?id";
+        string query = "select pes.pes_id, pes_nome, pas_cpf, pes_sexo, pes_nascimento, pes_cidade, pes_estado, usu_email from usu_usuario usu inner join pas_passageiro pas on pas.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id where pes.pes_id=?id";
         objComando = Mapped.Command(query, objConexao);
         objComando.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objComando);

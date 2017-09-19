@@ -42,11 +42,11 @@
             <asp:TextBox ID="txtDataNascimento" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
-            <%--<asp:Label ID="lblTelefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
+            <asp:Label ID="lblTelefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtTelefone" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="lblCelular" runat="server" Text="Celular" CssClass="margem"></asp:Label>
+            <%--<asp:Label ID="lblCelular" runat="server" Text="Celular" CssClass="margem"></asp:Label>
             <asp:TextBox ID="txtCelular" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />--%>

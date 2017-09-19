@@ -23,6 +23,7 @@ public class Sessão
     {
         this.id = id;
         this.email = email;
+        
     }
 
 }

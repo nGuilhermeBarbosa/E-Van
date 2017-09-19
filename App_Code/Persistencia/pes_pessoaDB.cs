@@ -115,6 +115,7 @@ public class pes_pessoaDB
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", pes.Pes_id));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", pes.Pes_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", pes.Pes_sexo));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_nascimento", pes.Pes_nascimento));

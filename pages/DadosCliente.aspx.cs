@@ -26,20 +26,21 @@ public partial class pages_DadosCliente : System.Web.UI.Page
     public void CarregarVisualizar()
     {
         usu_usuario usu = new usu_usuario();
-
+        pes_pessoa pes = new pes_pessoa();
+        pas_passageiro pas = new pas_passageiro();
 
         DataSet ds = pas_passageiroDB.SelectDados(Convert.ToInt32(hdf.Value));
 
         if (ds.Tables[0].Rows.Count == 1)
         {
-            hdfID.Value = ds.Tables[0].Rows[0]["cli_id"].ToString();
-            txtNome.Text = ds.Tables[0].Rows[0]["cli_nome"].ToString();
+            hdfID.Value = ds.Tables[0].Rows[0]["pes_id"].ToString();
+            txtNome.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
             txtEmail.Text = ds.Tables[0].Rows[0]["usu_email"].ToString();
-            txtCpf.Text = ds.Tables[0].Rows[0]["cli_cpf"].ToString();
-            txtSexo.Text = ds.Tables[0].Rows[0]["cli_sexo"].ToString();
-            txtCidade.Text = ds.Tables[0].Rows[0]["cli_cidade"].ToString();
-            txtEstado.Text = ds.Tables[0].Rows[0]["cli_estado"].ToString();
-            txtDataNascimento.Text = ds.Tables[0].Rows[0]["cli_datanascimento"].ToString();
+            txtCpf.Text = ds.Tables[0].Rows[0]["pas_cpf"].ToString();
+            txtSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
+            txtCidade.Text = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
+            txtEstado.Text = ds.Tables[0].Rows[0]["pes_estado"].ToString();
+            txtDataNascimento.Text = ds.Tables[0].Rows[0]["pes_nascimento"].ToString();
 
         }
     }
