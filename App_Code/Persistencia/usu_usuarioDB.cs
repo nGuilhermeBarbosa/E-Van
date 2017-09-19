@@ -69,6 +69,28 @@ public class usu_usuarioDB
         return ds;
     }
 
+    public static DataSet SelectAdm()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select pes_nome, pes_sexo, pes_nascimento, pes_cidade, pes_estado, usu_tipo from pes_pessoa pes inner join usu_usuario usu on usu.pes_id = pes.pes_id where usu_tipo = 'Administrador'";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
     public static int Delete(int id)
     {
         int retorno = 0;
@@ -78,13 +100,13 @@ public class usu_usuarioDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from usu_usuario where usu_id = ?usu_id";
+            string sql = "delete from usu_usuario where pes_id = ?pes_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", id));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -98,6 +120,7 @@ public class usu_usuarioDB
         }
         return retorno;
     }
+
     public static DataSet SelectByEmail(string email)
     {
         DataSet ds = new DataSet();
@@ -120,6 +143,7 @@ public class usu_usuarioDB
 
         return ds;
     }
+
     public static DataSet SelectLOGIN(usu_usuario usu)
     {
         DataSet ds = new DataSet();

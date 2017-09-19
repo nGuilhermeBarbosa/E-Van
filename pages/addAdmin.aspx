@@ -10,7 +10,8 @@
             <br />
             <div class="row">
                 <div class="col-lg-6">
-                    <br /><asp:TextBox ID="txtNomeA" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
+                    <br />
+                    <asp:TextBox ID="txtNomeA" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                 </div>
                 <div class="col-lg-6">
                     Sexo
@@ -57,8 +58,8 @@
             <br />
             <div class="row">
                 <div class="center">
-                    <a href="allAdmin.aspx"><asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-danger" /></a>
                     <asp:Button ID="Button2" runat="server" Text="Cadastrar" CssClass="btn btn-success" OnClick="btnConfirmaCadastro_Click" />
+                    <a href="allAdmin.aspx" class="btn btn-danger">Cancelar</a>
                     <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
                 </div>
             </div>

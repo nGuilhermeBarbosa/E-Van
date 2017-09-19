@@ -12,59 +12,59 @@ public partial class pages_allAdmin : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            //CarregarddlAdmin();
-            //CarregarGrid();
+            CarregarddlAdmin();
+            CarregarLiteral();
         }
         
     }
 
-    //DataSet ds = adm_administradorDB.SelectAll();
+    DataSet ds = usu_usuarioDB.SelectAdm();
 
-    //private void CarregarGrid()
-    //{
-    //    DataSet ds = adm_administradorDB.SelectAll();
-    //    int qtd = ds.Tables[0].Rows.Count;
-
-    //    if (qtd > 0)
-    //    {
-    //        gridAdmin.DataSource = ds.Tables[0].DefaultView;
-    //        gridAdmin.DataBind();
-    //        gridAdmin.Visible = true;
-    //        lbl.Text = "Foram encontrados " + qtd + " de registros!";
-    //    }
-    //    else
-    //    {
-    //        gridAdmin.Visible = false;
-    //        lbl.Text = "Não foram encontrados registros...";
-    //    }
-    //}
-
-    //public void CarregarddlAdmin()
-    //{
-    //    DataSet ds = adm_administradorDB.SelectAll();
-
-    //    ddlAdmin.DataSource = ds;
-    //    ddlAdmin.DataTextField = "adm_nome";
-    //    ddlAdmin.DataValueField = "adm_id";
-    //    ddlAdmin.DataBind();
-
-    //    ddlAdmin.Items.Insert(0, "Selecione o Admin que deseja excluir");
-    //}
-
-    //protected void ddlAmdmin_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-    //    switch (adm_administradorDB.Delete(Convert.ToInt32(ddlAdmin.SelectedValue)))
-    //    {
-    //        case 0:
-    //            CarregarddlAdmin();
-    //            lbl2.Text = "Excluido com sucesso";
-    //            CarregarGrid();
-    //            break;
-    //        case -2:
-    //            lbl2.Text = "<<<   ERRO    >>>";
-    //            break;
-
-    //    }
-    //    CarregarGrid();
-    //    CarregarddlAdmin();
+    public void CarregarLiteral()
+    {
+        foreach(DataRow dados in ds.Tables[0].Rows)
+        {
+            Literal1.Text += "<div class='serviceBox'> "
+                + "<div class='title'>" + dados["pes_nome"]
+                + "<span class='glyphicon glyphicon-trash'> Excluir"
+                +"</span><span class='glyphicon glyphicon-edit'> Editar</span></div>"
+                + "<div class='padding'>"
+                + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"
+                + "<b>Estado</b>: " + dados["pes_estado"] + "<br />"
+                + "<b>Cidade</b>:"+ dados["pes_cidade"]
+            + "</div></div>";
+        }
+        
     }
+
+
+
+    public void CarregarddlAdmin()
+    {
+        DataSet ds = pes_pessoaDB.SelectAll();
+
+        ddlAdmin.DataSource = ds;
+        ddlAdmin.DataTextField = "pes_nome";
+        ddlAdmin.DataValueField = "pes_id";
+        ddlAdmin.DataBind();
+
+        ddlAdmin.Items.Insert(0, "Selecione o Admin que deseja excluir");
+    }
+
+    protected void ddlAmdmin_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        switch (pes_pessoaDB.Delete(Convert.ToInt32(ddlAdmin.SelectedValue)))
+        {
+            case 0:
+                CarregarddlAdmin();
+                lbl2.Text = "Excluido com sucesso";
+                break;
+            case -2:
+                lbl2.Text = "<<<   ERRO    >>>";
+                break;
+
+        }
+        CarregarddlAdmin();
+        Response.Redirect("allAdmin.aspx", true);
+    }
+}
