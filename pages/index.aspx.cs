@@ -88,8 +88,6 @@ public partial class pages_index : System.Web.UI.Page
 
                 usu_usuarioDB.Insert(us);
 
-                //Insere o Usuario
-
                 pas_passageiro passageiro = new pas_passageiro();
                 passageiro.Pas_cpf = txtCpf.Text;
 

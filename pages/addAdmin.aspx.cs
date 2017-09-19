@@ -11,7 +11,7 @@ public partial class pages_addAdmin : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            
+
         }
     }
 
@@ -31,39 +31,43 @@ public partial class pages_addAdmin : System.Web.UI.Page
             pes.Pes_estado = ddlEstadoA.SelectedValue;
             pes.Pes_nascimento = Convert.ToDateTime(txtDataNasc.Text);
 
+            pes_pessoaDB.Insert(pes);
+
+
+
             usu_usuario us = new usu_usuario();
             us.Usu_email = txtEmailA.Text;
             us.Usu_senha = txtSenhaA.Text;
             us.Usu_tipo = "Administrador";
+
+            string n = txtNomeA.Text;
+            ////cria um dataset, pois o SelectByEmail retorna um dataset
+            DataSet id = new DataSet();
+
+            id = pes_pessoaDB.SelectByEmail(n);
+
+            pes.Pes_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+            us.Pes_id = pes;
             //adm.Adm_cpf = txtCpf.Text;
 
             usu_usuarioDB.Insert(us);
             ////joga o email pra uma variavel
-            string email = txtNomeA.Text;
-            ////cria um dataset, pois o SelectByEmail retorna um dataset
-            DataSet id = new DataSet();
 
-            id = pes_pessoaDB.SelectByEmail(email);
+            //switch (pes_pessoaDB.Insert(pes))
+            //{
+            //    case 0:
+            //        lbl.Text = "Cadastrado com sucesso";
 
-            pes.Pes_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+            //        lblCS.Visible = false;
+            //        txtNomeA.Text = "";
+            //        txtEmailA.Text = "";
+            //        txtSenhaA.Text = "";
 
-            us.Pes_id = pes;
-
-            switch (pes_pessoaDB.Insert(pes))
-            {
-                case 0:
-                    lbl.Text = "Cadastrado com sucesso";
-
-                    lblCS.Visible = false;
-                    txtNomeA.Text = "";
-                    txtEmailA.Text = "";
-                    txtSenhaA.Text = "";
-
-                    break;
-                case -2:
-                    lbl.Text = "Erro, verifique os campos acima e tente novamente";
-                    break;
-            }
+            //        break;
+            //    case -2:
+            //        lbl.Text = "Erro, verifique os campos acima e tente novamente";
+            //        break;
+            //}
 
         }
         else

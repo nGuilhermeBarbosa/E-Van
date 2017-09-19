@@ -80,8 +80,7 @@ public class mxc_motorista_tipo_contatoDB
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
-            objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
+            objCommand.Parameters.Add(Mapped.Parameter("?mxc_descricao", mxc.Mxc_descricao));
             //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
             objCommand.ExecuteNonQuery();
             objConexao.Close();
