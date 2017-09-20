@@ -25,9 +25,7 @@ public partial class pages_allAdmin : System.Web.UI.Page
         foreach(DataRow dados in ds.Tables[0].Rows)
         {
             Literal1.Text += "<div class='serviceBox'> "
-                + "<div class='title'>" + dados["pes_nome"]
-                + "<span class='glyphicon glyphicon-trash' data-toggle='modal' data-target='#ModalDelete'> Excluir"
-                + "</span><span class='glyphicon glyphicon-edit'> Editar</span></div>"
+                + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"
                 + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"
                 + "<b>Estado</b>: " + dados["pes_estado"] + "<br />"

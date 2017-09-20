@@ -21,74 +21,51 @@ public partial class pages_addAdmin : System.Web.UI.Page
         pes_pessoa pes = new pes_pessoa();
         pas_passageiro pas = new pas_passageiro();
 
-        DataSet ds = pes_pessoaDB.SelectDados(Convert.ToInt32(Request.QueryString["id"]));
-        Label1.Text = Request.QueryString["id"];
+        DataSet ds = pes_pessoaDB.SelectDados(Convert.ToInt32(Request.QueryString["value"]));
+        Label1.Text = Request.QueryString["value"];
 
         if (ds.Tables[0].Rows.Count == 1)
         {
             Label1.Text = ds.Tables[0].Rows[0]["pes_id"].ToString();
             txtNomeA.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
-            txtEmailA.Text = ds.Tables[0].Rows[0]["usu_email"].ToString();
             ddlSexoA.SelectedValue = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
-            ddlCidadeA.SelectedValue = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
-            ddlEstadoA.SelectedValue = ds.Tables[0].Rows[0]["pes_estado"].ToString();
+            txtEmailA.Text = ds.Tables[0].Rows[0]["usu_email"].ToString();
             txtDataNasc.Text = ds.Tables[0].Rows[0]["pes_nascimento"].ToString();
+            ddlEstadoA.SelectedValue = ds.Tables[0].Rows[0]["pes_estado"].ToString();
+            ddlCidadeA.SelectedValue = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
+            
         }
     }
 
-    protected void btnConfirmaCadastro_Click(object sender, EventArgs e)
+    protected void Button2_Click(object sender, EventArgs e)
     {
-
-
         if (txtSenhaA.Text == txtConfirmarSenha.Text)
         {
-            //Insere o Usuario
-            //string tipo = "Administrador";
-
             pes_pessoa pes = new pes_pessoa();
+            pes.Pes_id = Convert.ToInt32(Label1.Text);
             pes.Pes_nome = txtNomeA.Text;
             pes.Pes_sexo = ddlSexoA.SelectedValue;
             pes.Pes_cidade = ddlCidadeA.SelectedValue;
             pes.Pes_estado = ddlEstadoA.SelectedValue;
             pes.Pes_nascimento = Convert.ToDateTime(txtDataNasc.Text);
 
-            pes_pessoaDB.Insert(pes);
-
-
+            pes_pessoaDB.Update(pes);
 
             usu_usuario us = new usu_usuario();
+            us.Usu_id = Convert.ToInt32(Label1.Text);
             us.Usu_email = txtEmailA.Text;
             us.Usu_senha = txtSenhaA.Text;
             us.Usu_tipo = "Administrador";
 
             string n = txtNomeA.Text;
-            ////cria um dataset, pois o SelectByEmail retorna um dataset
             DataSet id = new DataSet();
 
             id = pes_pessoaDB.SelectByEmail(n);
 
             pes.Pes_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
             us.Pes_id = pes;
-            //adm.Adm_cpf = txtCpf.Text;
 
-            usu_usuarioDB.Insert(us);
-            ////joga o email pra uma variavel
-
-            //switch (pes_pessoaDB.Insert(pes))
-            //{
-            //    case 0:
-            //        lbl.Text = "Cadastrado com sucesso";
-
-            //        lblCS.Visible = false;
-            //        txtNomeA.Text = "";
-            //        txtEmailA.Text = "";
-            //        txtSenhaA.Text = "";
-
-            //        break;
-            //    case -2:
-            //        lbl.Text = "Erro, verifique os campos acima e tente novamente";
-            //        break;
-            //}
+            usu_usuarioDB.Update(us);
 
         }
         else

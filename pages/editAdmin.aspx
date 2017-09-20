@@ -5,11 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="title text-center">Editar Administrador</div>
     <div class="row margem">
-        <asp:Label ID="Label1" runat="server" Text="Label" style="display:none;"></asp:Label>
+        
         <div class="col-lg-6 margin-left">
             <br />
             <div class="row">
                 <div class="col-lg-6">
+                    <asp:Label ID="Label1" runat="server" Text="Label" style="visibility:hidden;"></asp:Label>
                     <br />
                     <asp:TextBox ID="txtNomeA" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                 </div>
@@ -58,7 +59,7 @@
             <br />
             <div class="row">
                 <div class="center">
-                    <asp:Button ID="Button2" runat="server" Text="Cadastrar" CssClass="btn btn-success" OnClick="btnConfirmaCadastro_Click" />
+                    <asp:Button ID="Button2" runat="server" Text="Atualizar" CssClass="btn btn-success" OnClick="Button2_Click" />
                     <a href="allAdmin.aspx" class="btn btn-danger">Cancelar</a>
                     <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
                 </div>

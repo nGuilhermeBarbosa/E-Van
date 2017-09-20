@@ -187,7 +187,7 @@ public class pes_pessoaDB
         IDbCommand objComando;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        string query = "select pes.pes_id, pes.pes_nome, pes.pes_sexo, pes.pes_nascimento, pes.pes_cidade, pes.pes_estado, usu.usu_email from pes_pessoa pes inner join usu_usuario usu on usu.pes_id = pes.pes_id where pes.pes_id = ?pes_id";
+        string query = "select pes.pes_id, pes.pes_nome, pes.pes_sexo, usu.usu_email, pes.pes_nascimento, pes.pes_estado, pes.pes_cidade from pes_pessoa pes inner join usu_usuario usu on usu.pes_id = pes.pes_id where pes.pes_id = ?id";
         objComando = Mapped.Command(query, objConexao);
         objComando.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objComando);
