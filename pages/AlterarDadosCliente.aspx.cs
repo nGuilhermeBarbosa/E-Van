@@ -55,6 +55,9 @@ public partial class pages_AlterarDadosCliente : System.Web.UI.Page
         pes.Pes_estado = ddlEstado.SelectedValue;
         pes.Pes_nascimento = Convert.ToDateTime(txtData.Text);
 
+        usu_usuario usu = new usu_usuario();
+        usu.Usu_email = txtEmail.Text;
+
         switch (pes_pessoaDB.Update(pes))
         {
             case 0:
