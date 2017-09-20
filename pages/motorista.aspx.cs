@@ -22,6 +22,8 @@ public partial class pages_motorista : System.Web.UI.Page
         usu_usuario usu = new usu_usuario();
         pes_pessoa pes = new pes_pessoa();
         mot_motorista mot = new mot_motorista();
+        tpc_tipo_contato tpc = new tpc_tipo_contato();
+        mxc_motorista_tipo_contato mxc = new mxc_motorista_tipo_contato();
 
         DataSet ds = mot_motoristaDB.SelectDados(Convert.ToInt32(hdf1.Value));
 
@@ -34,6 +36,8 @@ public partial class pages_motorista : System.Web.UI.Page
             txtCidade.Text = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
             txtEstado.Text = ds.Tables[0].Rows[0]["pes_estado"].ToString();
             txtEmail.Text = ds.Tables[0].Rows[0]["usu_email"].ToString();
+            txtTipoTelefone.Text = ds.Tables[0].Rows[0]["tpc_descricao"].ToString();
+            txtTelefone.Text = ds.Tables[0].Rows[0]["mxc_descricao"].ToString();
 
     }
     protected void btnAlterar_Click(object sender, EventArgs e)

@@ -104,7 +104,7 @@ public class tpc_tipo_contatoDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update tpc_tipo_contato set tpc_descricao = ?tpc_descricao";
+            string sql = "update tpc_tipo_contato set tpc_descricao = ?tpc_descricao where tpc_id = ?tpc_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);

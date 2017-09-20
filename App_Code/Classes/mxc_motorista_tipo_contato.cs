@@ -8,6 +8,7 @@ using System.Web;
 /// </summary>
 public class mxc_motorista_tipo_contato
 {
+    private int mxc_id;
     private mot_motorista mot_id;
     private tpc_tipo_contato tpc_id;
     private string mxc_descricao; 
@@ -48,6 +49,19 @@ public class mxc_motorista_tipo_contato
         set
         {
             mxc_descricao = value;
+        }
+    }
+
+    public int Mxc_id
+    {
+        get
+        {
+            return mxc_id;
+        }
+
+        set
+        {
+            mxc_id = value;
         }
     }
 }

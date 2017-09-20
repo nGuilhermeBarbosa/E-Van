@@ -29,6 +29,8 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
         usu_usuario usu = new usu_usuario();
         mot_motorista mot = new mot_motorista();
         pes_pessoa pes = new pes_pessoa();
+        mxc_motorista_tipo_contato mxc = new mxc_motorista_tipo_contato();
+        tpc_tipo_contato tpc = new tpc_tipo_contato();
 
         DataSet ds = mot_motoristaDB.SelectDados(Convert.ToInt32(hdf.Value));
 
@@ -41,7 +43,7 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
             ddlSexo.SelectedItem.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
             ddlCidade.SelectedItem.Text = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
             ddlEstado.SelectedItem.Text = ds.Tables[0].Rows[0]["pes_estado"].ToString();
-            ddl.SelectedItem.Text = ds.Tables[0].Rows[0]["mxc_descricao"].ToString();
+            ddl.SelectedValue = ds.Tables[0].Rows[0]["mxc_descricao"].ToString();
             txtTelefone.Text = ds.Tables[0].Rows[0]["tpc_descricao"].ToString();
             txtData.Text = ds.Tables[0].Rows[0]["pes_nascimento"].ToString();
 
@@ -70,12 +72,13 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
                 mxc.Mxc_descricao = txtTelefone.Text;
                 mxc.Mot_id = mot;
             }
-            else
-            {
                 mot.Mot_cnpj = txtCNPJ.Text;
 
-                mxc.Mxc_descricao = ddl.SelectedItem.Text;
+                tpc.Tpc_descricao = ddl.SelectedItem.Text;
+                tpc_tipo_contatoDB.Update(tpc);
 
+                mxc.Mxc_descricao = txtTelefone.Text;
+                mxc_motorista_tipo_contatoDB.Update(mxc);
 
                 tpc.Tpc_descricao = txtTelefone.Text;
 
@@ -98,7 +101,7 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
                         Response.Write("<script>alert('Ocorreu um Erro');</script>");
                         break;
                 }
-            }
+            
         }
 
         

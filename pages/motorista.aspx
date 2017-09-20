@@ -42,8 +42,16 @@
             <asp:TextBox ID="txtDataNascimento" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="lblTelefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
-            <asp:TextBox ID="txtTelefone" runat="server" ReadOnly="true" CssClass="form-control controle"></asp:TextBox>
+            <div class="row">
+                <div class="col-lg-6">
+                    <asp:Label ID="Telefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
+                    <asp:TextBox ID="txtTipoTelefone" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-lg-6">
+                    <br />
+                    <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control controle"></asp:TextBox>
+                </div>
+            </div>
             <br />
             <br />
             <%--<asp:Label ID="lblCelular" runat="server" Text="Celular" CssClass="margem"></asp:Label>

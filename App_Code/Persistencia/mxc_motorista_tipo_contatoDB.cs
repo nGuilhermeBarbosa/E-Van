@@ -75,7 +75,7 @@ public class mxc_motorista_tipo_contatoDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update mxc_motorista set mxc_descricao where usu_id = ?usu_id";
+            string sql = "update mxc_motorista set mxc_descricao where mxc_id = ?mxc_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
