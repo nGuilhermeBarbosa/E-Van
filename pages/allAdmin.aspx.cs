@@ -58,6 +58,19 @@ public partial class pages_allAdmin : System.Web.UI.Page
 
     protected void ddlAmdmin_SelectedIndexChanged(object sender, EventArgs e)
     {
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+
+    }
+
+    protected void DropDownListEdit_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int id = Convert.ToInt32(DropDownListEdit.SelectedValue);
+        Context.Items["value"] = id;
+        Server.Transfer("editAdmin.aspx");
+    }
+
+    protected void btnConfirmaExclusao_Click(object sender, EventArgs e)
+    {
         switch (pes_pessoaDB.Delete(Convert.ToInt32(ddlAdmin.SelectedValue)))
         {
             case 0:
@@ -73,9 +86,8 @@ public partial class pages_allAdmin : System.Web.UI.Page
         Response.Redirect("allAdmin.aspx", true);
     }
 
-    protected void DropDownListEdit_SelectedIndexChanged(object sender, EventArgs e)
+    protected void btnCancelar_Click(object sender, EventArgs e)
     {
-        int id = Convert.ToInt32(DropDownListEdit.SelectedValue);
-        Response.Redirect("editAdmin.aspx?value=" + id);
+        ddlAdmin.SelectedIndex = 0;
     }
 }

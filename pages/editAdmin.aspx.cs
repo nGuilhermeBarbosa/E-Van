@@ -21,8 +21,8 @@ public partial class pages_addAdmin : System.Web.UI.Page
         pes_pessoa pes = new pes_pessoa();
         pas_passageiro pas = new pas_passageiro();
 
-        DataSet ds = pes_pessoaDB.SelectDados(Convert.ToInt32(Request.QueryString["value"]));
-        Label1.Text = Request.QueryString["value"];
+        DataSet ds = pes_pessoaDB.SelectDados(Convert.ToInt32(Context.Items["value"]));
+        Label1.Text = Context.Items["value"].ToString();
 
         if (ds.Tables[0].Rows.Count == 1)
         {
