@@ -10,11 +10,14 @@
             <span class="glyphicon glyphicon-plus glyphiconBar">&nbsp;<a href="addAdmin.aspx">Adicionar Administrador</a></span>
         </div>
 
-        <div class="col-lg-9">
+        <div class="col-lg-9" style="float:left;">
             <asp:Literal ID="Literal1" runat="server"></asp:Literal>
         </div>
-        <div class="col-lg-3">
-            <asp:DropDownList ID="ddlAdmin" runat="server" OnSelectedIndexChanged="ddlAmdmin_SelectedIndexChanged" AutoPostBack="true" CssClass="form-control"></asp:DropDownList>
+        <div class="col-lg-3" style="float:right;">
+            <p class="glyphicon glyphicon-trash"></p>
+            <asp:DropDownList ID="ddlAdmin" runat="server" OnSelectedIndexChanged="ddlAmdmin_SelectedIndexChanged" AutoPostBack="true" CssClass="form-inline" style="margin-top:10px;"></asp:DropDownList><br />
+            <p class="glyphicon glyphicon-edit"></p>
+            <asp:DropDownList ID="DropDownListEdit" runat="server" OnSelectedIndexChanged="DropDownListEdit_SelectedIndexChanged" AutoPostBack="true" CssClass="form-inline" style="margin-top:10px;"></asp:DropDownList>
         </div>
         <asp:Label ID="lbl2" runat="server" Text=""></asp:Label>
         

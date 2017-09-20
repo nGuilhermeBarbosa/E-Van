@@ -26,8 +26,8 @@ public partial class pages_allAdmin : System.Web.UI.Page
         {
             Literal1.Text += "<div class='serviceBox'> "
                 + "<div class='title'>" + dados["pes_nome"]
-                + "<span class='glyphicon glyphicon-trash'> Excluir"
-                +"</span><span class='glyphicon glyphicon-edit'> Editar</span></div>"
+                + "<span class='glyphicon glyphicon-trash' data-toggle='modal' data-target='#ModalDelete'> Excluir"
+                + "</span><span class='glyphicon glyphicon-edit'> Editar</span></div>"
                 + "<div class='padding'>"
                 + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"
                 + "<b>Estado</b>: " + dados["pes_estado"] + "<br />"
@@ -41,7 +41,7 @@ public partial class pages_allAdmin : System.Web.UI.Page
 
     public void CarregarddlAdmin()
     {
-        DataSet ds = pes_pessoaDB.SelectAll();
+        DataSet ds = pes_pessoaDB.SelectToDDL();
 
         ddlAdmin.DataSource = ds;
         ddlAdmin.DataTextField = "pes_nome";
@@ -49,6 +49,13 @@ public partial class pages_allAdmin : System.Web.UI.Page
         ddlAdmin.DataBind();
 
         ddlAdmin.Items.Insert(0, "Selecione o Admin que deseja excluir");
+
+        DropDownListEdit.DataSource = ds;
+        DropDownListEdit.DataTextField = "pes_nome";
+        DropDownListEdit.DataValueField = "pes_id";
+        DropDownListEdit.DataBind();
+
+        DropDownListEdit.Items.Insert(0, "Selecione o Admin que deseja editar");
     }
 
     protected void ddlAmdmin_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,5 +73,11 @@ public partial class pages_allAdmin : System.Web.UI.Page
         }
         CarregarddlAdmin();
         Response.Redirect("allAdmin.aspx", true);
+    }
+
+    protected void DropDownListEdit_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int id = Convert.ToInt32(DropDownListEdit.SelectedValue);
+        Response.Redirect("editAdmin.aspx?value=" + id);
     }
 }

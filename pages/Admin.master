@@ -41,6 +41,29 @@
                 </div>
             </div>
 
+            <!-- Modal -->
+            <div id="ModalDelete" class="modal fade" role="dialog">
+                <div class="modal-dialog mdleft">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="close" data-dismiss="modal">&times;</div>
+                            <h4 class="modal-title">Opções de Acessibidade</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Tem deseja se deseja excluir este usuário?</p><br />
+                                    <asp:Button ID="btnConfirmaExclusao" runat="server" Text="Sim, Excluir" CssClass="btn btn-danger"/>
+                                    <asp:Button ID="btnCancelar" runat="server" Text="Não, Cancelar" data-dismiss="modal" CssClass="btn btn-default"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <nav id="bgChange" class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
