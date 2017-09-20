@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="center">
                     <asp:Button ID="Button2" runat="server" Text="Cadastrar" CssClass="btn btn-success" OnClick="btnConfirmaCadastro_Click" />
-                    <a href="allAdmin.aspx" class="btn btn-danger">Cancelar</a>
+                    <a href="allAdmin.aspx" class="btn btn-danger">Voltar</a>
                     <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
                 </div>
             </div>

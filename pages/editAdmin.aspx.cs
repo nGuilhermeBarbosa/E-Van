@@ -67,6 +67,11 @@ public partial class pages_addAdmin : System.Web.UI.Page
 
             usu_usuarioDB.Update(us);
 
+            txtNomeA.Text = null;
+            txtEmailA.Text = null;
+            txtSenhaA.Text = null;
+            txtDataNasc.Text = null;
+            lbl.Text = "<script>alert('Administrador atualizado com sucesso');</script>";
         }
         else
         {

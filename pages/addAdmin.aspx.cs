@@ -69,6 +69,11 @@ public partial class pages_addAdmin : System.Web.UI.Page
             //        break;
             //}
 
+            txtNomeA.Text = null;
+            txtEmailA.Text = null;
+            txtSenhaA.Text = null;
+            txtDataNasc.Text = null;
+            lbl.Text = "<script>alert('Administrador cadastrado com sucesso');</script>";
         }
         else
         {

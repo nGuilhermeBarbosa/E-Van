@@ -46,14 +46,14 @@ public partial class pages_allAdmin : System.Web.UI.Page
         ddlAdmin.DataValueField = "pes_id";
         ddlAdmin.DataBind();
 
-        ddlAdmin.Items.Insert(0, "Selecione o Admin que deseja excluir");
+        ddlAdmin.Items.Insert(0, "Selecione o usuário que deseja excluir");
 
         DropDownListEdit.DataSource = ds;
         DropDownListEdit.DataTextField = "pes_nome";
         DropDownListEdit.DataValueField = "pes_id";
         DropDownListEdit.DataBind();
 
-        DropDownListEdit.Items.Insert(0, "Selecione o Admin que deseja editar");
+        DropDownListEdit.Items.Insert(0, "Selecione o usuário que deseja editar");
     }
 
     protected void ddlAmdmin_SelectedIndexChanged(object sender, EventArgs e)
