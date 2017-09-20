@@ -12,7 +12,8 @@
     <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
         Mensagem
     <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" TextMode="MultiLine" required="required"></asp:TextBox><br />
-        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info" />
+        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info" OnClick="btnEnviar_Click"/>
+        <asp:Label ID="lblFeedBack" runat="server" Text=""></asp:Label>
     </div>
     <br />
 </asp:Content>
