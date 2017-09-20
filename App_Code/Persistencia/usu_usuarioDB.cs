@@ -169,20 +169,18 @@ public class usu_usuarioDB
         return ds;
     }
 
-    public static int Update(usu_usuario usu)
+    public static void Update(usu_usuario usu)
     {
-        int retorno = 0;
-
-        try
-        {
-            //Correto
+        
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update usu_usuario set usu_email = ?usu_email, usu_senha = ?usu_senha, usu_tipo = ?usu_tipo where usu_id = ?usu_id";
+            string sql = "update usu_usuario set usu_email = ?usu_email, usu_senha = " +
+                "?usu_senha where usu_id = ?usu_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
+            objCommand.Parameters.Add(Mapped.Parameter("?usu_id", usu.Usu_id));
             objCommand.Parameters.Add(Mapped.Parameter("?usu_email", usu.Usu_email));
             objCommand.Parameters.Add(Mapped.Parameter("?usu_senha", usu.Usu_senha));
             //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
@@ -190,13 +188,6 @@ public class usu_usuarioDB
             objConexao.Close();
             objConexao.Dispose();
             objCommand.Dispose();
-        }
-        catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }
-        return retorno;
     }
    /* public static DataSet SelectByEmailMoto(string email)
     {
