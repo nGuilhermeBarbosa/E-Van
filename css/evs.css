@@ -564,3 +564,10 @@ footer {
     .undo:hover {
         background: #009ffb;
     }
+
+.mdleft {
+    float:left;
+    display:block;
+    display:inline-block;
+    margin-left:10%;
+}

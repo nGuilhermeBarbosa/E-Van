@@ -47,6 +47,30 @@ public class pes_pessoaDB
         return retorno;
     }
 
+    public static DataSet SelectToDDL()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select pes.pes_id, pes.pes_nome from pes_pessoa pes join usu_usuario usu on pes.pes_id = usu.pes_id where usu.usu_tipo = 'Administrador'";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
     public static DataSet SelectAll()
     {
         DataSet ds = new DataSet();
@@ -154,6 +178,23 @@ public class pes_pessoaDB
         objConexao.Dispose();
         objCommand.Dispose();
 
+        return ds;
+    }
+    public static DataSet SelectDados(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select pes.pes_id, pes.pes_nome, pes.pes_sexo, usu.usu_email, pes.pes_nascimento, pes.pes_estado, pes.pes_cidade from pes_pessoa pes inner join usu_usuario usu on usu.pes_id = pes.pes_id where pes.pes_id = ?id";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
         return ds;
     }
 }
