@@ -58,7 +58,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <asp:Label ID="Telefone" runat="server" Text="Telefone" CssClass="margem"></asp:Label>
-                    <asp:DropDownList ID="ddl" runat="server" CssClass="form-control controle"></asp:DropDownList>
+                    <asp:DropDownList ID="ddl" runat="server" CssClass="form-control controle">
+                        <asp:ListItem Value="1">Telefone</asp:ListItem>
+                        <asp:ListItem Value="2">Celular</asp:ListItem>
+                        <asp:ListItem Value="3">Whatsapp</asp:ListItem>
+                        <asp:ListItem Value="4">Email Alternativo</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
                 <div class="col-lg-6">
                     <br />

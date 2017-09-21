@@ -26,18 +26,16 @@ public partial class pages_motorista : System.Web.UI.Page
         mxc_motorista_tipo_contato mxc = new mxc_motorista_tipo_contato();
 
         DataSet ds = mot_motoristaDB.SelectDados(Convert.ToInt32(hdf1.Value));
-
-        
-            hdfID.Value = ds.Tables[0].Rows[0]["pes_id"].ToString();
-            txtNome.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
-            txtCNPJ.Text = ds.Tables[0].Rows[0]["mot_cnpj"].ToString();
-            txtSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
-            txtDataNascimento.Text = ds.Tables[0].Rows[0]["pes_nascimento"].ToString();
-            txtCidade.Text = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
-            txtEstado.Text = ds.Tables[0].Rows[0]["pes_estado"].ToString();
-            txtEmail.Text = ds.Tables[0].Rows[0]["usu_email"].ToString();
-            txtTipoTelefone.Text = ds.Tables[0].Rows[0]["tpc_descricao"].ToString();
-            txtTelefone.Text = ds.Tables[0].Rows[0]["mxc_descricao"].ToString();
+        hdfID.Value = ds.Tables[0].Rows[0]["pes_id"].ToString();
+        txtNome.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
+        txtCNPJ.Text = ds.Tables[0].Rows[0]["mot_cnpj"].ToString();
+        txtSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
+        txtDataNascimento.Text = ds.Tables[0].Rows[0]["pes_nascimento"].ToString();
+        txtCidade.Text = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
+        txtEstado.Text = ds.Tables[0].Rows[0]["pes_estado"].ToString();
+        txtEmail.Text = ds.Tables[0].Rows[0]["usu_email"].ToString();
+        txtTipoTelefone.Text = ds.Tables[0].Rows[0]["tpc_descricao"].ToString();
+        txtTelefone.Text = ds.Tables[0].Rows[0]["mxc_descricao"].ToString();
 
     }
     protected void btnAlterar_Click(object sender, EventArgs e)

@@ -18,16 +18,16 @@ public class ser_servicosDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into ser_servicos ";
-            sql += "(ser_datacadastro, ser_nome, ser_datafim, ser_origem, ser_datainicio, ser_destino, ser_descricao, ser_lugares, mot_id)";
+            sql += "(ser_datacadastro, ser_datafim, ser_origem, ser_datainicio, ser_destino, ser_descricao, ser_lugares, mot_id)";
             sql += "values ";
-            sql += "(?ser_datacadastro, ?ser_nome, ?ser_datafim, ?ser_origem, ?ser_datainicio, ?ser_destino, ?ser_descricao, ?ser_lugares, ?mot_id)";
+            sql += "(?ser_datacadastro, ?ser_datafim, ?ser_origem, ?ser_datainicio, ?ser_destino, ?ser_descricao, ?ser_lugares, ?mot_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datacadastro", ser.Ser_datacadastro));
-            objCommand.Parameters.Add(Mapped.Parameter("?ser_nome", ser.Ser_nome));
+            //objCommand.Parameters.Add(Mapped.Parameter("?ser_nome", ser.Ser_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datafim", ser.Ser_datafim));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_origem", ser.Ser_origem));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datainicio", ser.Ser_datainicio));
@@ -119,7 +119,7 @@ public class ser_servicosDB
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datacadastro", ser.Ser_datacadastro));
-            objCommand.Parameters.Add(Mapped.Parameter("?ser_nome", ser.Ser_nome));
+            //objCommand.Parameters.Add(Mapped.Parameter("?ser_nome", ser.Ser_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datafim", ser.Ser_datafim));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_origem", ser.Ser_origem));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datainicio", ser.Ser_datainicio));
@@ -138,5 +138,29 @@ public class ser_servicosDB
             retorno = -2;
         }
         return retorno;
+    }
+
+    public static DataSet SelectServicos(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select pes_nome, ser_datainicio, ser_datafim, ser_destino from ser_servicos ser inner join mot_motorista mot on mot.mot_id = ser.mot_id inner join usu_usuario usu on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id where ser.mot_id = ?id";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
     }
 }

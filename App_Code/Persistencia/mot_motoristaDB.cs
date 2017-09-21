@@ -103,35 +103,26 @@ public class mot_motoristaDB
         }
         return retorno;
     }
-    public static int Update(mot_motorista mot)
+    public static void Update(mot_motorista mot)
     {
-        int retorno = 0;
-
-        try
-        {
+        
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update mot_motorista set mot_cpf = ?mot_cpf where mot_id = ?mot_id";
+            string sql = "update mot_motorista set mot_cnpj = ?mot_cnpj where mot_id = ?mot_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?mot_cnpj", mot.Mot_cnpj));
-
+            objCommand.Parameters.Add(Mapped.Parameter("?mot_id", mot.Mot_id));
 
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
             objConexao.Dispose();
             objCommand.Dispose();
-        }
-        catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }
-        return retorno;
+        
     }
     public static DataSet SelectDados(int id)
     {
@@ -181,7 +172,7 @@ public class mot_motoristaDB
         IDbCommand objComando;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        string query = "select mot_id, mot.usu_id from mot_motorista mot inner join usu_usuario usu on mot.usu_id = usu.usu_id where usu.usu_id = ?id";
+        string query = "select mot_id from mot_motorista mot inner join usu_usuario usu on mot.usu_id = usu.usu_id where usu.usu_id = ?id";
         objComando = Mapped.Command(query, objConexao);
         objComando.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objComando);

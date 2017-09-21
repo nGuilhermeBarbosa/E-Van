@@ -20,7 +20,7 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
                 //lblSessao.Text = usu.email;
                 hdf.Value = usu.id.ToString();
                 CarregarVisualizar();
-                CarregarDDL();
+                //CarregarDDL();
             }
         }
     }
@@ -43,8 +43,8 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
             ddlSexo.SelectedItem.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
             ddlCidade.SelectedItem.Text = ds.Tables[0].Rows[0]["pes_cidade"].ToString();
             ddlEstado.SelectedItem.Text = ds.Tables[0].Rows[0]["pes_estado"].ToString();
-            ddl.SelectedValue = ds.Tables[0].Rows[0]["mxc_descricao"].ToString();
-            txtTelefone.Text = ds.Tables[0].Rows[0]["tpc_descricao"].ToString();
+            ddl.SelectedItem.Text = ds.Tables[0].Rows[0]["tpc_descricao"].ToString();
+            txtTelefone.Text = ds.Tables[0].Rows[0]["mxc_descricao"].ToString();
             txtData.Text = ds.Tables[0].Rows[0]["pes_nascimento"].ToString();
 
         }
@@ -59,52 +59,53 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count == 1)
         {
-            if (mxc.Mxc_descricao == null)
+            //if (mxc.Mxc_descricao == null)
+            //{
+            //    hdfM.Value = ds.Tables[0].Rows[0]["mot_id"].ToString();
+
+            //    tpc.Tpc_id = Convert.ToInt32(ddl.SelectedValue);
+            //    CarregarDDL();
+
+            //    mot.Mot_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+
+            //    mxc.Tpc_id = tpc;
+            //    mxc.Mxc_descricao = txtTelefone.Text;
+            //    mxc.Mot_id = mot;
+            //}
+            mot.Mot_cnpj = txtCNPJ.Text;
+            mot_motoristaDB.Update(mot);
+
+            tpc.Tpc_id = Convert.ToInt32(ddl.SelectedValue);
+            mxc.Tpc_id = tpc;
+
+            //tpc_tipo_contatoDB.Update(tpc);
+
+            mxc.Mxc_descricao = txtTelefone.Text;
+            mxc_motorista_tipo_contatoDB.Update(mxc);
+
+            pes_pessoa pes = new pes_pessoa();
+            pes.Pes_id = Convert.ToInt32(hdf.Value);
+            pes.Pes_nome = txtNome.Text;
+            pes.Pes_sexo = ddlSexo.SelectedValue;
+            pes.Pes_cidade = ddlCidade.SelectedValue;
+            pes.Pes_estado = ddlEstado.SelectedValue;
+            pes.Pes_nascimento = Convert.ToDateTime(txtData.Text);
+
+            switch (pes_pessoaDB.Update(pes))
             {
-                //hdfM.Value = ds.Tables[0].Rows[0]["mot_id"].ToString();
-                
-                tpc.Tpc_id = Convert.ToInt32(ddl.SelectedValue);
-                CarregarDDL();
-
-                mot.Mot_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
-
-                mxc.Tpc_id = tpc;
-                mxc.Mxc_descricao = txtTelefone.Text;
-                mxc.Mot_id = mot;
+                case 0:
+                    //Response.Write("OK");
+                    Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                    break;
+                case -2:
+                    //Response.Write("ERRO");
+                    Response.Write("<script>alert('Ocorreu um Erro');</script>");
+                    break;
             }
-                mot.Mot_cnpj = txtCNPJ.Text;
 
-                tpc.Tpc_descricao = ddl.SelectedItem.Text;
-                tpc_tipo_contatoDB.Update(tpc);
-
-                mxc.Mxc_descricao = txtTelefone.Text;
-                mxc_motorista_tipo_contatoDB.Update(mxc);
-
-                tpc.Tpc_descricao = txtTelefone.Text;
-
-                pes_pessoa pes = new pes_pessoa();
-                pes.Pes_id = Convert.ToInt32(hdf.Value);
-                pes.Pes_nome = txtNome.Text;
-                pes.Pes_sexo = ddlSexo.SelectedValue;
-                pes.Pes_cidade = ddlCidade.SelectedValue;
-                pes.Pes_estado = ddlEstado.SelectedValue;
-                pes.Pes_nascimento = Convert.ToDateTime(txtData.Text);
-
-                switch (pes_pessoaDB.Update(pes))
-                {
-                    case 0:
-                        //Response.Write("OK");
-                        Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
-                        break;
-                    case -2:
-                        //Response.Write("ERRO");
-                        Response.Write("<script>alert('Ocorreu um Erro');</script>");
-                        break;
-                }
-            
         }
 
-        
+
         // switch (pas_passageiroDB.Update(cli))
         //{
         //    case 0:
@@ -118,13 +119,13 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
         //        break;
         //}
     }
-    public void CarregarDDL()
-    {
-        DataSet ds = tpc_tipo_contatoDB.SelectAll();
-        ddl.DataSource = ds;
-        ddl.DataTextField = "tpc_descricao";
-        ddl.DataValueField = "tpc_id";
-        ddl.DataBind();
-        ddl.Items.Insert(0, "Selecione");
-    }
+    //public void CarregarDDL()
+    //{
+    //    DataSet ds = tpc_tipo_contatoDB.SelectAll();
+    //    ddl.DataSource = ds;
+    //    ddl.DataTextField = "tpc_descricao";
+    //    ddl.DataValueField = "tpc_id";
+    //    ddl.DataBind();
+    //    ddl.Items.Insert(0, "Selecione");
+    //}
 }

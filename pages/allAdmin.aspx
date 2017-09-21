@@ -41,7 +41,8 @@
         </script>
 
         <div class="col-lg-9" style="float: left;">
-            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+            <asp:Literal ID="Literal1" runat="server">
+            </asp:Literal>
         </div>
         <div class="col-lg-3" style="float: right;">
             <p class="glyphicon glyphicon-trash"></p>

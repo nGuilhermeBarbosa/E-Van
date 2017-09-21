@@ -9,11 +9,11 @@ using System.Web;
 public class ser_servicos
 {
 	private int ser_id;
-    private string ser_datacadastro;
-    private string ser_nome;
-    private string ser_datafim;
+    private DateTime ser_datacadastro;
+    //private string ser_nome;
+    private DateTime ser_datafim;
     private string ser_origem;
-    private string ser_datainicio;
+    private DateTime ser_datainicio;
     private string ser_destino;
     private string ser_descricao;
     private int ser_lugares;
@@ -45,28 +45,28 @@ public class ser_servicos
         set { ser_destino = value; }
     }
 
-    public string Ser_datacadastro
+    public DateTime Ser_datacadastro
     {
         get { return ser_datacadastro; }
         set { ser_datacadastro = value; }
     }
     
 
-    public string Ser_nome
-    {
-        get { return ser_nome; }
-        set { ser_nome = value; }
-    }
+    //public string Ser_nome
+    //{
+    //    get { return ser_nome; }
+    //    set { ser_nome = value; }
+    //}
     
 
-    public string Ser_datainicio
+    public DateTime Ser_datainicio
     {
         get { return ser_datainicio; }
         set { ser_datainicio = value; }
     }
     
 
-    public string Ser_datafim
+    public DateTime Ser_datafim
     {
         get { return ser_datafim; }
         set { ser_datafim = value; }

@@ -95,32 +95,24 @@ public class tpc_tipo_contatoDB
         }
         return retorno;
     }
-    public static int Update(tpc_tipo_contato tpc)
+    public static void Update(tpc_tipo_contato tpc)
     {
-        int retorno = 0;
 
-        try
-        {
-            //Correto
-            IDbConnection objConexao; //Abrir a conexão
-            IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update tpc_tipo_contato set tpc_descricao = ?tpc_descricao where tpc_id = ?tpc_id";
+        //Correto
+        IDbConnection objConexao; //Abrir a conexão
+        IDbCommand objCommand; // Criar e executar os comandos
+        string sql = "update tpc_tipo_contato set tpc_descricao = ?tpc_descricao where tpc_id = ?tpc_id";
 
-            objConexao = Mapped.Connection();
-            objCommand = Mapped.Command(sql, objConexao);
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("tpc_descricao", tpc.Tpc_descricao));
+        objCommand.Parameters.Add(Mapped.Parameter("tpc_id", tpc.Tpc_id));
+        objCommand.Parameters.Add(Mapped.Parameter("tpc_descricao", tpc.Tpc_descricao));
 
-            objCommand.ExecuteNonQuery();
-            objConexao.Close();
-            objConexao.Dispose();
-            objCommand.Dispose();
-        }
-        catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }
-        return retorno;
+        objCommand.ExecuteNonQuery();
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
     }
 }

@@ -66,32 +66,24 @@ public class mxc_motorista_tipo_contatoDB
 
         return ds;
     }
-    public static int Update(mxc_motorista_tipo_contato mxc)
+    public static void Update(mxc_motorista_tipo_contato mxc)
     {
-        int retorno = 0;
 
-        try
-        {
-            //Correto
-            IDbConnection objConexao; //Abrir a conexão
-            IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update mxc_motorista set mxc_descricao where mxc_id = ?mxc_id";
+        //Correto
+        IDbConnection objConexao; //Abrir a conexão
+        IDbCommand objCommand; // Criar e executar os comandos
+        string sql = "update mxc_motorista_tipo_contato set mxc_descricao = ?mxc_descricao where mxc_id = ?mxc_id";
 
-            objConexao = Mapped.Connection();
-            objCommand = Mapped.Command(sql, objConexao);
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?mxc_descricao", mxc.Mxc_descricao));
-            //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
-            objCommand.ExecuteNonQuery();
-            objConexao.Close();
-            objConexao.Dispose();
-            objCommand.Dispose();
-        }
-        catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }
-        return retorno;
+        objCommand.Parameters.Add(Mapped.Parameter("?mxc_id", mxc.Mxc_id));
+        objCommand.Parameters.Add(Mapped.Parameter("?mxc_descricao", mxc.Mxc_descricao));
+        //objCommand.Parameters.Add(Mapped.Parameter("?usu_tipo", usu.Usu_tipo));
+        objCommand.ExecuteNonQuery();
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
     }
 }

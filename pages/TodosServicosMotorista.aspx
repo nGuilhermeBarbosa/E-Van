@@ -9,7 +9,7 @@
     </div>
     <div id="meuModal" class="modal fade" role="dialog">
         <div class="modal-a">
-
+            <asp:HiddenField ID="hdf" runat="server" />
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -114,7 +114,10 @@
                 <p>05/17</p>
             </div>
         </div> -->
-        asNenhum serviço cadastrado.
+        <div class="col-lg-9" style="float: left;">
+            <asp:Literal ID="Literal1" runat="server">
+            </asp:Literal>
+        </div>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     </div>
