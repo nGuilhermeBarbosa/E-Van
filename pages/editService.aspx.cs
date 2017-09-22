@@ -35,6 +35,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
             txtDataFim.Text = ds.Tables[0].Rows[0]["ser_datafim"].ToString();
             txtLugares.Text = ds.Tables[0].Rows[0]["ser_lugares"].ToString();
             txtDescricao.Text = ds.Tables[0].Rows[0]["ser_descricao"].ToString();
+            Label1.Text = ds.Tables[0].Rows[0]["ser_id"].ToString();
 
         }
     }
@@ -56,7 +57,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         switch (ser_servicosDB.Update(serv))
         {
             case 0:
-                lblMsg.Text = "Cadastrado com sucesso";
+                lblMsg.Text = "Atualizado com sucesso";
                 break;
             case -2:
                 lblMsg.Text = "ERRO";

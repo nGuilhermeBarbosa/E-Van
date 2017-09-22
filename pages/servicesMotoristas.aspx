@@ -7,6 +7,9 @@
         <div class="title text-center">Serviços</div>
         <div class="col-lg-12">
 
+            <asp:Literal ID="LiteralServices" runat="server" Text="Nenhum serviço disponível no momento"></asp:Literal>
+
+            <!--
             <a href="serviceInfo.aspx" class="dblock">
                 <div class="serviceBox">
                     <div class="title">João</div>
@@ -26,6 +29,7 @@
                     </div>
                     <p>9/5/2017</p>
                 </div>
+                -->
         </div>
     </div>
     <div class="getDown"></div>

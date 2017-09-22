@@ -72,7 +72,7 @@ public partial class pages_Default : System.Web.UI.Page
     {
         int id = Convert.ToInt32(ddlEdit.SelectedValue);
         Context.Items["value"] = id;
-        Response.Redirect("editService.aspx");
+        Server.Transfer("editService.aspx", true);
     }
 
     protected void ddlDelete_SelectedIndexChanged(object sender, EventArgs e)
