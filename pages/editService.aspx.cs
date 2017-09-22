@@ -31,13 +31,13 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count == 1)
         {
-            Label1.Text = ds.Tables[0].Rows[0]["mot_id"].ToString();
             txtOrigem.Text = ds.Tables[0].Rows[0]["ser_origem"].ToString();
             txtDestino.Text = ds.Tables[0].Rows[0]["ser_destino"].ToString();
             txtDataInicio.Text = ds.Tables[0].Rows[0]["ser_datainicio"].ToString();
             txtDataFim.Text = ds.Tables[0].Rows[0]["ser_datafim"].ToString();
             txtLugares.Text = ds.Tables[0].Rows[0]["ser_lugares"].ToString();
             txtDescricao.Text = ds.Tables[0].Rows[0]["ser_descricao"].ToString();
+            Label1.Text = ds.Tables[0].Rows[0]["ser_id"].ToString();
 
         }
     }
@@ -62,13 +62,12 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         serv.Ser_datafim = Convert.ToDateTime(txtDataFim.Text);
         serv.Ser_datainicio = Convert.ToDateTime(txtDataInicio.Text);
         serv.Ser_lugares = Convert.ToInt32(txtLugares.Text);
-        serv.Mot_id = mot;
 
 
         switch (ser_servicosDB.Update(serv))
         {
             case 0:
-                lblMsg.Text = "Cadastrado com sucesso";
+                lblMsg.Text = "Atualizado com sucesso";
                 break;
             case -2:
                 lblMsg.Text = "ERRO";
