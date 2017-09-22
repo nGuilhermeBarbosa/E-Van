@@ -118,6 +118,12 @@
             <asp:Literal ID="Literal1" runat="server">
             </asp:Literal>
         </div>
+        <div class="col-lg-3" style="margin-top:10px;">
+            <b class="glyphicon glyphicon-edit"> Editar</b><br />
+            <asp:DropDownList ID="ddlEdit" runat="server" CssClass="form-horizontal" OnSelectedIndexChanged="ddlEdit_SelectedIndexChanged"></asp:DropDownList><br /><br />
+            <b class="glyphicon glyphicon-trash"> Excluir</b><br />
+            <asp:DropDownList ID="ddlDelete" runat="server" CssClass="form-horizontal" OnSelectedIndexChanged="ddlDelete_SelectedIndexChanged"></asp:DropDownList>
+        </div>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     </div>

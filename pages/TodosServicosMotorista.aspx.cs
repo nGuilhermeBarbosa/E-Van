@@ -17,6 +17,7 @@ public partial class pages_Default : System.Web.UI.Page
                 //lblSessao.Text = usu.email;
                 hdf.Value = usu.id.ToString();
                 CarregarLiteral();
+                Carregarddls();
             }
         }
     }
@@ -36,13 +37,46 @@ public partial class pages_Default : System.Web.UI.Page
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
             Literal1.Text += "<div class='serviceBox'> "
-                + "<div class='title'>" + dados["pes_nome"] + "</div>"
+                + "<div class='title'>" + dados["pes_nome"]
+                + "<span class='text-right'>" + dados["ser_id"] + "</span></div>"
                 + "<div class='padding'>"
                 + "<b>Destino</b>: " + dados["ser_destino"] + "<br />"
-                + "<b>Data De Saida</b>:" + dados["ser_datainicio"] + "<br />"
-                + "<b>Data De Volta</b>:" + dados["ser_datafim"]
+                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}",dados["ser_datainicio"]) + "<br />"
+                + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "<br />"
+                + "<b>Mensagem</b>:" + dados["ser_descricao"]
             + "</div></div>";
         }
+
+    }
+
+    public void Carregarddls()
+    {
+        DataSet ds = ser_servicosDB.SelectAll();
+
+        ddlDelete.DataSource = ds;
+        ddlDelete.DataTextField = "ser_id";
+        ddlDelete.DataValueField = "ser_id";
+        ddlDelete.DataBind();
+
+        ddlDelete.Items.Insert(0, "Selecione o número do serviço");
+
+        ddlEdit.DataSource = ds;
+        ddlEdit.DataTextField = "ser_id";
+        ddlEdit.DataValueField = "ser_id";
+        ddlEdit.DataBind();
+
+        ddlEdit.Items.Insert(0, "Selecione o número do serviço");
+    }
+
+    protected void ddlEdit_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int id = Convert.ToInt32(ddlEdit.SelectedValue);
+        Context.Items["value"] = id;
+        Server.Transfer("editService.aspx");
+    }
+
+    protected void ddlDelete_SelectedIndexChanged(object sender, EventArgs e)
+    {
 
     }
 }
