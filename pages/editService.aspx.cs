@@ -14,9 +14,6 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                Sessão usu = (Sessão)Session["nome"];
-                //lblSessao.Text = usu.email;
-                hdf.Value = usu.id.ToString();
                 CarregarVisualizar();
             }
         }
@@ -31,7 +28,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count == 1)
         {
-            Label1.Text = ds.Tables[0].Rows[0]["mot_id"].ToString();
+            Label1.Text = ds.Tables[0].Rows[0]["ser_id"].ToString();
             txtOrigem.Text = ds.Tables[0].Rows[0]["ser_origem"].ToString();
             txtDestino.Text = ds.Tables[0].Rows[0]["ser_destino"].ToString();
             txtDataInicio.Text = ds.Tables[0].Rows[0]["ser_datainicio"].ToString();
@@ -46,14 +43,6 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
     {
         DateTime data = DateTime.Now;
 
-        mot_motorista mot = new mot_motorista();
-
-        DataSet codigo = new DataSet();
-
-        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
-
-        mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
-
         ser_servicos serv = new ser_servicos();
         serv.Ser_datacadastro = data;
         serv.Ser_origem = txtOrigem.Text;
@@ -62,7 +51,6 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         serv.Ser_datafim = Convert.ToDateTime(txtDataFim.Text);
         serv.Ser_datainicio = Convert.ToDateTime(txtDataInicio.Text);
         serv.Ser_lugares = Convert.ToInt32(txtLugares.Text);
-        serv.Mot_id = mot;
 
 
         switch (ser_servicosDB.Update(serv))

@@ -41,8 +41,6 @@ public partial class pages_addAdmin : System.Web.UI.Page
     {
         if (txtSenhaA.Text == txtConfirmarSenha.Text)
         {
-            
-
             pes_pessoa pes = new pes_pessoa();
             pes.Pes_id = Convert.ToInt32(Label1.Text);
             pes.Pes_nome = txtNomeA.Text;
