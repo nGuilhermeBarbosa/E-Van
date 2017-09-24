@@ -79,10 +79,11 @@ public partial class pages_index : System.Web.UI.Page
 
                 pessoa.Pes_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
+                
 
                 usu_usuario us = new usu_usuario();
                 us.Usu_email = txtEmail.Text;
-                us.Usu_senha = txtSenha.Text;
+                us.Usu_senha = Funções.Hash(txtSenha.Text, "SHA512");
                 us.Usu_tipo = ddlPM.SelectedValue;
                 us.Pes_id = pessoa;
 

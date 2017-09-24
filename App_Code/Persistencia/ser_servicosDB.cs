@@ -84,13 +84,13 @@ public class ser_servicosDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete from ser_servicos where ser_id = ?ser_id";
+            string sql = "delete from ser_servicos where ser_id = ?id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
 
-            objCommand.Parameters.Add(Mapped.Parameter("?ser_id", id));
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
@@ -113,11 +113,12 @@ public class ser_servicosDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "update ser_servicos set ser_datacadastro = ?ser_datacadastro, ser_nome = ?ser_nome, ser_datafim = ?ser_datafim, ser_origem = ?ser_origem, ser_datainicio = ?ser_datainicio, ser_destino = ?ser_destino, ser_descricao = ?ser_descricao, ser_lugares = ?ser_lugares where ser_id = ?ser_id";
+            string sql = "update ser_servicos set ser_datacadastro = ?ser_datacadastro, ser_datafim = ?ser_datafim, ser_origem = ?ser_origem, ser_datainicio = ?ser_datainicio, ser_destino = ?ser_destino, ser_descricao = ?ser_descricao, ser_lugares = ?ser_lugares where ser_id = ?ser_id";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
+            objCommand.Parameters.Add(Mapped.Parameter("?ser_id", ser.Ser_id));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datacadastro", ser.Ser_datacadastro));
             //objCommand.Parameters.Add(Mapped.Parameter("?ser_nome", ser.Ser_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?ser_datafim", ser.Ser_datafim));
@@ -170,7 +171,7 @@ public class ser_servicosDB
         IDbCommand objCommand;
 
         IDataAdapter objDataAdapter;
-        string sql = "select ser_id, pes_nome, ser_datainicio, ser_datafim, ser_destino, ser_descricao from ser_servicos ser inner join mot_motorista mot on mot.mot_id = ser.mot_id inner join usu_usuario usu on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id where ser.mot_id = ?id";
+        string sql = "select ser_id from ser_servicos ser inner join mot_motorista mot on mot.mot_id = ser.mot_id inner join usu_usuario usu on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id where ser.mot_id = ?id";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);

@@ -41,7 +41,7 @@ public partial class pages_Default : System.Web.UI.Page
                 + "<span class='text-right'>" + dados["ser_id"] + "</span></div>"
                 + "<div class='padding'>"
                 + "<b>Destino</b>: " + dados["ser_destino"] + "<br />"
-                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}",dados["ser_datainicio"]) + "<br />"
+                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br />"
                 + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "<br />"
                 + "<b>Mensagem</b>:" + dados["ser_descricao"]
             + "</div></div>";
@@ -51,7 +51,15 @@ public partial class pages_Default : System.Web.UI.Page
 
     public void Carregarddls()
     {
-        DataSet ds = ser_servicosDB.SelectAll();
+        mot_motorista mot = new mot_motorista();
+
+        DataSet codigo = new DataSet();
+
+        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+
+        int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+        DataSet ds = ser_servicosDB.SelectSer(c);
 
         ddlDelete.DataSource = ds;
         ddlDelete.DataTextField = "ser_id";
@@ -77,6 +85,23 @@ public partial class pages_Default : System.Web.UI.Page
 
     protected void ddlDelete_SelectedIndexChanged(object sender, EventArgs e)
     {
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+    }
 
+    protected void btnExcluir_Click(object sender, EventArgs e)
+    {
+        switch (ser_servicosDB.Delete(Convert.ToInt32(ddlDelete.SelectedValue)))
+        {
+            case 0:
+                Carregarddls();
+                //lbl2.Text = "Excluido com sucesso";
+                break;
+            case -2:
+                //lbl2.Text = "<<<   ERRO    >>>";
+                break;
+
+        }
+        Carregarddls();
+        Response.Redirect("TodosServicosMotorista.aspx", true);
     }
 }

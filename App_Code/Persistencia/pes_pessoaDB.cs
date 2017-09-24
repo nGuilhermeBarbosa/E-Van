@@ -95,34 +95,23 @@ public class pes_pessoaDB
         return ds;
     }
 
-    public static int Delete(int id)
+    public static void Delete(int id)
     {
-        int retorno = 0;
-
-        try
-        {
+        
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "delete pes, usu from pes_pessoa pes join usu_usuario usu on pes.pes_id = usu.pes_id where pes.pes_id = ?pes_id";
-
+            string sql = "delete from pes_pessoa where pes_id = ?pes_id";
+            
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
-
-
             objCommand.Parameters.Add(Mapped.Parameter("?pes_id", id));
-
+            //retorno = Convert.ToInt32(objCommand.ExecuteScalar());
             objCommand.ExecuteNonQuery();
             objConexao.Close();
             objConexao.Dispose();
             objCommand.Dispose();
-        }
-        catch (Exception)
-        {
-            //erro
-            retorno = -2;
-        }
-        return retorno;
+        
     }
 
     public static int Update(pes_pessoa pes)

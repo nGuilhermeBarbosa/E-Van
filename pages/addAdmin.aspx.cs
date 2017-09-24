@@ -42,11 +42,13 @@ public partial class pages_addAdmin : System.Web.UI.Page
 
             string n = txtNomeA.Text;
             ////cria um dataset, pois o SelectByEmail retorna um dataset
+
             DataSet id = new DataSet();
 
             id = pes_pessoaDB.SelectByEmail(n);
 
             pes.Pes_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+
             us.Pes_id = pes;
             //adm.Adm_cpf = txtCpf.Text;
 

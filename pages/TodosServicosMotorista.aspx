@@ -19,18 +19,22 @@
                     <div class="row">
                         <div class="col-lg-12">
                             Tem certeza que deseja excluir ?
-                       
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <asp:Button ID="btnExcluir" class="btn btn-default" runat="server" Text="Sim" onclick="btnExcluir_Click"/>
+                    <asp:Button ID="btnCancelar" class="btn btn-default" runat="server" Text="Cancelar" />
                 </div>
             </div>
 
         </div>
     </div>
+    <script type="text/javascript">
+            function openModal() {
+                $('#meuModal').modal('show');
+            }
+        </script>
     <div class="row">
         <div class="col-lg-9" style="float: left;">
             <asp:Literal ID="Literal1" runat="server">

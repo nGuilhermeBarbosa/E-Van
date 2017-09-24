@@ -59,7 +59,7 @@ public partial class pages_login : System.Web.UI.Page
     {
         usu_usuario usu = new usu_usuario();
         usu.Usu_email = txtEmail.Text;
-        usu.Usu_senha = txtSenha.Text;
+        usu.Usu_senha = Funções.Hash(txtSenha.Text, "SHA512");
 
         DataSet ds = usu_usuarioDB.SelectLOGIN(usu);
         // mot_motorista mot = new mot_motorista();

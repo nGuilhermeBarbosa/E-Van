@@ -71,17 +71,10 @@ public partial class pages_allAdmin : System.Web.UI.Page
 
     protected void btnConfirmaExclusao_Click(object sender, EventArgs e)
     {
-        switch (pes_pessoaDB.Delete(Convert.ToInt32(ddlAdmin.SelectedValue)))
-        {
-            case 0:
-                CarregarddlAdmin();
-                lbl2.Text = "Excluido com sucesso";
-                break;
-            case -2:
-                lbl2.Text = "<<<   ERRO    >>>";
-                break;
-
-        }
+        int i = Convert.ToInt32(ddlAdmin.SelectedValue);
+        usu_usuarioDB.Delete(i);
+        int id = Convert.ToInt32(ddlAdmin.SelectedValue);
+        pes_pessoaDB.Delete(id);
         CarregarddlAdmin();
         Response.Redirect("allAdmin.aspx", true);
     }

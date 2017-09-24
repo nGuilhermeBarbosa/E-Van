@@ -36,5 +36,4 @@ public class Mapped
     {
         return new MySqlParameter(nomeDoParametro, valor);
     }
-	
 }

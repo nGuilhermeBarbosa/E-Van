@@ -45,6 +45,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         DateTime data = DateTime.Now;
 
         ser_servicos serv = new ser_servicos();
+        serv.Ser_id = Convert.ToInt32(Label1.Text);
         serv.Ser_datacadastro = data;
         serv.Ser_origem = txtOrigem.Text;
         serv.Ser_destino = txtDestino.Text;
