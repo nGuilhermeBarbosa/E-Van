@@ -169,7 +169,7 @@ public partial class pages_index : System.Web.UI.Page
 
                 usu_usuario us = new usu_usuario();
                 us.Usu_email = txtEmailM.Text;
-                us.Usu_senha = txtSenhaM.Text;
+                us.Usu_senha = Funções.Hash(txtSenhaM.Text, "SHA512");
                 us.Usu_tipo = ddlPM.SelectedValue;
                 us.Pes_id = pes;
 

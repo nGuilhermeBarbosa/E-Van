@@ -76,12 +76,15 @@ public partial class pages_login : System.Web.UI.Page
             {
                 case "Passageiro":
                     Response.Redirect("homeCliente.aspx");
+                    this.MasterPageFile = "~/Client.master";
                     break;
                 case "Motorista":
                     Response.Redirect("homeMotorista.aspx");
+                    this.MasterPageFile = "~/Driver.master";
                     break;
                 case "Administrador":
                     Response.Redirect("allAdmin.aspx");
+                    this.MasterPageFile = "~/Admin.master";
                     break;
             }
             lbl.Visible = false;
