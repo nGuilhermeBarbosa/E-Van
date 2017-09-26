@@ -6,26 +6,9 @@
     <div class="row">
         <div class="title text-center">Serviços</div>
         <div class="col-lg-12">
-
-            <a href="serviceInfo.aspx" class="dblock">
-                <div class="serviceBox">
-                    <div class="title">João</div>
-                    <div class="padding">
-                        <table border="0">
-                            <tr>
-                                <td>
-                                    <b>Destino:&nbsp</b>Praia Grande<br />
-                                    <b>Cidade:&nbsp</b>Ubatuba<br />
-                                    <b>Saída:&nbsp</b>Guaratinguetá<br />
-                                </td>
-                                <td>
-                                    <div class="photoDriver border"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <p>9/5/2017</p>
-                </div>
+            
+                <asp:Literal ID="LiteralServices" runat="server"></asp:Literal>
+            
         </div>
     </div>
     <div class="getDown"></div>
