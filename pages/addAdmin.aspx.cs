@@ -37,7 +37,7 @@ public partial class pages_addAdmin : System.Web.UI.Page
 
             usu_usuario us = new usu_usuario();
             us.Usu_email = txtEmailA.Text;
-            us.Usu_senha = txtSenhaA.Text;
+            us.Usu_senha = Funções.Hash(txtSenhaA.Text, "SHA512");
             us.Usu_tipo = "Administrador";
 
             string n = txtNomeA.Text;
