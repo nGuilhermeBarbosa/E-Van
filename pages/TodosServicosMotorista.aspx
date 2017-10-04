@@ -35,7 +35,6 @@
                 $('#meuModal').modal('show');
             }
         </script>
-    <div class="row">
         <div class="col-lg-9" style="float: left;">
             <asp:Literal ID="Literal1" runat="server">
             </asp:Literal>
@@ -46,9 +45,6 @@
             <b class="glyphicon glyphicon-trash"> Excluir</b><br />
             <asp:DropDownList ID="ddlDelete" runat="server" CssClass="form-horizontal" OnSelectedIndexChanged="ddlDelete_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
         </div>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    </div>
-    <div class="getDown"></div>
 </asp:Content>
 

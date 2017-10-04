@@ -41,36 +41,8 @@
                 }
             </script>
             <asp:Literal ID="msg" runat="server"></asp:Literal>
-
-            <!--
-            <div class="serviceBox">
-                <div class="title">
-                    <span class="glyphicon glyphicon-remove">&nbsp;Excluir</span>
-                    <span class="glyphicon glyphicon-send">&nbsp;Responder</span>
-                </div>
-                <div class="padding">
-                    <b>Nome: </b>Cunha<br />
-                    <b>E-mail: </b>cunhafjg@gmail.com<br />
-                    <b>Mensagem: </b>Gostaria de saber se serei notificado se um serviço que eu denunciei foi removido.
-                </div>
-                <p>24/05/2017</p>
-            </div>
-
-            <div class="serviceBox">
-                <div class="title">
-                    <span class="glyphicon glyphicon-remove">&nbsp;Excluir</span>
-                    <span class="glyphicon glyphicon-send">&nbsp;Responder</span>
-                </div>
-                <div class="padding">
-                    <b>Nome: </b>Cunha<br />
-                    <b>E-mail: </b>cunhafjg@gmail.com<br />
-                    <b>Mensagem: </b>Gostaria de saber se serei notificado se um serviço que eu denunciei foi removido.
-                </div>
-                <p>24/05/2017</p>
-            </div>-->
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         </div>
     </div>
-    <div class="getDown"></div>
 </asp:Content>
 

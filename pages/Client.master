@@ -15,7 +15,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Modal -->
+        <div class="page">
+            <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
@@ -37,59 +38,63 @@
                 </div>
             </div>
 
-        <nav id="bgChange" class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <!-- Trabalha a responsividade do menu (COLLAPSE)-->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand glyphicon glyphicon-road logo" href="homeCliente.aspx">&nbsp E-Van</a>
+            <nav id="bgChange" class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <!-- Trabalha a responsividade do menu (COLLAPSE)-->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand glyphicon glyphicon-road logo" href="homeCliente.aspx">&nbsp E-Van</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a class="glyphicon glyphicon-book" href="servicesCliente.aspx">&nbsp;Serviços</a></li>
+                            <li><a href="sRequirementCliente.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
+                            <li><a href="TodosMotoristasCliente.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
+
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-pencil">&nbsp;Gerenciar <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="GerenciamentoSolicitações.aspx" class="glyphicon glyphicon-comment">&nbsp;Minhas Solicitações</a></li>
+                                    <li><a href="savedServices.aspx" class="glyphicon glyphicon-floppy-disk">&nbsp;Serviços Salvos</a></li>
+                                    <li><a href="Historico.aspx" class="glyphicon glyphicon-time">&nbsp;Histórico</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-bell"></span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Sem notificações</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp
+                                    <asp:Label ID="lblSessao" runat="server" Text="---"></asp:Label></span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="DadosCliente.aspx">
+                                        <div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div>
+                                    </a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp Acessibilidade</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <asp:Button ID="btnSair" runat="server" Text="Sair" OnClick="btnSair_Click" CssClass="noButtableButton" /></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a class="glyphicon glyphicon-book" href="servicesCliente.aspx">&nbsp;Serviços</a></li>
-                        <li><a href="sRequirementCliente.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
-                        <li><a href="TodosMotoristasCliente.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
-                        
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-pencil">&nbsp;Gerenciar <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="GerenciamentoSolicitações.aspx" class="glyphicon glyphicon-comment">&nbsp;Minhas Solicitações</a></li>
-                                <li><a href="savedServices.aspx" class="glyphicon glyphicon-floppy-disk">&nbsp;Serviços Salvos</a></li>
-                                <li><a href="Historico.aspx" class="glyphicon glyphicon-time">&nbsp;Histórico</a></li>
-                                
-                            </ul>
-                        </li> 
-                    </ul>
-                    
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-bell"></span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Sem notificações</a></li>
-                            </ul>
-                        </li>
+            </nav>
 
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp <asp:Label ID="lblSessao" runat="server" Text="---"></asp:Label></span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="DadosCliente.aspx"><div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div></a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp Acessibilidade</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><asp:Button ID="btnSair" runat="server" Text="Sair" OnClick="btnSair_Click" CssClass="noButtableButton" /></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
         <br />
         <br />
         <footer class="text-center">
