@@ -9,27 +9,6 @@
 
             <asp:Literal ID="LiteralServices" runat="server" Text="Nenhum serviço disponível no momento"></asp:Literal>
 
-            <!--
-            <a href="serviceInfo.aspx" class="dblock">
-                <div class="serviceBox">
-                    <div class="title">João</div>
-                    <div class="padding">
-                        <table border="0">
-                            <tr>
-                                <td>
-                                    <b>Destino:&nbsp</b>Praia Grande<br />
-                                    <b>Cidade:&nbsp</b>Ubatuba<br />
-                                    <b>Saída:&nbsp</b>Guaratinguetá<br />
-                                </td>
-                                <td>
-                                    <div class="photoDriver border"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <p>9/5/2017</p>
-                </div>
-                -->
         </div>
     </div>
 </asp:Content>

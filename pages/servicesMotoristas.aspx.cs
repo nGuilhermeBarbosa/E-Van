@@ -10,8 +10,9 @@ public partial class pages_servicesMotoristas : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //ServicesLoad();
+        ServicesLoad();
     }
+
 
     DataSet ds = ser_servicosDB.SelectAll();
 
@@ -21,11 +22,11 @@ public partial class pages_servicesMotoristas : System.Web.UI.Page
         {
             LiteralServices.Text += "<div class='serviceBox'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
-                + "<div class='padding'>"
+                +"<div class='padding'>"
                 + "<b>Destino</b>: " + dados["ser_destino"] + "<br />"
-                + "<b>Cidade</b>:" + dados["pes_cidade"] + "<br />"
-                + "<b>Saída</b>:" + dados["ser_cidade"] + "<br />"
-                + "<p>" + String.Format("{0:dd/MM/yyyy}",dados["ser_datainicio"]) + "</p>"
+                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br />"
+                + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "<br />"
+                + "<b>Mensagem</b>:" + dados["ser_descricao"]
             + "</div></div>";
         }
     }
