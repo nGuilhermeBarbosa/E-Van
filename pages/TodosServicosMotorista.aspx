@@ -18,11 +18,13 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            Tem certeza que deseja excluir ?
+                            
+                            <p id="par"></p>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <a href="#" class="btn btn-default" onclick="exc();">Simm</a>
                     <asp:Button ID="btnExcluir" class="btn btn-default" runat="server" Text="Sim" OnClick="btnExcluir_Click" />
                     <asp:Button ID="btnCancelar" class="btn btn-default" runat="server" Text="Cancelar" />
                 </div>
@@ -47,6 +49,13 @@
             <b class="glyphicon glyphicon-trash">Excluir</b><br />
             <asp:DropDownList ID="ddlDelete" runat="server" CssClass="form-horizontal" OnSelectedIndexChanged="ddlDelete_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
         </div>
+
     </div>
+    
+    <script src="jsExcluir.js">
+       
+
+
+</script>
 </asp:Content>
 

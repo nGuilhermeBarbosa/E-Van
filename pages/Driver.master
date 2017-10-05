@@ -7,11 +7,36 @@
     <title>E-Van</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/evs.css" rel="stylesheet" />
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/evjs.js"></script>
+    <style>
+        .jplist-pagination-info{
+            margin: 15px 15px 0 40px;
+        }
+
+        .jplist-items-per-page{
+            margin: 15px 10px 0 0;
+        }
+
+        .jplist-pagination{
+            margin: 10px 10px 15px 30px;
+        }
+
+        .center-block{
+            width: 415px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
