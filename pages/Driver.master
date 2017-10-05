@@ -98,7 +98,8 @@
                             </li>
 
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"> <asp:Label ID="lbl" runat="server" Text="---"></asp:Label></span><b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">
+                                    <asp:Label ID="lbl" runat="server" Text="---"></asp:Label></span><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="motorista.aspx">
                                         <div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div>
@@ -106,7 +107,7 @@
                                     </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="index.aspx">
-                                        <asp:Button ID="btn" runat="server" Text="Sair" onclick="btn_Click" CssClass="noButtableButton"/>
+                                        <asp:Button ID="btn" runat="server" Text="Sair" OnClick="btn_Click" CssClass="noButtableButton" />
                                     </a></li>
                                 </ul>
                             </li>
@@ -117,48 +118,48 @@
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-
-            <br />
-            <br />
-            <footer class="container-fluid text-center">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="innerFooterLeft">
-                            <p>
-                                <a href="help.aspx">Ajuda
-                                </a>
-                            </p>
-                            <p>
-                                <a href="perguntasFreq.aspx">Perguntas Frequêntes
-                                </a>
-                            </p>
-                            <p>
-                                <a href="termsOfUse.aspx">Termos de Uso</a>
-                            </p>
-                            <p>
-                                <a href="faleConosco.aspx">Fale Conosco
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="innerFooterRight">
-                            <b>Desenvolvido por</b>
-                            <p>
-                                Guilherme Cunha
-                            </p>
-                            <p>
-                                João Guilherme
-                            </p>
-                            <p>
-                                Laura Siqueira
-                            </p>
-                        </div>
+        </div>
+        <br />
+        <br />
+        <footer class="container-fluid text-center">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="innerFooterLeft">
+                        <p>
+                            <a href="help.aspx">Ajuda
+                            </a>
+                        </p>
+                        <p>
+                            <a href="perguntasFreq.aspx">Perguntas Frequêntes
+                            </a>
+                        </p>
+                        <p>
+                            <a href="termsOfUse.aspx">Termos de Uso</a>
+                        </p>
+                        <p>
+                            <a href="faleConosco.aspx">Fale Conosco
+                            </a>
+                        </p>
                     </div>
                 </div>
-            </footer>
+                <div class="col-lg-6">
+                    <div class="innerFooterRight">
+                        <b>Desenvolvido por</b>
+                        <p>
+                            Guilherme Cunha
+                        </p>
+                        <p>
+                            João Guilherme
+                        </p>
+                        <p>
+                            Laura Siqueira
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-        </div>
+
     </form>
 </body>
 </html>

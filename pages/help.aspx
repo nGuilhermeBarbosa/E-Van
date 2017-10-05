@@ -20,6 +20,5 @@
     Outras dúvidas, <a href="faleConosco.aspx">fale conosco!</a>
     </div>
     
-    <br /><br /><div class="getDown"></div>
 </asp:Content>
 

@@ -11,9 +11,6 @@
         Lamentamos o inconveniente, mas você não possui permissão para acessar essa página, 
         agradescemos a compreensão.
     </div>
-    <br /><br /><br /><br />
-    <div class="getDown"></div>
-    <br /><br /><br /><br />
-    <asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click"/>
+    <asp:Button ID="Button1" runat="server" Text="Press me" onclick="Button1_Click" CssClass="btn btn-danger"/>
 </asp:Content>
 

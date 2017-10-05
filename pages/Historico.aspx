@@ -8,7 +8,6 @@
             Histórico
             <span class="glyphicon glyphicon-trash glyphiconBar">&nbsp;Limpar</span>
         </div>
-        <div class="getDown"></div>
     </div>
 </asp:Content>
 

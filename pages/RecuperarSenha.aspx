@@ -12,15 +12,6 @@
                     CPF: <asp:TextBox ID="txtRecSenha" runat="server" TextMode="Number" CssClass="form-control"  required="required"></asp:TextBox>
                     <br />
                     <asp:button ID="RecConta" runat="server" text="Buscar Senha" cssClass="btn btn-lg" OnClick="RecConta_Click" />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                 </div>
             </div>
 

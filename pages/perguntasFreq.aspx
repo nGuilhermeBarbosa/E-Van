@@ -19,6 +19,5 @@
         <br />
     </div>
 
-    <div class="getDown"></div>
     <br />
 </asp:Content>

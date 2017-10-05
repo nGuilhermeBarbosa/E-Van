@@ -9,6 +9,5 @@
             <asp:Literal ID="LiteralMotoristas" runat="server"></asp:Literal>
         </div>
     </div>
-    <div class="getDown"></div>
 </asp:Content>
 

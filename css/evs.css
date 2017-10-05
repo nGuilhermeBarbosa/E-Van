@@ -1,4 +1,9 @@
 ﻿/* navbar */
+*{
+    margin:auto;
+    padding:0;
+}
+
 .navbar-default {
     background-color: #009ffb;
     border-color: #009ffb;
@@ -143,7 +148,6 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    /********************************/
     right: 0;
     left: 0;
     background: #384357;
@@ -581,4 +585,10 @@ footer {
     display:block;
     display:inline-block;
     margin-left:10%;
+}
+
+
+.page {
+    position: relative;
+    min-height:28.7em !important;
 }

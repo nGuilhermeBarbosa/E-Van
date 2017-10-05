@@ -45,6 +45,5 @@
             <asp:Button ID="btnNext" runat="server" Text="Próximo" CssClass="btn btn-info" />
         </asp:Panel>
     </div>
-    <div class="getDown"></div>
 </asp:Content>
 
