@@ -592,3 +592,7 @@ footer {
     position: relative;
     min-height:28.7em !important;
 }
+
+.shadow{
+    box-shadow: 1px 1px 5px #000;
+}

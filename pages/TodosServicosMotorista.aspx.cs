@@ -38,15 +38,18 @@ public partial class pages_Default : System.Web.UI.Page
 
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            Literal1.Text += "<div class='serviceBox'> "
+            Literal1.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["ser_id"] + "</span>" 
                 + "<span class='text-right'><a href='#' onclick='excluir("+ dados["ser_id"] + ", \""+ dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
                  + "   <span class='text-right'><a href = 'editService.aspx?ser=" + dados["ser_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp Editar</a></span></div>"
                 + "<div class='padding'>"
-                + "<b>Destino</b>: " + dados["ser_destino"] + "<br />"
+                + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
+                + "<b>Destino</b>: " + dados["ser_destino"] + "<br /><hr>"
                 + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br />"
+                + "<b>Hora de Saida</b>:" + String.Format("{0:HH:mm}", dados["ser_datainicio"]) + "<br /><hr>"
                 + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "<br />"
+                + "<b>Hora de Volta</b>:" + String.Format("{0:HH:mm}", dados["ser_datafim"]) + "<br /><hr>"
                 + "<b>Mensagem</b>:" + dados["ser_descricao"]
             + "</div></div>";
         }
