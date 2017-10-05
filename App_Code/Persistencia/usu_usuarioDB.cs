@@ -151,7 +151,7 @@ public class usu_usuarioDB
         IDbCommand objCommand;
 
         IDataAdapter objDataAdapter;
-        string sql = "select usu_id, usu_email, usu_senha, usu_tipo from usu_usuario where usu_email = ?usu_email and usu_senha = ?usu_senha";
+        string sql = "select usu_id, usu_email, usu_senha, usu_tipo, pes_nome from usu_usuario usu inner join pes_pessoa pes on pes.pes_id = usu.pes_id where usu_email = ?usu_email and usu_senha = ?usu_senha";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);

@@ -12,17 +12,18 @@ public class Sessão
 
     public string email { get; set; }
 
-    
+    public string nome { get; set; }
 
     public Sessão()
     {
 
     }
 
-    public Sessão(int id, string email)
+    public Sessão(int id, string email, string nome)
     {
         this.id = id;
         this.email = email;
+        this.nome = nome;
         
     }
 

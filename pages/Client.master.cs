@@ -20,7 +20,7 @@ public partial class pages_Client : System.Web.UI.MasterPage
             if (perfil == "Passageiro")
             {
                 Sessão usu = (Sessão)Session["nome"];
-                lblSessao.Text = usu.email;
+                lblSessao.Text = usu.nome;
                 //hdf.Value = usu.id.ToString();
                 //lblSessao.Text = Session["nome"].ToString();
             }
