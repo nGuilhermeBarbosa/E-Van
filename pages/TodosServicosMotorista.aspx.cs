@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.Services;
+
 public partial class pages_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -38,7 +40,9 @@ public partial class pages_Default : System.Web.UI.Page
         {
             Literal1.Text += "<div class='serviceBox'> "
                 + "<div class='title'>" + dados["pes_nome"]
-                + "<span class='text-right'>" + dados["ser_id"] + "</span></div>"
+                //+ "<span class='text-right'>" + dados["ser_id"] + "</span>" 
+                + "<span class='text-right'><a href='#' onclick='excluir("+ dados["ser_id"] + ", \""+ dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
+                 + "   <span class='text-right'><a href = 'editService.aspx?ser=" + dados["ser_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp Editar</a></span></div>"
                 + "<div class='padding'>"
                 + "<b>Destino</b>: " + dados["ser_destino"] + "<br />"
                 + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br />"
@@ -48,6 +52,15 @@ public partial class pages_Default : System.Web.UI.Page
         }
 
     }
+    
+
+    [WebMethod]
+    public static string Excluir(string par)
+    {
+        return par;
+    }
+
+
 
     public void Carregarddls()
     {

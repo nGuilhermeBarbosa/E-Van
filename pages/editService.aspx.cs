@@ -14,17 +14,28 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                CarregarVisualizar();
+                if (Request.QueryString["ser"] != null)
+                {
+                    if (!String.IsNullOrEmpty(Request.QueryString["ser"].ToString()))
+                    {
+                        CarregarVisualizar(Request.QueryString["ser"].ToString());
+                    }
+                    else Response.Redirect("TodosServicosMotorista.aspx");
+                }
+                else
+                    Response.Redirect("TodosServicosMotorista.aspx");
+
+                //CarregarVisualizar();
             }
         }
     }
 
-    public void CarregarVisualizar()
+    public void CarregarVisualizar(string par)
     {
         ser_servicos usu = new ser_servicos();
 
-        DataSet ds = ser_servicosDB.SelectDados(Convert.ToInt32(Context.Items["value"]));
-        Label1.Text = Context.Items["value"].ToString();
+        DataSet ds = ser_servicosDB.SelectDados(Convert.ToInt32(par));
+        Label1.Text = par;
 
         if (ds.Tables[0].Rows.Count == 1)
         {

@@ -58,7 +58,7 @@ public class mot_motoristaDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from mot_motorista";
+        string sql = "select pes_nome, pes_sexo, pes_cidade, usu_email from usu_usuario usu inner join mot_motorista mot on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id =       usu.pes_id";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
