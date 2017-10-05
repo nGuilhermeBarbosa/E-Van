@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btnExcluir" class="btn btn-default" runat="server" Text="Sim" onclick="btnExcluir_Click"/>
+                    <asp:Button ID="btnExcluir" class="btn btn-default" runat="server" Text="Sim" OnClick="btnExcluir_Click" />
                     <asp:Button ID="btnCancelar" class="btn btn-default" runat="server" Text="Cancelar" />
                 </div>
             </div>
@@ -31,20 +31,22 @@
         </div>
     </div>
     <script type="text/javascript">
-            function openModal() {
-                $('#meuModal').modal('show');
-            }
-        </script>
+        function openModal() {
+            $('#meuModal').modal('show');
+        }
+    </script>
+    <div class="row">
         <div class="col-lg-9" style="float: left;">
             <asp:Literal ID="Literal1" runat="server">
             </asp:Literal>
         </div>
-        <div class="col-lg-3" style="margin-top:10px;">
-            <b class="glyphicon glyphicon-edit"> Editar</b><br />
-            <asp:DropDownList ID="ddlEdit" runat="server" CssClass="form-horizontal" OnSelectedIndexChanged="ddlEdit_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList><br /><br />
-            <b class="glyphicon glyphicon-trash"> Excluir</b><br />
+        <div class="col-lg-3" style="margin-top: 10px;">
+            <b class="glyphicon glyphicon-edit">Editar</b><br />
+            <asp:DropDownList ID="ddlEdit" runat="server" CssClass="form-horizontal" OnSelectedIndexChanged="ddlEdit_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList><br />
+            <br />
+            <b class="glyphicon glyphicon-trash">Excluir</b><br />
             <asp:DropDownList ID="ddlDelete" runat="server" CssClass="form-horizontal" OnSelectedIndexChanged="ddlDelete_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
         </div>
-
+    </div>
 </asp:Content>
 

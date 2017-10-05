@@ -36,13 +36,18 @@ public partial class pages_Default : System.Web.UI.Page
 
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            Literal1.Text += "<div class='serviceBox'> "
+            Literal1.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"]
+                + "<span class='glyphicon glyphicon-delete text-right'>Excluir</span>"
+                + "<span class='glyphicon glyphicon-delete text-right'>Editar</span>"
                 + "<span class='text-right'>" + dados["ser_id"] + "</span></div>"
                 + "<div class='padding'>"
-                + "<b>Destino</b>: " + dados["ser_destino"] + "<br />"
+                + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
+                + "<b>Destino</b>: " + dados["ser_destino"] + "<br /><hr>"
                 + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br />"
+                + "<b>Hora de Saida</b>:" + String.Format("{0:HH:mm}", dados["ser_datainicio"]) + "<br /><hr>"
                 + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "<br />"
+                + "<b>Hora de Volta</b>:" + String.Format("{0:HH:mm}", dados["ser_datafim"]) + "<br /><hr>"
                 + "<b>Mensagem</b>:" + dados["ser_descricao"]
             + "</div></div>";
         }
