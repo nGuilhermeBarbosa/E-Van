@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="Error.aspx.cs" Inherits="pages_Error" %>
+﻿<%@ Page Title="You're not suppose to being here :/" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="Error.aspx.cs" Inherits="pages_Error" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

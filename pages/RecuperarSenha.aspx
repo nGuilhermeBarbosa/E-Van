@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="RecuperarSenha.aspx.cs" Inherits="pages_RecuperarSenha" %>
+﻿<%@ Page Title="Recuperar Senha" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="RecuperarSenha.aspx.cs" Inherits="pages_RecuperarSenha" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

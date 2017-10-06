@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Driver.master" AutoEventWireup="true" CodeFile="AlterarVeiculos.aspx.cs" Inherits="pages_AlterarVeiculos" %>
+﻿<%@ Page Title="Alterar Veículo" Language="C#" MasterPageFile="~/pages/Driver.master" AutoEventWireup="true" CodeFile="AlterarVeiculos.aspx.cs" Inherits="pages_AlterarVeiculos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
