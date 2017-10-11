@@ -63,6 +63,7 @@
                 </div>
                 <br />
                 
+                <!-- Panel Passageiro -->
                 <asp:Panel ID="pPassageiro" runat="server" Visible="true">
                     <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
@@ -98,11 +99,13 @@
                             </asp:DropDownList>
                         </div>
                         <div class="getDown"></div>
+                        <!--
                         <asp:Button ID="btnCadastrarPassageiro" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
-
+                        -->
                     </div>
                 </asp:Panel>
 
+                <!-- Painel Motorista -->
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
                     <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
@@ -139,7 +142,9 @@
                             </asp:DropDownList>
                         </div>
                         <div class="getDown"></div>
+                        <!--
                         <asp:Button ID="btnCadastrarMotorista" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
+                        -->
                     </div>
                 </asp:Panel>
 
@@ -175,6 +180,7 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
                 <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
+                <asp:Button ID="btnCadastrar" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrar_Click" />
             </div>
         </div>
     </div>
