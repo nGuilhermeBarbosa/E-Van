@@ -43,7 +43,7 @@ public class mxc_motorista_tipo_contatoDB
         return retorno;
     }
 
-    public static DataSet SelectAll()
+    public static DataSet SelectAll(int id)
     {
         DataSet ds = new DataSet();
         IDbConnection objConexao;
@@ -52,11 +52,11 @@ public class mxc_motorista_tipo_contatoDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from mxc_motorista_tipo_contato";
+        string sql = "select * from usu_usuario usu inner join mot_motorista mot on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id=?id";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
-
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
 

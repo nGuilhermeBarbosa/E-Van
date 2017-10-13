@@ -11,8 +11,10 @@ public class sol_solicitacao
     private int sol_id;
     private string sol_origem;
     private string sol_destino;
-    private string sol_data;
+    private DateTime sol_datainicio;
+    private DateTime sol_datafim;
     private int sol_qtdpessoas;
+    private string sol_descricao;
     private pas_passageiro pas_id;
 
     public global::pas_passageiro Pas_id
@@ -34,12 +36,6 @@ public class sol_solicitacao
         set { sol_qtdpessoas = value; }
     }
 
-    public string Sol_data
-    {
-        get { return sol_data; }
-        set { sol_data = value; }
-    }
-
     public string Sol_destino
     {
         get { return sol_destino; }
@@ -57,5 +53,44 @@ public class sol_solicitacao
     {
         get { return sol_id; }
         set { sol_id = value; }
+    }
+
+    public DateTime Sol_datainicio
+    {
+        get
+        {
+            return sol_datainicio;
+        }
+
+        set
+        {
+            sol_datainicio = value;
+        }
+    }
+
+    public DateTime Sol_datafim
+    {
+        get
+        {
+            return sol_datafim;
+        }
+
+        set
+        {
+            sol_datafim = value;
+        }
+    }
+
+    public string Sol_descricao
+    {
+        get
+        {
+            return sol_descricao;
+        }
+
+        set
+        {
+            sol_descricao = value;
+        }
     }
 }

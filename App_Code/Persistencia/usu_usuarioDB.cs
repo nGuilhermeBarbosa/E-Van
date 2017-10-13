@@ -143,7 +143,28 @@ public class usu_usuarioDB
 
         return ds;
     }
+    public static DataSet Select(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
 
+        IDataAdapter objDataAdapter;
+        string sql = "select pas_id from pas_passageiro pas inner join usu_usuario usu on usu.usu_id = pas.usu_id where usu.usu_id = ?id";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
     public static DataSet SelectLOGIN(usu_usuario usu)
     {
         DataSet ds = new DataSet();

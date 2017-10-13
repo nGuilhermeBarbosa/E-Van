@@ -18,9 +18,9 @@ public class sol_solicitacaoDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into sol_solicitacao ";
-            sql += "(sol_origem, sol_destino, sol_data, sol_qtdpessoas, cli_id)";
+            sql += "(sol_origem, sol_destino, sol_datainicio, sol_datafim, sol_qtdpessoas, sol_descricao, pas_id)";
             sql += "values ";
-            sql += "(?sol_origem, ?sol_destino, ?sol_data, ?sol_qtdpessoas, ?cli_id)";
+            sql += "(?sol_origem, ?sol_destino, ?sol_datainicio, ?sol_datafim, ?sol_qtdpessoas, ?sol_descricao, ?pas_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
@@ -28,8 +28,10 @@ public class sol_solicitacaoDB
 
             objCommand.Parameters.Add(Mapped.Parameter("?sol_origem", sol.Sol_origem));
             objCommand.Parameters.Add(Mapped.Parameter("?sol_destino", sol.Sol_destino));
-            objCommand.Parameters.Add(Mapped.Parameter("?sol_data", sol.Sol_data));
+            objCommand.Parameters.Add(Mapped.Parameter("?sol_datainicio", sol.Sol_datainicio));
+            objCommand.Parameters.Add(Mapped.Parameter("?sol_datafim", sol.Sol_datafim));
             objCommand.Parameters.Add(Mapped.Parameter("?sol_qtdpessoas", sol.Sol_qtdpessoas));
+            objCommand.Parameters.Add(Mapped.Parameter("?sol_descricao", sol.Sol_descricao));
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?pas_id", sol.Pas_id.Pas_id));
 

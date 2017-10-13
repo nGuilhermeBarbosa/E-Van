@@ -1,14 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Driver.master" AutoEventWireup="true" CodeFile="homeMotorista.aspx.cs" Inherits="pages_homeMotorista" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <div class="row">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:Label ID="lbl" runat="server"></asp:Label>
+    <%--<div class="popup">Para a utilização completa do sistema complete o seu cadastro <a href="#">Aqui</a> </div>--%>
+    <asp:HiddenField ID="hdf" runat="server" />
+    <div class="row">
         <div class="col-lg-9">
-
             <div class="title">Busca</div>
             <div class="filtro">
-                <br /><br />
+                <br />
+                <br />
                 <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Sua cidade"></asp:TextBox><br />
                 <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" placeholder="Para onde deseja ir?"></asp:TextBox><br />
                 <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" placeholder="Quando quer ir?"></asp:TextBox><br />

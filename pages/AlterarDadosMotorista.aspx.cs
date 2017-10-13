@@ -56,69 +56,56 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
         tpc_tipo_contato tpc = new tpc_tipo_contato();
 
         DataSet ds = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+    
 
-        if (ds.Tables[0].Rows.Count == 1)
+        mot.Mot_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+        mot.Mot_cnpj = txtCNPJ.Text;
+        mot_motoristaDB.Update(mot);
+
+        //tpc.Tpc_id = Convert.ToInt32(ddl.SelectedValue);
+        //mxc.Tpc_id = tpc;
+
+        //tpc_tipo_contatoDB.Update(tpc);
+
+        mxc.Mxc_descricao = txtTelefone.Text;
+        mxc_motorista_tipo_contatoDB.Update(mxc);
+
+        pes_pessoa pes = new pes_pessoa();
+        pes.Pes_id = Convert.ToInt32(hdf.Value);
+        pes.Pes_nome = txtNome.Text;
+        pes.Pes_sexo = ddlSexo.SelectedValue;
+        pes.Pes_cidade = ddlCidade.SelectedValue;
+        pes.Pes_estado = ddlEstado.SelectedValue;
+        pes.Pes_nascimento = Convert.ToDateTime(txtData.Text);
+
+        switch (pes_pessoaDB.Update(pes))
         {
-            //if (mxc.Mxc_descricao == null)
-            //{
-            //    hdfM.Value = ds.Tables[0].Rows[0]["mot_id"].ToString();
-
-            //    tpc.Tpc_id = Convert.ToInt32(ddl.SelectedValue);
-            //    CarregarDDL();
-
-            //    mot.Mot_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
-
-            //    mxc.Tpc_id = tpc;
-            //    mxc.Mxc_descricao = txtTelefone.Text;
-            //    mxc.Mot_id = mot;
-            //}
-            mot.Mot_cnpj = txtCNPJ.Text;
-            mot_motoristaDB.Update(mot);
-
-            tpc.Tpc_id = Convert.ToInt32(ddl.SelectedValue);
-            mxc.Tpc_id = tpc;
-
-            //tpc_tipo_contatoDB.Update(tpc);
-
-            mxc.Mxc_descricao = txtTelefone.Text;
-            mxc_motorista_tipo_contatoDB.Update(mxc);
-
-            pes_pessoa pes = new pes_pessoa();
-            pes.Pes_id = Convert.ToInt32(hdf.Value);
-            pes.Pes_nome = txtNome.Text;
-            pes.Pes_sexo = ddlSexo.SelectedValue;
-            pes.Pes_cidade = ddlCidade.SelectedValue;
-            pes.Pes_estado = ddlEstado.SelectedValue;
-            pes.Pes_nascimento = Convert.ToDateTime(txtData.Text);
-
-            switch (pes_pessoaDB.Update(pes))
-            {
-                case 0:
-                    //Response.Write("OK");
-                    Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
-                    break;
-                case -2:
-                    //Response.Write("ERRO");
-                    Response.Write("<script>alert('Ocorreu um Erro');</script>");
-                    break;
-            }
-
+            case 0:
+                //Response.Write("OK");
+                Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                break;
+            case -2:
+                //Response.Write("ERRO");
+                Response.Write("<script>alert('Ocorreu um Erro');</script>");
+                break;
         }
 
-
-        // switch (pas_passageiroDB.Update(cli))
-        //{
-        //    case 0:
-        //        //Response.Write("OK");
-        //        Label1.Text = "Dados Alterados com sucesso";
-        //        break;
-        //    case -2:
-        //        //Response.Write("ERRO");
-        //        Label1.Text = "Ocorreu um erro ao atualizar os dados, por favor confira os campos
-        //            "e tente novamente";
-        //        break;
-        //}
     }
+
+
+    // switch (pas_passageiroDB.Update(cli))
+    //{
+    //    case 0:
+    //        //Response.Write("OK");
+    //        Label1.Text = "Dados Alterados com sucesso";
+    //        break;
+    //    case -2:
+    //        //Response.Write("ERRO");
+    //        Label1.Text = "Ocorreu um erro ao atualizar os dados, por favor confira os campos
+    //            "e tente novamente";
+    //        break;
+    //}
+}
     //public void CarregarDDL()
     //{
     //    DataSet ds = tpc_tipo_contatoDB.SelectAll();
@@ -128,4 +115,3 @@ public partial class pages_AlterarDadosPessoais : System.Web.UI.Page
     //    ddl.DataBind();
     //    ddl.Items.Insert(0, "Selecione");
     //}
-}

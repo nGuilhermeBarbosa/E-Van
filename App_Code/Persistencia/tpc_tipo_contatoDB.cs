@@ -115,4 +115,27 @@ public class tpc_tipo_contatoDB
         objCommand.Dispose();
 
     }
+    public static DataSet SelectId(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "@select mot.mot_id, mxc.mxc_id from mxc_motorista_tipo_contato mxc inner join mot_motorista mot on mot.mot_id = mxc.mot_id inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where mot.mot_id = ?id ";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
 }

@@ -97,6 +97,46 @@ public class pas_passageiroDB
         }
         return retorno;
     }
+    public static DataSet SelectSolicitacao(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select sol_id, pes_nome, sol_origem, sol_datainicio, sol_datafim, sol_destino, sol_descricao from sol_solicitacao sol inner join pas_passageiro pas on pas.pas_id = sol.pas_id inner join usu_usuario usu on pas.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id where sol.pas_id = ?id";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+    public static DataSet SelectID(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select pas_id from pas_passageiro pas inner join usu_usuario usu on pas.usu_id = usu.usu_id where usu.usu_id = ?id";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
+        return ds;
+    }
     public static DataSet SelectDados(int id)
     {
         DataSet ds = new DataSet();
