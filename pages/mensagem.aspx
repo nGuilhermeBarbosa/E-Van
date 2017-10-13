@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Admin.master" AutoEventWireup="true" CodeFile="mensagem.aspx.cs" Inherits="pages_mensagem" %>
+﻿<%@ Page Title="Mensagens" Language="C#" MasterPageFile="~/pages/Admin.master" AutoEventWireup="true" CodeFile="mensagem.aspx.cs" Inherits="pages_mensagem" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -35,13 +35,39 @@
                 </div>
             </div>
 
+            <!-- Modal -->
+            <div id="ModalAnswer" class="modal fade" role="dialog">
+                <div class="modal-dialog mdleft">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="close" data-dismiss="modal">&times;</div>
+                            <h4 class="modal-title">Responder</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" placeholder="Mensagem" textmode="MultiLine"></asp:TextBox><br />
+                                    <asp:Button ID="btnAnswer" runat="server" CssClass="btn btn-success" Text="Enviar" OnClick="btnAnswer_Click"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <script type="text/javascript">
                 function openModal() {
                     $('#ModalLimpar').modal('show');
                 }
+                function openModalAnswer() {
+                    $('#ModalAnswer').modal('show');
+                }
             </script>
             <asp:Literal ID="msg" runat="server"></asp:Literal>
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+            <asp:Button ID="btnTest" runat="server" CssClass="btn btn-info" Text="Teste" OnClick="btnTest_Click"/>
         </div>
     </div>
 </asp:Content>

@@ -11,4 +11,12 @@ function undoBg() {
     document.getElementById("bgChange").style.backgroundColor = "#009ffb";
 }
 
-//oi
+$(document).ready(function () {
+    $("#ajuda").mouseenter(function () {
+        $("#ajudaSenha").show(500);
+    });
+
+    $("#ajuda").mouseleave(function () {
+        $("#ajudaSenha").hide(500);
+    });
+});

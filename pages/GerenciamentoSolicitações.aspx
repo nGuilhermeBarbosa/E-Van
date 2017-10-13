@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Client.master" AutoEventWireup="true" CodeFile="GerenciamentoSolicitações.aspx.cs" Inherits="pages_r_management" %>
+﻿<%@ Page Title="Gerenciamento de Solicitações" Language="C#" MasterPageFile="~/pages/Client.master" AutoEventWireup="true" CodeFile="GerenciamentoSolicitações.aspx.cs" Inherits="pages_r_management" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="about.aspx.cs" Inherits="pages_about" %>
+﻿<%@ Page Title="Sobre" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="about.aspx.cs" Inherits="pages_about" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="../js/cheet.min.js"></script>
