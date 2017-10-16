@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Data;
 
-public partial class pages_services : System.Web.UI.Page
+public partial class pages_Servicos : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["nome"] == null || Session["perfil"] == null)
-        {
-            Response.Redirect("error.aspx");
-        }
         ServicesLoad();
     }
     DataSet ds = ser_servicosDB.SelectAll();
@@ -23,7 +18,7 @@ public partial class pages_services : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            LiteralServices.Text += "<div class='serviceBox'> "
+            Literal1.Text += "<div class='serviceBox'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"
                 + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
