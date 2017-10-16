@@ -72,7 +72,7 @@
                             <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength(this.value)"></asp:TextBox>
                         </div>
                         <div class="col-lg-3">
-                            <span id='ajuda' class="glyphicon glyphicon-asterisk" style="cursor:default;">Dica de senha</span>
+                            <span id='ajuda' class="glyphicon glyphicon-asterisk" style="cursor:default;"> Recomendação de senha</span>
                             <br />
                             <p id="ajudaSenha" style="width: 300px; height: 100px; background: #ffffff; float: right; display: none; text-align: justify; box-shadow:1px 1px 5px #000; padding:5px;">
                                 É recomendável uma senha que contenha acima de 8 caracteres e contenha letras (maiusculas e minusculas), números e caracteres especiais
