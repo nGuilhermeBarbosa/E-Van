@@ -12,10 +12,10 @@
             <div class="col-lg-12 margin">
                 <div class="row">
                     <div class="col-lg-6">
-                        <asp:TextBox ID="txtOrigem" runat="server" placeholder="E-Mail" CssClass="form-control"></asp:TextBox><br />
+                        <asp:TextBox ID="txtOrigem" runat="server" placeholder="Origem" CssClass="form-control"></asp:TextBox><br />
                     </div>
                     <div class="col-lg-6">
-                        <asp:TextBox ID="txtDestino" runat="server" placeholder="Sua cidade" CssClass="form-control"></asp:TextBox><br />
+                        <asp:TextBox ID="txtDestino" runat="server" placeholder="Destino" CssClass="form-control"></asp:TextBox><br />
                     </div>
                 </div>
                 <div class="row">
