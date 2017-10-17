@@ -7,7 +7,7 @@
         <div class="title text-center">Serviços</div>
         <div class="col-lg-12">
 
-            <asp:Literal ID="LiteralServices" runat="server" Text="Nenhum serviço disponível no momento"></asp:Literal>
+            <asp:Literal ID="LiteralServices" runat="server" Text=""></asp:Literal>
 
         </div>
     </div>

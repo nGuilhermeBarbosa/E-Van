@@ -22,11 +22,12 @@ public partial class pages_servicesMotoristas : System.Web.UI.Page
         {
             LiteralServices.Text += "<div class='serviceBox'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
-                +"<div class='padding'>"
-                + "<b>Destino</b>: " + dados["ser_destino"] + "<br />"
-                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br />"
-                + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "<br />"
-                + "<b>Mensagem</b>:" + dados["ser_descricao"]
+                + "<div class='padding'>"
+                + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
+                + "<b>Destino</b>: " + dados["ser_destino"] + "<br /><hr />"
+                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br /><hr />"
+                + "<b>Vagas: </b>" + dados["ser_lugares"] + "<br />"
+                + "<button class='btn btn-default' style='float:right;'>Detalhes</button><br />"
             + "</div></div>";
         }
     }

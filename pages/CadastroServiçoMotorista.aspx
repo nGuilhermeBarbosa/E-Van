@@ -21,13 +21,23 @@
                 <br />
                 <div class="row">
                     <div class="col-lg-6">
-                        <asp:Label ID="lblDataInicio" runat="server" Text="Data Inicio" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblDataInicio" runat="server" Text="Data Partida" CssClass="margem"></asp:Label>
                         <asp:TextBox ID="txtDataInicio" runat="server" TextMode="Date" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>  
                     <div class ="col-lg-6">
-                        <asp:Label ID="lblDataFim" runat="server" Text="Data de Fim" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblDataFim" runat="server" Text="Data Retorno" CssClass="margem"></asp:Label>
                         <asp:TextBox ID="txtDataFim" runat="server" TextMode="Date" CssClass="form-control controle"></asp:TextBox>
+                        <br />
+                    </div><br />
+                    <div class="col-lg-6">
+                        <asp:Label ID="Label1" runat="server" Text="Hora Partida" CssClass="margem"></asp:Label>
+                        <asp:TextBox ID="TextBox1" runat="server" TextMode="Time" CssClass="form-control controle"></asp:TextBox>
+                        <br />
+                    </div>  
+                    <div class ="col-lg-6">
+                        <asp:Label ID="Label2" runat="server" Text="Hora Retorno" CssClass="margem"></asp:Label>
+                        <asp:TextBox ID="TextBox2" runat="server" TextMode="Time" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>
                 </div>
