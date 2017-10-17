@@ -12,6 +12,7 @@ public class usu_usuario
     private string usu_email;
     private string usu_senha;
     private string usu_tipo;
+    private Boolean usu_status;
     private pes_pessoa pes_id;
 
     public int Usu_id
@@ -57,6 +58,19 @@ public class usu_usuario
         set
         {
             pes_id = value;
+        }
+    }
+
+    public bool Usu_status
+    {
+        get
+        {
+            return usu_status;
+        }
+
+        set
+        {
+            usu_status = value;
         }
     }
 }

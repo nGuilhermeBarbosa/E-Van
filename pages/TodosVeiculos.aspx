@@ -5,11 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="title text-center">
         Meus Veículos
-        <span class="glyphicon glyphicon-plus glyphiconBar"><a href="CadastrarVeiculo.aspx">&nbsp Cadastrar Novo serviço</a></span>
+        <span class="glyphicon glyphicon-plus glyphiconBar"><a href="CadastrarVeiculo.aspx">&nbsp Cadastrar Novo Veículo</a></span>
     </div>
     <div id="meuModal" class="modal fade" role="dialog">
         <div class="modal-a">
-
+            <asp:HiddenField ID="hdf" runat="server" />
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">

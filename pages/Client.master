@@ -81,6 +81,13 @@
                                     <li><a href="DadosCliente.aspx">
                                         <div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div>
                                     </a></li>
+
+                                    <%--<li>
+                                        <div class="glyphicon glyphicon-off">
+                                            <asp:Button ID="btnDesativar" runat="server" Text="Desativar" OnClick="btnDesativar_Click" CssClass="noButtableButton" />
+                                        </div>
+                                    </li>--%>
+
                                     <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp Acessibilidade</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li>

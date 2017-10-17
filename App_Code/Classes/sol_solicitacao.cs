@@ -15,6 +15,7 @@ public class sol_solicitacao
     private DateTime sol_datafim;
     private int sol_qtdpessoas;
     private string sol_descricao;
+    private string sol_private;
     private pas_passageiro pas_id;
 
     public global::pas_passageiro Pas_id
@@ -91,6 +92,19 @@ public class sol_solicitacao
         set
         {
             sol_descricao = value;
+        }
+    }
+
+    public string Sol_private
+    {
+        get
+        {
+            return sol_private;
+        }
+
+        set
+        {
+            sol_private = value;
         }
     }
 }
