@@ -10,19 +10,14 @@ public class tdo_tipodocumento
 {
     private int tdo_id;
     private int tdo_obrigatorio;
-    private string tdo_descricao;
+    private string tdo_image;
 
-    public string Tdo_descricao
+    public string Tdo_image
     {
-        get { return tdo_descricao; }
-        set { tdo_descricao = value; }
+        get { return tdo_image; }
+        set { tdo_image = value; }
     }
 
-    public int Tdo_obrigatorio
-    {
-        get { return tdo_obrigatorio; }
-        set { tdo_obrigatorio = value; }
-    }
 
     public int Tdo_id
     {

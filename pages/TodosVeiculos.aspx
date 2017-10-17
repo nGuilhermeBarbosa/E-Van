@@ -9,7 +9,7 @@
     </div>
     <div id="meuModal" class="modal fade" role="dialog">
         <div class="modal-a">
-
+            <asp:HiddenField ID="hdf" runat="server" />
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">

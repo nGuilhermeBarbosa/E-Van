@@ -10,20 +10,8 @@ public class doc_documento
 {
     private mot_motorista mot_id;
     private tdo_tipodocumento tdo_id;
-    private string doc_image;
 
-    public string Doc_image
-    {
-        get
-        {
-            return doc_image;
-        }
 
-        set
-        {
-            doc_image = value;
-        }
-    }
 
     public global::tdo_tipodocumento Tdo_id
     {

@@ -18,16 +18,15 @@ public class tdo_tipodocumentoDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into  tdo_tipodocumento";
-            sql += "(tdo_obrigatorio, tdo_descricao)";
+            sql += "(tdo_image)";
             sql += "values ";
-            sql += "(?tdo_obrigatorio, ?tdo_descricao)";
+            sql += "(?tdo_image)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             // Chave estrangeira
-            objCommand.Parameters.Add(Mapped.Parameter("?tdo_obrigatorio", tdo.Tdo_obrigatorio));
-            objCommand.Parameters.Add(Mapped.Parameter("?tdo_descricao", tdo.Tdo_descricao));
+            objCommand.Parameters.Add(Mapped.Parameter("?tdo_image", tdo.Tdo_image));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

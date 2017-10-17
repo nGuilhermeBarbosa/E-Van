@@ -20,6 +20,7 @@ public partial class pages_Default : System.Web.UI.Page
                 hdf.Value = usu.id.ToString();
                 CarregarLiteral();
                 Carregarddls();
+                CadastroCompleto();
             }
         }
     }
@@ -119,5 +120,17 @@ public partial class pages_Default : System.Web.UI.Page
         }
         Carregarddls();
         Response.Redirect("TodosServicosMotorista.aspx", true);
+    }
+
+    public void CadastroCompleto()
+    {
+        DataSet ds = mxc_motorista_tipo_contatoDB.SelectAll(Convert.ToInt32(hdf.Value));
+        int qtd = ds.Tables[0].Rows.Count;
+
+        if (qtd == 0)
+        {
+            //lbl.Text = Convert.ToString(cont);
+            Response.Redirect("Erro.aspx");
+        }
     }
 }

@@ -37,4 +37,9 @@ public partial class pages_Client : System.Web.UI.MasterPage
         Session.Remove("perfil");
         Response.Redirect("index.aspx");
     }
+
+    protected void btnDesativar_Click(object sender, EventArgs e)
+    {
+
+    }
 }
