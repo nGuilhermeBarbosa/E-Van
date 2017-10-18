@@ -14,7 +14,10 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            Lamentamos informar que para prosseguir deve estar cadastrado no sistema
+                            Lamentamos informar que para prosseguir deve estar cadastrado no sistema<br /><br />
+                            <asp:Button ID="btnGtHP" runat="server" Text="Ir para a Home Page" OnClick="btnGtHP_Click" CssClass="btn btn-info"/>
+                            &nbsp;
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>
