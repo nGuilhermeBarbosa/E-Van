@@ -21,7 +21,7 @@ public partial class pages_Driver : System.Web.UI.MasterPage
             if (perfil == "Motorista")
             {
                 Sessão usu = (Sessão)Session["nome"];
-                lbl.Text = usu.email;
+                lbl.Text = usu.nome;
                 //hdf.Value = usu.id.ToString();
                 //lbl.Text = Session["nome"].ToString();
             }

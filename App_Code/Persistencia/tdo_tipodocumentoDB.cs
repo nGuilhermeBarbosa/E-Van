@@ -64,4 +64,27 @@ public class tdo_tipodocumentoDB
 
         return ds;
     }
+    public static DataSet SelectImage(string tdo_image)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select tdo_id from tdo_tipodocumento where tdo_image = ?tdo_image";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?tdo_image", tdo_image));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
 }

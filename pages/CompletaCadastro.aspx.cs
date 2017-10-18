@@ -40,6 +40,7 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
         mxc.Mot_id = mot;
         mxc.Tpc_id = tpc;
         mxc_motorista_tipo_contatoDB.Insert(mxc);
+
         //switch (mxc_motorista_tipo_contatoDB.Insert(mxc))
         //{
         //    case 0:
@@ -57,25 +58,27 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
         foreach (HttpPostedFile flp in fup.PostedFiles)
         {
 
-            try
-            {
+            
                 double mp = 2000;
 
                 if (fup.HasFile)
                 {
 
-                    string arq = Path.GetFileName(flp.FileName); string ext = Path.GetExtension(flp.FileName);
-                    ext = ext.ToLower(); double ta = flp.ContentLength / 1024;
+                    string arq = Path.GetFileName(flp.FileName);
+                    string ext = Path.GetExtension(flp.FileName);
+                    ext = ext.ToLower();
+                    double ta = flp.ContentLength / 1024;
 
                     if (ext == ".jpg" || ext == ".png" || ext == ".gif")
                     {
                         if (ta <= mp)
                         {
-                            arq = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ext; if (!File.Exists(dir + arq))
+                            arq = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ext;
+                            if (!File.Exists(dir + arq))
                             {
                                 flp.SaveAs(dir + arq);
 
-                                System.Drawing.Image imgOriginal = System.Drawing.Image.FromFile(Server.MapPath("~/pg/up loads/" + arq), true);
+                                System.Drawing.Image imgOriginal = System.Drawing.Image.FromFile(Server.MapPath("~/pg/uploads/" + arq), true);
 
                                 System.Drawing.Image.GetThumbnailImageAbort miniatura = new System.Drawing.Image.GetThumbnailImageAbort(erro);
 
@@ -97,16 +100,25 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
 
                                 imgRedimensionada = imgOriginal.GetThumbnailImage(width, height, miniatura, IntPtr.Zero);
 
-                                //nova imagem gerada string novo_nome = arq.Substring(0, arq.Length - 4) + "-mini.png"; 
-
-                                //salve a miniatura em um formato imgRedimensionada.Save(dir + novo_nome, System.Drawing.Imaging.ImageFormat.Png); 
 
                                 imgRedimensionada.Dispose();
 
                                 imgOriginal.Dispose();
 
-                                //visualize a original e a redimensionada                             //File.Delete(Server.MapPath("~/Uploads/" +       Path.GetFileName(flp.FileName))); 
-                                Response.Write("<script>alert('Imagem gravada com sucesso');</script>");
+                                Response.Write("<script>alert('Cadastrado com sucesso');</script>");
+                                tdo_tipodocumento tdo = new tdo_tipodocumento();
+                                tdo.Tdo_image = arq;
+                                tdo_tipodocumentoDB.Insert(tdo);
+
+                                string img = arq;
+                                DataSet id = new DataSet();
+                                id = tdo_tipodocumentoDB.SelectImage(img);
+                                tdo.Tdo_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+
+                                doc_documento doc = new doc_documento();
+                                doc.Mot_id = mot;
+                                doc.Tdo_id = tdo;
+                                doc_documentoDB.Insert(doc);
                             }
                             else
                             {
@@ -130,12 +142,11 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
                     Response.Write("<script>alert('Selecione um arquivo');</script>");
                 }
 
-            }
-            catch
-            {
-                Response.Write("<script>alert('Erro no upload');</script>");
-            }
+            
         }
+        
+
+        
     }
 
     public bool erro() { return false; }
