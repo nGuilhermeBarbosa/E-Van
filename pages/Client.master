@@ -51,7 +51,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a class="glyphicon glyphicon-book" href="servicesCliente.aspx">&nbsp;Serviços</a></li>
+                            <li><a class="glyphicon glyphicon-bullhorn" href="servicesCliente.aspx">&nbsp;Serviços</a></li>
                             <li><a href="sRequirementCliente.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
                             <li><a href="TodosMotoristasCliente.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
 
