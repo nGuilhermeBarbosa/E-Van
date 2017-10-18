@@ -32,12 +32,12 @@
                     </div><br />
                     <div class="col-lg-6">
                         <asp:Label ID="Label1" runat="server" Text="Hora Partida" CssClass="margem"></asp:Label>
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="Time" CssClass="form-control controle"></asp:TextBox>
+                        <asp:TextBox ID="txtHoraPartida" runat="server" type="Time" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>  
                     <div class ="col-lg-6">
                         <asp:Label ID="Label2" runat="server" Text="Hora Retorno" CssClass="margem"></asp:Label>
-                        <asp:TextBox ID="TextBox2" runat="server" TextMode="Time" CssClass="form-control controle"></asp:TextBox>
+                        <asp:TextBox ID="txtHoraRetorno" runat="server" type="Time" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>
                 </div>

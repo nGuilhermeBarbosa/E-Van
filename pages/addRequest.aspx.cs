@@ -21,8 +21,13 @@ public partial class pages_addRequest : System.Web.UI.Page
         sol.Sol_origem = txtOrigem.Text;
         sol.Sol_destino = txtDestino.Text;
         sol.Sol_datainicio = Convert.ToDateTime(txtDataInicio.Text);
+        sol.Sol_datainicio = Convert.ToDateTime(txtHoraInicio.Text);
         sol.Sol_datafim = Convert.ToDateTime(txtDataFim.Text);
+        sol.Sol_datafim = Convert.ToDateTime(txtHoraFim.Text);
         sol.Sol_qtdpessoas = Convert.ToInt32(txtPessoas.Text);
+        if (cbl.Checked == true) {
+            sol.Sol_private = true;
+        }
         sol.Sol_descricao = txtMensagem.Text;
         pas_passageiro pas = new pas_passageiro();
         
