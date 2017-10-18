@@ -21,7 +21,7 @@
             </div>
         <br />
         <br />
-        <asp:FileUpload ID="fup" runat="server" />
+        <asp:FileUpload ID="fup" runat="server" AllowMultiple="true"/>
         <br />
         <br />
         <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info margem" OnClick="btnEnviar_Click" />
