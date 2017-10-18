@@ -72,9 +72,9 @@
                             <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength(this.value)"></asp:TextBox>
                         </div>
                         <div class="col-lg-3">
-                            <span id='ajuda' class="glyphicon glyphicon-asterisk" style="cursor:default;"> Recomendação de senha</span>
+                            <span id='ajuda' class="glyphicon glyphicon-asterisk" style="cursor: default;">Recomendação de senha</span>
                             <br />
-                            <p id="ajudaSenha" style="width: 300px; height: 100px; background: #ffffff; float: right; display: none; text-align: justify; box-shadow:1px 1px 5px #000; padding:5px;">
+                            <p id="ajudaSenha" style="width: 300px; height: 100px; background: #ffffff; float: right; display: none; text-align: justify; box-shadow: 1px 1px 5px #000; padding: 5px;">
                                 É recomendável uma senha que contenha acima de 8 caracteres e contenha letras (maiusculas e minusculas), números e caracteres especiais
                             </p>
                         </div>
@@ -120,9 +120,20 @@
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
                     <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength2(this.value)"></asp:TextBox><br />
-
-                    <span id="password_strength2"></span>
+                   
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength2(this.value)"></asp:TextBox><br />
+                            <span id="password_strength2"></span>
+                        </div>
+                        <div class="col-lg-3">
+                            <span id='ajudam' class="glyphicon glyphicon-asterisk" style="cursor: default;">Recomendação de senha</span>
+                            <br />
+                            <p id="ajudaSenham" style="width: 300px; height: 100px; background: #ffffff; float: right; display: none; text-align: justify; box-shadow: 1px 1px 5px #000; padding: 5px;">
+                                É recomendável uma senha que contenha acima de 8 caracteres e contenha letras (maiusculas e minusculas), números e caracteres especiais
+                            </p>
+                        </div>
+                    </div>
 
                     <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required"></asp:TextBox><br />

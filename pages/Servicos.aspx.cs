@@ -19,7 +19,7 @@ public partial class pages_Servicos : System.Web.UI.Page
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
             Literal1.Text += "<div class='serviceBox'> "
-                + "<div class='title'>" + dados["pes_nome"] + "</div>"
+                + "<div class='title'><a href='" + dados["pes_nome"] + "'>"+ dados["pes_nome"] + "</a></div>"
                 + "<div class='padding'>"
                 + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
                 + "<b>Destino</b>: " + dados["ser_destino"] + "<br /><hr />"

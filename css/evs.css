@@ -590,7 +590,8 @@ footer {
 
 .page {
     position: relative;
-    min-height:28.7em !important;
+    min-height:100vh;
+    /*  min-height:28.7em !important;*/
 }
 
 .shadow{

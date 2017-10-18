@@ -19,4 +19,12 @@ $(document).ready(function () {
     $("#ajuda").mouseleave(function () {
         $("#ajudaSenha").hide(500);
     });
+
+    $("#ajudam").mouseenter(function () {
+        $("#ajudaSenham").show(500);
+    });
+
+    $("#ajudam").mouseleave(function () {
+        $("#ajudaSenham").hide(500);
+    });
 });
