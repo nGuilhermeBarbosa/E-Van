@@ -604,3 +604,7 @@ footer {
     float: left;
     padding: 10px;
 }
+check{
+    text-align:right;
+    padding-right:50px;
+}

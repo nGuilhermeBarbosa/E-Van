@@ -10,6 +10,7 @@
     <div class="signupBox">
         <div class="row">
             <div class="col-lg-12 margin">
+                <asp:CheckBox ID="cbl" runat="server" text="Privado"/>
                 <div class="row">
                     <div class="col-lg-6">
                         <asp:TextBox ID="txtOrigem" runat="server" placeholder="Origem" CssClass="form-control"></asp:TextBox><br />
@@ -26,7 +27,14 @@
                         <asp:TextBox ID="txtDataFim" runat="server" placeholder="Data de Volta" CssClass="form-control" TextMode="date"></asp:TextBox><br />
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-lg-6">
+                        <asp:TextBox ID="txtHoraInicio" runat="server" CssClass="form-control" TextMode="time"></asp:TextBox><br />
+                    </div>
+                    <div class="col-lg-6">
+                        <asp:TextBox ID="txtHoraFim" runat="server" CssClass="form-control" TextMode="time"></asp:TextBox><br />
+                    </div>
+                </div>
                 <asp:HiddenField ID="hdf" runat="server" />
                 <asp:TextBox ID="txtPessoas" runat="server" placeholder="Número de pessoas" CssClass="form-control" TextMode="number"></asp:TextBox><br />
                 <asp:TextBox ID="txtMensagem" runat="server" placeholder="Mensagem" TextMode="multiline" CssClass="form-control"></asp:TextBox><br />
