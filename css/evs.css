@@ -114,6 +114,7 @@
         margin-top: 20px;
         text-align: center !important;
         margin-left: 20px;
+        cursor:default !important;
     }
 }
 
