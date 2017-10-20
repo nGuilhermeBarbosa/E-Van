@@ -39,8 +39,8 @@ public partial class pages_r_management : System.Web.UI.Page
             LSolicitacao.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["sol_id"] + "</span>" 
-                + "<span class='text-right'><a href='#' onclick='excluir(" + dados["sol_id"] + ", \"" + dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
-                 + "   <span class='text-right'><a href = 'editService.aspx?ser=" + dados["sol_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp Editar</a></span>" +
+                + "<span class='text-right'><a href='#' onclick='excluir(" + dados["sol_id"] + ", \"" + dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp;Excluir</a></span>"
+                 + "   <span class='text-right'><a href = 'editService.aspx?ser=" + dados["sol_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp;Editar</a></span>" +
                  "</div>"
                 + "<div class='padding'>"
                 + "<b>Origem</b>: " + dados["sol_origem"] + "<br />"

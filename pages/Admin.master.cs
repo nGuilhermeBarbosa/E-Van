@@ -20,7 +20,7 @@ public partial class pages_Admin : System.Web.UI.MasterPage
             if (perfil == "Administrador")
             {
                 Sessão usu = (Sessão)Session["nome"];
-                lblAdmin.Text = usu.email;
+                lblAdmin.Text = usu.nome;
                 //hdf.Value = usu.id.ToString();
                 //lblSessao.Text = Session["nome"].ToString();
             }

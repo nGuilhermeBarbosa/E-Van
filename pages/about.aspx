@@ -42,7 +42,7 @@
     <div class="signupBox text-center">
         Vídeo de apresentação da plataforma
         <hr />
-        <video width="500" controls>
+        <video width="500" controls id="video">
             <source src="../video/about.ogg" type="video/mp4">
         </video>
         <hr />

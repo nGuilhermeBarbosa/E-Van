@@ -60,6 +60,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="TodosServicosMotorista.aspx" class="glyphicon glyphicon-book">&nbsp;Meus Serviços</a></li>
                                     <li><a href="TodosVeiculos.aspx" class="glyphicon glyphicon-road">&nbsp;Meus Veículos</a></li>
+                                    <li><a href="Condutores.aspx" class="glyphicon glyphicon-briefcase">&nbsp;Meus Condutores</a></li>
                                 </ul>
                             </li>
                         </ul>

@@ -102,6 +102,10 @@
     .signupBox {
         width: 300px !important;
     }
+
+    #video{
+        width: 250px !important;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -608,4 +612,8 @@ footer {
 check{
     text-align:right;
     padding-right:50px;
+}
+
+.leftButton{
+    float:left !important;
 }
