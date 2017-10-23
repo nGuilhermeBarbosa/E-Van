@@ -52,7 +52,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a class="glyphicon glyphicon-book" href="servicesMotoristas.aspx">&nbsp;Serviços</a></li>
+                            <li><a class="glyphicon glyphicon-bullhorn" href="servicesMotoristas.aspx">&nbsp;Serviços</a></li>
                             <li><a href="SolicitaçõesServiçosMotorista.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
                             <li><a href="TodosMotoristasMotoristas.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
                             <li class="dropdown">
@@ -60,6 +60,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="TodosServicosMotorista.aspx" class="glyphicon glyphicon-book">&nbsp;Meus Serviços</a></li>
                                     <li><a href="TodosVeiculos.aspx" class="glyphicon glyphicon-road">&nbsp;Meus Veículos</a></li>
+                                    <li><a href="Condutores.aspx" class="glyphicon glyphicon-briefcase">&nbsp;Meus Condutores</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -78,7 +79,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="motorista.aspx">
                                         <div class="glyphicon glyphicon-user">&nbsp;Meu Perfil</div>
-                                        <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp Acessibilidade</a></li>
                                     </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="index.aspx">

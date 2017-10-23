@@ -48,7 +48,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand glyphicon glyphicon-road logo" href="allAdmin.aspx">&nbsp E-Van</a>
+                        <a class="navbar-brand glyphicon glyphicon-road logo" href="allAdmin.aspx">&nbsp;E-Van</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -78,7 +78,6 @@
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp;<asp:Label ID="lblAdmin" runat="server" Text="Label"></asp:Label></span><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#" class="glyphicon glyphicon-user">&nbsp;Meu Perfil</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp Acessibilidade</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li>
                                         <asp:Button ID="btnSair" runat="server" Text="Sair" OnClick="btnSair_Click" CssClass="noButtableButton" /></li>

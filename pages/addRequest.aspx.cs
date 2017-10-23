@@ -28,6 +28,10 @@ public partial class pages_addRequest : System.Web.UI.Page
         if (cbl.Checked == true) {
             sol.Sol_private = true;
         }
+        else
+        {
+            sol.Sol_private = false;
+        }
         sol.Sol_descricao = txtMensagem.Text;
         pas_passageiro pas = new pas_passageiro();
         

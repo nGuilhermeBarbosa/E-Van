@@ -6,7 +6,7 @@
     <div class="row page">
         <div class="col-lg-12">
             <div class="title text-center">
-                Gerencimento de Solicitações
+                Minhas Solicitações
                 <span class="glyphicon glyphicon-plus glyphiconBar"><a href="addRequest.aspx">&nbsp;Adicionar</a></span>
             </div>
             <asp:HiddenField ID="hdf" runat="server" />

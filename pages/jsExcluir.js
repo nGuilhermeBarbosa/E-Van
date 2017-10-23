@@ -1,5 +1,5 @@
 ﻿function excluir(par, nome) {
-    $("#par").text("Tem certeza que deseja excluir o servico do motorista: " + nome);
+    $("#par").text("Tem certeza que deseja excluir o serviço do motorista: " + nome);
     $("#par").attr('rel', par);
     $("#meuModal").modal('show');
 }
