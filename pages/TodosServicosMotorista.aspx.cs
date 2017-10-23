@@ -20,7 +20,7 @@ public partial class pages_Default : System.Web.UI.Page
                 hdf.Value = usu.id.ToString();
                 CarregarLiteral();
                 Carregarddls();
-               // CadastroCompleto();
+               CadastroCompleto();
             }
         }
     }

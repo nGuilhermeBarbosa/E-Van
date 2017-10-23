@@ -82,4 +82,9 @@ public partial class pages_AlterarDadosCliente : System.Web.UI.Page
         //        break;
         //}
     }
+
+    protected void btnCancelar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("DadosCliente.aspx");
+    }
 }

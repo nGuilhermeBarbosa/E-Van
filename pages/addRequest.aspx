@@ -37,7 +37,7 @@
                 </div>
                 <asp:HiddenField ID="hdf" runat="server" />
                 <asp:TextBox ID="txtPessoas" runat="server" placeholder="Número de pessoas" CssClass="form-control" TextMode="number"></asp:TextBox><br />
-                <asp:TextBox ID="txtMensagem" runat="server" placeholder="Mensagem" TextMode="multiline" CssClass="form-control"></asp:TextBox><br />
+                <asp:TextBox ID="txtMensagem" runat="server" placeholder="Mensagem" TextMode="multiline" CssClass="form-control" Style="resize:none;"></asp:TextBox><br />
                 <asp:Button ID="btnCadastrar" runat="server" Text="Enviar" CssClass="btn btn-success" OnClick="btnCadastrar_Click" />
                 <asp:Label ID="Label1" runat="server" Text="---"></asp:Label><br />
                 <%--<asp:Label ID="Label2" runat="server" Text="---"></asp:Label>--%>
