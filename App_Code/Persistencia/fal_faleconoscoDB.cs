@@ -43,7 +43,40 @@ public class fal_faleconoscoDB
         }
         return retorno;
     }
+    public static int Inser(fal_faleconosco fal)
+    {
+        int retorno = 0;
 
+        try
+        {
+            //Correto
+            IDbConnection objConexao; //Abrir a conexão
+            IDbCommand objCommand; // Criar e executar os comandos
+            string sql = "insert into fal_faleconosco ";
+            sql += "(fal_nome, fal_email, fal_mensagem)";
+            sql += "values ";
+            sql += "(?fal_nome, ?fal_email, ?fal_mensagem)";
+
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConexao);
+
+
+            objCommand.Parameters.Add(Mapped.Parameter("?fal_nome", fal.fal_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?fal_email", fal.fal_email));
+            objCommand.Parameters.Add(Mapped.Parameter("?fal_mensagem", fal.fal_mensagem));
+
+            objCommand.ExecuteNonQuery();
+            objConexao.Close();
+            objConexao.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception)
+        {
+            //erro
+            retorno = -2;
+        }
+        return retorno;
+    }
     public static DataSet SelectAll()
     {
         DataSet ds = new DataSet();
