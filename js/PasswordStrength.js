@@ -36,23 +36,23 @@
         case 1:
             strength = "A sua senha está fraca, recomendamos melhora-la";
             color = "red";
-            $("#btnCadastrarPassageiro").prop('disabled', true);
+            $("#btnCadastrar").prop('disabled', true);
             break;
         case 2:
             strength = "Senha Boa";
             color = "darkorange";
-            $("#btnCadastrarPassageiro").prop('disabled', false);
+            $("#btnCadastrar").prop('disabled', false);
             break;
         case 3:
         case 4:
             strength = "Senha Forte";
             color = "green";
-            $("#btnCadastrarPassageiro").prop('disabled', false);
+            $("#btnCadastrar").prop('disabled', false);
             break;
         case 5:
             strength = "Senha Muito Forte";
             color = "darkgreen";
-            $("#btnCadastrarPassageiro").prop('disabled', false);
+            $("#btnCadastrar").prop('disabled', false);
             break;
     }
     password_strength.innerHTML = strength;
@@ -98,23 +98,23 @@ function CheckPasswordStrength2(password) {
         case 1:
             strength = "A sua senha está fraca, recomendamos melhora-la";
             color = "red";
-            $("#btnCadastrarMotorista").prop('disabled', true);
+            $("#btnCadastrar").prop('disabled', true);
             break;
         case 2:
             strength = "Senha Boa";
             color = "darkorange";
-            $("#btnCadastrarMotorista").prop('disabled', false);
+            $("#btnCadastrar").prop('disabled', false);
             break;
         case 3:
         case 4:
             strength = "Senha Forte";
             color = "green";
-            $("#btnCadastrarMotorista").prop('disabled', false);
+            $("#btnCadastrar").prop('disabled', false);
             break;
         case 5:
             strength = "Senha Muito Forte";
             color = "darkgreen";
-            $("#btnCadastrarMotorista").prop('disabled', false);
+            $("#btnCadastrar").prop('disabled', false);
             break;
     }
     password_strength.innerHTML = strength;

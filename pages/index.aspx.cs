@@ -43,7 +43,6 @@ public partial class pages_index : System.Web.UI.Page
             Label2.Visible = false;
         }
     }
-
     protected void btnCadastrarPassageiro_Click(object sender, EventArgs e)
     {
         if (txtSenha.Text == txtSenha2.Text)
@@ -224,7 +223,6 @@ public partial class pages_index : System.Web.UI.Page
 
     }
 
-
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {
         if (ddlPM.SelectedIndex == 1)
@@ -234,8 +232,9 @@ public partial class pages_index : System.Web.UI.Page
             {
                 if (CheckBox1.Checked == false)
                 {
-                    Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
-                    Label1.Visible = true;
+                    /*Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
+                    Label1.Visible = true;*/
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalCb();", true);
                 }
                 else if (Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
                 {
@@ -315,8 +314,9 @@ public partial class pages_index : System.Web.UI.Page
 
             else
             {
-                Label1.Text = "As senhas estão diferentes!";
-                Label1.Visible = true;
+                /*Label1.Text = "As senhas estão diferentes!";
+                Label1.Visible = true;*/
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalP();", true);
             }
 
         }
@@ -327,8 +327,9 @@ public partial class pages_index : System.Web.UI.Page
             {
                 if (CheckBox1.Checked == false)
                 {
-                    Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
-                    Label1.Visible = true;
+                    /*Label1.Text = "Para prosseguir você deve concordar com os Termos de Uso!";
+                    Label1.Visible = true;*/
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalCb();", true);
                 }
                 else
                 {
@@ -379,14 +380,15 @@ public partial class pages_index : System.Web.UI.Page
                     switch (mot_motoristaDB.Insert(mot))
                     {
                         case 0:
-                            Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                            //Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
                             txtEmailM.Text = "";
                             txtNomeM.Text = "";
                             txtCnpj.Text = "";
                             break;
                         case -2:
-                            Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>");
-
+                            //Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalE();", true);
                             break;
                     }
 
@@ -401,8 +403,9 @@ public partial class pages_index : System.Web.UI.Page
 
             else
             {
-                Label1.Text = "As senhas estão diferentes!";
-                Label1.Visible = true;
+                /*Label1.Text = "As senhas estão diferentes!";
+                Label1.Visible = true;*/
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalP();", true);
             }
 
         }
