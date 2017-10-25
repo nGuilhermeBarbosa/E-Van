@@ -25,7 +25,8 @@ public partial class pages_addRequest : System.Web.UI.Page
         sol.Sol_datafim = Convert.ToDateTime(txtDataFim.Text);
         sol.Sol_datafim = Convert.ToDateTime(txtHoraFim.Text);
         sol.Sol_qtdpessoas = Convert.ToInt32(txtPessoas.Text);
-        if (cbl.Checked == true) {
+        if (cbl.Checked == true)
+        {
             sol.Sol_private = true;
         }
         else
