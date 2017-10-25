@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="pages_index" %>--%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="pages_index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -109,9 +109,7 @@
                                 <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <!--
-                        <asp:Button ID="btnCadastrarPassageiro" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarPassageiro_Click" />
-                        -->
+                        
                     </div>
                 </asp:Panel>
 
@@ -162,9 +160,7 @@
                                 <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <!--
-                        <asp:Button ID="btnCadastrarMotorista" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrarMotorista_Click" />
-                        -->
+                        
                     </div>
                 </asp:Panel>
 
@@ -180,25 +176,7 @@
 
                 <br />
                 <br />
-                <asp:GridView ID="gridUsuario" runat="server" CssClass="table" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
-                    <Columns>
-                        <asp:BoundField DataField="mot_nome" HeaderText="Nome" />
-                        <%--<asp:BoundField DataField="usu_email" HeaderText="Email" />
-                        <asp:BoundField DataField="usu_senha" HeaderText="Senha" />--%>
-                        <asp:BoundField DataField="mot_sexo" HeaderText="Sexo" />
-                        <asp:BoundField DataField="mot_cidade" HeaderText="Cidade" />
-                        <asp:BoundField DataField="mot_estado" HeaderText="Estado" />
-                        <%--<asp:BoundField DataField="mot_cnpj" HeaderText="Cnpj" />--%>
-                    </Columns>
-                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                    <SortedDescendingHeaderStyle BackColor="#242121" />
-                </asp:GridView>
+                
                 <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
                 <asp:Button ID="btnCadastrar" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrar_Click" />
             </div>

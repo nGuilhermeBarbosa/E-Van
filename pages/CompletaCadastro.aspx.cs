@@ -161,4 +161,12 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
         ddl.DataBind();
         ddl.Items.Insert(0, "Selecione");
     }
+
+    protected void btnAdicionar_Click(object sender, EventArgs e)
+    {
+        //int cont = 0;
+        //for (int i = 0;i<=cont;i++) {
+        //    LiteralTelefone.Text += "<input type='text' name='name'>";
+        //}
+    }
 }

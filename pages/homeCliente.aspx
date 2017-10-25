@@ -10,7 +10,7 @@
             <div class="filtro">
                 <br /><br />
                 Sua Cidade
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" type="time"></asp:TextBox><br />
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox><br />
                 Para onde deseja ir?
                 <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox><br />
                 Quando quer ir?
