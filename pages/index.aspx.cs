@@ -292,14 +292,16 @@ public partial class pages_index : System.Web.UI.Page
                     switch (pas_passageiroDB.Insert(passageiro))
                     {
                         case 0:
-                            Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                            //Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
                             txtEmail.Text = "";
                             txtNome.Text = "";
                             txtCpf.Text = "";
                             Label1.Visible = false;
                             break;
                         case -2:
-                            Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>");
+                            //Response.Write("<script>alert('Ocorreu um erro, por favor verifique os campos e tente novamente');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalE();", true);
                             break;
                     }
 

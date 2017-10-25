@@ -58,95 +58,100 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
         foreach (HttpPostedFile flp in fup.PostedFiles)
         {
 
-            
-                double mp = 2000;
 
-                if (fup.HasFile)
+            double mp = 2000;
+
+            if (fup.HasFile)
+            {
+
+                string arq = Path.GetFileName(flp.FileName);
+                string ext = Path.GetExtension(flp.FileName);
+                ext = ext.ToLower();
+                double ta = flp.ContentLength / 1024;
+
+                if (ext == ".jpg" || ext == ".png" || ext == ".gif")
                 {
-
-                    string arq = Path.GetFileName(flp.FileName);
-                    string ext = Path.GetExtension(flp.FileName);
-                    ext = ext.ToLower();
-                    double ta = flp.ContentLength / 1024;
-
-                    if (ext == ".jpg" || ext == ".png" || ext == ".gif")
+                    if (ta <= mp)
                     {
-                        if (ta <= mp)
+                        arq = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ext;
+                        if (!File.Exists(dir + arq))
                         {
-                            arq = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ext;
-                            if (!File.Exists(dir + arq))
+                            flp.SaveAs(dir + arq);
+
+                            System.Drawing.Image imgOriginal = System.Drawing.Image.FromFile(Server.MapPath("~/pg/uploads/" + arq), true);
+
+                            System.Drawing.Image.GetThumbnailImageAbort miniatura = new System.Drawing.Image.GetThumbnailImageAbort(erro);
+
+                            System.Drawing.Image imgRedimensionada;
+
+                            int width, height;
+
+                            if (imgOriginal.Width > 200)
                             {
-                                flp.SaveAs(dir + arq);
 
-                                System.Drawing.Image imgOriginal = System.Drawing.Image.FromFile(Server.MapPath("~/pg/uploads/" + arq), true);
+                                width = 200; height = (int)(width * imgOriginal.Height) / imgOriginal.Width;
 
-                                System.Drawing.Image.GetThumbnailImageAbort miniatura = new System.Drawing.Image.GetThumbnailImageAbort(erro);
-
-                                System.Drawing.Image imgRedimensionada;
-
-                                int width, height;
-
-                                if (imgOriginal.Width > 200)
-                                {
-
-                                    width = 200; height = (int)(width * imgOriginal.Height) / imgOriginal.Width;
-
-                                }
-                                else
-                                {
-
-                                    width = imgOriginal.Width; height = imgOriginal.Height;
-                                }
-
-                                imgRedimensionada = imgOriginal.GetThumbnailImage(width, height, miniatura, IntPtr.Zero);
-
-
-                                imgRedimensionada.Dispose();
-
-                                imgOriginal.Dispose();
-
-                                Response.Write("<script>alert('Cadastrado com sucesso');</script>");
-                                tdo_tipodocumento tdo = new tdo_tipodocumento();
-                                tdo.Tdo_image = arq;
-                                tdo_tipodocumentoDB.Insert(tdo);
-
-                                string img = arq;
-                                DataSet id = new DataSet();
-                                id = tdo_tipodocumentoDB.SelectImage(img);
-                                tdo.Tdo_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
-
-                                doc_documento doc = new doc_documento();
-                                doc.Mot_id = mot;
-                                doc.Tdo_id = tdo;
-                                doc_documentoDB.Insert(doc);
                             }
                             else
                             {
-                                Response.Write("<script>alert('Arquivo ja existe');</script>");
 
+                                width = imgOriginal.Width; height = imgOriginal.Height;
                             }
+
+                            imgRedimensionada = imgOriginal.GetThumbnailImage(width, height, miniatura, IntPtr.Zero);
+
+
+                            imgRedimensionada.Dispose();
+
+                            imgOriginal.Dispose();
+
+                            //Response.Write("<script>alert('Cadastrado com sucesso');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
+                            tdo_tipodocumento tdo = new tdo_tipodocumento();
+                            tdo.Tdo_image = arq;
+                            tdo_tipodocumentoDB.Insert(tdo);
+
+                            string img = arq;
+                            DataSet id = new DataSet();
+                            id = tdo_tipodocumentoDB.SelectImage(img);
+                            tdo.Tdo_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+
+                            doc_documento doc = new doc_documento();
+                            doc.Mot_id = mot;
+                            doc.Tdo_id = tdo;
+                            doc_documentoDB.Insert(doc);
                         }
                         else
                         {
-                            Response.Write("<script>alert('Tamanho maximo excedido - 500KB');</script>");
+                            //Response.Write("<script>alert('Arquivo ja existe');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalF();", true);
+
                         }
                     }
                     else
                     {
-                        Response.Write("<script>alert('Extensão invalida');</script>");
+                        //Response.Write("<script>alert('Tamanho maximo excedido - 500KB');</script>");
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalMS();", true);
                     }
-
                 }
                 else
                 {
-                    Response.Write("<script>alert('Selecione um arquivo');</script>");
+                    //Response.Write("<script>alert('Extensão invalida');</script>");
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalEI();", true);
                 }
 
-            
-        }
-        
+            }
+            else
+            {
+                //Response.Write("<script>alert('Selecione um arquivo');</script>");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSl();", true);
+            }
 
-        
+
+        }
+
+
+
     }
 
     public bool erro() { return false; }
