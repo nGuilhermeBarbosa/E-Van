@@ -19,7 +19,7 @@ public partial class pages_mensagem : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            msg.Text += "<div class='serviceBox'> "
+            msg.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["fal_nome"] + "</div>"
                 + "<div class='padding'>"
                 + "<b>E-mail</b>: " + dados["fal_email"] + "<br />"
