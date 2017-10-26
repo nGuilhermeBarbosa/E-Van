@@ -5,17 +5,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
         <div class="col-lg-9">
-
+            
             <div class="title">Busca</div>
             <div class="filtro">
-                <br /><br />
+                <br />
+                <br />
                 Sua Cidade
+               
                 <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox><br />
                 Para onde deseja ir?
+               
                 <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox><br />
                 Quando quer ir?
+               
                 <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox><br />
                 Avaliação do Motorista
+               
                 <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
                     <asp:ListItem Value="null">Nível de avaliação do motorista</asp:ListItem>
                     <asp:ListItem>1</asp:ListItem>
@@ -30,26 +35,9 @@
             </div>
             <br />
             <div class="title">Principais Recomendações</div>
-            <a href="serviceInfo.aspx" class="dblock">
-                <div class="serviceBox">
-                    <div class="title">João</div>
-                    <div class="padding">
-                        <table border="0">
-                            <tr>
-                                <td>
-                                    <b>Destino:&nbsp</b>Praia Grande<br />
-                                    <b>Cidade:&nbsp</b>Ubatuba<br />
-                                    <b>Saída:&nbsp</b>Guaratinguetá<br />
-                                </td>
-                                <td>
-                                    <div class="photoDriver border"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <p>9/5/2017</p>
-                </div>
-            </a>
+            
+                <asp:Literal ID="LiteralServices" runat="server"></asp:Literal>
+            
 
         </div>
         <div class="col-lg-3">

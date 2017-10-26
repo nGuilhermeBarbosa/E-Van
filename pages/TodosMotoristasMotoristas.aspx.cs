@@ -18,7 +18,7 @@ public partial class pages_TodosMotoristas : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            LiteralMotoristas.Text += "<div class='serviceBox'> "
+            LiteralMotoristas.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"
                 + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"

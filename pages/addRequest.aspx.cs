@@ -47,7 +47,8 @@ public partial class pages_addRequest : System.Web.UI.Page
         switch (sol_solicitacaoDB.Insert(sol))
         {
             case 0:
-                Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                //Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSS();", true);
                 txtDestino.Text = null;
                 txtMensagem.Text = null;
                 txtDataInicio.Text = null;
@@ -56,7 +57,8 @@ public partial class pages_addRequest : System.Web.UI.Page
                 txtPessoas.Text = null;
                 break;
             case -2:
-                Response.Write("<script>alert('Erro, verifique os campos acima e tente novamente');</script>");
+                //Response.Write("<script>alert('Erro, verifique os campos acima e tente novamente');</script>");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSE();", true);
                 break;
         }
     }

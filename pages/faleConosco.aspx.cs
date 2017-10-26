@@ -22,7 +22,8 @@ public partial class pages_faleConosco : System.Web.UI.Page
         switch (fal_faleconoscoDB.Insert(fal))
         {
             case 0:
-                lblFeedBack.Text = "<script>alert('Mensagem enviada com sucesso');</script>";
+                //lblFeedBack.Text = "<script>alert('Mensagem enviada com sucesso');</script>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalCb();", true);
                 TextBox1.Text = null;
                 TextBox2.Text = null;
                 TextBox3.Text = null;
