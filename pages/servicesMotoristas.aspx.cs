@@ -20,14 +20,14 @@ public partial class pages_servicesMotoristas : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            LiteralServices.Text += "<div class='serviceBox'> "
+            LiteralServices.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"
                 + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
                 + "<b>Destino</b>: " + dados["ser_destino"] + "<br /><hr />"
                 + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br /><hr />"
                 + "<b>Vagas: </b>" + dados["ser_lugares"] + "<br />"
-                + "<button class='btn btn-default' style='float:right;'>Detalhes</button><br />"
+                + "<button type='button' class='btn btn-default' style='float:right;'>Detalhes</button><br />"
             + "</div></div>";
         }
     }

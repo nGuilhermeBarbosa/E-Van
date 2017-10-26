@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="title text-center">Novo Administrador</div>
+    <div class="title">
+        <span class="text-left glyphicon glyphicon-chevron-left leftButton"><a href="allAdmin.aspx">&nbsp;Voltar</a></span>
+        Adicionar Administrador
+    </div>
     <div class="row margem">
 
         <div class="col-lg-6 margin-left">

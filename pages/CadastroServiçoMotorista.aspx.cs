@@ -53,7 +53,8 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
                 //lblMsg.Text = "Cadastrado com sucesso";
                 break;
             case -2:
-                lblMsg.Text = "ERRO";
+                //lblMsg.Text = "ERRO";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSE();", true);
                 break;
         }
 

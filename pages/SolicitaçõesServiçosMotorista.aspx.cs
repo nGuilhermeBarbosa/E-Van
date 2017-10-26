@@ -31,7 +31,7 @@ public partial class pages_SolicitaçõesServiçosMotorista : System.Web.UI.Page
                 + "<b>Hora de Saida</b>:" + String.Format("{0:HH:mm}", dados["sol_datainicio"]) + "<br /><hr>"
                 + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["sol_datafim"]) + "<br />"
                 + "<b>Hora de Volta</b>:" + String.Format("{0:HH:mm}", dados["sol_datafim"]) + "<br /><br />"
-                + "<button class='btn btn-default' style='float:right;'>Detalhes</button><br />"
+                + "<button type='button' class='btn btn-default' style='float:right;'>Detalhes</button><br />"
             + "</div></div>";
         }
     }
