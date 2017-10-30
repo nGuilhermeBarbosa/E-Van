@@ -1,34 +1,97 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Public.master" AutoEventWireup="true" CodeFile="Test.aspx.cs" Inherits="pages_Test" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <!-- jquery library -->
+    <script src="jquery.js"></script>
+
+    <!-- jPList Core -->
+    <script src="jplist.core.min.js"></script>
+    <link href="jplist.core.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- jPList Sort Bundle -->
+    <script src="jplist.sort-bundle.min.js"></script>
+
+    <!-- jPList Pagination Bundle -->
+    <script src="jplist.pagination-bundle.min.js"></script>
+
+    <!-- Textbox Filter Control -->
+    <script src="jplist.textbox-filter.min.js"></script>
+    <link href="jplist.textbox-filter.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Other bundles or controls... -->
+
+    <!-- Initialization -->
+    <script>
+        $('document').ready(function () {
+
+            //check all jPList javascript options here
+            $('#demo').jplist({
+                itemsBox: '.list',
+                itemPath: '.list-item',
+                panelPath: '.jplist-panel'
+            });
+
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div id="fbSuccess" class="modal fade" role="dialog">
-        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
 
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="close" data-dismiss="modal">&times;</div>
-                    <h4 class="modal-title">Teste de Modal</h4>
+    <div id="demo">
+   
+           <!-- panel -->
+           <div class="jplist-panel">						
+      
+                <!-- filter by title -->
+                <div class="text-filter-box">
+                   <i class="fa fa-search  jplist-icon"></i>
+                   <input 
+                      data-path=".title" 
+                      type="text" 
+                      value="" 
+                      placeholder="Filter by Title" 
+                      data-control-type="textbox" 
+                      data-control-name="title-filter" 
+                      data-control-action="filter"
+                   />
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p class="glyphicon glyphicon-ok col-xs-12 text-center" style="font-size: 90px;"></p>
-                            <br />
-                            <p class="text-center">Ação realizada com Sucesso</p>
-                        </div>
-                    </div>
+      
+           </div>				 
+   
+           <!-- HTML data -->   
+           <div class="list">
+      
+                <!-- item 1 -->
+                <div class="list-item">	
+                   <p class="title">Architecture</p>
                 </div>
-            </div>
 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <button type="button" id="btnSuccess" data-toggle="modal" data-target="#fbSuccess" class="btn btn-success">Testar Modal OK</button>
-        </div>
-    </div>
+                <!-- item 2 -->
+                <div class="list-item">	
+                   <p class="title">Autumn</p>
+                </div>
 
+                <!-- item 3 -->
+                <div class="list-item">	
+                   <p class="title">Boats</p>
+                </div>
+
+                <!-- item 4 -->
+                <div class="list-item">	
+                   <p class="title">Arch</p>
+                </div>
+
+                <!-- item 5 -->
+                <div class="list-item">	
+                   <p class="title">Books</p>
+                </div>
+      
+           </div>
+   
+           <!-- no results found -->
+           <div class="jplist-no-results">
+              <p>No results found</p>
+           </div>
+               
+        </div>		
 </asp:Content>
 
