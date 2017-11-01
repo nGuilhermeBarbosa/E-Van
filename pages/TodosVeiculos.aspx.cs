@@ -10,7 +10,13 @@ public partial class pages_TodosVeiculos : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        CadastroCompleto();
+        if (Session["nome"] != null)
+        {
+            Sessão usu = (Sessão)Session["nome"];
+            //lblSessao.Text = usu.email;
+            hdf.Value = usu.id.ToString();
+            CadastroCompleto();
+        }
     }
     public void CadastroCompleto()
     {

@@ -165,18 +165,19 @@
         <div class="row">
             <div class="col-lg-3">
                 <asp:HiddenField ID="hdf" runat="server" />
-                <asp:Label ID="Telefone" runat="server" Text="Telefone" CssClass="margem" required="true"></asp:Label>
+                <asp:Label ID="Telefone" runat="server" Text="Telefone" CssClass="margem" required="true" onkeyup="formataTelefone(this,event);"></asp:Label>
                 <asp:DropDownList ID="ddl" runat="server" CssClass="form-control controle">
                 </asp:DropDownList>
             </div>
             <div class="col-lg-5">
                 <br />
-                <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control controle"></asp:TextBox>
-                <asp:Literal ID="LiteralTelefone" runat="server"></asp:Literal>
+                <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control" onkeyup="formataTelefone(this,event);"></asp:TextBox>
+                <asp:Panel ID="pnl" runat="server"></asp:Panel>
             </div>
             <div class="col-lg-3">
-                <asp:Button ID="btnAdicionar" runat="server" Text="+" CssClass="btn btn-link" Style="font-size: 22px; margin-top: 0.7em" OnClick="btnAdicionar_Click" />
+                <asp:Button ID="btnAdicionar" runat="server" Text="+" CssClass="btn btn-link" Style="font-size: 22px; margin-top: 0.7em" />
             </div>
+
         </div>
         <br />
         <br />

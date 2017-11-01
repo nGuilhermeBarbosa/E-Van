@@ -16,6 +16,7 @@
             $("#txtSenha").css("border", "1px solid #ff0000");
         }
     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
@@ -54,7 +55,7 @@
                         <div class="col-lg-12">
                             <p class="glyphicon glyphicon-file col-xs-12 text-center" style="font-size: 90px;"></p>
                             <br />
-                            <p class="text-center">Para prosseguir você deve concordar com os <a href="termsOfUse.aspx" style="color:#0094ff !important;">Termos de Uso</a></p>
+                            <p class="text-center">Para prosseguir você deve concordar com os <a href="termsOfUse.aspx" style="color: #0094ff !important;">Termos de Uso</a></p>
                         </div>
                     </div>
                 </div>
@@ -187,7 +188,7 @@
                     <span id="password_strength"></span>
 
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event);"></asp:TextBox><br />
                     Data de Nascimento
                     <asp:TextBox ID="txtData" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
                     Sexo
@@ -213,7 +214,7 @@
                                 <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        
+
                     </div>
                 </asp:Panel>
 
@@ -221,7 +222,7 @@
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
                     <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
-                   
+
                     <div class="row">
                         <div class="col-lg-9">
                             <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength2(this.value)"></asp:TextBox><br />
@@ -237,7 +238,7 @@
                     </div>
 
                     <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required" onkeyup="formataCNPJ(this,event);"></asp:TextBox><br />
                     Data de Nascimento
                     <asp:TextBox ID="txtDataM" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
 
@@ -264,7 +265,7 @@
                                 <asp:ListItem Selected="true">SP</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        
+
                     </div>
                 </asp:Panel>
 
@@ -280,11 +281,13 @@
 
                 <br />
                 <br />
-                
+
                 <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
                 <asp:Button ID="btnCadastrar" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrar_Click" />
             </div>
         </div>
     </div>
+    
+
 </asp:Content>
 

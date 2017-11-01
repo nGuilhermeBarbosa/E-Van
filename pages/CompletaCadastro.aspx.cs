@@ -32,24 +32,13 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
 
         tpc_tipo_contato tpc = new tpc_tipo_contato();
         tpc.Tpc_id = Convert.ToInt32(ddl.SelectedValue);
-        //tpc.Tpc_descricao = ddl.SelectedItem.Text;
-        //tpc_tipo_contatoDB.Insert(tpc);
+
 
         mxc_motorista_tipo_contato mxc = new mxc_motorista_tipo_contato();
         mxc.Mxc_descricao = txtTelefone.Text;
         mxc.Mot_id = mot;
         mxc.Tpc_id = tpc;
         mxc_motorista_tipo_contatoDB.Insert(mxc);
-
-        //switch (mxc_motorista_tipo_contatoDB.Insert(mxc))
-        //{
-        //    case 0:
-        //        Response.Write("<script>alert('Cadastrado com Sucesso');</script>");
-        //        break;
-        //    case -2:
-        //        Response.Write("<script>alert('ERRO');</script>");
-        //        break;
-        //}
 
         string dir = Request.PhysicalApplicationPath + "pg\\uploads\\";
 
@@ -167,11 +156,5 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
         ddl.Items.Insert(0, "Selecione");
     }
 
-    protected void btnAdicionar_Click(object sender, EventArgs e)
-    {
-        //int cont = 0;
-        //for (int i = 0;i<=cont;i++) {
-        //    LiteralTelefone.Text += "<input type='text' name='name'>";
-        //}
-    }
+
 }

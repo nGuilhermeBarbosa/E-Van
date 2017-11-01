@@ -35,11 +35,12 @@
         }
     </script>
     <div class="row">
+        <%--<asp:Label ID="Label1" runat="server" Text="can you see this?" style="visibility:hidden"></asp:Label>--%>
         <div class="title text-center col-lg-12">
             Meus Serviços
         <span class="glyphicon glyphicon-plus glyphiconBar"><a href="CadastroServiçoMotorista.aspx">&nbsp Cadastrar Novo serviço</a></span>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-12">
             <asp:Literal ID="Literal1" runat="server">
             </asp:Literal>
         </div>

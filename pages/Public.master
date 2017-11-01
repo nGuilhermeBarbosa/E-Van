@@ -13,6 +13,8 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/evjs.js"></script>
     <script src="../js/PasswordStrength.js"></script>
+    <script src="../js/mascara.js"></script>
+
 </head>
 <body>
 

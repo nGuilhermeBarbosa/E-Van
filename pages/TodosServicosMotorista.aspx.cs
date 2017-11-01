@@ -18,9 +18,13 @@ public partial class pages_Default : System.Web.UI.Page
                 Sessão usu = (Sessão)Session["nome"];
                 //lblSessao.Text = usu.email;
                 hdf.Value = usu.id.ToString();
+
                 CarregarLiteral();
                 Carregarddls();
-               CadastroCompleto();
+                CadastroCompleto();
+
+                //CarregarLiteral();
+
             }
         }
     }
@@ -32,6 +36,7 @@ public partial class pages_Default : System.Web.UI.Page
         DataSet codigo = new DataSet();
 
         codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+        // Label1.Text = par;
 
         int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
@@ -42,7 +47,7 @@ public partial class pages_Default : System.Web.UI.Page
             Literal1.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["ser_id"] + "</span>" 
-                + "<span class='text-right'><a href='#' onclick='excluir("+ dados["ser_id"] + ", \""+ dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
+                + "<span class='text-right'><a href='#' onclick='excluir(" + dados["ser_id"] + ", \"" + dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
                  + "   <span class='text-right'><a href = 'editService.aspx?ser=" + dados["ser_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp Editar</a></span></div>"
                 + "<div class='padding'>"
                 + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
@@ -56,7 +61,7 @@ public partial class pages_Default : System.Web.UI.Page
         }
 
     }
-    
+
 
     [WebMethod]
     public static string Excluir(string par)
@@ -95,9 +100,9 @@ public partial class pages_Default : System.Web.UI.Page
 
     protected void ddlEdit_SelectedIndexChanged(object sender, EventArgs e)
     {
-        int id = Convert.ToInt32(ddlEdit.SelectedValue);
-        Context.Items["value"] = id;
-        Server.Transfer("editService.aspx", true);
+        //int id = Convert.ToInt32(ddlEdit.SelectedValue);
+        //Context.Items["value"] = id;
+        //Server.Transfer("editService.aspx", true);
     }
 
     protected void ddlDelete_SelectedIndexChanged(object sender, EventArgs e)

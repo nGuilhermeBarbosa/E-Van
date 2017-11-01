@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
         <div class="col-lg-9">
-            
+
             <div class="title">Busca</div>
             <div class="filtro">
                 <br />
@@ -35,9 +35,9 @@
             </div>
             <br />
             <div class="title">Principais Recomendações</div>
-            
-                <asp:Literal ID="LiteralServices" runat="server"></asp:Literal>
-            
+
+            <asp:Literal ID="LiteralServices" runat="server"></asp:Literal>
+
 
         </div>
         <div class="col-lg-3">

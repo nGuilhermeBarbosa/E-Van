@@ -11,7 +11,6 @@
         <div class="row">
             <div class="col-lg-11">
                 <asp:Label ID="Label1" runat="server" Text="can you see this?" style="visibility:hidden"></asp:Label>
-                <asp:HiddenField ID="hdf" runat="server" />
                 <br />
                 <asp:Label ID="lblOrigem" runat="server" Text="Origem" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtOrigem" runat="server" CssClass="form-control controle"></asp:TextBox>

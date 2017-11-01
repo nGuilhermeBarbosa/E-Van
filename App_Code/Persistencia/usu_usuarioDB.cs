@@ -121,6 +121,29 @@ public class usu_usuarioDB
         return retorno;
     }
 
+    public static DataSet SelectEmail()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select usu_email from usu_usuario";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+       
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
     public static DataSet SelectByEmail(string email)
     {
         DataSet ds = new DataSet();
