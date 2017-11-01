@@ -31,7 +31,7 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                             <li><a class="glyphicon glyphicon-bullhorn" href="servicesMotoristas.aspx">&nbsp;Serviços</a></li>
-                            <li><a href="SolicitaçõesServiçosMotorista.aspx" class="glyphicon glyphicon-comment">&nbsp;Solicitações de Serviços</a></li>
+                            <li><a href="SolicitaçõesServiçosMotorista.aspx" class="glyphicon glyphicon-comment">&nbsp;Serviços Solicitados</a></li>
                             <li><a href="TodosMotoristasMotoristas.aspx" class="glyphicon glyphicon-user">&nbsp;Motoristas</a></li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-pencil">&nbsp;Gerenciar <b class="caret"></b></a>

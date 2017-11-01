@@ -11,4 +11,9 @@ public partial class pages_addCondutor : System.Web.UI.Page
     {
 
     }
+
+    protected void addCondutor_Click(object sender, EventArgs e)
+    {
+
+    }
 }
