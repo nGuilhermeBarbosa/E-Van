@@ -15,7 +15,7 @@
         Não é necessário, o sistema permite alterar o e-mail do usuário<br />
         <br />
         <b>Esqueci minha senha e agora?<br /></b>
-        A senha pode ser resgatada clicando no campo "esqueci a senha" no menu de login<br />
+        A senha pode ser resgatada clicando no campo "esqueci a senha" na página de login<br />
         <br />
     </div>
 

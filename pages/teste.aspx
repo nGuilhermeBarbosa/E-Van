@@ -167,8 +167,11 @@
                     </ul>
                 </div>
 
-                <!-- pagination results -->
-                <div class="jplist-label" data-type="{start} - {end} of {all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging">1 - 10 of 32</div>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+</asp:Content>
 
                 <!-- pagination -->
                 <div class="jplist-pagination" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true">

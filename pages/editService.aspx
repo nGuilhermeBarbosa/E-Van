@@ -1,8 +1,59 @@
 ﻿<%@ Page Title="Editar Serviço" Language="C#" MasterPageFile="~/pages/Driver.master" AutoEventWireup="true" CodeFile="editService.aspx.cs" Inherits="pages_CadastroServiço" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script type="text/javascript">
+        function openModalS() {
+            $('#fbSuccess').modal('show');
+        }
+        function openModalE() {
+            $('#fbError').modal('show');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div id="fbSuccess" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Atualizar Serviço</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="glyphicon glyphicon-ok col-xs-12 text-center" style="font-size: 90px;"></p>
+                            <br />
+                            <p class="text-center">Serviço atualizado com sucesso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="fbError" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Atualizar Serviço</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="glyphicon glyphicon-remove col-xs-12 text-center" style="font-size: 90px;"></p>
+                            <br />
+                            <p class="text-center">Ocorreu um erro, por favor verifique os campos e tente novamente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="title text-center">Cadastro De Serviço</div>
     <br />
     <br />

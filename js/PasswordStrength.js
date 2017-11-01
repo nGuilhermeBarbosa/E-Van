@@ -37,22 +37,26 @@
             strength = "A sua senha está fraca, recomendamos melhora-la";
             color = "red";
             $("#btnCadastrar").prop('disabled', true);
+            $("#feedback").show();
             break;
         case 2:
             strength = "Senha Boa";
             color = "darkorange";
             $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
             break;
         case 3:
         case 4:
             strength = "Senha Forte";
             color = "green";
             $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
             break;
         case 5:
             strength = "Senha Muito Forte";
             color = "darkgreen";
             $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
             break;
     }
     password_strength.innerHTML = strength;
@@ -99,22 +103,26 @@ function CheckPasswordStrength2(password) {
             strength = "A sua senha está fraca, recomendamos melhora-la";
             color = "red";
             $("#btnCadastrar").prop('disabled', true);
+            $("#feedback").show();
             break;
         case 2:
             strength = "Senha Boa";
             color = "darkorange";
             $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
             break;
         case 3:
         case 4:
             strength = "Senha Forte";
             color = "green";
             $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
             break;
         case 5:
             strength = "Senha Muito Forte";
             color = "darkgreen";
             $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
             break;
     }
     password_strength.innerHTML = strength;

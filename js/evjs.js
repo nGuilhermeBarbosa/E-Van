@@ -27,4 +27,8 @@ $(document).ready(function () {
     $("#ajudam").mouseleave(function () {
         $("#ajudaSenham").hide(500);
     });
+
+    $("#btnSearch").click(function () {
+        $("#campoBusca").toggle(500);
+    });
 });

@@ -36,6 +36,6 @@ public partial class pages_Driver : System.Web.UI.MasterPage
     {
         Session.Remove("nome");
         Session.Remove("perfil");
-        Response.Redirect("login.aspx");
+        Response.Redirect("index.aspx");
     }
 }
