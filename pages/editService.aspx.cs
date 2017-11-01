@@ -69,10 +69,12 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         switch (ser_servicosDB.Update(serv))
         {
             case 0:
-                lblMsg.Text = "Atualizado com sucesso";
+                //lblMsg.Text = "Atualizado com sucesso";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
                 break;
             case -2:
-                lblMsg.Text = "ERRO";
+                //lblMsg.Text = "ERRO";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalE();", true);
                 break;
         }
     }

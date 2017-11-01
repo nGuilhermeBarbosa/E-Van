@@ -203,7 +203,7 @@ Mauris malesuada ultrices vestibulum. Curabitur sit amet elementum nulla. Donec 
                 <br />
 
                 <!-- Panel Passageiro -->
-                <asp:Panel ID="pPassageiro" runat="server" Visible="true">
+                <asp:Panel ID="pPassageiro" runat="server" Visible="true"><br />
                     <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
                     <div class="row">
@@ -223,7 +223,6 @@ Mauris malesuada ultrices vestibulum. Curabitur sit amet elementum nulla. Donec 
 
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" required="required"></asp:TextBox><br />
-                    Data de Nascimento
                     <asp:TextBox ID="txtData" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
                     Sexo
                     <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">

@@ -41,7 +41,7 @@ public partial class pages_homeMotorista : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            LiteralServices.Text += "<div class='serviceBox'> "
+            LiteralServices.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"
                 + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
