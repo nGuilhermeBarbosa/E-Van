@@ -317,6 +317,7 @@ Mauris malesuada ultrices vestibulum. Curabitur sit amet elementum nulla. Donec 
                 <br />
                 
                 <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
+                <p id="feedback" style="display:none; color:#ff0000;">É necessário uma senha no mínimo boa para cadastrar-se no sistema.<br />Digite uma senha melhor.</p>
                 <asp:Button ID="btnCadastrar" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrar_Click" />
             </div>
         </div>

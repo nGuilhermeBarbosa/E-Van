@@ -10,20 +10,20 @@
             <div id="campoBusca" class="col-lg-12" style="display: none;">
 
                 <div class="filtro">
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Sua cidade"></asp:TextBox><br />
-                    <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" placeholder="Para onde deseja ir?"></asp:TextBox><br />
-                    <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" placeholder="Quando quer ir?"></asp:TextBox><br />
-                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
-                        <asp:ListItem Value="null">Nível de avaliação do motorista</asp:ListItem>
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem Value="6">Exibir todas as op&#231;&#245;es</asp:ListItem>
-                    </asp:DropDownList>
+                    Local de Origem<br />
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox><br />
+                    Local de Destino<br />
+                    <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox><br />
+                    Data Prevista<br />
+                    <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox><br />
+                    Ranking<br />
+                    <asp:CheckBox ID="CheckBox1" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="CheckBox2" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="CheckBox3" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="CheckBox4" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="CheckBox5" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
                     <br />
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-info" />
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-info" autopostback="true"/>
                 </div>
             </div>
             <br />
