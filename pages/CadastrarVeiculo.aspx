@@ -5,21 +5,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="title text-center">Cadastrar Veiculo</div>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="signupBox">
             <br />
             <br />
-            <div class="row">
                 <div class="col-lg-6">
                     <asp:Label ID="lblVeiculo" runat="server" Text="Tipo De Veiculo" CssClass="margem"></asp:Label>
                     <asp:DropDownList ID="ddlVeiculo" runat="server" CssClass="form-control controle dropdown">
-                        
                     </asp:DropDownList>
                 </div>
                 <div class="col-lg-6">
                     <asp:Label ID="lblModelo" runat="server" Text="Modelo" CssClass="margem"></asp:Label>
                     <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control controle"></asp:TextBox>
                 </div>
-            </div>
             <br />
             <br />
             <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label>
@@ -31,10 +28,10 @@
             <br />
             <br />
             <asp:Label ID="lblFoto" runat="server" Text="Upload de Fotos: " CssClass="up"></asp:Label>
-            <asp:ImageButton ID="imgVeiculo" runat="server" CssClass="up"/>
+            <asp:ImageButton ID="imgVeiculo" runat="server" CssClass="up" />
             <br />
             <br />
-            <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" cssclass="btn btn-default margem"/>
+            <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-default margem" />
         </div>
     </div>
 </asp:Content>

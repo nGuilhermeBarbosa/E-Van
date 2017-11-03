@@ -56,7 +56,10 @@
         </div>
     </div>
 
-    <div class="title text-center">Cadastrar Solicitação</div>
+    <div class="title text-center">
+        <span class="text-left glyphicon glyphicon-chevron-left leftButton"><a href="GerenciamentoSolicitações.aspx">&nbsp;Voltar</a></span>
+        Cadastrar Solicitação
+    </div>
     <br />
     <br />
     <br />

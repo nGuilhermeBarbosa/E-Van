@@ -1,11 +1,11 @@
 CREATE DATABASE evanew;
 USE evanew;
--- DROP DATABASE EVANEW;
-
+#DROP DATABASE EVANEW;
 
 CREATE TABLE pes_pessoa(
 	pes_id INT PRIMARY KEY AUTO_INCREMENT,
     pes_nome VARCHAR(50) NOT NULL,
+    pes_sexo VARCHAR(1) NOT NULL,
     pes_sexo VARCHAR(1) NOT NULL,
     pes_nascimento DATE NOT NULL,
     pes_cidade VARCHAR(20),
@@ -204,7 +204,7 @@ CREATE TABLE ctp_condutor_tipo_contato (
   ctp_descricao VARCHAR(200) 
   );
   
-  
+
 
 select mxc_descricao, tdo_image from usu_usuario usu 
 inner join mot_motorista mot on mot.usu_id = usu.usu_id 
@@ -260,7 +260,6 @@ insert into rec_recursos (rec_descricao) values ("Porta Automática");
 insert into tve_tipoveiculo (tve_descricao) values ("Doblô");
 insert into tve_tipoveiculo (tve_descricao) values ("Van");
 insert into tve_tipoveiculo (tve_descricao) values ("Mini-Van");
-
 
 insert into tpc_tipo_contato (tpc_descricao) values ("Telefone");
 insert into tpc_tipo_contato (tpc_descricao) values ("Celular");
