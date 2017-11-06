@@ -12,7 +12,6 @@
                 <div class="col-lg-6">
                     <asp:Label ID="lblVeiculo" runat="server" Text="Tipo De Veiculo" CssClass="margem"></asp:Label>
                     <asp:DropDownList ID="ddlVeiculo" runat="server" CssClass="form-control controle dropdown">
-                        
                     </asp:DropDownList>
                 </div>
                 <div class="col-lg-6">

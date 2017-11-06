@@ -18,7 +18,16 @@ public partial class pages_Default : System.Web.UI.Page
                 Sessão usu = (Sessão)Session["nome"];
                 //lblSessao.Text = usu.email;
                 hdf.Value = usu.id.ToString();
-
+                //if (Request.QueryString["value"] != null)
+                //{
+                //    if (!String.IsNullOrEmpty(Request.QueryString["value"].ToString()))
+                //    {
+                //        CarregarLiteral(Request.QueryString["value"].ToString());
+                //        Carregarddls();
+                //        CadastroCompleto();
+                //    }
+                //}
+                //CarregarLiteral();
                 CarregarLiteral();
                 Carregarddls();
                 CadastroCompleto();

@@ -12,7 +12,6 @@ CREATE TABLE pes_pessoa(
     pes_estado VARCHAR(2)
 );
 
-
 CREATE TABLE usu_usuario(
   usu_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   usu_email VARCHAR(100) NOT NULL,
@@ -64,7 +63,14 @@ CREATE TABLE doc_documento (
   tdo_id INT(11) NOT NULL,
   FOREIGN KEY (tdo_id) references tdo_tipodocumento(tdo_id)
   );
-
+  
+CREATE  TABLE con_condutor (
+	con_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    con_nome VARCHAR(20) NOT NULL,
+    con_cpf VARCHAR(13) NOT NULL,
+    mot_id INT NOT NULL,
+    FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id)
+);
 
 CREATE TABLE ser_servicos (
   ser_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -77,7 +83,9 @@ CREATE TABLE ser_servicos (
   ser_descricao VARCHAR(200) NOT NULL,
   ser_lugares INT(3) NOT NULL,
   mot_id INT(11) NOT NULL,
-  FOREIGN KEY (mot_id) references mot_motorista(mot_id));
+  FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id),
+  con_id INT NOT NULL,
+  FOREIGN KEY (con_id) REFERENCES con_condutor (con_id));
 
 CREATE TABLE Int_interesse (
   pas_id INT(11) NOT NULL,
@@ -187,16 +195,8 @@ CREATE TABLE fal_faleConosco(
   fal_mensagem VARCHAR(200) NOT NULL
 );
 
-CREATE  TABLE con_condutor (
-	con_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    con_nome VARCHAR(20) NOT NULL,
-    con_cpf VARCHAR(13) NOT NULL,
-    mot_id INT NOT NULL,
-    FOREIGN KEY (mot_id) REFERENCES tpc_tipo_contato(tpc_id)
-);
-
 CREATE TABLE ctp_condutor_tipo_contato (
-  mxc_id INT PRIMARY KEY AUTO_INCREMENT,
+  ctp_id INT PRIMARY KEY AUTO_INCREMENT,
   con_id INT(11) NOT NULL,
   FOREIGN KEY (con_id) REFERENCES con_condutor(con_id),
   tpc_id INT(11) NOT NULL,

@@ -21,6 +21,7 @@ public partial class pages_Client : System.Web.UI.MasterPage
             {
                 Sessão usu = (Sessão)Session["nome"];
                 lblSessao.Text = usu.nome;
+                Context.Items["value"] = usu.id.ToString();
                 //hdf.Value = usu.id.ToString();
                 //lblSessao.Text = Session["nome"].ToString();
             }

@@ -12,11 +12,17 @@
             </div>
             <br />
             <br />
-            <div class="signupBox" style="margin-top:20px;">
+            <div class="signupBox" style="margin-top: 20px;">
                 Nome:&nbsp;<asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="true"></asp:TextBox><br />
                 CPF:&nbsp;<asp:TextBox ID="txtCPF" runat="server" placeholder="CPF" CssClass="form-control" required="true"></asp:TextBox><br />
-                E-mail:&nbsp;<asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" required="true"></asp:TextBox><br />
-                Telefone:&nbsp;<asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control" required="true"></asp:TextBox><br />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <asp:DropDownList ID="ddl" runat="server"></asp:DropDownList>
+                    </div>
+                    <div class="col-lg-9">
+                        Telefone:&nbsp;<asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control" required="true"></asp:TextBox><br />
+                    </div>
+                </div>
                 <asp:Button ID="btnAdicionar" runat="server" Text="Adicionar" CssClass="btn btn-info" OnClick="btnAdicionar_Click" />
             </div>
 

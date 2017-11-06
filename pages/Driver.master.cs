@@ -22,7 +22,8 @@ public partial class pages_Driver : System.Web.UI.MasterPage
             {
                 Sessão usu = (Sessão)Session["nome"];
                 lbl.Text = usu.nome;
-                //hdf.Value = usu.id.ToString();
+                //Context.Items["value"] = usu.id.ToString();
+                hdf.Value = usu.id.ToString();
                 //lbl.Text = Session["nome"].ToString();
             }
             else

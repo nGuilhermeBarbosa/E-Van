@@ -17,6 +17,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
                 Sessão usu = (Sessão)Session["nome"];
                 //lblSessao.Text = usu.email;
                 hdf.Value = usu.id.ToString();
+                
             }
         }
     }
