@@ -17,11 +17,11 @@
                     Data Prevista<br />
                     <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox><br />
                     Ranking<br />
-                    <asp:CheckBox ID="CheckBox1" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><br />
-                    <asp:CheckBox ID="CheckBox2" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
-                    <asp:CheckBox ID="CheckBox3" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
-                    <asp:CheckBox ID="CheckBox4" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
-                    <asp:CheckBox ID="CheckBox5" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="cb1s" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="cb2s" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="cb3s" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="cb4s" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
+                    <asp:CheckBox ID="cb5s" runat="server" />&nbsp;<div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><div class="glyphicon glyphicon-star"></div><br />
                     <br />
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-info" autopostback="true"/>
                 </div>

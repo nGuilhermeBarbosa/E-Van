@@ -65,5 +65,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         txtDescricao.Text = "";
         txtDataInicio.Text = "";
         txtLugares.Text = "";
+        txtHoraPartida.Text = "";
+        txtHoraRetorno.Text = "";
     }
 }

@@ -8,7 +8,6 @@
             <div class="title">
                 <span class="text-left glyphicon glyphicon-chevron-left leftButton"><a href="Condutores.aspx">&nbsp;Voltar</a></span>
                 Adicionar Condutor
-           
             </div>
             <br />
             <br />
@@ -25,7 +24,6 @@
                 </div>
                 <asp:Button ID="btnAdicionar" runat="server" Text="Adicionar" CssClass="btn btn-info" OnClick="btnAdicionar_Click" />
             </div>
-
         </div>
     </div>
 </asp:Content>
