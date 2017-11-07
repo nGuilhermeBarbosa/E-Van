@@ -12,6 +12,7 @@ CREATE TABLE pes_pessoa(
     pes_estado VARCHAR(2)
 );
 
+
 CREATE TABLE usu_usuario(
   usu_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   usu_email VARCHAR(100) NOT NULL,
@@ -19,7 +20,6 @@ CREATE TABLE usu_usuario(
   usu_status BOOL DEFAULT TRUE,
   usu_tipo ENUM('Passageiro', 'Motorista', 'Administrador') NOT NULL,
   pes_id INT,
-  unique key (usu_email),
   FOREIGN KEY (pes_id) REFERENCES pes_pessoa(pes_id)
 );
 
@@ -40,7 +40,6 @@ CREATE TABLE pas_passageiro (
   pas_cpf VARCHAR(13) NOT NULL,
   usu_id int,
   foreign key (usu_id) references usu_usuario(usu_id));
-  
 
 
 CREATE TABLE mot_motorista (
@@ -56,21 +55,13 @@ CREATE TABLE tdo_tipodocumento (
   -- tdo_obrigatorio TINYINT NOT NULL DEFAULT '0'
 );
 
-
 CREATE TABLE doc_documento (
   mot_id INT(11) NOT NULL,
   FOREIGN KEY (mot_id) references mot_motorista(mot_id),
   tdo_id INT(11) NOT NULL,
   FOREIGN KEY (tdo_id) references tdo_tipodocumento(tdo_id)
   );
-  
-CREATE  TABLE con_condutor (
-	con_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    con_nome VARCHAR(20) NOT NULL,
-    con_cpf VARCHAR(13) NOT NULL,
-    mot_id INT NOT NULL,
-    FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id)
-);
+
 
 CREATE TABLE ser_servicos (
   ser_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -83,9 +74,7 @@ CREATE TABLE ser_servicos (
   ser_descricao VARCHAR(200) NOT NULL,
   ser_lugares INT(3) NOT NULL,
   mot_id INT(11) NOT NULL,
-  FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id),
-  con_id INT,
-  FOREIGN KEY (con_id) REFERENCES con_condutor (con_id));
+  FOREIGN KEY (mot_id) references mot_motorista(mot_id));
 
 CREATE TABLE Int_interesse (
   pas_id INT(11) NOT NULL,
@@ -158,19 +147,13 @@ CREATE TABLE tve_tipoveiculo (
   tve_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   tve_descricao VARCHAR(50) NOT NULL
   );
-  
-CREATE TABLE img_imagemveiculo(
-	img_id INT PRIMARY KEY AUTO_INCREMENT,
-    img_foto VARCHAR(100) NOT NULL
-  );
+
 
 CREATE TABLE tra_transporte (
   tra_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   tra_lugares INT(2) NOT NULL,
   tve_id INT(11) NOT NULL,
-  FOREIGN KEY (tve_id) REFERENCES tve_tipoveiculo(tve_id),
-  img_id INT NOT NULL,
-  FOREIGN KEY (img_id) REFERENCES img_imagemveiculo(img_id)
+  FOREIGN KEY (tve_id) references tve_tipoveiculo(tve_id)
 );
 
 
@@ -214,7 +197,7 @@ inner join pes_pessoa pes on pes.pes_id = usu.pes_id
 inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
 inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
-select * from mot_motorista mot inner join con_condutor con on mot.mot_id = con.mot_id where mot.mot_id=1;
+
 
 select * from rec_recursos;
 select * from doc_documento;
@@ -231,6 +214,12 @@ select * from con_condutor;
 
 select pas_id from pas_passageiro pas inner join usu_usuario usu on usu.usu_id = pas.usu_id where usu.usu_id = 1;
 
+select mxc_descricao, doc_image from usu_usuario usu 
+inner join mot_motorista mot on mot.usu_id = usu.usu_id 
+inner join doc_documento doc on mot.mot_id = doc.mot_id
+inner join pes_pessoa pes on pes.pes_id = usu.pes_id 
+inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
+inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
 select mxc_descricao from usu_usuario usu 
 inner join mot_motorista mot on mot.usu_id = usu.usu_id 
@@ -251,22 +240,10 @@ inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where mot.mot_id = 1;
 -- delete from usu_usuario where usu_id = 5;
 -- delete from pas_passageiro where pas_id = 1;
 
-insert into rec_recursos (rec_descricao) values ("Ar-condicionado");
-insert into rec_recursos (rec_descricao) values ("Wi-Fi");
-insert into rec_recursos (rec_descricao) values ("Televisão");
-insert into rec_recursos (rec_descricao) values ("Frigobar");
-insert into rec_recursos (rec_descricao) values ("Rádio");
-insert into rec_recursos (rec_descricao) values ("Porta Automática");
-
-insert into tve_tipoveiculo (tve_descricao) values ("Doblô");
-insert into tve_tipoveiculo (tve_descricao) values ("Van");
-insert into tve_tipoveiculo (tve_descricao) values ("Mini-Van");
-
-
 insert into tpc_tipo_contato (tpc_descricao) values ("Telefone");
 insert into tpc_tipo_contato (tpc_descricao) values ("Celular");
 insert into tpc_tipo_contato (tpc_descricao) values ("Whatsapp");
-insert into tpc_tipo_contato (tpc_descricao) values ("Email Alternativo");
+insert into tpc_tipo_contato (tpc_descricao) values ("Email Altsernativo");
 
 -- insert into pes_pessoa (pes_nome, pes_sexo, pes_nascimento, pes_cidade, pes_estado) values ('Motorista', 'M', '1999-02-03', 'Pindamonhangaba', 'SP');
 -- insert into usu_usuario (usu_email, usu_senha, usu_tipo, pes_id) values ('motorista@motorista.com', '123', 'Motorista', 1);
@@ -275,13 +252,6 @@ insert into tpc_tipo_contato (tpc_descricao) values ("Email Alternativo");
 
 insert into tip_tipoconta (tip_descricao) values ('Free');
 insert into tip_tipoconta (tip_descricao) values ('Premium');
-
-select mxc_descricao, tdo_image from usu_usuario usu inner join mot_motorista mot on mot.usu_id = usu.usu_id 
-inner join doc_documento doc on doc.mot_id = mot.mot_id 
-inner join tdo_tipodocumento tdo on tdo.tdo_id = doc.tdo_id 
-inner join pes_pessoa pes on pes.pes_id = usu.pes_id 
-inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
-inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
 -- insert into mxc_motorista_tipo_contato (mot_id, tpc_id, mxc_descricao) values (1, 2, '3645-8888');
 
