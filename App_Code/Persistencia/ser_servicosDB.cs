@@ -18,9 +18,9 @@ public class ser_servicosDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into ser_servicos ";
-            sql += "(ser_datacadastro, ser_datafim, ser_origem, ser_datainicio, ser_destino, ser_descricao, ser_lugares, mot_id)";
+            sql += "(ser_datacadastro, ser_datafim, ser_origem, ser_datainicio, ser_destino, ser_descricao, ser_lugares, mot_id, con_id)";
             sql += "values ";
-            sql += "(?ser_datacadastro, ?ser_datafim, ?ser_origem, ?ser_datainicio, ?ser_destino, ?ser_descricao, ?ser_lugares, ?mot_id)";
+            sql += "(?ser_datacadastro, ?ser_datafim, ?ser_origem, ?ser_datainicio, ?ser_destino, ?ser_descricao, ?ser_lugares, ?mot_id, ?con_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
@@ -37,6 +37,7 @@ public class ser_servicosDB
             
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?mot_id", ser.Mot_id.Mot_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?con_id", ser.Con_id.Con_id));
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

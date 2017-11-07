@@ -182,4 +182,21 @@ public class mot_motoristaDB
         objComando.Dispose();
         return ds;
     }
+    public static DataSet SelectCon(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select * from mot_motorista mot inner join con_condutor con on mot.mot_id = con.mot_id where mot.mot_id=?id";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
+        return ds;
+    }
 }

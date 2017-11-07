@@ -18,6 +18,7 @@ public class ser_servicos
     private string ser_descricao;
     private int ser_lugares;
     private mot_motorista mot_id;
+    private con_condutor con_id;
 
     public string Ser_descricao
     {
@@ -85,7 +86,17 @@ public class ser_servicos
         get { return ser_id; }
         set { ser_id = value; }
     }
-     
 
+    public global::con_condutor Con_id
+    {
+        get
+        {
+            return con_id;
+        }
 
+        set
+        {
+            con_id = value;
+        }
+    }
 }

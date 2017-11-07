@@ -17,7 +17,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
                 Sessão usu = (Sessão)Session["nome"];
                 //lblSessao.Text = usu.email;
                 hdf.Value = usu.id.ToString();
-                
+                CarregarDDL();
             }
         }
     }
@@ -34,6 +34,18 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
 
         mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
+        
+        /*DataSet ds = mot_motoristaDB.SelectCon(id);
+
+        int qtd = ds.Tables[0].Rows.Count;
+
+        con_condutor con = new con_condutor();
+        if (qtd!=0)
+        {
+            con.Con_id = Convert.ToInt32(ddlCondutor.SelectedValue);
+        }
+        */
+
         ser_servicos serv = new ser_servicos();
         serv.Ser_datacadastro = data;
         serv.Ser_origem = txtOrigem.Text;
@@ -45,6 +57,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         serv.Ser_datainicio = Convert.ToDateTime(txtHoraPartida.Text);
         serv.Ser_lugares = Convert.ToInt32(txtLugares.Text);
         serv.Mot_id = mot;
+        //serv.Con_id = con;
 
 
         switch (ser_servicosDB.Insert(serv))
@@ -67,5 +80,15 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         txtLugares.Text = "";
         txtHoraPartida.Text = "";
         txtHoraRetorno.Text = "";
+    }
+
+    public void CarregarDDL()
+    {
+        DataSet ds = con_condutorDB.SelectAll();
+        ddlCondutor.DataSource = ds;
+        ddlCondutor.DataTextField = "con_nome";
+        ddlCondutor.DataValueField = "con_id";
+        ddlCondutor.DataBind();
+        ddlCondutor.Items.Insert(0, "Selecione");
     }
 }

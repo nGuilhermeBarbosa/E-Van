@@ -1,11 +1,11 @@
 CREATE DATABASE evanew;
 USE evanew;
-#DROP DATABASE EVANEW;
+-- DROP DATABASE EVANEW;
+
 
 CREATE TABLE pes_pessoa(
 	pes_id INT PRIMARY KEY AUTO_INCREMENT,
     pes_nome VARCHAR(50) NOT NULL,
-    pes_sexo VARCHAR(1) NOT NULL,
     pes_sexo VARCHAR(1) NOT NULL,
     pes_nascimento DATE NOT NULL,
     pes_cidade VARCHAR(20),
@@ -84,7 +84,7 @@ CREATE TABLE ser_servicos (
   ser_lugares INT(3) NOT NULL,
   mot_id INT(11) NOT NULL,
   FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id),
-  con_id INT NOT NULL,
+  con_id INT,
   FOREIGN KEY (con_id) REFERENCES con_condutor (con_id));
 
 CREATE TABLE Int_interesse (
@@ -204,7 +204,7 @@ CREATE TABLE ctp_condutor_tipo_contato (
   ctp_descricao VARCHAR(200) 
   );
   
-
+  
 
 select mxc_descricao, tdo_image from usu_usuario usu 
 inner join mot_motorista mot on mot.usu_id = usu.usu_id 
@@ -214,7 +214,7 @@ inner join pes_pessoa pes on pes.pes_id = usu.pes_id
 inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
 inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
-
+select * from mot_motorista mot inner join con_condutor con on mot.mot_id = con.mot_id where mot.mot_id=1;
 
 select * from rec_recursos;
 select * from doc_documento;
@@ -227,6 +227,7 @@ select * from mxc_motorista_tipo_contato;
 select * from tpc_tipo_contato;
 select * from ser_servicos;
 select * from sol_solicitacao;
+select * from con_condutor;
 
 select pas_id from pas_passageiro pas inner join usu_usuario usu on usu.usu_id = pas.usu_id where usu.usu_id = 1;
 
@@ -260,6 +261,7 @@ insert into rec_recursos (rec_descricao) values ("Porta Automática");
 insert into tve_tipoveiculo (tve_descricao) values ("Doblô");
 insert into tve_tipoveiculo (tve_descricao) values ("Van");
 insert into tve_tipoveiculo (tve_descricao) values ("Mini-Van");
+
 
 insert into tpc_tipo_contato (tpc_descricao) values ("Telefone");
 insert into tpc_tipo_contato (tpc_descricao) values ("Celular");

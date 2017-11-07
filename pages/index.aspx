@@ -203,11 +203,11 @@
                 <!-- Panel Passageiro -->
                 <asp:Panel ID="pPassageiro" runat="server" Visible="true">
                     <br />
-                    <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required" MaxLength="50"></asp:TextBox><br />
+                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required" MaxLength="100"></asp:TextBox><br />
                     <div class="row">
                         <div class="col-lg-9">
-                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength(this.value)"></asp:TextBox>
+                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength(this.value)" MaxLength="100"></asp:TextBox>
                         </div>
                         <div class="col-lg-3">
                             <span id='ajuda' class="glyphicon glyphicon-asterisk" style="cursor: default;">Recomendação de senha</span>
@@ -221,7 +221,7 @@
                     <span id="password_strength"></span>
 
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event);"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event);" MaxLength="14"></asp:TextBox><br />
                     Data de Nascimento
                     <asp:TextBox ID="txtData" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
                     Sexo
@@ -253,12 +253,12 @@
 
                 <!-- Painel Motorista -->
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
-                    <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required" MaxLength="50"></asp:TextBox><br />
+                    <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required" MaxLength="100"></asp:TextBox><br />
 
                     <div class="row">
                         <div class="col-lg-9">
-                            <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength2(this.value)"></asp:TextBox><br />
+                            <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength2(this.value)" MaxLength="100"></asp:TextBox><br />
                             <span id="password_strength2"></span>
                         </div>
                         <div class="col-lg-3">
@@ -271,7 +271,7 @@
                     </div>
 
                     <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required" onkeyup="formataCNPJ(this,event);"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required" onkeyup="formataCNPJ(this,event);" MaxLength="18"></asp:TextBox><br />
                     Data de Nascimento
                     <asp:TextBox ID="txtDataM" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
 
