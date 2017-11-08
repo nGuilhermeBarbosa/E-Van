@@ -37,7 +37,7 @@ public class ser_servicosDB
 
             // Chave estrangeira
             objCommand.Parameters.Add(Mapped.Parameter("?mot_id", ser.Mot_id.Mot_id));
-            objCommand.Parameters.Add(Mapped.Parameter("?con_id", ser.Con_id.Con_id));
+            
 
 
             objCommand.ExecuteNonQuery();
