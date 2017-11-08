@@ -18,6 +18,7 @@ public class ser_servicos
     private string ser_descricao;
     private int ser_lugares;
     private mot_motorista mot_id;
+    
 
     public string Ser_descricao
     {
@@ -85,7 +86,5 @@ public class ser_servicos
         get { return ser_id; }
         set { ser_id = value; }
     }
-     
-
 
 }

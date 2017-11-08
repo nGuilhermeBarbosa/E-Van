@@ -43,4 +43,27 @@ public class con_condutorDB
         }
         return retorno;
     }
+    public static DataSet SelectAll()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select * from con_condutor";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
 }
