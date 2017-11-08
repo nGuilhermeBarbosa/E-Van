@@ -58,6 +58,7 @@ public partial class pages_index : System.Web.UI.Page
         if (Convert.ToInt32(ddlPM.SelectedItem.Value) == 0)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalAt();", true);
+            Label2.Visible = false;
         }
         else if (ddlPM.SelectedIndex == 1)
         {
