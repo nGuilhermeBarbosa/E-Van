@@ -18,6 +18,9 @@
         function openModalToU() {
             $('#termsOfUseModal').modal('show');
         }
+        function openModalAt() {
+            $('#fbAt').modal('show');
+        }
     </script>
 
 </asp:Content>
@@ -45,6 +48,28 @@
         </div>
     </div>
 
+    <div id="fbAt" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Cadastro E-Van</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="glyphicon glyphicon-alert col-xs-12 text-center" style="font-size: 90px;"></p>
+                            <br />
+                            <p class="text-center">Por favor selecione o tipo de conta antes de continuar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <div id="termsOfUseModal" class="modal fade" role="dialog">
         <div class="modal-dialog" id="video" style="float: unset; width: 800px;">
 
@@ -62,7 +87,7 @@
                                 <h3>Licença de uso de software</h3>
                                 <p>Leia atentamente os termos de uso abaixo antes de utilizar a plataforma.</p>
                                 <p><b>1 Introdução: </b>O E-Van é um projeto desenvolvido por Guilherme Cunha, João Guilherme e Laura Freitas, alunos da Fatec Prof. João Mod em Guaratinguetá. A Plataforma foi desenvolvida com o intuito de ser apresentado como um trabalho de conclusão do curso de Análise e Desenvolvimento de Sistemas, o E-Van não possui parceria com nenhuma empresa ou instituição.</p>
-                                <p><b>2.1 Licença de Uso: </b>A plataforma permite que você gerencie apenas sua conta, não é permitido gerenciar qualquer outra conta a não ser a sua própria. A gerencia permite gerenciar serviços, solicitações e veículos, variando de acordo com o tipo de conta.</p>
+                                <p><b>2.1 Licença de Uso: </b>A plataforma permite que você gerencie apenas sua conta, não é permitido gerenciar qualquer outra conta a não ser a sua própria. A gerencia de serviços, solicitações e veículos, varia de acordo com o tipo de conta.</p>
                                 <p><b>2.2 Restições: </b>Os usuários de um tipo de conta apenas deverão acessar áreas permitidas para o seu tipo específico de conta.</p>
                                 <p><b>2.3 Responsabilidades: </b>As informações inseridas nos anúncios de serviços e solicitações são de responsabilidade do próprio usuário, o E-Van não se responsabilisa por nenhum informação ou imagem cadastrada no sistema.</p>
                             </p>
@@ -203,11 +228,11 @@
                 <!-- Panel Passageiro -->
                 <asp:Panel ID="pPassageiro" runat="server" Visible="true">
                     <br />
-                    <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required" MaxLength="50"></asp:TextBox><br />
+                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required" MaxLength="100"></asp:TextBox><br />
                     <div class="row">
                         <div class="col-lg-9">
-                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength(this.value)"></asp:TextBox>
+                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength(this.value)" MaxLength="100"></asp:TextBox>
                         </div>
                         <div class="col-lg-3">
                             <span id='ajuda' class="glyphicon glyphicon-asterisk" style="cursor: default;">Recomendação de senha</span>
@@ -221,7 +246,7 @@
                     <span id="password_strength"></span>
 
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event);"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event);" MaxLength="14"></asp:TextBox><br />
                     Data de Nascimento
                     <asp:TextBox ID="txtData" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
                     Sexo
@@ -253,12 +278,12 @@
 
                 <!-- Painel Motorista -->
                 <asp:Panel ID="pMotorista" runat="server" Visible="false">
-                    <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required"></asp:TextBox><br />
+                    <asp:TextBox ID="txtNomeM" runat="server" placeholder="Nome Completo" CssClass="form-control" required="required" MaxLength="50"></asp:TextBox><br />
+                    <asp:TextBox ID="txtEmailM" runat="server" placeholder="E-Mail" CssClass="form-control" TextMode="Email" required="required" MaxLength="100"></asp:TextBox><br />
 
                     <div class="row">
                         <div class="col-lg-9">
-                            <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength2(this.value)"></asp:TextBox><br />
+                            <asp:TextBox ID="txtSenhaM" runat="server" placeholder="Senha" CssClass="form-control" TextMode="Password" required="required" onkeyup="CheckPasswordStrength2(this.value)" MaxLength="100"></asp:TextBox><br />
                             <span id="password_strength2"></span>
                         </div>
                         <div class="col-lg-3">
@@ -271,7 +296,7 @@
                     </div>
 
                     <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required" onkeyup="formataCNPJ(this,event);"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required" onkeyup="formataCNPJ(this,event);" MaxLength="18"></asp:TextBox><br />
                     Data de Nascimento
                     <asp:TextBox ID="txtDataM" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
 

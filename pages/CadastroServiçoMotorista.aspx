@@ -96,10 +96,8 @@
                     </div>
                 </div>
                 <br />
-                <asp:Panel ID="pnl" runat="server">
-                    <asp:Label ID="lblCondutores" runat="server" Text="Condutores" CssClass="margem"></asp:Label>
-                    <asp:DropDownList ID="ddlCondutor" runat="server" CssClass="form-control controle"></asp:DropDownList>
-                </asp:Panel>
+                <asp:Label ID="lblCondutores" runat="server" Text="Condutores" CssClass="margem"></asp:Label>
+                <asp:DropDownList ID="ddlCondutor" runat="server" CssClass="form-control controle"></asp:DropDownList>
                 <br />
                 <asp:Label ID="lblLugares" runat="server" Text="Lugares Disponiveis" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtLugares" runat="server" CssClass="form-control controle" required="true"></asp:TextBox>

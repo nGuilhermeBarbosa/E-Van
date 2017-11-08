@@ -25,7 +25,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             Karina Buttignon<br />
-                            Thiago Julien
+                            Thiago Julien<br />
+                            Adrison Freitas
                         </div>
                     </div>
                 </div>

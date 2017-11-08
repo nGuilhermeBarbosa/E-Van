@@ -352,6 +352,27 @@ function formataTelefone(campo, evt) {
     //        xPos = xPos +1
     MovimentaCursor(campo, xPos);
 }
+
+function formataCelular(campo, evt) {
+    var xPos = PosicaoCursor(campo);
+    evt = getEvent(evt);
+    var tecla = getKeyCode(evt);
+    if (!teclaValida(tecla))
+        return;
+    vr = campo.value = filtraNumeros(filtraCampo(campo));
+    tam = vr.length;
+    if (tam == 1)
+        campo.value = '(' + vr;
+    else if (tam >= 2 && tam < 6)
+        campo.value = '(' + vr.substr(0, 2) + ') ' + vr.substr(2);
+    else if (tam >= 6)
+        campo.value = '(' + vr.substr(0, 2) + ') ' + vr.substr(2, 5) + '-' + vr.substr(7);
+    //(
+    //    if(xPos == 1 || xPos == 3 || xPos == 5 || xPos == 9)
+    //        xPos = xPos +1
+    MovimentaCursor(campo, xPos);
+}
+
 function formataTexto(campo, evt, sMascara) {
     //Nome com Inicial Maiuscula.
     evt = getEvent(evt);
