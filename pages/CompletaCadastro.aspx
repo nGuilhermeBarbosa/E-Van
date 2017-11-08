@@ -158,33 +158,47 @@
     </div>
 
     <div class="title text-center">Completar Cadastro</div>
-    <br />
-    <br />
-    <br />
-    <div class="signupBox">
-        <div class="row">
-            <div class="col-lg-3">
-                <asp:HiddenField ID="hdf" runat="server" />
-                <asp:Label ID="Telefone" runat="server" Text="Telefone" CssClass="margem" required="true" onkeyup="formataTelefone(this,event);"></asp:Label>
-                <asp:DropDownList ID="ddl" runat="server" CssClass="form-control controle">
-                </asp:DropDownList>
-            </div>
-            <div class="col-lg-5">
-                <br />
-                <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control" onkeyup="formataTelefone(this,event);"></asp:TextBox>
-                <asp:Panel ID="pnl" runat="server"></asp:Panel>
-            </div>
-            <div class="col-lg-3">
-                <asp:Button ID="btnAdicionar" runat="server" Text="+" CssClass="btn btn-link" Style="font-size: 22px; margin-top: 0.7em" />
-            </div>
+    <asp:Panel ID="pBefore" runat="server">
+        <br />
+        <br />
+        <br />
+        <div class="signupBox">
+            <div class="row">
+                <div class="col-lg-3">
+                    <asp:HiddenField ID="hdf" runat="server" />
+                    <asp:Label ID="Telefone" runat="server" Text="Contato" CssClass="margem" required="true" onkeyup="formataTelefone(this,event);"></asp:Label>
+                    <asp:DropDownList ID="ddl" runat="server" CssClass="form-control controle" OnSelectedIndexChanged="ddl_SelectedIndexChanged" AutoPostBack="true">
+                    </asp:DropDownList>
+                </div>
+                <div class="col-lg-5">
+                    <br />
+                    <asp:TextBox ID="txtWhatsapp" runat="server" CssClass="form-control" onkeyup="formataCelular(this,event);" MaxLength="15" Visible="false" placeholder="Whatsapp"></asp:TextBox>
+                    <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control" onkeyup="formataCelular(this,event);" MaxLength="15" Visible="false" placeholder="Celular"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control" onkeyup="formataTelefone(this,event);" MaxLength="14" Visible="false" placeholder="Telefone"></asp:TextBox>
+                    <asp:TextBox ID="txtEmailAlt" runat="server" CssClass="form-control" TextMode="Email" MaxLength="100" Visible="false" placeholder="Email Alternativo"></asp:TextBox>
+                    <asp:Panel ID="pnl" runat="server"></asp:Panel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Button ID="btnAdicionar" runat="server" Text="+" CssClass="btn btn-link" Style="font-size: 22px; margin-top: 0.7em" />
+                </div>
 
+            </div>
+            <br />
+            <br />
+            <asp:FileUpload ID="fup" runat="server" AllowMultiple="true" />
+            <br />
+            <br />
+            <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info margem" OnClick="btnEnviar_Click" />
         </div>
+    </asp:Panel>
+    <asp:Panel ID="pAfter" runat="server" Visible="false">
         <br />
         <br />
-        <asp:FileUpload ID="fup" runat="server" AllowMultiple="true" />
         <br />
-        <br />
-        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-info margem" OnClick="btnEnviar_Click" />
-    </div>
+        <div class="signupBox">
+            <div class="text-center">Informações enviadas com sucesso</div>
+            <button type="button" onclick="window.location.replace('homemotorista.aspx')" class="btn btn-info center-block">Voltar para a Home Page</button>
+        </div>
+    </asp:Panel>
 </asp:Content>
 

@@ -11,6 +11,7 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        
         if (!Page.IsPostBack)
         {
             if (Session["nome"] != null)
@@ -19,6 +20,7 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
                 //lblSessao.Text = usu.email;
                 hdf.Value = usu.id.ToString();
                 CarregarDDL();
+                CampoVazio();
             }
         }
     }
@@ -109,6 +111,8 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
                             doc.Mot_id = mot;
                             doc.Tdo_id = tdo;
                             doc_documentoDB.Insert(doc);
+                            pBefore.Visible = false;
+                            pAfter.Visible = true;
                         }
                         else
                         {
@@ -157,4 +161,69 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
     }
 
 
+
+    protected void ddl_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ddl.SelectedValue == 1.ToString())
+        {
+            txtTelefone.Visible = true;
+            txtCelular.Visible = false;
+            txtWhatsapp.Visible = false;
+            txtEmailAlt.Visible = false;
+
+            txtTelefone.Text = null;
+            txtCelular.Text = null;
+            txtWhatsapp.Text = null;
+            txtEmailAlt.Text = null;
+        }
+        else if (ddl.SelectedValue == 2.ToString())
+        {
+            txtTelefone.Visible = false;
+            txtCelular.Visible = true;
+            txtWhatsapp.Visible = false;
+            txtEmailAlt.Visible = false;
+
+            txtTelefone.Text = null;
+            txtCelular.Text = null;
+            txtWhatsapp.Text = null;
+            txtEmailAlt.Text = null;
+        }
+        else if(ddl.SelectedValue == 3.ToString())
+        {
+            txtTelefone.Visible = false;
+            txtCelular.Visible = false;
+            txtWhatsapp.Visible = true;
+            txtEmailAlt.Visible = false;
+
+            txtTelefone.Text = null;
+            txtCelular.Text = null;
+            txtWhatsapp.Text = null;
+            txtEmailAlt.Text = null;
+        }
+        else if(ddl.SelectedValue == 4.ToString())
+        {
+            txtTelefone.Visible = false;
+            txtCelular.Visible = false;
+            txtWhatsapp.Visible = false;
+            txtEmailAlt.Visible = true;
+
+            txtTelefone.Text = null;
+            txtCelular.Text = null;
+            txtWhatsapp.Text = null;
+            txtEmailAlt.Text = null;
+        }
+    }
+
+    public void CampoVazio()
+    {
+
+        DataSet ds = mxc_motorista_tipo_contatoDB.SelectAll(Convert.ToInt32(hdf.Value));
+        int qtd = ds.Tables[0].Rows.Count;
+
+        if (qtd != 0)
+        {
+            pBefore.Visible = false;
+            pAfter.Visible = true;
+        }
+    }
 }
