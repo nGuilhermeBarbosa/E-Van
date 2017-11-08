@@ -49,6 +49,11 @@
             color = "darkorange";
             $("#btnCadastrar").prop('disabled', false);
             $("#feedback").hide();
+        } else if (passed == 3){
+            strength = "Senha Forte";
+            color = "green";
+            $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
         } else if (passed == 4) {
             strength = "Senha Forte";
             color = "green";
@@ -141,6 +146,11 @@ function CheckPasswordStrength2(password) {
         } else if (passed == 2) {
             strength = "Senha Boa";
             color = "darkorange";
+            $("#btnCadastrar").prop('disabled', false);
+            $("#feedback").hide();
+        } else if (passed == 3) {
+            strength = "Senha Forte";
+            color = "green";
             $("#btnCadastrar").prop('disabled', false);
             $("#feedback").hide();
         } else if (passed == 4) {
