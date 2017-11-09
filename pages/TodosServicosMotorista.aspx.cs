@@ -15,24 +15,21 @@ public partial class pages_Default : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                Sessão usu = (Sessão)Session["nome"];
-                //lblSessao.Text = usu.email;
-                hdf.Value = usu.id.ToString();
+                //Sessão usu = (Sessão)Session["nome"];
+                ////lblSessao.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
                 //if (Request.QueryString["value"] != null)
                 //{
                 //    if (!String.IsNullOrEmpty(Request.QueryString["value"].ToString()))
                 //    {
                 //        CarregarLiteral(Request.QueryString["value"].ToString());
-                //        Carregarddls();
                 //        CadastroCompleto();
                 //    }
                 //}
-                //CarregarLiteral();
                 CarregarLiteral();
-                Carregarddls();
                 CadastroCompleto();
 
-                //CarregarLiteral();
+                
 
             }
         }
@@ -40,6 +37,8 @@ public partial class pages_Default : System.Web.UI.Page
 
     public void CarregarLiteral()
     {
+        hdf.Value = Session["value"].ToString();
+
         mot_motorista mot = new mot_motorista();
 
         DataSet codigo = new DataSet();
@@ -68,7 +67,7 @@ public partial class pages_Default : System.Web.UI.Page
                 + "<b>Mensagem</b>:" + dados["ser_descricao"]
             + "</div></div>";
         }
-
+        
     }
 
 
@@ -80,32 +79,32 @@ public partial class pages_Default : System.Web.UI.Page
 
 
 
-    public void Carregarddls()
-    {
-        mot_motorista mot = new mot_motorista();
+    //public void Carregarddls(string par)
+    //{
+    //    mot_motorista mot = new mot_motorista();
 
-        DataSet codigo = new DataSet();
+    //    DataSet codigo = new DataSet();
 
-        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+    //    codigo = mot_motoristaDB.SelectID(Convert.ToInt32(par));
 
-        int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+    //    int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
-        DataSet ds = ser_servicosDB.SelectSer(c);
+    //    DataSet ds = ser_servicosDB.SelectSer(c);
 
-        ddlDelete.DataSource = ds;
-        ddlDelete.DataTextField = "ser_id";
-        ddlDelete.DataValueField = "ser_id";
-        ddlDelete.DataBind();
+    //    ddlDelete.DataSource = ds;
+    //    ddlDelete.DataTextField = "ser_id";
+    //    ddlDelete.DataValueField = "ser_id";
+    //    ddlDelete.DataBind();
 
-        ddlDelete.Items.Insert(0, "Selecione o número do serviço");
+    //    ddlDelete.Items.Insert(0, "Selecione o número do serviço");
 
-        ddlEdit.DataSource = ds;
-        ddlEdit.DataTextField = "ser_id";
-        ddlEdit.DataValueField = "ser_id";
-        ddlEdit.DataBind();
+    //    ddlEdit.DataSource = ds;
+    //    ddlEdit.DataTextField = "ser_id";
+    //    ddlEdit.DataValueField = "ser_id";
+    //    ddlEdit.DataBind();
 
-        ddlEdit.Items.Insert(0, "Selecione o número do serviço");
-    }
+    //    ddlEdit.Items.Insert(0, "Selecione o número do serviço");
+    //}
 
     protected void ddlEdit_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -124,7 +123,7 @@ public partial class pages_Default : System.Web.UI.Page
         switch (ser_servicosDB.Delete(Convert.ToInt32(ddlDelete.SelectedValue)))
         {
             case 0:
-                Carregarddls();
+                //Carregarddls();
                 //lbl2.Text = "Excluido com sucesso";
                 break;
             case -2:
@@ -132,7 +131,7 @@ public partial class pages_Default : System.Web.UI.Page
                 break;
 
         }
-        Carregarddls();
+        //Carregarddls();
         Response.Redirect("TodosServicosMotorista.aspx", true);
     }
 

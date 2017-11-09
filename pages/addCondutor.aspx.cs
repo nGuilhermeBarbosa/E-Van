@@ -25,21 +25,25 @@ public partial class pages_addCondutor : System.Web.UI.Page
 
     protected void ddl_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if(ddl.SelectedValue == 0.ToString())
+        if (ddl.SelectedValue == 0.ToString())
         {
             txtCelular.Visible = false;
             txtTelefone.Visible = true;
             txtWhatsapp.Visible = false;
-        }else if (ddl.SelectedValue == 1.ToString())
+        } else if (ddl.SelectedValue == 1.ToString())
         {
             txtCelular.Visible = true;
             txtTelefone.Visible = false;
             txtWhatsapp.Visible = false;
-        }else if (ddl.SelectedValue == 2.ToString())
+        } else if (ddl.SelectedValue == 2.ToString())
         {
             txtCelular.Visible = false;
             txtTelefone.Visible = false;
             txtWhatsapp.Visible = true;
         }
+    }
+    public void Carregarddl()
+    {
+
     }
 }

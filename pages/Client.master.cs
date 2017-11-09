@@ -36,6 +36,7 @@ public partial class pages_Client : System.Web.UI.MasterPage
     {
         Session.Remove("nome");
         Session.Remove("perfil");
+        Session.Remove("value");
         Response.Redirect("index.aspx");
     }
 

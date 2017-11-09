@@ -14,9 +14,9 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                Sessão usu = (Sessão)Session["nome"];
-                //lblSessao.Text = usu.email;
-                hdf.Value = usu.id.ToString();
+                //Sessão usu = (Sessão)Session["nome"];
+                ////lblSessao.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
                 CarregarDDL();
             }
         }
@@ -25,6 +25,8 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {
         DateTime data = DateTime.Now;
+
+        hdf.Value = Session["value"].ToString();
 
         mot_motorista mot = new mot_motorista();
 

@@ -10,13 +10,14 @@ public partial class pages_addRequest : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Sessão usu = (Sessão)Session["nome"];
-        //lblSessao.Text = usu.email;
-        hdf.Value = usu.id.ToString();
+        //Sessão usu = (Sessão)Session["nome"];
+        ////lblSessao.Text = usu.email;
+        //hdf.Value = usu.id.ToString();
     }
 
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {
+        hdf.Value = Session["value"].ToString();
         sol_solicitacao sol = new sol_solicitacao();
         sol.Sol_origem = txtOrigem.Text;
         sol.Sol_destino = txtDestino.Text;
@@ -35,7 +36,7 @@ public partial class pages_addRequest : System.Web.UI.Page
         }
         sol.Sol_descricao = txtMensagem.Text;
         pas_passageiro pas = new pas_passageiro();
-        
+
         DataSet id = new DataSet();
 
         id = usu_usuarioDB.Select(Convert.ToInt32(hdf.Value));
@@ -61,5 +62,6 @@ public partial class pages_addRequest : System.Web.UI.Page
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSE();", true);
                 break;
         }
+        
     }
 }
