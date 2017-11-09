@@ -47,10 +47,8 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         serv.Ser_origem = txtOrigem.Text;
         serv.Ser_destino = txtDestino.Text;
         serv.Ser_descricao = txtDescricao.Text;
-        serv.Ser_datafim = Convert.ToDateTime(txtDataFim.Text);
-        serv.Ser_datafim = Convert.ToDateTime(txtHoraRetorno.Text);
-        serv.Ser_datainicio = Convert.ToDateTime(txtDataInicio.Text);
-        serv.Ser_datainicio = Convert.ToDateTime(txtHoraPartida.Text);
+        serv.Ser_datafim = Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text);
+        serv.Ser_datainicio = Convert.ToDateTime(txtDataInicio.Text + " " + txtHoraPartida.Text);
         serv.Ser_lugares = Convert.ToInt32(txtLugares.Text);
         serv.Mot_id = mot;
         switch (ser_servicosDB.Insert(serv))
