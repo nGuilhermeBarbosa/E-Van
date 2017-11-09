@@ -12,14 +12,15 @@ public partial class pages_TodosVeiculos : System.Web.UI.Page
     {
         if (Session["nome"] != null)
         {
-            Sessão usu = (Sessão)Session["nome"];
-            //lblSessao.Text = usu.email;
-            hdf.Value = usu.id.ToString();
+            //Sessão usu = (Sessão)Session["nome"];
+            ////lblSessao.Text = usu.email;
+            //hdf.Value = usu.id.ToString();
             CadastroCompleto();
         }
     }
     public void CadastroCompleto()
     {
+        hdf.Value = Session["value"].ToString();
         DataSet ds = mxc_motorista_tipo_contatoDB.SelectAll(Convert.ToInt32(hdf.Value));
         int qtd = ds.Tables[0].Rows.Count;
 

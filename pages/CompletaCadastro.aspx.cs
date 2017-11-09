@@ -16,9 +16,9 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                Sessão usu = (Sessão)Session["nome"];
-                //lblSessao.Text = usu.email;
-                hdf.Value = usu.id.ToString();
+                //Sessão usu = (Sessão)Session["nome"];
+                ////lblSessao.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
                 CarregarDDL();
                 CampoVazio();
             }
@@ -27,6 +27,8 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
 
     protected void btnEnviar_Click(object sender, EventArgs e)
     {
+        hdf.Value = Session["value"].ToString();
+
         DataSet ds = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
 
         mot_motorista mot = new mot_motorista();

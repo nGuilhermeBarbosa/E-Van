@@ -12,7 +12,6 @@ CREATE TABLE pes_pessoa(
     pes_estado VARCHAR(2)
 );
 
-
 CREATE TABLE usu_usuario(
   usu_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   usu_email VARCHAR(100) NOT NULL,
@@ -38,7 +37,7 @@ CREATE TABLE usu_usuario(
 
 CREATE TABLE pas_passageiro (
   pas_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  pas_cpf VARCHAR(13) NOT NULL,
+  pas_cpf VARCHAR(15) NOT NULL,
   usu_id int,
   foreign key (usu_id) references usu_usuario(usu_id));
   
@@ -46,7 +45,7 @@ CREATE TABLE pas_passageiro (
 
 CREATE TABLE mot_motorista (
   mot_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  mot_cnpj VARCHAR(13) NOT NULL,
+  mot_cnpj VARCHAR(18) NOT NULL,
   usu_id int,
   foreign key (usu_id) references usu_usuario(usu_id));
 
@@ -64,7 +63,14 @@ CREATE TABLE doc_documento (
   tdo_id INT(11) NOT NULL,
   FOREIGN KEY (tdo_id) references tdo_tipodocumento(tdo_id)
   );
-
+  
+CREATE  TABLE con_condutor (
+	con_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    con_nome VARCHAR(20) NOT NULL,
+    con_cpf VARCHAR(13) NOT NULL,
+    mot_id INT NOT NULL,
+    FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id)
+);
 
 CREATE TABLE ser_servicos (
   ser_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -77,7 +83,15 @@ CREATE TABLE ser_servicos (
   ser_descricao VARCHAR(200) NOT NULL,
   ser_lugares INT(3) NOT NULL,
   mot_id INT(11) NOT NULL,
-  FOREIGN KEY (mot_id) references mot_motorista(mot_id));
+  FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id)
+  );
+  
+CREATE TABLE sco_servicoscondutor(
+	ser_id INT,
+    FOREIGN KEY (ser_id) REFERENCES ser_servicos(ser_id),
+    con_id INT,
+    FOREIGN KEY (con_id) REFERENCES con_condutor(con_id)
+);
 
 CREATE TABLE Int_interesse (
   pas_id INT(11) NOT NULL,
@@ -101,7 +115,6 @@ CREATE TABLE mxc_motorista_tipo_contato (
   mxc_descricao VARCHAR(200) 
   );
   
-
 
 CREATE TABLE rec_recursos (
   rec_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -180,6 +193,7 @@ CREATE TABLE txr_transporte_recursos (
   rec_id INT(11) NOT NULL,
   FOREIGN KEY (rec_id) references rec_recursos(rec_id));
   
+  
 CREATE TABLE fal_faleConosco( 
   fal_id INT AUTO_INCREMENT PRIMARY KEY,
   fal_nome VARCHAR(40) NOT NULL,
@@ -187,16 +201,8 @@ CREATE TABLE fal_faleConosco(
   fal_mensagem VARCHAR(200) NOT NULL
 );
 
-CREATE  TABLE con_condutor (
-	con_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    con_nome VARCHAR(20) NOT NULL,
-    con_cpf VARCHAR(13) NOT NULL,
-    mot_id INT NOT NULL,
-    FOREIGN KEY (mot_id) REFERENCES tpc_tipo_contato(tpc_id)
-);
-
 CREATE TABLE ctp_condutor_tipo_contato (
-  mxc_id INT PRIMARY KEY AUTO_INCREMENT,
+  ctp_id INT PRIMARY KEY AUTO_INCREMENT,
   con_id INT(11) NOT NULL,
   FOREIGN KEY (con_id) REFERENCES con_condutor(con_id),
   tpc_id INT(11) NOT NULL,
@@ -214,7 +220,7 @@ inner join pes_pessoa pes on pes.pes_id = usu.pes_id
 inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
 inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
-
+select * from mot_motorista mot inner join con_condutor con on mot.mot_id = con.mot_id where mot.mot_id=1;
 
 select * from rec_recursos;
 select * from doc_documento;
@@ -227,9 +233,12 @@ select * from mxc_motorista_tipo_contato;
 select * from tpc_tipo_contato;
 select * from ser_servicos;
 select * from sol_solicitacao;
+select * from con_condutor;
 
 select pas_id from pas_passageiro pas inner join usu_usuario usu on usu.usu_id = pas.usu_id where usu.usu_id = 1;
 
+-- insert into ser_servicos (ser_datacadastro, ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, mot_id, con_id) values 
+-- ('2017-02-03', '2017-02-03', '2017-02-03', 'fatec', 'pinda', 'abcd', 12, 1, null);
 
 select mxc_descricao from usu_usuario usu 
 inner join mot_motorista mot on mot.usu_id = usu.usu_id 
@@ -325,5 +334,10 @@ select mot_id, mot.usu_id from mot_motorista mot inner join usu_usuario usu on m
 
 insert into pes_pessoa (pes_nome, pes_sexo, pes_nascimento, pes_cidade, pes_estado) values ('Admin', 'M', '1999-02-03', 'Pindamonhangaba', 'SP');
 insert into usu_usuario (usu_email, usu_senha, usu_tipo, pes_id) values ('admin@admin.com', 'xwtd2ev7b1HQnUEytxcMnSB1CnhS8AaA9lZY8DEOgQBW5nY8NMmgCw6UAHb1RJXBafwjAszrMSA5JxxDRpUH3A==', 'Administrador', 1);
-*/
 
+select pes.pes_id, pes_nome, mot_cnpj, pes_sexo, pes_nascimento, pes_cidade, pes_estado, usu_email, mxc_descricao, tpc_descricao from usu_usuario usu 
+inner join    mot_motorista mot on mot.usu_id = usu.usu_id 
+inner join pes_pessoa pes on pes.pes_id = usu.pes_id 
+inner join mxc_motorista_tipo_contato mxc on mxc.mot_id = mot.mot_id 
+inner join tpc_tipo_contato tpc on mxc.tpc_id = tpc.tpc_id where pes.pes_id = 2;
+*/

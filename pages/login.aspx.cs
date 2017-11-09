@@ -69,8 +69,9 @@ public partial class pages_login : System.Web.UI.Page
             Sessão ses = new Sessão(Convert.ToInt32(ds.Tables[0].Rows[0]["usu_id"].ToString()), ds.Tables[0].Rows[0]["usu_email"].ToString(), ds.Tables[0].Rows[0]["pes_nome"].ToString());
             Session["nome"] = ses;
             Session["perfil"] = ds.Tables[0].Rows[0]["usu_tipo"].ToString();
+            Session["value"] = ds.Tables[0].Rows[0]["usu_id"].ToString();
             string perfil = Convert.ToString(Session["perfil"]);
-
+            string a = Session["value"].ToString();
 
             switch (perfil)
             {

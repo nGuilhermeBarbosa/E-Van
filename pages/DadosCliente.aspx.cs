@@ -14,9 +14,9 @@ public partial class pages_DadosCliente : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                Sessão usu = (Sessão)Session["nome"];
-                //lblSessao.Text = usu.email;
-                hdf.Value = usu.id.ToString();
+                //Sessão usu = (Sessão)Session["nome"];
+                ////lblSessao.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
                 CarregarVisualizar();
             }
         }
@@ -25,6 +25,8 @@ public partial class pages_DadosCliente : System.Web.UI.Page
 
     public void CarregarVisualizar()
     {
+        hdf.Value = Session["value"].ToString();
+
         usu_usuario usu = new usu_usuario();
         pes_pessoa pes = new pes_pessoa();
         pas_passageiro pas = new pas_passageiro();

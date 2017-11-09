@@ -14,9 +14,9 @@ public partial class pages_r_management : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                Sessão usu = (Sessão)Session["nome"];
-                //lblSessao.Text = usu.email;
-                hdf.Value = usu.id.ToString();
+                //Sessão usu = (Sessão)Session["nome"];
+                ////lblSessao.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
                 CarregarLiteral();
             }
         }
@@ -24,6 +24,8 @@ public partial class pages_r_management : System.Web.UI.Page
 
     public void CarregarLiteral()
     {
+        hdf.Value = Session["value"].ToString();
+
         pas_passageiro pas = new pas_passageiro();
 
         DataSet codigo = new DataSet();

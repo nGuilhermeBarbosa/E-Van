@@ -13,15 +13,16 @@ public partial class pages_AlterarDadosCliente : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                Sessão usu = (Sessão)Session["nome"];
-                //lblSessao.Text = usu.email;
-                hdf.Value = usu.id.ToString();
+                //Sessão usu = (Sessão)Session["nome"];
+                ////lblSessao.Text = usu.email;
+                //hdf.Value = usu.id.ToString();
                 CarregarVisualizar();
             }
         }
     }
     public void CarregarVisualizar()
     {
+        hdf.Value = Session["value"].ToString();
         usu_usuario usu = new usu_usuario();
         pas_passageiro pas = new pas_passageiro();
         pes_pessoa pes = new pes_pessoa();

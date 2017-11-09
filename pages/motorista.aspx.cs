@@ -11,14 +11,15 @@ public partial class pages_motorista : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-            Sessão usu = (Sessão)Session["nome"];
-            //lblSessao.Text = usu.email;
-            hdf1.Value = usu.id.ToString();
+            //Sessão usu = (Sessão)Session["nome"];
+            ////lblSessao.Text = usu.email;
+            //hdf1.Value = usu.id.ToString();
             CarregarVisualizarM();
         }
     }
     public void CarregarVisualizarM()
     {
+        hdf1.Value = Session["value"].ToString();
         usu_usuario usu = new usu_usuario();
         pes_pessoa pes = new pes_pessoa();
         mot_motorista mot = new mot_motorista();

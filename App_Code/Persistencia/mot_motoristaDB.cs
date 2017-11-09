@@ -131,7 +131,7 @@ public class mot_motoristaDB
         IDbCommand objComando;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        string query = "select pes.pes_id, pes_nome, mot_cnpj, pes_sexo, pes_nascimento, pes_cidade,pes_estado, usu_email, mxc_descricao, tpc_descricao from usu_usuario usu inner join    mot_motorista mot on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id inner join mxc_motorista_tipo_contato mxc on mxc.mot_id = mot.mot_id inner join tpc_tipo_contato tpc on mxc.tpc_id = tpc.tpc_id where pes.pes_id =  ?id";
+        string query = "select pes.pes_id, pes_nome, mot_cnpj, pes_sexo, pes_nascimento, pes_cidade, pes_estado, usu_email, mxc_descricao, tpc_descricao from usu_usuario usu inner join    mot_motorista mot on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id inner join mxc_motorista_tipo_contato mxc on mxc.mot_id = mot.mot_id inner join tpc_tipo_contato tpc on mxc.tpc_id = tpc.tpc_id where pes.pes_id =  ?id";
         objComando = Mapped.Command(query, objConexao);
         objComando.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objComando);
