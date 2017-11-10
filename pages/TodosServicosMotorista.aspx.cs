@@ -49,14 +49,17 @@ public partial class pages_Default : System.Web.UI.Page
         int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
         DataSet ds = ser_servicosDB.SelectServicos(c);
-
+        int esCounter = 0;
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
             if (Convert.ToDateTime(dados["ser_datafim"]) < DateTime.Now)
             {
                 ser_servicosDB.Delete(Convert.ToInt32(dados["ser_id"]));
+                esCounter++;
             }
-            Literal1.Text += "<div class='serviceBox shadow'> "
+            else
+            {
+                Literal1.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["ser_id"] + "</span>" 
                 + "<span class='text-right'><a href='#' onclick='excluir(" + dados["ser_id"] + ", \"" + dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
@@ -70,6 +73,18 @@ public partial class pages_Default : System.Web.UI.Page
                 + "<b>Hora de Volta</b>:" + String.Format("{0:HH:mm}", dados["ser_datafim"]) + "<br /><hr>"
                 + "<b>Mensagem</b>:" + dados["ser_descricao"]
             + "</div></div>";
+            }
+
+            if (esCounter > 0)
+            {
+                fbse.Text = "Serviços expirados: " + esCounter;
+                fbse.Visible = true;
+            }
+            else
+            {
+                fbse.Visible = false;
+            }
+            
         }
         
     }
