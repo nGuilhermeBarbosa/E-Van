@@ -10,12 +10,18 @@ public partial class pages_serviceInfo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Request.QueryString["value"] != null)
+        {
+            if (!String.IsNullOrEmpty(Request.QueryString["value"].ToString()))
+            {
+                ServiceLoad(Request.QueryString["value"].ToString());
+            }
+        }
     }
 
     DataSet ds = ser_servicosDB.SelectAll();
 
-    public void ServiceLoad()
+    public void ServiceLoad(string par)
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {

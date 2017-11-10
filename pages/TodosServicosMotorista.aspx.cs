@@ -52,6 +52,10 @@ public partial class pages_Default : System.Web.UI.Page
 
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
+            if (Convert.ToDateTime(dados["ser_datafim"]) < DateTime.Now)
+            {
+                ser_servicosDB.Delete(Convert.ToInt32(dados["ser_id"]));
+            }
             Literal1.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["ser_id"] + "</span>" 
