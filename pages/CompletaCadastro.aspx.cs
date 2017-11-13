@@ -20,7 +20,6 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
                 ////lblSessao.Text = usu.email;
                 //hdf.Value = usu.id.ToString();
                 CarregarDDL();
-                CampoVazio();
             }
         }
     }
@@ -39,7 +38,20 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
 
 
         mxc_motorista_tipo_contato mxc = new mxc_motorista_tipo_contato();
-        mxc.Mxc_descricao = txtTelefone.Text;
+        if(ddl.SelectedIndex == 1)
+        {
+            mxc.Mxc_descricao = txtTelefone.Text;
+        }else if(ddl.SelectedIndex == 2)
+        {
+            mxc.Mxc_descricao = txtCelular.Text;
+        }else if(ddl.SelectedIndex == 3)
+        {
+            mxc.Mxc_descricao = txtWhatsapp.Text;
+        }else if(ddl.SelectedIndex == 4)
+        {
+            mxc.Mxc_descricao = txtEmailAlt.Text;
+        }
+        
         mxc.Mot_id = mot;
         mxc.Tpc_id = tpc;
         mxc_motorista_tipo_contatoDB.Insert(mxc);
@@ -213,19 +225,6 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
             txtCelular.Text = null;
             txtWhatsapp.Text = null;
             txtEmailAlt.Text = null;
-        }
-    }
-
-    public void CampoVazio()
-    {
-
-        DataSet ds = mxc_motorista_tipo_contatoDB.SelectAll(Convert.ToInt32(hdf.Value));
-        int qtd = ds.Tables[0].Rows.Count;
-
-        if (qtd != 0)
-        {
-            pBefore.Visible = false;
-            pAfter.Visible = true;
         }
     }
 }

@@ -86,7 +86,7 @@
                         <p>
                             Laura Siqueira
                         </p>
-                        <asp:Label ID="lblop" runat="server" Text="Cunhão" style="color:#354357; cursor:default;"></asp:Label>
+                       <!-- <asp:Label ID="lblop" runat="server" Text="Cunhão" style="color:#354357; cursor:default;"></asp:Label>-->
                     </div>
                 </div>
             </div>
