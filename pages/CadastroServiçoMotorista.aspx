@@ -106,7 +106,10 @@
         </div>
     </div>
 
-    <div class="title text-center">Cadastro De Serviço</div>
+    <div class="title text-center">
+        <span class="text-left glyphicon glyphicon-chevron-left leftButton"><a href="TodosServicosMotorista.aspx">&nbsp;Voltar</a></span>
+                Cadastrar Serviço
+    </div>
     <br />
     <br />
     <br />

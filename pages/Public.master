@@ -72,18 +72,21 @@
                         </p>
                     </div>
                 </div>
+                
                 <div class="col-lg-6">
                     <div class="innerFooterRight">
                         <b>Desenvolvido por</b>
                         <p>
                             Guilherme Cunha
                         </p>
+                        
                         <p>
                             João Guilherme
                         </p>
                         <p>
                             Laura Siqueira
                         </p>
+                        <asp:Label ID="lblop" runat="server" Text="Teste" style="color:#354357; cursor:default;"></asp:Label>
                     </div>
                 </div>
             </div>
