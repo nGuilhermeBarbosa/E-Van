@@ -16,6 +16,7 @@ public partial class pages_Error : System.Web.UI.Page
     {
         Session.Remove("nome");
         Session.Remove("perfil");
+        Session.Remove("value");
         Response.Redirect("index.aspx");
     }
 }

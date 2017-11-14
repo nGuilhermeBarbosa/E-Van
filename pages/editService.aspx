@@ -83,6 +83,9 @@
                     </div>
                 </div>
                 <br />
+                <asp:Label ID="lblCondutores" runat="server" Text="Condutores" CssClass="margem"></asp:Label>
+                <asp:DropDownList ID="ddlCondutor" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList>
+                <br />
                 <asp:Label ID="lblLugares" runat="server" Text="Lugares Disponiveis" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtLugares" runat="server" CssClass="form-control controle"></asp:TextBox>
                 <br />

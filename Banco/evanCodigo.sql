@@ -234,9 +234,10 @@ select * from tpc_tipo_contato;
 select * from ser_servicos;
 select * from sol_solicitacao;
 select * from con_condutor;
+select * from ctp_condutor_tipo_contato;
+select * from sco_servicoscondutor;
 
-select pas_id from pas_passageiro pas inner join usu_usuario usu on usu.usu_id = pas.usu_id where usu.usu_id = 1;
-
+select * from ser_servicos ser inner join con_condutor con on ser.con_id = con.con_id where ser_id = 5;
 -- insert into ser_servicos (ser_datacadastro, ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, mot_id, con_id) values 
 -- ('2017-02-03', '2017-02-03', '2017-02-03', 'fatec', 'pinda', 'abcd', 12, 1, null);
 
@@ -290,6 +291,8 @@ inner join tdo_tipodocumento tdo on tdo.tdo_id = doc.tdo_id
 inner join pes_pessoa pes on pes.pes_id = usu.pes_id 
 inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
 inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
+
+
 
 -- insert into mxc_motorista_tipo_contato (mot_id, tpc_id, mxc_descricao) values (1, 2, '3645-8888');
 

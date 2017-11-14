@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
+        <asp:HiddenField ID="hdf1" runat="server" />
         <div class="col-lg-12">
             <div class="title">
                 <span class="text-left glyphicon glyphicon-chevron-left leftButton"><a href="Condutores.aspx">&nbsp;Voltar</a></span>
@@ -17,14 +18,12 @@
                 <div class="row">
                     <div class="col-lg-3">Tipo de Contato:&nbsp;
                         <asp:DropDownList ID="ddl" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddl_SelectedIndexChanged" AutoPostBack="true">
-                            <asp:ListItem Value="0">Telefone Fixo</asp:ListItem>
-                            <asp:ListItem Value="1">Celular</asp:ListItem>
-                            <asp:ListItem Value="2">Whatsapp</asp:ListItem>
                         </asp:DropDownList>
                     </div>
                     <div class="col-lg-9">
                         Contato:&nbsp;
-                        <asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control" required="true" onkeyup="formataTelefone(this,event);" MaxLength="14"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" CssClass="form-control" required="true" Visible="false"></asp:TextBox>
+                        <asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control" required="true" onkeyup="formataTelefone(this,event);" MaxLength="14" Visible="false"></asp:TextBox>
                         <asp:TextBox ID="txtCelular" runat="server" placeholder="Celular" CssClass="form-control" required="true" onkeyup="formataCelular(this,event);" MaxLength="15" Visible="false"></asp:TextBox>
                         <asp:TextBox ID="txtWhatsapp" runat="server" placeholder="Whatsapp" CssClass="form-control" required="true" onkeyup="formataCelular(this,event);" MaxLength="15" Visible="false"></asp:TextBox>
                         <br />

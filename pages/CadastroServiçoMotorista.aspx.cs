@@ -76,11 +76,12 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
         serv.Ser_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
 
         sco_servicoscondutor sco = new sco_servicoscondutor();
-        if (qtd!=0)
+        if (ddlCondutor.SelectedIndex != 0)
         {
             con.Con_id = Convert.ToInt32(ddlCondutor.SelectedValue);
             sco.Con_id = con;
             sco.Ser_id = serv;
+            sco_servicoscondutorDB.Insert(sco);
         }
 
 

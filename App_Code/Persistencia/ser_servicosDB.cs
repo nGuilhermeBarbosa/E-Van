@@ -197,7 +197,7 @@ public class ser_servicosDB
         IDbCommand objComando;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        string query = "select * from ser_servicos where ser_id = ?id";
+        string query = "select ser.ser_id, ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, con.con_id from ser_servicos ser inner join sco_servicoscondutor sco on ser.ser_id = sco.ser_id inner join con_condutor con on con.con_id = sco.con_id where ser.ser_id=?id";
         objComando = Mapped.Command(query, objConexao);
         objComando.Parameters.Add(Mapped.Parameter("?id", id));
         objDataAdapter = Mapped.Adapter(objComando);

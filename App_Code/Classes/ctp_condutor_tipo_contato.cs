@@ -52,4 +52,17 @@ public class ctp_condutor_tipo_contato
             tpc_id = value;
         }
     }
+
+    public string Ctp_descricao
+    {
+        get
+        {
+            return ctp_descricao;
+        }
+
+        set
+        {
+            ctp_descricao = value;
+        }
+    }
 }

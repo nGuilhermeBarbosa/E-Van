@@ -19,6 +19,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
                     if (!String.IsNullOrEmpty(Request.QueryString["ser"].ToString()))
                     {
                         CarregarVisualizar(Request.QueryString["ser"].ToString());
+                        CarregarDDL();
                     }
                     else Response.Redirect("TodosServicosMotorista.aspx");
                 }
@@ -33,6 +34,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
     public void CarregarVisualizar(string par)
     {
         ser_servicos usu = new ser_servicos();
+        con_condutor con = new con_condutor();
 
         DataSet ds = ser_servicosDB.SelectDados(Convert.ToInt32(par));
         Label1.Text = par;
@@ -46,11 +48,20 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
             txtDataFim.Text = ds.Tables[0].Rows[0]["ser_datafim"].ToString();
             txtLugares.Text = ds.Tables[0].Rows[0]["ser_lugares"].ToString();
             txtDescricao.Text = ds.Tables[0].Rows[0]["ser_descricao"].ToString();
+            ddlCondutor.SelectedValue = ds.Tables[0].Rows[0]["con_id"].ToString();
             Label1.Text = ds.Tables[0].Rows[0]["ser_id"].ToString();
 
         }
     }
-
+    public void CarregarDDL()
+    {
+        DataSet ds = con_condutorDB.SelectAll();
+        ddlCondutor.DataSource = ds;
+        ddlCondutor.DataTextField = "con_nome";
+        ddlCondutor.DataValueField = "con_id";
+        ddlCondutor.DataBind();
+        //ddlCondutor.Items.Insert(0, "Selecione");
+    }
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
         DateTime data = DateTime.Now;
