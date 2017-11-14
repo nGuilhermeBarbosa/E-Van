@@ -8,6 +8,12 @@
         function openModalSE() {
             $('#fbSE').modal('show');
         }
+        function openModalSET() {
+            $('#fbSET').modal('show');
+        }
+        function openModalSETN() {
+            $('#fbSETN').modal('show');
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -56,7 +62,54 @@
         </div>
     </div>
 
-    <div class="title text-center">Cadastro De Serviço</div>
+    <div id="fbSET" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Cadastro de Serviço</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img src="../images/tardis.png" style="position:absolute; left:0; right:0; vertical-align:central; width:90px; margin:auto; padding:0;" / >
+                            <br />
+                            <p class="text-center" style="margin-top:70px;">A data de retorno deve ser maior do que a data de partida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="fbSETN" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Cadastro de Serviço</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img src="../images/tardis.png" style="position:absolute; left:0; right:0; vertical-align:central; width:90px; margin:auto; padding:0;" / >
+                            <br />
+                            <p class="text-center" style="margin-top:70px;">Serviços de datas passadas não podem ser cadastrados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="title text-center">
+        <span class="text-left glyphicon glyphicon-chevron-left leftButton"><a href="TodosServicosMotorista.aspx">&nbsp;Voltar</a></span>
+                Cadastrar Serviço
+    </div>
     <br />
     <br />
     <br />

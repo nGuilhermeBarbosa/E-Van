@@ -39,6 +39,7 @@
         <div class="title text-center col-lg-12">
             Meus Serviços
         <span class="glyphicon glyphicon-plus glyphiconBar"><a href="CadastroServiçoMotorista.aspx">&nbsp Cadastrar Novo serviço</a></span>
+            <asp:Label ID="fbse" runat="server" Text="Nada de viajar no tempo" Visible="false" style="background:#ff6a00; height:38px; margin-top:-8px; line-height:20px; padding:10px;"></asp:Label>
         </div>
         <div class="col-lg-12">
             <asp:Literal ID="Literal1" runat="server">

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 
 public partial class pages_Servicos : System.Web.UI.Page
 {
@@ -21,6 +21,10 @@ public partial class pages_Servicos : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
+            if (Convert.ToDateTime(dados["ser_datafim"]) < DateTime.Now)
+            {
+                ser_servicosDB.Delete(Convert.ToInt32(dados["ser_id"]));
+            }
             Literal1.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"

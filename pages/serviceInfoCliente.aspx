@@ -4,7 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
+            <asp:Literal ID="lInfo" runat="server"></asp:Literal>
+        </div>
+    </div>
+    <!--<div class="col-lg-8">
             <div class="title">João</div>
             <div class="serviceBox">
                 <div class="title">Serviço</div>
@@ -79,9 +83,7 @@
                 <div class="photoGallery"></div>
                 <div class="photoGallery"></div>
             </div>
-
         </div>
-
-    </div>
+    </div>-->
 </asp:Content>
 

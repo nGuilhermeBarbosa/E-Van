@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div id="modalNext" class="modal fade" role="dialog">
-        <div class="modal-dialog" id="video" style="float:unset; width:400px;">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
 
             <div class="modal-content">
                 <div class="modal-header">
@@ -14,8 +14,9 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            Lamentamos informar que para prosseguir deve estar cadastrado no sistema<br /><br />
-                            <asp:Button ID="btnGtHP" runat="server" Text="Ir para página de cadastro" OnClick="btnGtHP_Click" CssClass="btn btn-info"/>
+                            Lamentamos informar que para prosseguir deve estar cadastrado no sistema<br />
+                            <br />
+                            <asp:Button ID="btnGtHP" runat="server" Text="Ir para página de cadastro" OnClick="btnGtHP_Click" CssClass="btn btn-info" />
                             &nbsp;
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                         </div>

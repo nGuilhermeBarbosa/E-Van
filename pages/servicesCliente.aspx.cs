@@ -23,6 +23,10 @@ public partial class pages_services : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
+            if (Convert.ToDateTime(dados["ser_datafim"]) < DateTime.Now)
+            {
+                ser_servicosDB.Delete(Convert.ToInt32(dados["ser_id"]));
+            }
             LiteralServices.Text += "<div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"

@@ -19,7 +19,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="close" data-dismiss="modal">&times;</div>
-                    <h4 class="modal-title">Agradecimentos</h4>
+                    <h4 class="modal-title"><asp:Label Text="Agradecimentos" runat="server"></asp:Label></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
