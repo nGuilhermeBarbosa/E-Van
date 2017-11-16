@@ -18,6 +18,7 @@ public class ser_servicos
     private string ser_descricao;
     private int ser_lugares;
     private mot_motorista mot_id;
+    private tra_transporte tra_id;
     
 
     public string Ser_descricao
@@ -87,4 +88,16 @@ public class ser_servicos
         set { ser_id = value; }
     }
 
+    public tra_transporte Tra_id
+    {
+        get
+        {
+            return tra_id;
+        }
+
+        set
+        {
+            tra_id = value;
+        }
+    }
 }

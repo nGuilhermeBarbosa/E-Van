@@ -72,6 +72,15 @@ CREATE  TABLE con_condutor (
     FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id)
 );
 
+CREATE TABLE tra_transporte (
+  tra_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  tra_lugares INT(2) NOT NULL,
+  tve_id INT(11) NOT NULL,
+  FOREIGN KEY (tve_id) REFERENCES tve_tipoveiculo(tve_id),
+  img_id INT NOT NULL,
+  FOREIGN KEY (img_id) REFERENCES img_imagemveiculo(img_id)
+);
+
 CREATE TABLE ser_servicos (
   ser_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   ser_datacadastro DATETIME NOT NULL,
@@ -83,7 +92,9 @@ CREATE TABLE ser_servicos (
   ser_descricao VARCHAR(200) NOT NULL,
   ser_lugares INT(3) NOT NULL,
   mot_id INT(11) NOT NULL,
-  FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id)
+  FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id),
+  tra_id INT(11) NOT NULL,
+  FOREIGN KEY (tra_id) REFERENCES tra_transporte(tra_id)
   );
   
 CREATE TABLE sco_servicoscondutor(
@@ -169,15 +180,6 @@ CREATE TABLE img_imagemveiculo(
     img_foto VARCHAR(100) NOT NULL
   );
 
-CREATE TABLE tra_transporte (
-  tra_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  tra_lugares INT(2) NOT NULL,
-  tve_id INT(11) NOT NULL,
-  FOREIGN KEY (tve_id) REFERENCES tve_tipoveiculo(tve_id),
-  img_id INT NOT NULL,
-  FOREIGN KEY (img_id) REFERENCES img_imagemveiculo(img_id)
-);
-
 
 CREATE TABLE txm_transporte_motorista (
   mot_id INT(11) NOT NULL,
@@ -222,6 +224,8 @@ inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
 select * from mot_motorista mot inner join con_condutor con on mot.mot_id = con.mot_id where mot.mot_id=1;
 
+
+
 select * from rec_recursos;
 select * from doc_documento;
 select * from tdo_tipodocumento;
@@ -237,7 +241,7 @@ select * from con_condutor;
 select * from ctp_condutor_tipo_contato;
 select * from sco_servicoscondutor;
 
-select * from ser_servicos ser inner join con_condutor con on ser.con_id = con.con_id where ser_id = 5;
+select ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, con_nome from ser_servicos ser inner join sco_servicoscondutor sco on ser.ser_id = sco.ser_id inner join con_condutor con on con.con_id = sco.con_id where ser.ser_id=5;
 -- insert into ser_servicos (ser_datacadastro, ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, mot_id, con_id) values 
 -- ('2017-02-03', '2017-02-03', '2017-02-03', 'fatec', 'pinda', 'abcd', 12, 1, null);
 
