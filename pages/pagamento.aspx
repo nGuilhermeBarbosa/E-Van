@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Public.master" AutoEventWireup="true" CodeFile="pagamento.aspx.cs" Inherits="pages_Selecionar_forma_de_pagamento" %>
+﻿<%@ Page Title="Pagamento" Language="C#" MasterPageFile="Public.master" AutoEventWireup="true" CodeFile="pagamento.aspx.cs" Inherits="pages_Selecionar_forma_de_pagamento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script type="text/javascript">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12" style="text-align:center;">
                             <img src="../images/Loading_icon.gif" style="width: 200px;" />
                             <br />
                             <p class="text-center">O pagamento está em estado pendente</p>
