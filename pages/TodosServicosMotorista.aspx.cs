@@ -15,22 +15,24 @@ public partial class pages_Default : System.Web.UI.Page
         {
             if (Session["nome"] != null)
             {
-                //Sessão usu = (Sessão)Session["nome"];
-                ////lblSessao.Text = usu.email;
-                //hdf.Value = usu.id.ToString();
-                //if (Request.QueryString["value"] != null)
-                //{
-                //    if (!String.IsNullOrEmpty(Request.QueryString["value"].ToString()))
-                //    {
-                //        CarregarLiteral(Request.QueryString["value"].ToString());
-                //        CadastroCompleto();
-                //    }
-                //}
+                hdf.Value = Session["value"].ToString();
+                mot_motorista mot = new mot_motorista();
+                DataSet codigo = new DataSet();
+                codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+                mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+                int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+                DataSet ds = mot_motoristaDB.SelectPETC(a);
+                foreach (DataRow dados in ds.Tables[0].Rows)
+                {
+                    if (Convert.ToString(dados["tip_descricao"]) == "Free")
+                    {
+                        ExibirLimite();
+                    }
+                }
+                
+                
                 CarregarLiteral();
                 CadastroCompleto();
-
-                
-
             }
         }
     }
@@ -47,9 +49,8 @@ public partial class pages_Default : System.Web.UI.Page
         // Label1.Text = par;
 
         int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
-
-        DataSet ds = ser_servicosDB.SelectServicos(c);
         int esCounter = 0;
+        DataSet ds = ser_servicosDB.SelectServicos(c);
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
             if (Convert.ToDateTime(dados["ser_datafim"]) < DateTime.Now)
@@ -84,9 +85,9 @@ public partial class pages_Default : System.Web.UI.Page
             {
                 fbse.Visible = false;
             }
-            
+
         }
-        
+
     }
 
 
@@ -164,5 +165,53 @@ public partial class pages_Default : System.Web.UI.Page
             //lbl.Text = Convert.ToString(cont);
             Response.Redirect("Erro.aspx");
         }
+    }
+
+    protected void csm_Click(object sender, EventArgs e)
+    {
+        mot_motorista mot = new mot_motorista();
+
+        DataSet codigo = new DataSet();
+
+        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+
+        mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+        int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+        DataSet ds = mot_motoristaDB.SelectPETC(a);
+        foreach (DataRow dados in ds.Tables[0].Rows)
+            if (Convert.ToInt32(dados["mot_publicacoes"]) == 5 && Convert.ToString(dados["tip_descricao"]) == "Free")
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalLimite();", true);
+        }
+        else
+        {
+            Server.Transfer("CadastroServiçoMotorista.aspx", true);
+        }
+    }
+    
+    public void ExibirLimite()
+    {
+        hdf.Value = Session["value"].ToString();
+
+        mot_motorista mot = new mot_motorista();
+
+        DataSet codigo = new DataSet();
+
+        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+
+        mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+        int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+        DataSet ds = mot_motoristaDB.SelectPETC(a);
+
+        foreach (DataRow dados in ds.Tables[0].Rows)
+        {
+            fbUnlimited.Visible = false;
+            fbLimite.Text = "Publicações: "+dados["mot_publicacoes"]+"/5";
+            fbLimite.Visible = true;
+        }
+        
     }
 }

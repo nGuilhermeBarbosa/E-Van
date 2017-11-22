@@ -10,7 +10,9 @@ public class mot_motorista
 {
     private int mot_id;
     private string mot_cnpj;
+    private int mot_publicacoes;
     private usu_usuario usu_id;
+    private tip_tipoconta tip_id;
 
 
 
@@ -35,6 +37,32 @@ public class mot_motorista
         set
         {
             usu_id = value;
+        }
+    }
+
+    public int Mot_publicacoes
+    {
+        get
+        {
+            return mot_publicacoes;
+        }
+
+        set
+        {
+            mot_publicacoes = value;
+        }
+    }
+
+    public tip_tipoconta Tip_id
+    {
+        get
+        {
+            return tip_id;
+        }
+
+        set
+        {
+            tip_id = value;
         }
     }
 }

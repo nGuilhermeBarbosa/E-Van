@@ -322,6 +322,7 @@ function formataCPF(campo, evt) {
         campo.value = vr.substr(0, 3) + '.' + vr.substr(3, 3) + '.' + vr.substr(6, 3) + '-' + vr.substr(9);
     MovimentaCursor(campo, xPos);
 }
+
 function formataDouble(campo, evt) {
     //18,53012
     var xPos = PosicaoCursor(campo);

@@ -196,7 +196,7 @@ public partial class pages_index : System.Web.UI.Page
 
                     mot_motorista mot = new mot_motorista();
                     mot.Mot_cnpj = txtCnpj.Text;
-
+                    mot.Mot_publicacoes = 0;
                     ////joga o email pra uma variavel
                     string emai = txtEmailM.Text;
 
@@ -210,6 +210,15 @@ public partial class pages_index : System.Web.UI.Page
                     us.Usu_id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
 
                     mot.Usu_id = us;
+
+                    DataSet dss = new DataSet();
+                    string TCTemporario = "Free";
+
+                    tip_tipoconta tip = new tip_tipoconta();
+
+                    dss = tip_tipocontaDB.SelectID(TCTemporario);
+                    tip.Tip_id = Convert.ToInt32(dss.Tables[0].Rows[0][0]);
+                    mot.Tip_id = tip;
 
                     switch (mot_motoristaDB.Insert(mot))
                     {

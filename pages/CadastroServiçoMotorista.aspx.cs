@@ -24,10 +24,11 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
 
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {
-        if (Convert.ToDateTime(txtDataInicio.Text +" "+txtHoraPartida.Text) > Convert.ToDateTime(txtDataFim.Text+" "+txtHoraRetorno.Text))
+        if (Convert.ToDateTime(txtDataInicio.Text + " " + txtHoraPartida.Text) > Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text))
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSET();", true);
-        }else if (Convert.ToDateTime(txtDataFim.Text +" "+ txtHoraRetorno.Text) < DateTime.Now)
+        }
+        else if (Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text) < DateTime.Now)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSETN();", true);
         }
@@ -48,6 +49,15 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
             int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
             DataSet ds = mot_motoristaDB.SelectCon(a);
+            DataSet dsp = mot_motoristaDB.SelectPublicacoes(mot.Mot_id);
+
+            foreach (DataRow dados in dsp.Tables[0].Rows)
+            {
+                int publicacoes = Convert.ToInt32(dados["mot_publicacoes"]);
+                publicacoes++;
+                mot.Mot_publicacoes = publicacoes;
+                mot_motoristaDB.UpdatePublicacoes(mot);
+            }
 
             int qtd = ds.Tables[0].Rows.Count;
 
@@ -82,14 +92,14 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
 
             serv.Ser_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
 
-        sco_servicoscondutor sco = new sco_servicoscondutor();
-        if (ddlCondutor.SelectedIndex != 0)
-        {
-            con.Con_id = Convert.ToInt32(ddlCondutor.SelectedValue);
-            sco.Con_id = con;
-            sco.Ser_id = serv;
-            sco_servicoscondutorDB.Insert(sco);
-        }
+            sco_servicoscondutor sco = new sco_servicoscondutor();
+            if (ddlCondutor.SelectedIndex != 0)
+            {
+                con.Con_id = Convert.ToInt32(ddlCondutor.SelectedValue);
+                sco.Con_id = con;
+                sco.Ser_id = serv;
+                sco_servicoscondutorDB.Insert(sco);
+            }
 
             txtOrigem.Text = "";
             txtDestino.Text = "";
@@ -100,7 +110,7 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
             txtHoraPartida.Text = "";
             txtHoraRetorno.Text = "";
         }
-        
+
     }
 
     public void CarregarDDL()

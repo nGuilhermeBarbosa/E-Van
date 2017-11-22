@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <asp:HiddenField ID="hdf" runat="server" />
-                <asp:Label ID="lblVagas" runat="server" Text="Vagas Disponíveis" CssClass="margem"></asp:Label>
+                <asp:Label ID="lblVagas" runat="server" Text="Número de Passageiros" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtPessoas" runat="server" CssClass="form-control" TextMode="number"></asp:TextBox><br />
                 <asp:Label ID="lblMensagem" runat="server" Text="Mensagem" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtMensagem" runat="server" TextMode="multiline" CssClass="form-control" Style="resize: none;"></asp:TextBox><br />
