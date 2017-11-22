@@ -29,8 +29,16 @@ public partial class pages_Default : System.Web.UI.Page
                         ExibirLimite();
                     }
                 }
-                
-                
+
+                DateTime data = DateTime.Today;
+                DateTime firstDay = new DateTime(data.Year, data.Month, 1);
+
+                if (data == firstDay)
+                {
+                    int publicacoes = 0;
+                    mot.Mot_publicacoes = publicacoes;
+                    mot_motoristaDB.UpdatePublicacoes(mot);
+                }
                 CarregarLiteral();
                 CadastroCompleto();
             }
@@ -60,20 +68,20 @@ public partial class pages_Default : System.Web.UI.Page
             }
             else
             {
-                Literal1.Text += "<div class='serviceBox shadow'> "
-                + "<div class='title'>" + dados["pes_nome"]
+                Literal1.Text += "  <div class='list-item'><div class='serviceBox shadow'> "
+                  + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["ser_id"] + "</span>" 
                 + "<span class='text-right'><a href='#' onclick='excluir(" + dados["ser_id"] + ", \"" + dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
                  + "   <span class='text-right'><a href = 'editService.aspx?ser=" + dados["ser_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp Editar</a></span></div>"
                 + "<div class='padding'>"
-                + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
-                + "<b>Destino</b>: " + dados["ser_destino"] + "<br /><hr>"
-                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br />"
-                + "<b>Hora de Saida</b>:" + String.Format("{0:HH:mm}", dados["ser_datainicio"]) + "<br /><hr>"
-                + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "<br />"
-                + "<b>Hora de Volta</b>:" + String.Format("{0:HH:mm}", dados["ser_datafim"]) + "<br /><hr>"
+                + "<p class='origem'><b>Origem</b>: " + dados["ser_origem"] + "</p>"
+                + "<p class='destino'><b>Destino</b>: " + dados["ser_destino"] + "</p><hr>"
+                + "<p><b>Data De Saida</b>:<e class='saida'>" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "</e></p>"
+                + "<p><b>Hora de Saida</b>:<e class='horasaida'>" + String.Format("{0:HH:mm}", dados["ser_datainicio"]) + "</e></p><hr>"
+                + "<p><b>Data De Volta</b>:<e class='chegada'>" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "</e></p>"
+                + "<p><b>Hora de Volta</b>:<e class='horachegada'>" + String.Format("{0:HH:mm}", dados["ser_datafim"]) + "</e></p><hr>"
                 + "<b>Mensagem</b>:" + dados["ser_descricao"]
-            + "</div></div>";
+            + "</div></div></div>";
             }
 
             if (esCounter > 0)
@@ -180,7 +188,7 @@ public partial class pages_Default : System.Web.UI.Page
         int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
         DataSet ds = mot_motoristaDB.SelectPETC(a);
         foreach (DataRow dados in ds.Tables[0].Rows)
-            if (Convert.ToInt32(dados["mot_publicacoes"]) == 5 && Convert.ToString(dados["tip_descricao"]) == "Free")
+            if (Convert.ToInt32(dados["mot_publicacoes"]) >= 5 && Convert.ToString(dados["tip_descricao"]) == "Free")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalLimite();", true);
         }
