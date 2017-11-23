@@ -50,7 +50,7 @@ public class tve_tveoveiculoDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from tve_tveoveiculo";
+        string sql = "select * from tve_tipoveiculo";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
