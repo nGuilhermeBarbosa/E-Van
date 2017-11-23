@@ -11,14 +11,25 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
         if (!Page.IsPostBack)
         {
             if (Session["nome"] != null)
             {
-                //Sessão usu = (Sessão)Session["nome"];
-                ////lblSessao.Text = usu.email;
-                //hdf.Value = usu.id.ToString();
+                Sessão usu = (Sessão)Session["nome"];
+                hdf.Value = usu.id.ToString();
+                DataSet ds = mxc_motorista_tipo_contatoDB.SelectAll(Convert.ToInt32(hdf.Value));
+                int qtd = ds.Tables[0].Rows.Count;
+
+                if (qtd != 0)
+                {
+                    pBefore.Visible = false;
+                    pAfter.Visible = true;
+                }
+                else
+                {
+                    pBefore.Visible = true;
+                    pAfter.Visible = false;
+                }
                 CarregarDDL();
             }
         }
@@ -110,6 +121,30 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
 
                             imgOriginal.Dispose();
 
+                            //Atualizar tipo de conta
+                            if (rbMensal.Checked)
+                            {
+                                string kindOfPremium = "Premium M";
+                                DataSet dsp = new DataSet();
+                                tip_tipoconta tip = new tip_tipoconta();
+
+                                dsp = tip_tipocontaDB.SelectID(kindOfPremium);
+                                tip.Tip_id = Convert.ToInt32(dsp.Tables[0].Rows[0][0]);
+                                mot.Tip_id = tip;
+                                mot_motoristaDB.UpdatePremium(mot);
+                            }
+                            else if (rbAnual.Checked)
+                            {
+                                string kindOfPremium = "Premium A";
+                                DataSet dsp = new DataSet();
+                                tip_tipoconta tip = new tip_tipoconta();
+
+                                dsp = tip_tipocontaDB.SelectID(kindOfPremium);
+                                tip.Tip_id = Convert.ToInt32(dsp.Tables[0].Rows[0][0]);
+                                mot.Tip_id = tip;
+                                mot_motoristaDB.UpdatePremium(mot);
+                            }
+
                             //Response.Write("<script>alert('Cadastrado com sucesso');</script>");
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
                             tdo_tipodocumento tdo = new tdo_tipodocumento();
@@ -125,6 +160,7 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
                             doc.Mot_id = mot;
                             doc.Tdo_id = tdo;
                             doc_documentoDB.Insert(doc);
+
                             pBefore.Visible = false;
                             pAfter.Visible = true;
                         }
@@ -225,6 +261,42 @@ public partial class pages_CompletaCadastro : System.Web.UI.Page
             txtCelular.Text = null;
             txtWhatsapp.Text = null;
             txtEmailAlt.Text = null;
+        }
+    }
+
+    protected void cbFree_CheckedChanged(object sender, EventArgs e)
+    {
+        if (cbFree.Checked)
+        {
+            cbPremium.Checked = false;
+            panelPremium.Visible = false;
+            panelFree.Visible = true;
+        }
+    }
+
+    protected void cbPremium_CheckedChanged(object sender, EventArgs e)
+    {
+        if (cbPremium.Checked)
+        {
+            cbFree.Checked = false;
+            panelPremium.Visible = true;
+            panelFree.Visible = false;
+        }
+    }
+
+    protected void rbMensal_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbMensal.Checked)
+        {
+            rbAnual.Checked = false;
+        }
+    }
+
+    protected void rbAnual_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbAnual.Checked)
+        {
+            rbMensal.Checked = false;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Public.master" AutoEventWireup="true" CodeFile="pagamento.aspx.cs" Inherits="pages_Selecionar_forma_de_pagamento" %>
+﻿<%@ Page Title="Pagamento" Language="C#" MasterPageFile="Public.master" AutoEventWireup="true" CodeFile="pagamento.aspx.cs" Inherits="pages_Selecionar_forma_de_pagamento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script type="text/javascript">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12" style="text-align:center;">
                             <img src="../images/Loading_icon.gif" style="width: 200px;" />
                             <br />
                             <p class="text-center">O pagamento está em estado pendente</p>
@@ -40,7 +40,7 @@
             <asp:Panel ID="PanelCartao" runat="server" Visible="false">
                 <div class="signupBox" style="border-top: 1px dashed #fff;">
                     Selecione seu cartão de crédito:<br />
-                    <asp:RadioButton ID="bVisa" runat="server" CssClass="radio-inline" OnCheckedChanged="bVisa_CheckedChanged" AutoPostBack="true" />
+                    <asp:RadioButton ID="bVisa" runat="server" Checked="true" CssClass="radio-inline" OnCheckedChanged="bVisa_CheckedChanged" AutoPostBack="true" />
                     <img src="../images/Visa-icon.png" width="50px" /><br />
                     <asp:RadioButton ID="bMaster" runat="server" CssClass="radio-inline" OnCheckedChanged="bMaster_CheckedChanged" AutoPostBack="true" />
                     <img src="../images/Master-Card-icon.png" width="50px" />
@@ -67,7 +67,7 @@
                         <div class="col-lg-12">
                             <div class="col-lg-6">
                                 Número do Cartão<br />
-                                <asp:TextBox ID="txtCartao" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                <asp:TextBox ID="txtCartao" runat="server" CssClass="form-control" onkeyup="formataCartaoCredito(this,event);" MaxLength="19"></asp:TextBox>
                             </div>
                             <div class="col-lg-2">
                                 Validade<br />
@@ -107,7 +107,7 @@
                             <div class="col-lg-2">
                                 Código
                                 <br />
-                                <asp:TextBox ID="txtCS" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                <asp:TextBox ID="txtCS" runat="server" CssClass="form-control" onkeyup="formataCartaoCredito(this,event);" MaxLength="3"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-12" style="margin-top: 15px;">
@@ -117,7 +117,7 @@
                             </div>
                             <div class="col-lg-6">
                                 CPF do titular do cartão
-                                    <asp:TextBox ID="txtCpfC" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtCpfC" runat="server" CssClass="form-control" onkeyup="formataCPF(this,event);" MaxLength="14"></asp:TextBox>
                             </div>
                         </div>
                     </div>

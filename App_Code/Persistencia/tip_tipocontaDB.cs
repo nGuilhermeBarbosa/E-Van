@@ -65,6 +65,30 @@ public class tip_tipocontaDB
         return ds;
     }
 
+    public static DataSet SelectID(string descricao)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select tip_id from tip_tipoconta where tip_descricao = ?descricao";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?descricao", descricao));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
     public static int Delete(int id)
     {
         int retorno = 0;
