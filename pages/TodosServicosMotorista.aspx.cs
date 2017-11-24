@@ -80,8 +80,8 @@ public partial class pages_Default : System.Web.UI.Page
                 + "<p><b>Hora de Saida</b>:<e class='horasaida'>" + String.Format("{0:HH:mm}", dados["ser_datainicio"]) + "</e></p><hr>"
                 + "<p><b>Data De Volta</b>:<e class='chegada'>" + String.Format("{0:dd/MM/yyyy}", dados["ser_datafim"]) + "</e></p>"
                 + "<p><b>Hora de Volta</b>:<e class='horachegada'>" + String.Format("{0:HH:mm}", dados["ser_datafim"]) + "</e></p><hr>"
-                + "<b>Mensagem</b>:" + dados["ser_descricao"]
-            + "</div></div></div>";
+                + "<p><b>Mensagem</b>:" + dados["ser_descricao"]
+            + "</p></div></div></div>";
             }
 
             if (esCounter > 0)
