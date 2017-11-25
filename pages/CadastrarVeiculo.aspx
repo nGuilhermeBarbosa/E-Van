@@ -28,23 +28,19 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
+                        <asp:HiddenField ID="hdf" runat="server" />
                         <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label>
                         <asp:TextBox ID="txtLugar" runat="server" CssClass="form-control controle"></asp:TextBox>
                         <br />
                         <asp:Label ID="lblRecursos" runat="server" Text="Recursos" CssClass="margem"></asp:Label>
                         <asp:CheckBoxList ID="cblRecursos" runat="server" CssClass="checkbox box">
-                             <asp:ListItem Value="1">Ar-condicionado</asp:ListItem>
-                             <asp:ListItem Value="2">Wi-fi</asp:ListItem>
-                             <asp:ListItem Value="3">Televis&#227;o</asp:ListItem>
-                             <asp:ListItem Value="4">Frigobar</asp:ListItem>
-                             <asp:ListItem Value="5">R&#225;dio</asp:ListItem>
-                             <asp:ListItem Value="6">Porta Autom&#225;tica</asp:ListItem>
-            </asp:CheckBoxList>
+                            
+                        </asp:CheckBoxList>
                         <br />
                         <asp:Label ID="lblFoto" runat="server" Text="Upload de Fotos: " CssClass="up"></asp:Label>
-                        <asp:ImageButton ID="imgVeiculo" runat="server" CssClass="up" />
+                        <asp:FileUpload ID="fup" runat="server" CssClass="up" />
                         <br />
-                        <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-default margem" />
+                        <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-default margem" OnClick="btnCadastrar_Click" />
                     </div>
                 </div>
             </div>

@@ -32,7 +32,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            
+            <asp:Literal ID="Literal" runat="server"></asp:Literal>
         </div>
     </div>
 </asp:Content>

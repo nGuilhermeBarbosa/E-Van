@@ -18,6 +18,21 @@ public partial class pages_TodosVeiculos : System.Web.UI.Page
             CadastroCompleto();
         }
     }
+    DataSet ds = mot_motoristaDB.SelectAll();
+
+    public void VeiculoLoad()
+    {
+        foreach (DataRow dados in ds.Tables[0].Rows)
+        {
+            Literal.Text += "<div class='serviceBox shadow'> "
+                + "<div class='title'>" + dados["pes_nome"] + "</div>"
+                + "<div class='padding'>"
+                + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"
+                + "<b>Cidade</b>:" + dados["pes_cidade"] + "<br />"
+                + "<b>Contato</b>:" + dados["usu_email"] + "<br />"
+                + "</div></div>";
+        }
+    }
     public void CadastroCompleto()
     {
         hdf.Value = Session["value"].ToString();

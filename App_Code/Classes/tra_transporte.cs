@@ -10,6 +10,7 @@ public class tra_transporte
 {
     private int tra_id;
     private int tra_lugares;
+    private string tra_modelo;
     private tve_tipoveiculo tve_id;
     private img_imagemveiculo img_id;
 
@@ -41,6 +42,19 @@ public class tra_transporte
         set
         {
             img_id = value;
+        }
+    }
+
+    public string Tra_modelo
+    {
+        get
+        {
+            return tra_modelo;
+        }
+
+        set
+        {
+            tra_modelo = value;
         }
     }
 }

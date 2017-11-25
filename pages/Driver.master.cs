@@ -31,6 +31,15 @@ public partial class pages_Driver : System.Web.UI.MasterPage
                 Response.Redirect("error.aspx");
             }
         }
+        DateTime data = DateTime.Today;
+        DateTime firstDay = new DateTime(data.Year, data.Month, 1);
+        mot_motorista mot = new mot_motorista();
+        if (data == firstDay)
+        {
+            int publicacoes = 0;
+            mot.Mot_publicacoes = publicacoes;
+            mot_motoristaDB.UpdatePublicacoes(mot);
+        }
     }
 
     protected void btn_Click(object sender, EventArgs e)

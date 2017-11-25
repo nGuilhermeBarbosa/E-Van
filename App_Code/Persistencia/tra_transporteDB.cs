@@ -18,15 +18,17 @@ public class tra_transporteDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into tra_transporte ";
-            sql += "(tra_lugares, tve_id)";
+            sql += "(tra_lugares, tra_modelo, tve_id, img_id)";
             sql += "values ";
-            sql += "(?tra_lugares, ?tve_id)";
+            sql += "(?tra_lugares, ?tra_modelo, ?tve_id, ?img_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?tra_lugares", tra.Tra_lugares));
+            objCommand.Parameters.Add(Mapped.Parameter("?tra_modelo", tra.Tra_modelo));
             objCommand.Parameters.Add(Mapped.Parameter("?tve_id", tra.Tve_id.Tve_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?img_id", tra.Img_id.Img_id));
 
 
             objCommand.ExecuteNonQuery();
@@ -56,6 +58,30 @@ public class tra_transporteDB
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
 
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectLugar(string modelo)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select tra_id from tra_transporte where tra_modelo = ?modelo";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?modelo", modelo));
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
 

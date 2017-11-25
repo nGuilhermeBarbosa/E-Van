@@ -17,7 +17,7 @@ public class txm_transporte_motoristaDB
             //Correto
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
-            string sql = "insert into adm_administrador ";
+            string sql = "insert into txm_transporte_motorista ";
             sql += "(mot_id, tra_id)";
             sql += "values ";
             sql += "(?mot_id, ?tra_id)";
