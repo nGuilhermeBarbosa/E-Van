@@ -60,7 +60,7 @@
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-pencil">&nbsp;Gerenciar <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="Profilecliente.aspx" class="glyphicon glyphicon-user">&nbsp;Usuários</a></li>
+                                    <li><a href="Profilecliente.aspx" class="glyphicon glyphicon-user">&nbsp;Passageiros</a></li>
                                     <li><a href="Report.aspx" class="glyphicon glyphicon-alert">&nbsp;Denúncias</a></li>
                                     <li><a href="allAdmin.aspx" class="glyphicon glyphicon-cog">&nbsp;Administradores</a></li>
                                     <li><a href="mensagem.aspx" class="glyphicon glyphicon-envelope">&nbsp;Mensagens</a></li>

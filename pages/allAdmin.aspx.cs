@@ -30,6 +30,7 @@ public partial class pages_allAdmin : System.Web.UI.Page
                 + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"
                 + "<b>Estado</b>: " + dados["pes_estado"] + "<br />"
                 + "<b>Cidade</b>:"+ dados["pes_cidade"]
+                
             + "</div></div>";
         }
         
