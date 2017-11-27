@@ -22,106 +22,128 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
 
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {
-        if (Convert.ToDateTime(txtDataInicio.Text + " " + txtHoraPartida.Text) > Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text))
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSET();", true);
-        }
-        else if (Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text) < DateTime.Now)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSETN();", true);
-        }
-        else
-        {
-            DateTime data = DateTime.Now;
+        hdf.Value = Session["value"].ToString();
+        mot_motorista mot1 = new mot_motorista();
 
-            hdf.Value = Session["value"].ToString();
+        DataSet codigo1 = new DataSet();
 
-            mot_motorista mot = new mot_motorista();
+        codigo1 = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
 
-            DataSet codigo = new DataSet();
+        mot1.Mot_id = Convert.ToInt32(codigo1.Tables[0].Rows[0][0]);
 
-            codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
-
-            mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
-
-            int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
-
-            DataSet ds = mot_motoristaDB.SelectCon(a);
-            DataSet dsp = mot_motoristaDB.SelectPublicacoes(mot.Mot_id);
-
-            foreach (DataRow dados in dsp.Tables[0].Rows)
+        int a1 = Convert.ToInt32(codigo1.Tables[0].Rows[0][0]);
+        DataSet ds1 = mot_motoristaDB.SelectPETC(a1);
+        foreach (DataRow dados1 in ds1.Tables[0].Rows)
+            if (Convert.ToInt32(dados1["mot_publicacoes"]) >= 5 && Convert.ToString(dados1["tip_descricao"]) == "Free")
             {
-                int publicacoes = Convert.ToInt32(dados["mot_publicacoes"]);
-                publicacoes++;
-                mot.Mot_publicacoes = publicacoes;
-                mot_motoristaDB.UpdatePublicacoes(mot);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalLimite();", true);
             }
+            else{
 
-            int qtd = ds.Tables[0].Rows.Count;
-
-            ser_servicos serv = new ser_servicos();
-            con_condutor con = new con_condutor();
-            tra_transporte tra = new tra_transporte();
-            if (ddlTransporte.SelectedIndex != 0)
-            {
-                tra.Tra_id = Convert.ToInt32(ddlTransporte.SelectedValue);
-                serv.Tra_id = tra;
-                serv.Ser_datacadastro = data;
-                serv.Ser_origem = txtOrigem.Text;
-                serv.Ser_destino = txtDestino.Text;
-                serv.Ser_descricao = txtDescricao.Text;
-                serv.Ser_datafim = Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text);
-                serv.Ser_datainicio = Convert.ToDateTime(txtDataInicio.Text + " " + txtHoraPartida.Text);
-                serv.Ser_lugares = Convert.ToInt32(txtLugares.Text);
-
-                serv.Mot_id = mot;
-                switch (ser_servicosDB.Insert(serv))
+                if (Convert.ToDateTime(txtDataInicio.Text + " " + txtHoraPartida.Text) > Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text))
                 {
-                    case 0:
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSS();", true);
-                        //lblMsg.Text = "Cadastrado com sucesso";
-                        break;
-                    case -2:
-                        //lblMsg.Text = "ERRO";
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSE();", true);
-                        break;
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSET();", true);
                 }
-                string descricao = txtDescricao.Text;
-
-                DataSet id = new DataSet();
-
-                id = ser_servicosDB.SelectID(descricao);
-
-                serv.Ser_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
-
-                sco_servicoscondutor sco = new sco_servicoscondutor();
-                if (ddlCondutor.SelectedIndex != 0)
+                else if (Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text) < DateTime.Now)
                 {
-                    con.Con_id = Convert.ToInt32(ddlCondutor.SelectedValue);
-                    sco.Con_id = con;
-                    sco.Ser_id = serv;
-                    sco_servicoscondutorDB.Insert(sco);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSETN();", true);
+                }
+                else
+                {
+                    DateTime data = DateTime.Now;
+
+                    hdf.Value = Session["value"].ToString();
+
+                    mot_motorista mot = new mot_motorista();
+
+                    DataSet codigo = new DataSet();
+
+                    codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+
+                    mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+                    int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+                    DataSet ds = mot_motoristaDB.SelectCon(a);
+                    DataSet dsp = mot_motoristaDB.SelectPublicacoes(mot.Mot_id);
+
+                    foreach (DataRow dados in dsp.Tables[0].Rows)
+                    {
+                        int publicacoes = Convert.ToInt32(dados["mot_publicacoes"]);
+                        publicacoes++;
+                        mot.Mot_publicacoes = publicacoes;
+                        mot_motoristaDB.UpdatePublicacoes(mot);
+                    }
+
+                    int qtd = ds.Tables[0].Rows.Count;
+
+                    ser_servicos serv = new ser_servicos();
+                    con_condutor con = new con_condutor();
+                    tra_transporte tra = new tra_transporte();
+                    if (ddlTransporte.SelectedIndex != 0)
+                    {
+                        tra.Tra_id = Convert.ToInt32(ddlTransporte.SelectedValue);
+                        serv.Tra_id = tra;
+                        serv.Ser_datacadastro = data;
+                        serv.Ser_origem = txtOrigem.Text;
+                        serv.Ser_destino = txtDestino.Text;
+                        serv.Ser_descricao = txtDescricao.Text;
+                        serv.Ser_datafim = Convert.ToDateTime(txtDataFim.Text + " " + txtHoraRetorno.Text);
+                        serv.Ser_datainicio = Convert.ToDateTime(txtDataInicio.Text + " " + txtHoraPartida.Text);
+                        serv.Ser_lugares = Convert.ToInt32(txtLugares.Text);
+
+                        serv.Mot_id = mot;
+                        switch (ser_servicosDB.Insert(serv))
+                        {
+                            case 0:
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSS();", true);
+                                //lblMsg.Text = "Cadastrado com sucesso";
+                                break;
+                            case -2:
+                                //lblMsg.Text = "ERRO";
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSE();", true);
+                                break;
+                        }
+                        string descricao = txtDescricao.Text;
+
+                        DataSet id = new DataSet();
+
+                        id = ser_servicosDB.SelectID(descricao);
+
+                        serv.Ser_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
+
+                        sco_servicoscondutor sco = new sco_servicoscondutor();
+                        if (ddlCondutor.SelectedIndex != 0)
+                        {
+                            con.Con_id = Convert.ToInt32(ddlCondutor.SelectedValue);
+                            sco.Con_id = con;
+                            sco.Ser_id = serv;
+                            sco_servicoscondutorDB.Insert(sco);
+                        }
+
+
+
+                        txtOrigem.Text = "";
+                        txtDestino.Text = "";
+                        txtDataFim.Text = "";
+                        txtDescricao.Text = "";
+                        txtDataInicio.Text = "";
+                        txtLugares.Text = "";
+                        txtHoraPartida.Text = "";
+                        txtHoraRetorno.Text = "";
+                    }
+                    else
+                    {
+                        Label3.Visible = true;
+                    }
+
                 }
 
-
-
-                txtOrigem.Text = "";
-                txtDestino.Text = "";
-                txtDataFim.Text = "";
-                txtDescricao.Text = "";
-                txtDataInicio.Text = "";
-                txtLugares.Text = "";
-                txtHoraPartida.Text = "";
-                txtHoraRetorno.Text = "";
             }
-            else
-            {
-                Label3.Visible = true;
-            }
-
-        }
 
     }
+
+        
 
     public void CarregarDDL()
     {

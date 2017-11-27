@@ -14,10 +14,35 @@
         function openModalSETN() {
             $('#fbSETN').modal('show');
         }
+        function openModalLimite() {
+            $('#modalLimite').modal('show');
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+    <div id="modalLimite" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Atenção</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="glyphicon glyphicon-alert col-xs-12 text-center" style="font-size: 90px;"></p>
+                            <br />
+                            <p class="text-center">Lamentamos informar que você atingiu seu limite mensal de divulgação de serviço, aguarde a virada do mês para divulgar novamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
     <div id="fbSS" class="modal fade" role="dialog">
         <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
 
