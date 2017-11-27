@@ -16,7 +16,7 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
             if (Session["nome"] != null)
             {
                 CarregarDDL();
-                CarregarCheckBoxList();
+                
             }
         }
     }
@@ -122,15 +122,73 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
 
                             txm_transporte_motoristaDB.Insert(txm);
 
-                            rec_recursos rec = new rec_recursos();
-                            rec.Rec_id = Convert.ToInt32(cblRecursos.SelectedValue);
+                            if (cb1.Checked)
+                            {
 
-                            txr_transporte_recursos txr = new txr_transporte_recursos();
-                            txr.Tra_id = tra;
-                            txr.Rec_id = rec;
+                                rec_recursos rec = new rec_recursos();
+                                rec.Rec_id = 1;
 
-                            txr_transporte_recursosDB.Insert(txr);
+                                txr_transporte_recursos txr = new txr_transporte_recursos();
+                                txr.Tra_id = tra;
+                                txr.Rec_id = rec;
 
+                                txr_transporte_recursosDB.Insert(txr);
+                            }
+                            if (cb2.Checked)
+                            {
+                                rec_recursos rec = new rec_recursos();
+                                rec.Rec_id = 2;
+
+                                txr_transporte_recursos txr = new txr_transporte_recursos();
+                                txr.Tra_id = tra;
+                                txr.Rec_id = rec;
+
+                                txr_transporte_recursosDB.Insert(txr);
+                            }
+                            if (cb3.Checked)
+                            {
+                                rec_recursos rec = new rec_recursos();
+                                rec.Rec_id = 3;
+
+                                txr_transporte_recursos txr = new txr_transporte_recursos();
+                                txr.Tra_id = tra;
+                                txr.Rec_id = rec;
+
+                                txr_transporte_recursosDB.Insert(txr);
+                            }
+                            if (cb4.Checked)
+                            {
+                                rec_recursos rec = new rec_recursos();
+                                rec.Rec_id = 4;
+
+                                txr_transporte_recursos txr = new txr_transporte_recursos();
+                                txr.Tra_id = tra;
+                                txr.Rec_id = rec;
+
+                                txr_transporte_recursosDB.Insert(txr);
+                            }
+                            if (cb5.Checked)
+                            {
+                                rec_recursos rec = new rec_recursos();
+                                rec.Rec_id = 5;
+
+                                txr_transporte_recursos txr = new txr_transporte_recursos();
+                                txr.Tra_id = tra;
+                                txr.Rec_id = rec;
+
+                                txr_transporte_recursosDB.Insert(txr);
+                            }
+                            if (cb6.Checked)
+                            {
+                                rec_recursos rec = new rec_recursos();
+                                rec.Rec_id = 6;
+
+                                txr_transporte_recursos txr = new txr_transporte_recursos();
+                                txr.Tra_id = tra;
+                                txr.Rec_id = rec;
+
+                                txr_transporte_recursosDB.Insert(txr);
+                            }
                             txtLugar.Text = "";
                             txtModelo.Text = "";
                             
@@ -183,12 +241,5 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
         ddlVeiculo.DataBind();
         ddlVeiculo.Items.Insert(0, "Selecione");
     }
-    public void CarregarCheckBoxList()
-    {
-        DataSet ds = rec_recursosDB.SelectAll();
-        cblRecursos.DataSource = ds;
-        cblRecursos.DataTextField = "rec_descricao";
-        cblRecursos.DataValueField = "rec_id";
-        cblRecursos.DataBind();
-    }
+    
 }

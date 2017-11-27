@@ -152,6 +152,10 @@
                 <asp:Label ID="lblCondutores" runat="server" Text="Condutores" CssClass="margem"></asp:Label>
                 <asp:DropDownList ID="ddlCondutor" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList>
                 <br />
+                <asp:Label ID="lblTransporte" runat="server" Text="Veículo" CssClass="margem"></asp:Label>
+                <asp:DropDownList ID="ddlTransporte" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList>
+                <asp:Label ID="Label3" runat="server" Text="Você deve escolher um transporte para completar o cadastro de serviço" CssClass="alert-danger margem" Visible="false"></asp:Label>
+                <br />
                 <asp:Label ID="lblLugares" runat="server" Text="Lugares Disponiveis" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtLugares" runat="server" CssClass="form-control controle" required="true"></asp:TextBox>
                 <br />

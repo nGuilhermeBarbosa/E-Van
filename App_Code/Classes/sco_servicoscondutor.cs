@@ -8,6 +8,7 @@ using System.Web;
 /// </summary>
 public class sco_servicoscondutor
 {
+    private int sco_id;
     private ser_servicos ser_id;
     private con_condutor con_id;
 
@@ -34,6 +35,19 @@ public class sco_servicoscondutor
         set
         {
             con_id = value;
+        }
+    }
+
+    public int Sco_id
+    {
+        get
+        {
+            return sco_id;
+        }
+
+        set
+        {
+            sco_id = value;
         }
     }
 }

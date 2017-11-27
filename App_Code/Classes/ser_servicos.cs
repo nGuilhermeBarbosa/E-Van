@@ -19,6 +19,7 @@ public class ser_servicos
     private int ser_lugares;
     private mot_motorista mot_id;
     private tra_transporte tra_id;
+    private con_condutor con_id;
     
 
     public string Ser_descricao
@@ -98,6 +99,19 @@ public class ser_servicos
         set
         {
             tra_id = value;
+        }
+    }
+
+    public con_condutor Con_id
+    {
+        get
+        {
+            return con_id;
+        }
+
+        set
+        {
+            con_id = value;
         }
     }
 }

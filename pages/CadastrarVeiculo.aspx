@@ -33,9 +33,18 @@
                         <asp:TextBox ID="txtLugar" runat="server" CssClass="form-control controle"></asp:TextBox>
                         <br />
                         <asp:Label ID="lblRecursos" runat="server" Text="Recursos" CssClass="margem"></asp:Label>
-                        <asp:CheckBoxList ID="cblRecursos" runat="server" CssClass="checkbox box">
+                       
+                        <asp:CheckBox ID="cb1" Value="1" runat="server" Text="Ar-condicionado" CssClass="checkbox box"/>
+                        <asp:CheckBox ID="cb2" Value="2" runat="server" Text="Wi-fi" CssClass="checkbox box"/>
+                        <asp:CheckBox ID="cb3" Value="3" runat="server" Text="Televisão" CssClass="checkbox box"/>
+                        <asp:CheckBox ID="cb4" Value="4" runat="server" Text="Frigobar" CssClass="checkbox box"/>
+                        <asp:CheckBox ID="cb5" Value="5" runat="server" Text="Rádio" CssClass="checkbox box"/>
+                        <asp:CheckBox ID="cb6" Value="6" runat="server" Text="Porta Automática" CssClass="checkbox box"/>
+
+                        <%--<asp:CheckBoxList ID="cblRecursos" runat="server" CssClass="checkbox box">
+
                             
-                        </asp:CheckBoxList>
+                        </asp:CheckBoxList>--%>
                         <br />
                         <asp:Label ID="lblFoto" runat="server" Text="Upload de Fotos: " CssClass="up"></asp:Label>
                         <asp:FileUpload ID="fup" runat="server" CssClass="up" />

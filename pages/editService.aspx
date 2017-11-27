@@ -72,19 +72,33 @@
                 <br />
                 <div class="row">
                     <div class="col-lg-6">
-                        <asp:Label ID="lblDataInicio" runat="server" Text="Data Inicio" CssClass="margem"></asp:Label>
-                        <asp:TextBox ID="txtDataInicio" runat="server" CssClass="form-control controle"></asp:TextBox>
+                        <asp:Label ID="lblDataInicio" runat="server" Text="Data Partida" CssClass="margem"></asp:Label>
+                        <asp:TextBox ID="txtDataInicio" runat="server" TextMode="Date" CssClass="form-control controle" required="true"></asp:TextBox>
                         <br />
-                    </div>  
-                    <div class ="col-lg-6">
-                        <asp:Label ID="lblDataFim" runat="server" Text="Data de Fim" CssClass="margem"></asp:Label>
-                        <asp:TextBox ID="txtDataFim" runat="server" CssClass="form-control controle"></asp:TextBox>
+                    </div>
+                    <div class="col-lg-6">
+                        <asp:Label ID="lblDataFim" runat="server" Text="Data Retorno" CssClass="margem"></asp:Label>
+                        <asp:TextBox ID="txtDataFim" runat="server" TextMode="Date" CssClass="form-control controle" required="true"></asp:TextBox>
+                        <br />
+                    </div>
+                    <br />
+                    <div class="col-lg-6">
+                        <asp:Label ID="Label2" runat="server" Text="Hora Partida" CssClass="margem"></asp:Label>
+                        <asp:TextBox ID="txtHoraPartida" runat="server" type="Time" CssClass="form-control controle" required="true"></asp:TextBox>
+                        <br />
+                    </div>
+                    <div class="col-lg-6">
+                        <asp:Label ID="Label3" runat="server" Text="Hora Retorno" CssClass="margem"></asp:Label>
+                        <asp:TextBox ID="txtHoraRetorno" runat="server" type="Time" CssClass="form-control controle" required="true"></asp:TextBox>
                         <br />
                     </div>
                 </div>
                 <br />
                 <asp:Label ID="lblCondutores" runat="server" Text="Condutores" CssClass="margem"></asp:Label>
                 <asp:DropDownList ID="ddlCondutor" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList>
+                <br />
+                <asp:Label ID="lblTransporte" runat="server" Text="Veículo" CssClass="margem"></asp:Label>
+                <asp:DropDownList ID="ddlTransporte" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList>
                 <br />
                 <asp:Label ID="lblLugares" runat="server" Text="Lugares Disponiveis" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtLugares" runat="server" CssClass="form-control controle"></asp:TextBox>
@@ -94,6 +108,8 @@
                 <br />
                 <asp:Button ID="btnUpdate" runat="server" Text="Atualizar" CssClass="btn btn-info margem" OnClick="btnUpdate_Click" />
                 <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
+                <asp:Label ID="Label4" runat="server" Text="can you see this?" style="visibility:hidden"></asp:Label>
+
             </div>
         </div>
     </div>
