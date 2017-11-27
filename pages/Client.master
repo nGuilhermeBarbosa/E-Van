@@ -7,6 +7,7 @@
     <title>E-Van</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="../images/evan.ico" type="image/x-icon">
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/evs.css" rel="stylesheet" />
     <script src="../js/jquery-3.1.1.min.js"></script>
