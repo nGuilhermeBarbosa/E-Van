@@ -43,6 +43,24 @@ public class con_condutorDB
         }
         return retorno;
     }
+
+    public static DataSet SelectDados(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select con_nome, con_cpf, ctp_descricao, tpc_descricao from con_condutor con inner join mot_motorista mot on mot.mot_id = con.mot_id  inner join ctp_condutor_tipo_contato ctp on ctp.con_id = con.con_id inner join tpc_tipo_contato tpc on tpc.tpc_id = ctp.tpc_id where mot.mot_id = ?id";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
+        return ds;
+    }
     public static DataSet SelectAll()
     {
         DataSet ds = new DataSet();

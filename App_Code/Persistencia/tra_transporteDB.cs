@@ -67,7 +67,23 @@ public class tra_transporteDB
 
         return ds;
     }
-
+    public static DataSet SelectDados(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objComando;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        string query = "select tra_lugares, tra_modelo, tve_descricao from tra_transporte tra inner join txm_transporte_motorista txm on txm.tra_id = tra.tra_id  inner join mot_motorista mot on txm.mot_id = mot.mot_id inner join tve_tipoveiculo tve on tve.tve_id = tra.tve_id where mot.mot_id = ?id";
+        objComando = Mapped.Command(query, objConexao);
+        objComando.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objComando);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objConexao.Dispose();
+        objComando.Dispose();
+        return ds;
+    }
     public static DataSet SelectLugar(string modelo)
     {
         DataSet ds = new DataSet();
