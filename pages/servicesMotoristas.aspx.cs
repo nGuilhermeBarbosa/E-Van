@@ -24,15 +24,15 @@ public partial class pages_servicesMotoristas : System.Web.UI.Page
             {
                 ser_servicosDB.Delete(Convert.ToInt32(dados["ser_id"]));
             }
-            LiteralServices.Text += "<div class='serviceBox shadow'> "
+            LiteralServices.Text += "<div class='list-item'><div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"] + "</div>"
                 + "<div class='padding'>"
-                + "<b>Origem</b>: " + dados["ser_origem"] + "<br />"
-                + "<b>Destino</b>: " + dados["ser_destino"] + "<br /><hr />"
-                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br /><hr />"
-                + "<b>Vagas: </b>" + dados["ser_lugares"] + "<br />"
+                + "<p class='origem'><b>Origem</b>: " + dados["ser_origem"] + "</p>"
+                + "<p class='destino'><b>Destino</b>: " + dados["ser_destino"] + "</p><hr />"
+                + "<p><b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br /><hr /></p>"
+                + "<p><b>Vagas: </b>" + dados["ser_lugares"] + "<br /></p>"
                 + "<button type='button' class='btn btn-default' style='float:right;'>Detalhes</button><br />"
-            + "</div></div>";
+            + "</p></div></div></div>";
         }
     }
 }
