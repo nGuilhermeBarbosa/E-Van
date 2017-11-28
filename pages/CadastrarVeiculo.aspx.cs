@@ -82,7 +82,8 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
 
                             imgOriginal.Dispose();
 
-                            Response.Write("<script>alert('Cadastrado com sucesso');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
+                            //Response.Write("<script>alert('Cadastrado com sucesso');</script>");
                             //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
 
                             img_imagemveiculo img = new img_imagemveiculo();
@@ -197,28 +198,28 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
                         }
                         else
                         {
-                            Response.Write("<script>alert('Arquivo ja existe');</script>");
-                            //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalF();", true);
+                            //Response.Write("<script>alert('Arquivo ja existe');</script>");
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalF();", true);
 
                         }
                     }
                     else
                     {
-                        Response.Write("<script>alert('Tamanho maximo excedido - 500KB');</script>");
-                        //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalMS();", true);
+                        //Response.Write("<script>alert('Tamanho maximo excedido - 500KB');</script>");
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalMS();", true);
                     }
                 }
                 else
                 {
-                    Response.Write("<script>alert('Extensão invalida');</script>");
-                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalEI();", true);
+                    //Response.Write("<script>alert('Extensão invalida');</script>");
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalEI();", true);
                 }
 
             }
             else
             {
-                Response.Write("<script>alert('Selecione um arquivo');</script>");
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSl();", true);
+                //Response.Write("<script>alert('Selecione um arquivo');</script>");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalSl();", true);
             }
 
 
