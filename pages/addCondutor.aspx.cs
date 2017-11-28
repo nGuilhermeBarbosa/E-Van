@@ -76,7 +76,7 @@ public partial class pages_addCondutor : System.Web.UI.Page
         {
             case 0:
 
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
                 txtNome.Text = null;
                 txtCPF.Text = null;
                 txtTelefone.Text = null;
@@ -85,7 +85,7 @@ public partial class pages_addCondutor : System.Web.UI.Page
                 break;
             case -2:
 
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalE();", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalE();", true);
                 break;
         }
 

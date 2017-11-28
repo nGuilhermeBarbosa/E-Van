@@ -12,26 +12,36 @@ public partial class pages_TodosVeiculos : System.Web.UI.Page
     {
         if (Session["nome"] != null)
         {
-            //Sessão usu = (Sessão)Session["nome"];
-            ////lblSessao.Text = usu.email;
-            //hdf.Value = usu.id.ToString();
+            VeiculoLoad();
             CadastroCompleto();
         }
-        VeiculoLoad();
     }
-    DataSet ds = tra_transporteDB.SelectAll();
+    
 
     public void VeiculoLoad()
     {
+        hdf.Value = Session["value"].ToString();
+
+        mot_motorista mot = new mot_motorista();
+
+        DataSet codigo = new DataSet();
+
+        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+        // Label1.Text = par;
+        int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+        DataSet ds = tra_transporteDB.SelectDados(c);
+
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            Literal.Text += "<div class='serviceBox shadow'> "
-                + "<div class='title'>" + dados["tra_modelo"] + "</div>"
+            Literal.Text += "<div class='list-item'><div class='serviceBox shadow'> "
+                + "<p class='destino title'>" + dados["tra_modelo"]
+                + "<span class='glyphicon glyphicon-remove text_right'>&nbsp Excluir</span></span>"
+                + "<span class='glyphicon glyphicon-edit'>&nbsp Editar</span></span></p>" + "</p>"
                 + "<div class='padding'>"
-                + "<b>Lugares Disponiveis: </b> " + dados["tra_lugares"] + "<br />"
-               // + "<b>Cidade</b>:" + dados["pes_cidade"] + "<br />"
-               // + "<b>Contato</b>:" + dados["usu_email"] + "<br />"
-                + "</div></div>";
+                + "<p><b>Tipo de Veiculo</b>: " + dados["tve_descricao"] + "</p>"
+                + "<p><b>Lugares</b>:" + dados["tra_lugares"] + "</p>"
+                + "</p></div></div></div>";
         }
     }
     public void CadastroCompleto()
