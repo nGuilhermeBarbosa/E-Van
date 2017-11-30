@@ -93,13 +93,15 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
                             tra_transporte tra = new tra_transporte();
                             tra.Tra_lugares = Convert.ToInt32(txtLugar.Text);
                             tra.Tra_modelo = txtModelo.Text;
+                            tra.Tra_ano = Convert.ToInt32(txtAno.Text);
+                            tra.Tra_placa = txtPlaca.Text;
                             tra.Tve_id = tve;
-
+                            string placa = txtPlaca.Text;
                             tra_transporteDB.Insert(tra);
 
-                            string trans = txt.Text;
+                            
                             DataSet codigo = new DataSet();
-                            codigo = tra_transporteDB.SelectLugar(trans);
+                            codigo = tra_transporteDB.SelectLugar(placa);
                             tra.Tra_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
                             img_imagemveiculo img = new img_imagemveiculo();
