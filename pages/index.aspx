@@ -22,7 +22,6 @@
             $('#fbAt').modal('show');
         }
     </script>  
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
@@ -246,7 +245,7 @@
                     <span id="password_strength"></span>
 
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
-                    <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event);" MaxLength="14"></asp:TextBox><br />
+                    <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event)"; MaxLength="14"></asp:TextBox><br />
                     Data de Nascimento
                     <asp:TextBox ID="txtData" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
                     Sexo

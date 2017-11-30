@@ -18,14 +18,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="close" data-dismiss="modal">&times;</div>
-                    <h4 class="modal-title">Cadastro de Solicitação</h4>
+                    <h4 class="modal-title">Cadastro de Condutor</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
                             <p class="glyphicon glyphicon-ok col-xs-12 text-center" style="font-size: 90px;"></p>
                             <br />
-                            <p class="text-center">Soliticação registrada com sucesso!</p>
+                            <p class="text-center">Condutor registrado com sucesso!</p>
                         </div>
                     </div>
                 </div>
@@ -40,14 +40,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="close" data-dismiss="modal">&times;</div>
-                    <h4 class="modal-title">Cadastro de Solicitação</h4>
+                    <h4 class="modal-title">Cadastro de Condutor</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
                             <p class="glyphicon glyphicon-remove col-xs-12 text-center" style="font-size: 90px;"></p>
                             <br />
-                            <p class="text-center">Erro ao cadastrar a solicitação, por favor verifique os campos e tente novamente!</p>
+                            <p class="text-center">Erro ao cadastrar um condutor, por favor verifique os campos e tente novamente!</p>
                         </div>
                     </div>
                 </div>
