@@ -10,6 +10,7 @@ public class img_imagemveiculo
 {
     private int img_id;
     private string img_foto;
+    private tra_transporte tra_id;
 
     public int Img_id
     {
@@ -34,6 +35,19 @@ public class img_imagemveiculo
         set
         {
             img_foto = value;
+        }
+    }
+
+    public global::tra_transporte Tra_id
+    {
+        get
+        {
+            return tra_id;
+        }
+
+        set
+        {
+            tra_id = value;
         }
     }
 }
