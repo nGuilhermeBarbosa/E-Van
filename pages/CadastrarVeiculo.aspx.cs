@@ -86,14 +86,6 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
                             //Response.Write("<script>alert('Cadastrado com sucesso');</script>");
                             //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
 
-                            img_imagemveiculo img = new img_imagemveiculo();
-                            img.Img_foto = arq;
-                            img_imagemveiculoDB.Insert(img);
-
-                            string imagem = arq;
-                            DataSet id = new DataSet();
-                            id = img_imagemveiculoDB.SelectImage(imagem);
-                            img.Img_id = Convert.ToInt32(id.Tables[0].Rows[0][0]);
 
                             tve_tipoveiculo tve = new tve_tipoveiculo();
                             tve.Tve_id = Convert.ToInt32(ddlVeiculo.SelectedValue);
@@ -102,14 +94,18 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
                             tra.Tra_lugares = Convert.ToInt32(txtLugar.Text);
                             tra.Tra_modelo = txtModelo.Text;
                             tra.Tve_id = tve;
-                            tra.Img_id = img;
 
                             tra_transporteDB.Insert(tra);
 
-                            string trans = txtModelo.Text;
+                            string trans = txt.Text;
                             DataSet codigo = new DataSet();
                             codigo = tra_transporteDB.SelectLugar(trans);
                             tra.Tra_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+
+                            img_imagemveiculo img = new img_imagemveiculo();
+                            img.Img_foto = arq;
+                            img.Tra_id = tra;
+                            img_imagemveiculoDB.Insert(img);
 
                             DataSet idMot = new DataSet();
                             idMot = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
