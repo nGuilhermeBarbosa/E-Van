@@ -181,8 +181,21 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <asp:HiddenField ID="hdf" runat="server" />
-                        <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label>
-                        <asp:TextBox ID="txtLugar" runat="server" CssClass="form-control controle"></asp:TextBox>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label>
+                                <asp:TextBox ID="txtLugar" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" MaxLength="2"></asp:TextBox>
+                            </div>
+                            <div class="col-lg-3">
+                                <asp:Label ID="Label1" runat="server" Text="Ano" CssClass="margem"></asp:Label>
+                                <asp:TextBox ID="txtAno" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" MaxLength="4"></asp:TextBox>
+                            </div>
+                            <div class="col-lg-6">
+                                <asp:Label ID="Label2" runat="server" Text="Placa" CssClass="margem"></asp:Label>
+                                <asp:TextBox ID="txtPlaca" runat="server" onkeyup="formataPlaca(this, Function);" CssClass="form-control controle" MaxLength="8"></asp:TextBox>
+                            </div>
+                        </div>
                         <br />
                         <asp:Label ID="lblRecursos" runat="server" Text="Recursos" CssClass="margem"></asp:Label>
 

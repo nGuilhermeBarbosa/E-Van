@@ -181,8 +181,12 @@
                 <asp:DropDownList ID="ddlTransporte" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList>
                 <asp:Label ID="Label3" runat="server" Text="Você deve escolher um transporte para completar o cadastro de serviço" CssClass="alert-danger margem" Visible="false"></asp:Label>
                 <br />
-                <asp:Label ID="lblLugares" runat="server" Text="Lugares Disponiveis" CssClass="margem"></asp:Label>
-                <asp:TextBox ID="txtLugares" runat="server" CssClass="form-control controle" required="true"></asp:TextBox>
+                <asp:Label ID="lblLugares" runat="server" Text="Vagas Disponíveis" CssClass="margem"></asp:Label>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <asp:TextBox ID="txtLugares" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" required="true" MaxLength="2"></asp:TextBox>
+                    </div>
+                </div>
                 <br />
                 <asp:Label ID="lblDescricao" runat="server" Text="Descrição" CssClass="margem"></asp:Label>
                 <asp:TextBox ID="txtDescricao" runat="server" TextMode="MultiLine" CssClass="form-control controle" required="true"></asp:TextBox>

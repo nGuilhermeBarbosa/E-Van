@@ -353,6 +353,26 @@ function formataTelefone(campo, evt) {
     //        xPos = xPos +1
     MovimentaCursor(campo, xPos);
 }
+function formataPlaca(campo, evt) {
+    
+    var xPos = PosicaoCursor(campo);
+    evt = getEvent(evt);
+    var tecla = getKeyCode(evt);
+    if (!teclaValida(tecla))
+        return;
+    vr = campo.value;
+    tam = vr.length;
+    if (tam == 3)
+        campo.value = vr + '-';
+    else if (tam >= 3 && tam < 8)
+        campo.value = vr.substr(0, 3) + vr.substr(3);
+    else if (tam >= 4)
+        campo.value = vr.substr(0, 3) + '-' + vr.substr(4);
+    //(
+    //    if(xPos == 1 || xPos == 3 || xPos == 5 || xPos == 9)
+    //        xPos = xPos +1
+    MovimentaCursor(campo, xPos);
+}
 
 function formataCelular(campo, evt) {
     var xPos = PosicaoCursor(campo);
