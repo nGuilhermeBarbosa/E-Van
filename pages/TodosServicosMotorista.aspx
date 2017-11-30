@@ -79,7 +79,7 @@
                 <div class="jplist-panel">
 
                     <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging">
-                        <div class="jplist-dd-panel">10 per page </div>
+                        <div class="jplist-dd-panel">10 por página </div>
                         <ul style="display: none;">
                             <li class=""><span data-number="3">3 per page </span></li>
                             <li class=""><span data-number="5">5 per page </span></li>
