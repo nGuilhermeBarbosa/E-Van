@@ -19,14 +19,15 @@ public class img_imagemveiculoDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into img_imagemveiculo ";
-            sql += "(img_foto)";
+            sql += "(img_foto, tra_id)";
             sql += "values ";
-            sql += "(?img_foto)";
+            sql += "(?img_foto, ?tra_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?img_foto", img.Img_foto));
+            objCommand.Parameters.Add(Mapped.Parameter("?tra_id", img.Tra_id.Tra_id));
 
 
             objCommand.ExecuteNonQuery();

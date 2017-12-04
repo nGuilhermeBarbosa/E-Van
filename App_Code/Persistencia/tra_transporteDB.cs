@@ -18,17 +18,18 @@ public class tra_transporteDB
             IDbConnection objConexao; //Abrir a conexão
             IDbCommand objCommand; // Criar e executar os comandos
             string sql = "insert into tra_transporte ";
-            sql += "(tra_lugares, tra_modelo, tve_id)";
+            sql += "(tra_lugares, tra_modelo, tra_ano, tra_placa, tve_id)";
             sql += "values ";
-            sql += "(?tra_lugares, ?tra_modelo, ?tve_id)";
+            sql += "(?tra_lugares, ?tra_modelo, ?tra_ano, ?tra_placa, ?tve_id)";
 
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
 
             objCommand.Parameters.Add(Mapped.Parameter("?tra_lugares", tra.Tra_lugares));
             objCommand.Parameters.Add(Mapped.Parameter("?tra_modelo", tra.Tra_modelo));
+            objCommand.Parameters.Add(Mapped.Parameter("?tra_ano", tra.Tra_ano));
+            objCommand.Parameters.Add(Mapped.Parameter("?tra_placa", tra.Tra_placa));
             objCommand.Parameters.Add(Mapped.Parameter("?tve_id", tra.Tve_id.Tve_id));
-
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();
