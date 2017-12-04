@@ -177,27 +177,9 @@ public partial class pages_Default : System.Web.UI.Page
 
     protected void csm_Click(object sender, EventArgs e)
     {
-        mot_motorista mot = new mot_motorista();
-
-        DataSet codigo = new DataSet();
-
-        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
-
-        mot.Mot_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
-
-        int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
-        DataSet ds = mot_motoristaDB.SelectPETC(a);
-        foreach (DataRow dados in ds.Tables[0].Rows)
-            if (Convert.ToInt32(dados["mot_publicacoes"]) >= 5 && Convert.ToString(dados["tip_descricao"]) == "Free")
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalLimite();", true);
-        }
-        else
-        {
-            Server.Transfer("CadastroServiçoMotorista.aspx", true);
-        }
+        Server.Transfer("CadastroServiçoMotorista.aspx", true);
     }
-    
+
     public void ExibirLimite()
     {
         hdf.Value = Session["value"].ToString();
@@ -217,9 +199,9 @@ public partial class pages_Default : System.Web.UI.Page
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
             fbUnlimited.Visible = false;
-            fbLimite.Text = "Publicações: "+dados["mot_publicacoes"]+"/5";
+            fbLimite.Text = "Publicações: " + dados["mot_publicacoes"] + "/5";
             fbLimite.Visible = true;
         }
-        
+
     }
 }
