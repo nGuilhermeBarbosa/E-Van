@@ -18,13 +18,13 @@ public partial class pages_TodosMotoristasCliente : System.Web.UI.Page
     {
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            LiteralMotoristas.Text += "<div class='serviceBox shadow'> "
-                + "<div class='title'>" + dados["pes_nome"] + "</div>"
+            LiteralMotoristas.Text += "<div class='list-item'><div class='serviceBox shadow'> "
+                + "<p class='title origem'>" + dados["pes_nome"] + "</p>"
                 + "<div class='padding'>"
-                + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"
-                + "<b>Cidade</b>:" + dados["pes_cidade"] + "<br />"
-                + "<b>Contato</b>:" + dados["usu_email"] + "<br />"
-                + "</div></div>";
+                + "<p><b>Sexo</b>: " + dados["pes_sexo"] + "</p>"
+                + "<p><b>Cidade</b>:" + dados["pes_cidade"] + "</p>"
+                + "<p><b>Contato</b>:" + dados["usu_email"] + "</p>"
+                + "</div></div></div>";
         }
     }
 }

@@ -27,10 +27,10 @@
                     <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging">
                         <div class="jplist-dd-panel">10 per page </div>
                         <ul style="display: none;">
-                            <li class=""><span data-number="3">3 per page </span></li>
-                            <li class=""><span data-number="5">5 per page </span></li>
-                            <li class="active"><span data-number="10" data-default="true">10 per page </span></li>
-                            <li><span data-number="15">15 per page </span></li>
+                            <li class=""><span data-number="3">3 por pagina </span></li>
+                            <li class=""><span data-number="5">5 por pagina </span></li>
+                            <li class="active"><span data-number="10" data-default="true">10 por pagina </span></li>
+                            <li><span data-number="15">15 por pagina </span></li>
                             <li><span data-number="all">View All </span></li>
                         </ul>
                     </div>
@@ -80,7 +80,7 @@
                         </ul>
                     </div>
 
-                    <div class="jplist-label" data-type="Page {current} of {pages}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"></div>
+                    <div class="jplist-label" data-type="Pagina {current} de {pages}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"></div>
 
                     <div class="jplist-pagination" data-control-type="pagination" data-control-name="paging" data-control-action="paging">
                         <div class="jplist-pagingprev jplist-hidden" data-type="pagingprev">
@@ -112,7 +112,8 @@
 
             <!-- no results found -->
             <div class="jplist-no-results">
-                <p>No results found</p>
+                <br />
+                <p>Nenhum resultado encontrado</p>
             </div>
 
         </div>

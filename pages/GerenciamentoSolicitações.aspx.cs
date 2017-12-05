@@ -38,21 +38,21 @@ public partial class pages_r_management : System.Web.UI.Page
 
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
-            LSolicitacao.Text += "<div class='serviceBox shadow'> "
+            LSolicitacao.Text += "<div class = 'list-item'><div class='serviceBox shadow'> "
                 + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["sol_id"] + "</span>" 
                 + "<span class='text-right'><a href='#' onclick='excluir(" + dados["sol_id"] + ", \"" + dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp;Excluir</a></span>"
                  + "   <span class='text-right'><a href = 'editService.aspx?ser=" + dados["sol_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp;Editar</a></span>" +
                  "</div>"
                 + "<div class='padding'>"
-                + "<b>Origem</b>: " + dados["sol_origem"] + "<br />"
-                + "<b>Destino</b>: " + dados["sol_destino"] + "<br /><hr>"
-                + "<b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["sol_datainicio"]) + "<br />"
-                + "<b>Hora de Saida</b>:" + String.Format("{0:HH:mm}", dados["sol_datainicio"]) + "<br /><hr>"
-                + "<b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["sol_datafim"]) + "<br />"
-                + "<b>Hora de Volta</b>:" + String.Format("{0:HH:mm}", dados["sol_datafim"]) + "<br /><br />"
+                + "<p class = 'origem'><b>Origem</b>: " + dados["sol_origem"] + "</p>"
+                + "<p class = 'destino'><b>Destino</b>: " + dados["sol_destino"] + "</p><hr>"
+                + "<p><b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["sol_datainicio"]) + "</p>"
+                + "<p><b>Hora de Saida</b>:" + String.Format("{0:HH:mm}", dados["sol_datainicio"]) + "</p><hr>"
+                + "<p><b>Data De Volta</b>:" + String.Format("{0:dd/MM/yyyy}", dados["sol_datafim"]) + "</p>"
+                + "<p><b>Hora de Volta</b>:" + String.Format("{0:HH:mm}", dados["sol_datafim"]) + "</p>"
                 + "<button class='btn btn-default' style='float:right;'>Detalhes</button><br />"
-            + "</div></div>";
+            + "</div></div></div>";
         }
     }
 }
