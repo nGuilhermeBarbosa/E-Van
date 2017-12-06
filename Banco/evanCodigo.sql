@@ -134,17 +134,19 @@ CREATE TABLE tve_tipoveiculo (
   
 CREATE TABLE img_imagemveiculo(
 	img_id INT PRIMARY KEY AUTO_INCREMENT,
-    img_foto VARCHAR(100) NOT NULL
+    img_foto VARCHAR(100) NOT NULL,
+    tra_id INT NOT NULL,
+	FOREIGN KEY (tra_id) REFERENCES tra_transporte(tra_id)
   );
 
 CREATE TABLE tra_transporte (
   tra_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   tra_lugares INT(2) NOT NULL,
   tra_modelo VARCHAR(30) NOT NULL,
+  tra_ano INT,
+  tra_placa VARCHAR(8) NOT NULL,
   tve_id INT(11) NOT NULL,
-  FOREIGN KEY (tve_id) REFERENCES tve_tipoveiculo(tve_id),
-  img_id INT NOT NULL,
-  FOREIGN KEY (img_id) REFERENCES img_imagemveiculo(img_id)
+  FOREIGN KEY (tve_id) REFERENCES tve_tipoveiculo(tve_id)
 );
 
 
@@ -209,8 +211,6 @@ CREATE TABLE ctp_condutor_tipo_contato (
   FOREIGN KEY (ser_id) REFERENCES ser_servicos(ser_id)
 );
   
-
-
   CREATE TABLE Int_interesse (
   pas_id INT(11) NOT NULL,
   FOREIGN KEY (pas_id) REFERENCES pas_passageiro(pas_id),
@@ -243,6 +243,7 @@ inner join pes_pessoa pes on pes.pes_id = usu.pes_id
 inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
 inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
+select tra_id from tra_transporte where tra_placa = ;
 
 select * from mot_motorista;
 use evanew;
@@ -265,8 +266,16 @@ select * from sol_solicitacao;
 select * from txr_transporte_recursos;
 select * from con_condutor;
 select * from sco_servicocondutor;
+select * from tve_tipoveiculo;
+select * from ctp_condutor_tipo_contato;
+select * from tra_transporte;
+select * from img_imagemveiculo;
 
-update sco_servicocondutor set con_id = 2 where sco_id = 1;
+select con_nome, con_cpf, ctp_descricao, tpc_descricao from con_condutor con inner join mot_motorista mot on mot.mot_id = con.mot_id 
+inner join ctp_condutor_tipo_contato ctp on ctp.con_id = con.con_id inner join tpc_tipo_contato tpc on tpc.tpc_id = ctp.tpc_id where mot.mot_id = 1;
+
+select tra_lugares, tra_modelo, tve_descricao from tra_transporte tra inner join txm_transporte_motorista txm on txm.tra_id = tra.tra_id 
+inner join mot_motorista mot on txm.mot_id = mot.mot_id inner join tve_tipoveiculo tve on tve.tve_id = tra.tve_id where mot.mot_id = 1;
 
 select ser.ser_id, ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, con.con_id from ser_servicos ser 
 inner join sco_servicoscondutor sco on ser.ser_id = sco.ser_id 
@@ -275,6 +284,7 @@ show tables;
 select pas_id from pas_passageiro pas inner join usu_usuario usu on usu.usu_id = pas.usu_id where usu.usu_id = 1;
 
 select * from mxc_motorista_tipo_contato;
+
 
 select mxc_descricao from usu_usuario usu 
 inner join mot_motorista mot on mot.usu_id = usu.usu_id 
@@ -294,8 +304,8 @@ inner join sco_servicocondutor sco on ser.ser_id = sco.ser_id
 inner join con_condutor con on con.con_id = sco.con_id 
 inner join tra_transporte tra on ser.tra_id = tra.tra_id where ser.ser_id=4;
 
+select * from tdo_tipodocumento;
 
-*/
 insert into rec_recursos (rec_descricao) values ("Ar-condicionado");
 insert into rec_recursos (rec_descricao) values ("Wi-Fi");
 insert into rec_recursos (rec_descricao) values ("Televisão");
