@@ -302,6 +302,11 @@ footer {
         text-decoration: none !important;
     }
 
+.isntabutton{
+    border: 0;
+    background:none;
+}
+
 .serviceBox > .padding > h2 {
     font-size: 30px;
     margin: 0;

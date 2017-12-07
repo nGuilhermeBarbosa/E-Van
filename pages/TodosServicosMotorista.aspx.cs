@@ -72,7 +72,7 @@ public partial class pages_Default : System.Web.UI.Page
                   + "<div class='title'>" + dados["pes_nome"]
                 //+ "<span class='text-right'>" + dados["ser_id"] + "</span>" 
                 + "<span class='text-right'><a href='#' onclick='excluir(" + dados["ser_id"] + ", \"" + dados["pes_nome"] + "\");'><span class='glyphicon glyphicon-remove'></span>&nbsp Excluir</a></span>"
-                 + "<span class='text-right'><a href = 'editService.aspx?ser=" + dados["ser_id"] + "' ><span class='glyphicon glyphicon-edit'></span>&nbsp Editar</a></span></div>"
+                 + "<span class='text-right'><a href = 'editService.aspx?ser=" + dados["ser_id"] + "'><span class='glyphicon glyphicon-edit'></span>&nbsp Editar</a></span></div>"
                 + "<div class='padding'>"
                 + "<p class='origem'><b>Origem</b>: " + dados["ser_origem"] + "</p>"
                 + "<p class='destino'><b>Destino</b>: " + dados["ser_destino"] + "</p><hr>"

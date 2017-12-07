@@ -13,7 +13,7 @@ public partial class pages_Profilecliente : System.Web.UI.Page
         PerfilLoad();
     }
 
-    DataSet ds = pas_passageiroDB.SelectAll();
+    DataSet ds = pas_passageiroDB.SelectPassageiros();
 
     public void PerfilLoad()
     {
@@ -25,6 +25,7 @@ public partial class pages_Profilecliente : System.Web.UI.Page
                 + "<b>Sexo</b>: " + dados["pes_sexo"] + "<br />"
                 + "<b>Cidade</b>:" + dados["pes_cidade"] + "<br />"
                 + "<b>Contato</b>:" + dados["usu_email"] + "<br />"
+                + "</div>"
                 + "</div></div>";
         }
     }
