@@ -20,6 +20,12 @@
         function openModalLimite() {
             $('#modalLimite').modal('show');
         }
+        function openModalObrigatorio() {
+            $('#modalOb').modal('show');
+        }
+        function openModalObrigatorioVeiculo() {
+            $('#modalObv').modal('show');
+        }
         function openModalMS() {
             $('#fbMS').modal('show');
         }
@@ -71,10 +77,53 @@
         </div>
     </div>
 
+    <div id="modalOb" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Atenção</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="glyphicon glyphicon-alert col-xs-12 text-center" style="font-size: 90px;"></p>
+                            <br />
+                            <p class="text-center">Por favor, preencha todos os campos obrigatórios e tente novamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modalObv" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close" data-dismiss="modal">&times;</div>
+                    <h4 class="modal-title">Atenção</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="glyphicon glyphicon-alert col-xs-12 text-center" style="font-size: 90px;"></p>
+                            <br />
+                            <p class="text-center">Por favor selecione um veículo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- MODAL VEÍCULO -->
     <div id="modalVeiculo" class="modal fade" role="dialog">
-        <div class="modal-dialog" id="video" style="float: unset; width: 800px;">
+        <div class="modal-dialog" id="video" style="float: unset; width: 700px;">
 
             <div class="modal-content">
                 <div class="modal-header">
@@ -83,8 +132,6 @@
                 </div>
                 <div class="modal-body">
     <br />
-    <br />
-    <br />
     <div class="signupBox" style="padding-right: 50px;">
         <div class="row">
             <div class="col-lg-12">
@@ -92,13 +139,13 @@
                 <br />
                 <div class="row">
                     <div class="col-lg-6">
-                        <asp:Label ID="lblVeiculo" runat="server" Text="Tipo De Veiculo" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblVeiculo" runat="server" Text="Tipo De Veiculo" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:DropDownList ID="ddlVeiculo" runat="server" CssClass="form-control controle dropdown">
                         </asp:DropDownList>
                         
                     </div>
                     <div class="col-lg-6">
-                        <asp:Label ID="lblModelo" runat="server" Text="Modelo" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblModelo" runat="server" Text="Modelo" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control controle"></asp:TextBox>
                     </div>
                 </div>
@@ -108,20 +155,20 @@
                         <br />
                         <div class="row">
                             <div class="col-lg-3">
-                                <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label>
+                                <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                                 <asp:TextBox ID="txtLugar" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" MaxLength="2"></asp:TextBox>
                             </div>
                             <div class="col-lg-3">
-                                <asp:Label ID="Label4" runat="server" Text="Ano" CssClass="margem"></asp:Label>
+                                <asp:Label ID="Label4" runat="server" Text="Ano" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                                 <asp:TextBox ID="txtAno" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" MaxLength="4"></asp:TextBox>
                             </div>
                             <div class="col-lg-6">
-                                <asp:Label ID="Label5" runat="server" Text="Placa" CssClass="margem"></asp:Label>
+                                <asp:Label ID="Label5" runat="server" Text="Placa" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                                 <asp:TextBox ID="txtPlaca" runat="server" onkeyup="formataPlaca(this, Function);" CssClass="form-control controle" MaxLength="8"></asp:TextBox>
                             </div>
                         </div>
                         <br />
-                        <asp:Label ID="lblRecursos" runat="server" Text="Recursos" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblRecursos" runat="server" Text="Recursos" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
 
                         <asp:CheckBox ID="cb1" Value="1" runat="server" Text="Ar-condicionado" CssClass="checkbox box" />
                         <asp:CheckBox ID="cb2" Value="2" runat="server" Text="Wi-fi" CssClass="checkbox box" />
@@ -135,7 +182,7 @@
                             
                         </asp:CheckBoxList>--%>
                         <br />
-                        <asp:Label ID="lblFoto" runat="server" Text="Upload de Fotos: " CssClass="up"></asp:Label>
+                        <asp:Label ID="lblFoto" runat="server" Text="Upload de Fotos" CssClass="up"></asp:Label><span style="color:#ff0000;"> *</span><br />
                         <asp:FileUpload ID="fup" runat="server" CssClass="up" />
                         <br />
                         <asp:Button ID="btnCadastarModal" runat="server" Text="Cadastrar" CssClass="btn btn-default margem" OnClick="btnCadastarModal_Click" />
@@ -144,6 +191,7 @@
             </div>
         </div>
     </div>
+                    <br /><br />
 
                 </div>
             </div>
@@ -251,32 +299,32 @@
             <div class="col-lg-11">
                 <asp:HiddenField ID="hdf" runat="server" />
                 <br />
-                <asp:Label ID="lblOrigem" runat="server" Text="Origem" CssClass="margem"></asp:Label>
+                <asp:Label ID="lblOrigem" runat="server" Text="Origem" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                 <asp:TextBox ID="txtOrigem" runat="server" CssClass="form-control controle"></asp:TextBox>
                 <br />
-                <asp:Label ID="lblDestino" runat="server" Text="Destino" CssClass="margem"></asp:Label>
+                <asp:Label ID="lblDestino" runat="server" Text="Destino" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                 <asp:TextBox ID="txtDestino" runat="server" CssClass="form-control controle"></asp:TextBox>
                 <br />
                 <br />
                 <div class="row">
                     <div class="col-lg-6">
-                        <asp:Label ID="lblDataInicio" runat="server" Text="Data Partida" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblDataInicio" runat="server" Text="Data Partida" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:TextBox ID="txtDataInicio" runat="server" TextMode="Date" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>
                     <div class="col-lg-6">
-                        <asp:Label ID="lblDataFim" runat="server" Text="Data Retorno" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblDataFim" runat="server" Text="Data Retorno" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:TextBox ID="txtDataFim" runat="server" TextMode="Date" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>
                     <br />
                     <div class="col-lg-6">
-                        <asp:Label ID="Label1" runat="server" Text="Hora Partida" CssClass="margem"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Hora Partida" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:TextBox ID="txtHoraPartida" runat="server" type="Time" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>
                     <div class="col-lg-6">
-                        <asp:Label ID="Label2" runat="server" Text="Hora Retorno" CssClass="margem"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text="Hora Retorno" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:TextBox ID="txtHoraRetorno" runat="server" type="Time" CssClass="form-control controle"></asp:TextBox>
                         <br />
                     </div>
@@ -286,7 +334,7 @@
                 <asp:DropDownList ID="ddlCondutor" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList><br />
                 <div class="row">
                     <div class="col-lg-9">
-                        <asp:Label ID="lblTransporte" runat="server" Text="Veículo" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblTransporte" runat="server" Text="Veículo" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:DropDownList ID="ddlTransporte" runat="server" CssClass="form-control controle" AutoPostBack="True"></asp:DropDownList>
                     </div>
                     <div class="col-lg-3"><br />
@@ -297,7 +345,7 @@
                
                 <asp:Label ID="Label3" runat="server" Text="Você deve escolher um transporte para completar o cadastro de serviço" CssClass="alert-danger margem" Visible="false"></asp:Label>
                 <br />
-                <asp:Label ID="lblLugares" runat="server" Text="Vagas Disponíveis" CssClass="margem"></asp:Label>
+                <asp:Label ID="lblLugares" runat="server" Text="Vagas Disponíveis" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                 <div class="row">
                     <div class="col-lg-3">
                         <asp:TextBox ID="txtLugares" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" MaxLength="2"></asp:TextBox>
