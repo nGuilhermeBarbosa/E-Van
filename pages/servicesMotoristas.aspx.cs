@@ -31,7 +31,7 @@ public partial class pages_servicesMotoristas : System.Web.UI.Page
                 + "<p class='destino'><b>Destino</b>: " + dados["ser_destino"] + "</p><hr />"
                 + "<p><b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<br /><hr /></p>"
                 + "<p><b>Vagas: </b>" + dados["ser_lugares"] + "<br /></p>"
-                + "<button type='button' class='btn btn-default' style='float:right;'>Detalhes</button><br />"
+                + "<button type='button' class='btn btn-default' style='float:right;'><a href = 'ServiceInfoMotorista.aspx?ser=" + dados["ser_id"] + "'>Detalhes</button></a><br />"
             + "</p></div></div></div>";
         }
     }
