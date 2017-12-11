@@ -36,7 +36,7 @@ public partial class pages_home : System.Web.UI.Page
                 + "<p class = 'destino'><b>Destino</b>: " + dados["ser_destino"] + "<hr /></p>"
                 + "<p><b>Data De Saida</b>:" + String.Format("{0:dd/MM/yyyy}", dados["ser_datainicio"]) + "<hr /></p>"
                 + "<p><b>Vagas: </b>" + dados["ser_lugares"] + "</p>"
-                + "<button class='btn btn-default' type='button' style='float:right;'><a href = 'serviceInfoCliente.aspx?ser=" + dados["ser_id"] + "'>Detalhes</button></a><br />"
+                + "<a href = 'serviceInfoCliente.aspx?ser=" + dados["ser_id"] + "'><div class='btn btn-default' style='float:right;'>Detalhes</div></a><br />"
             + "</div></div></div>";
         }
     }
