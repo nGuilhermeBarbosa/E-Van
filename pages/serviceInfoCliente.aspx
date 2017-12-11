@@ -1,8 +1,20 @@
 ﻿<%@ Page Title="Informações de Serviço" Language="C#" MasterPageFile="~/pages/Client.master" AutoEventWireup="true" CodeFile="serviceInfoCliente.aspx.cs" Inherits="pages_serviceInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="../js/Imagem.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div id="myModal" class="moda">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="moda-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="title" style="margin-bottom: 10px;">Informação do Serviço</div>
@@ -10,8 +22,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8" style="border: 1px dashed #566787">
-            <div class="title">João</div>
+        <%--<div class="col-lg-8">--%>
+        <asp:Literal ID="LiteralInfo" runat="server"></asp:Literal>
+        <%--<div class="title">João</div>
             <div class="serviceBox">
                 <div class="title">Serviço</div>
                 <div class="padding">
@@ -72,20 +85,19 @@
                 Você tem interesse nesse serviço?
         <br />
                 <asp:CheckBox ID="CheckBox1" runat="server" Text="Sim" />
-            </div>
+            </div>--%>
+        <%--</div>--%>
 
+        <%--<div class="col-lg-4">
+        <div class="title">Fotos do Veículo</div>
+        <div class="photoGallery mainPhoto">
         </div>
-
-        <div class="col-lg-4" style="border: 1px dashed #566787;">
-            <div class="title">Fotos do Veículo</div>
-            <div class="photoGallery mainPhoto">
-            </div>
-            <div class="galleryField">
-                <div class="photoGallery"></div>
-                <div class="photoGallery"></div>
-                <div class="photoGallery"></div>
-            </div>
+        <div class="galleryField">
+            <div class="photoGallery"></div>
+            <div class="photoGallery"></div>
+            <div class="photoGallery"></div>
         </div>
+    </div>--%>
     </div>
 </asp:Content>
 

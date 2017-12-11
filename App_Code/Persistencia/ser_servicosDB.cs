@@ -56,6 +56,78 @@ public class ser_servicosDB
 
     }
 
+    public static DataSet SelectInfoService(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select pes_nome, pes_cidade, pes_estado, mot_cnpj, tdo_image, mxc_descricao, ser_datacadastro, ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, con_nome, con_cpf, ctp_descricao, tp.tpc_descricao, tpc.tpc_descricao, tra_modelo, tra_placa, tra_lugares, tve_descricao, rec_descricao, img_foto from pes_pessoa pes inner join usu_usuario usu on pes.pes_id = usu.pes_id inner join mot_motorista mot on usu.usu_id = mot.usu_id inner join doc_documento doc on mot.mot_id = doc.mot_id inner join tdo_tipodocumento tdo on tdo.tdo_id = doc.tdo_id inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id inner join ser_servicos ser on mot.mot_id = ser.mot_id inner join sco_servicocondutor sco on ser.ser_id = sco.ser_id inner join con_condutor con on con.con_id = sco.con_id inner join ctp_condutor_tipo_contato ctp on con.con_id = ctp.con_id inner join tpc_tipo_contato tpc on tpc.tpc_id = ctp.tpc_id inner join tra_transporte tra on tra.tra_id = ser.tra_id inner join tpc_tipo_contato tp on tp.tpc_id = mxc.tpc_id inner join tve_tipoveiculo tve on tve.tve_id = tra.tve_id inner join img_imagemveiculo img on tra.tra_id = img.tra_id inner join txr_transporte_recursos txr on tra.tra_id = txr.tra_id inner join rec_recursos rec on rec.rec_id = txr.rec_id where ser.ser_id = ?id";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectInfoCon(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select pes_nome, pes_cidade, pes_estado, mot_cnpj, tdo_image, mxc_descricao, ser_datacadastro, ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, tp.tpc_descricao, tra_modelo, tve_descricao, rec_descricao, tra_placa, tra_lugares, img_foto from pes_pessoa pes inner join usu_usuario usu on pes.pes_id = usu.pes_id inner join mot_motorista mot on usu.usu_id = mot.usu_id inner join doc_documento doc on mot.mot_id = doc.mot_id inner join tdo_tipodocumento tdo on tdo.tdo_id = doc.tdo_id inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id inner join ser_servicos ser on mot.mot_id = ser.mot_id inner join tra_transporte tra on tra.tra_id = ser.tra_id inner join tpc_tipo_contato tp on tp.tpc_id = mxc.tpc_id inner join tve_tipoveiculo tve on tve.tve_id = tra.tve_id inner join img_imagemveiculo img on tra.tra_id = img.tra_id inner join txr_transporte_recursos txr on tra.tra_id = txr.tra_id inner join rec_recursos rec on rec.rec_id = txr.rec_id where ser.ser_id = ?id; ";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectI(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
+        //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
+        string sql = "select * from sco_servicocondutor sco inner join ser_servicos ser on ser.ser_id = sco.ser_id inner join con_condutor con on con.con_id = sco.con_id where ser.ser_id = ?id ";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
     public static DataSet SelectAll()
     {
         DataSet ds = new DataSet();
@@ -169,6 +241,30 @@ public class ser_servicosDB
             retorno = -2;
         }
         return retorno;
+    }
+
+    public static DataSet SelectInfo(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+
+        IDataAdapter objDataAdapter;
+        string sql = "select ser_id, pes_nome, ser_origem, ser_datainicio, ser_datafim, ser_destino, ser_descricao from ser_servicos ser inner join mot_motorista mot on mot.mot_id = ser.mot_id inner join usu_usuario usu on mot.usu_id = usu.usu_id inner join pes_pessoa pes on pes.pes_id = usu.pes_id where ser.mot_id = ?id";
+
+        objConexao = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConexao);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConexao.Close();
+        objConexao.Dispose();
+        objCommand.Dispose();
+
+        return ds;
     }
 
     public static DataSet SelectServicos(int id)
