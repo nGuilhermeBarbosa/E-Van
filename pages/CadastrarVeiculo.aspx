@@ -212,7 +212,7 @@
                         </asp:CheckBoxList>--%>
                         <br />
                         <asp:Label ID="lblFoto" runat="server" Text="Upload de Fotos: " CssClass="up"></asp:Label>
-                        <asp:FileUpload ID="fup" runat="server" CssClass="up" />
+                        <asp:FileUpload ID="fup" runat="server" CssClass="up" AllowMultiple="true"/>
                         <br />
                         <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-default margem" OnClick="btnCadastrar_Click" />
                     </div>

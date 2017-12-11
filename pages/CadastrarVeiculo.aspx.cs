@@ -82,11 +82,7 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
 
                             imgOriginal.Dispose();
 
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
-                            //Response.Write("<script>alert('Cadastrado com sucesso');</script>");
-                            //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
-
-
+                            
                             tve_tipoveiculo tve = new tve_tipoveiculo();
                             tve.Tve_id = Convert.ToInt32(ddlVeiculo.SelectedValue);
 
@@ -99,7 +95,7 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
                             string placa = txtPlaca.Text;
                             tra_transporteDB.Insert(tra);
 
-                            
+
                             DataSet codigo = new DataSet();
                             codigo = tra_transporteDB.SelectLugar(placa);
                             tra.Tra_id = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
@@ -190,9 +186,6 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
                             }
                             txtLugar.Text = "";
                             txtModelo.Text = "";
-                            
-                            //pBefore.Visible = false;
-                            //pAfter.Visible = true;
                         }
                         else
                         {
