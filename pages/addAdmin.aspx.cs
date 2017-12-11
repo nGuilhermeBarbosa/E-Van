@@ -75,12 +75,14 @@ public partial class pages_addAdmin : System.Web.UI.Page
             txtEmailA.Text = null;
             txtSenhaA.Text = null;
             txtDataNasc.Text = null;
-            lbl.Text = "<script>alert('Administrador cadastrado com sucesso');</script>";
+            //lbl.Text = "<script>alert('Administrador cadastrado com sucesso');</script>";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
         }
         else
         {
             lblCS.Text = "As senhas devem ser identicas em ambos os campos!";
             lblCS.Visible = true;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalE();", true);
         }
     }
 }

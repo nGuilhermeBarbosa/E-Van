@@ -169,12 +169,12 @@
                 <br />
                 <div class="row">
                     <div class="col-lg-6">
-                        <asp:Label ID="lblVeiculo" runat="server" Text="Tipo De Veiculo" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblVeiculo" runat="server" Text="Tipo De Veiculo" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:DropDownList ID="ddlVeiculo" runat="server" CssClass="form-control controle dropdown">
                         </asp:DropDownList>
                     </div>
                     <div class="col-lg-6">
-                        <asp:Label ID="lblModelo" runat="server" Text="Modelo" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblModelo" runat="server" Text="Modelo" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                         <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control controle"></asp:TextBox>
                     </div>
                 </div>
@@ -184,20 +184,20 @@
                         <br />
                         <div class="row">
                             <div class="col-lg-3">
-                                <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label>
+                                <asp:Label ID="lblLugar" runat="server" Text="Lugares" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                                 <asp:TextBox ID="txtLugar" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" MaxLength="2"></asp:TextBox>
                             </div>
                             <div class="col-lg-3">
-                                <asp:Label ID="Label1" runat="server" Text="Ano" CssClass="margem"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text="Ano" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                                 <asp:TextBox ID="txtAno" runat="server" onkeyup="formataInteiro(this, Function);" CssClass="form-control controle" MaxLength="4"></asp:TextBox>
                             </div>
                             <div class="col-lg-6">
-                                <asp:Label ID="Label2" runat="server" Text="Placa" CssClass="margem"></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text="Placa" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
                                 <asp:TextBox ID="txtPlaca" runat="server" onkeyup="formataPlaca(this, Function);" CssClass="form-control controle" MaxLength="8"></asp:TextBox>
                             </div>
                         </div>
                         <br />
-                        <asp:Label ID="lblRecursos" runat="server" Text="Recursos" CssClass="margem"></asp:Label>
+                        <asp:Label ID="lblRecursos" runat="server" Text="Recursos" CssClass="margem"></asp:Label><span style="color:#ff0000;"> *</span>
 
                         <asp:CheckBox ID="cb1" Value="1" runat="server" Text="Ar-condicionado" CssClass="checkbox box" />
                         <asp:CheckBox ID="cb2" Value="2" runat="server" Text="Wi-fi" CssClass="checkbox box" />

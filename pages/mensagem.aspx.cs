@@ -29,12 +29,6 @@ public partial class pages_mensagem : System.Web.UI.Page
     }
 
 
-    protected void limpar_Click(object sender, EventArgs e)
-    {
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-    }
-
-
     protected void btnConfirmaExclusao_Click(object sender, EventArgs e)
     {
         fal_faleconoscoDB.Limpar();
@@ -46,13 +40,4 @@ public partial class pages_mensagem : System.Web.UI.Page
         Response.Redirect("mensagem.aspx", true);
     }
 
-    protected void btnAnswer_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void btnTest_Click(object sender, EventArgs e)
-    {
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalAnswer();", true);
-    }
 }

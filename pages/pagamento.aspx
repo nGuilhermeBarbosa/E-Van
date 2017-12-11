@@ -32,14 +32,14 @@
     <div class="row">
         <div class="col-lg-8">
             <div class="signupBox" style="margin-top: 10px;">
-                Selecione a forma de pagamento<br />
+                Selecione a forma de pagamento<span style="color:#ff0000;"> *</span><br />
                 <asp:RadioButton ID="rbCartao" runat="server" Text="Cartão de Crédito" OnCheckedChanged="rbCartao_CheckedChanged" AutoPostBack="true" CssClass="radio-inline" /><br />
                 <asp:RadioButton ID="rbBoleto" runat="server" Text="Boleto Bancário" OnCheckedChanged="rbBoleto_CheckedChanged" AutoPostBack="true" CssClass="radio-inline" /><br />
                 <asp:RadioButton ID="rbPaypal" runat="server" Text="PayPal" OnCheckedChanged="rbPaypal_CheckedChanged" AutoPostBack="true" CssClass="radio-inline" />
             </div>
             <asp:Panel ID="PanelCartao" runat="server" Visible="false">
                 <div class="signupBox" style="border-top: 1px dashed #fff;">
-                    Selecione seu cartão de crédito:<br />
+                    Selecione seu cartão de crédito:<span style="color:#ff0000;"> *</span><br />
                     <asp:RadioButton ID="bVisa" runat="server" Checked="true" CssClass="radio-inline" OnCheckedChanged="bVisa_CheckedChanged" AutoPostBack="true" />
                     <img src="../images/Visa-icon.png" width="50px" /><br />
                     <asp:RadioButton ID="bMaster" runat="server" CssClass="radio-inline" OnCheckedChanged="bMaster_CheckedChanged" AutoPostBack="true" />
@@ -49,13 +49,13 @@
                         <div class="col-lg-12">
                             <div class="col-lg-6">
                                 <br />
-                                Banco
+                                Banco<span style="color:#ff0000;"> *</span>
                             <asp:DropDownList ID="ddlBanco" runat="server" CssClass="form-control">
                                 <asp:ListItem>Todos os Bancos</asp:ListItem>
                                 <asp:ListItem>Banco do Brasil</asp:ListItem>
                             </asp:DropDownList>
                                 <br />
-                                Parcelas
+                                Parcelas<span style="color:#ff0000;"> *</span>
                             <asp:DropDownList ID="ddlParcela" runat="server" CssClass="form-control">
                                 <asp:ListItem>1x</asp:ListItem>
                                 <asp:ListItem>2x</asp:ListItem>
@@ -66,11 +66,11 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="col-lg-6">
-                                Número do Cartão<br />
+                                Número do Cartão<span style="color:#ff0000;"> *</span><br />
                                 <asp:TextBox ID="txtCartao" runat="server" CssClass="form-control" onkeyup="formataCartaoCredito(this,event);" MaxLength="19"></asp:TextBox>
                             </div>
                             <div class="col-lg-2">
-                                Validade<br />
+                                Validade<span style="color:#ff0000;"> *</span><br />
                                 <asp:DropDownList ID="ddlVCM" runat="server" CssClass="form-control">
                                     <asp:ListItem Value="null">M&#234;s</asp:ListItem>
                                     <asp:ListItem>1</asp:ListItem>
@@ -105,18 +105,18 @@
                                 </asp:DropDownList>
                             </div>
                             <div class="col-lg-2">
-                                Código
+                                Código<span style="color:#ff0000;"> *</span>
                                 <br />
                                 <asp:TextBox ID="txtCS" runat="server" CssClass="form-control" onkeyup="formataCartaoCredito(this,event);" MaxLength="3"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-12" style="margin-top: 15px;">
                             <div class="col-lg-6">
-                                Nome e sobrenome do cartão<br />
+                                Nome e sobrenome do cartão<span style="color:#ff0000;"> *</span><br />
                                 <asp:TextBox ID="txtNomeC" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="col-lg-6">
-                                CPF do titular do cartão
+                                CPF do titular do cartão<span style="color:#ff0000;"> *</span>
                                     <asp:TextBox ID="txtCpfC" runat="server" CssClass="form-control" onkeyup="formataCPF(this,event);" MaxLength="14"></asp:TextBox>
                             </div>
                         </div>

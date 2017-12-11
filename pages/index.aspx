@@ -19,8 +19,8 @@
             $('#termsOfUseModal').modal('show');
         }
         function openModalAt() {
-            $('#fbAt').modal('show');
-        }
+            $('#fbAt').modal('show'); 
+        }    
     </script>  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -119,7 +119,7 @@
 
         </div>
     </div>
-
+    <!--teste -->
     <div id="fbError" class="modal fade" role="dialog">
         <div class="modal-dialog" id="video" style="float: unset; width: 400px;">
 
