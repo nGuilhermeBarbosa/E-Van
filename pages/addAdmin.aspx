@@ -110,6 +110,7 @@
                         Cidade<span style="color: #ff0000;"> *</span>
                         <asp:DropDownList ID="ddlCidadeA" runat="server" CssClass="form-control dropdown">
                             <asp:ListItem>Aparecida</asp:ListItem>
+                            <asp:ListItem>Cunha</asp:ListItem>
                             <asp:ListItem Selected="True">Guaratinguet&#225;</asp:ListItem>
                             <asp:ListItem>Lorena</asp:ListItem>
                             <asp:ListItem>S&#227;o Jos&#233; dos Campos</asp:ListItem>
