@@ -1,5 +1,6 @@
 CREATE DATABASE evanew;
 USE evanew;
+
 -- DROP DATABASE EVANEW;
 
 
@@ -81,7 +82,8 @@ CREATE TABLE tpc_tipo_contato (
 
 CREATE TABLE mxc_motorista_tipo_contato (
   mxc_id INT PRIMARY KEY AUTO_INCREMENT,
-  mot_id INT(11) NOT NULL,
+  mot_id INT
+  (11) NOT NULL,
   FOREIGN KEY (mot_id) REFERENCES mot_motorista(mot_id),
   tpc_id INT(11) NOT NULL,
   FOREIGN KEY (tpc_id) REFERENCES tpc_tipo_contato(tpc_id),
@@ -132,24 +134,24 @@ CREATE TABLE tve_tipoveiculo (
   tve_descricao VARCHAR(50) NOT NULL
   );
   
-CREATE TABLE img_imagemveiculo(
-	img_id INT PRIMARY KEY AUTO_INCREMENT,
-    img_foto VARCHAR(100) NOT NULL,
-    tra_id INT NOT NULL,
-	FOREIGN KEY (tra_id) REFERENCES tra_transporte(tra_id)
-  );
-
 CREATE TABLE tra_transporte (
   tra_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   tra_lugares INT(2) NOT NULL,
   tra_modelo VARCHAR(30) NOT NULL,
   tra_ano INT,
   tra_placa VARCHAR(8) NOT NULL,
+  unique key(tra_placa),
   tve_id INT(11) NOT NULL,
   FOREIGN KEY (tve_id) REFERENCES tve_tipoveiculo(tve_id)
 );
 
-
+CREATE TABLE img_imagemveiculo(
+	img_id INT PRIMARY KEY AUTO_INCREMENT,
+    img_foto VARCHAR(100) NOT NULL,
+    tra_id INT NOT NULL,
+	FOREIGN KEY (tra_id) REFERENCES tra_transporte(tra_id)
+  );
+  
 CREATE TABLE txm_transporte_motorista (
   mot_id INT(11) NOT NULL,
   FOREIGN KEY (mot_id) references mot_motorista(mot_id),
@@ -243,10 +245,33 @@ inner join pes_pessoa pes on pes.pes_id = usu.pes_id
 inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id 
 inner join tpc_tipo_contato tpc on tpc.tpc_id = mxc.tpc_id where usu.usu_id = 2;
 
-select tra_id from tra_transporte where tra_placa = ;
+select * from sco_servicocondutor sco inner join ser_servicos ser on ser.ser_id = sco.ser_id 
+inner join con_condutor con on con.con_id = sco.con_id where ser.ser_id = 2;
 
-select * from mot_motorista;
-use evanew;
+
+select pes_nome, pes_cidade, pes_estado, mot_cnpj, tdo_image, mxc_descricao, ser_datacadastro, ser_datainicio, ser_datafim,
+ser_origem, ser_destino, ser_descricao, ser_lugares, tp.tpc_descricao, tra_modelo, tve_descricao,
+rec_descricao, tra_placa, tra_lugares, img_foto from pes_pessoa pes inner join usu_usuario usu on pes.pes_id = usu.pes_id 
+inner join mot_motorista mot on usu.usu_id = mot.usu_id inner join doc_documento doc on mot.mot_id = doc.mot_id
+inner join tdo_tipodocumento tdo on tdo.tdo_id = doc.tdo_id inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id
+inner join ser_servicos ser on mot.mot_id = ser.mot_id
+inner join tra_transporte tra on tra.tra_id = ser.tra_id
+inner join tpc_tipo_contato tp on tp.tpc_id = mxc.tpc_id
+inner join tve_tipoveiculo tve on tve.tve_id = tra.tve_id inner join img_imagemveiculo img on tra.tra_id = img.tra_id
+inner join txr_transporte_recursos txr on tra.tra_id = txr.tra_id inner join rec_recursos rec on rec.rec_id = txr.rec_id where ser.ser_id = 1;
+
+select pes_nome, pes_cidade, pes_estado, mot_cnpj, tdo_image, mxc_descricao, ser_datacadastro, 
+ser_datainicio, ser_datafim, ser_origem, ser_destino, ser_descricao, ser_lugares, con_nome, con_cpf, ctp_descricao, 
+tp.tpc_descricao, tpc.tpc_descricao, tra_modelo, tra_placa, tra_lugares, tve_descricao, rec_descricao, img_foto from pes_pessoa pes 
+inner join usu_usuario usu on pes.pes_id = usu.pes_id inner join mot_motorista mot on usu.usu_id = mot.usu_id 
+inner join doc_documento doc on mot.mot_id = doc.mot_id inner join tdo_tipodocumento tdo on tdo.tdo_id = doc.tdo_id 
+inner join mxc_motorista_tipo_contato mxc on mot.mot_id = mxc.mot_id inner join ser_servicos ser on mot.mot_id = ser.mot_id 
+inner join sco_servicocondutor sco on ser.ser_id = sco.ser_id inner join con_condutor con on con.con_id = sco.con_id 
+inner join ctp_condutor_tipo_contato ctp on con.con_id = ctp.con_id inner join tpc_tipo_contato tpc on tpc.tpc_id = ctp.tpc_id 
+inner join tra_transporte tra on tra.tra_id = ser.tra_id inner join tpc_tipo_contato tp on tp.tpc_id = mxc.tpc_id 
+inner join tve_tipoveiculo tve on tve.tve_id = tra.tve_id inner join img_imagemveiculo img on tra.tra_id = img.tra_id 
+inner join txr_transporte_recursos txr on tra.tra_id = txr.tra_id inner join rec_recursos rec on rec.rec_id = txr.rec_id 
+where mot.mot_id = 1;
 
 select mot_publicacoes from mot_motorista where mot_id=1;
 
@@ -270,6 +295,12 @@ select * from tve_tipoveiculo;
 select * from ctp_condutor_tipo_contato;
 select * from tra_transporte;
 select * from img_imagemveiculo;
+select * from txm_transporte_motorista;
+
+
+select pes_nome, sol_origem, sol_destino, sol_datainicio, sol_datafim from pes_pessoa pes inner join usu_usuario usu on pes.pes_id = usu.pes_id 
+inner join pas_passageiro pas on pas.usu_id = usu.usu_id 
+inner join sol_solicitacao sol on sol.pas_id = pas.pas_id;
 
 select con_nome, con_cpf, ctp_descricao, tpc_descricao from con_condutor con inner join mot_motorista mot on mot.mot_id = con.mot_id 
 inner join ctp_condutor_tipo_contato ctp on ctp.con_id = con.con_id inner join tpc_tipo_contato tpc on tpc.tpc_id = ctp.tpc_id where mot.mot_id = 1;

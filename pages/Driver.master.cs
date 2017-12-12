@@ -44,6 +44,7 @@ public partial class pages_Driver : System.Web.UI.MasterPage
 
     protected void btn_Click(object sender, EventArgs e)
     {
+        //Response.Write("ERRO");
         Session.Remove("nome");
         Session.Remove("perfil");
         Session.Remove("value");

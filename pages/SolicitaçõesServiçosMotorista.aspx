@@ -30,8 +30,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Enviar</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-default" Text="Enviar" OnClick="Button1_Click1" />
+                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default" Text="Cancelar" OnClick="Button2_Click" />
+                    
                 </div>
             </div>
 
