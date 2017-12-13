@@ -170,7 +170,11 @@ public partial class pages_CadastroServiço : System.Web.UI.Page
     }
     public void CarregarDDLT()
     {
-        DataSet ds = tra_transporteDB.SelectAll();
+        hdf.Value = Session["value"].ToString();
+        DataSet codigo = new DataSet();
+        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+        int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+        DataSet ds = tra_transporteDB.SelectTransportes(c);
         ddlTransporte.DataSource = ds;
         ddlTransporte.DataTextField = "tra_modelo";
         ddlTransporte.DataValueField = "tra_id";

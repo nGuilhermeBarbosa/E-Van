@@ -628,6 +628,10 @@ check {
     float: left !important;
 }
 
+.rightButton {
+    float: right !important;
+}
+
 #myImg {
     border-radius: 5px;
     cursor: pointer;

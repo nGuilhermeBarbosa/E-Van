@@ -14,8 +14,6 @@
     <div id="meModal" class="modal fade">
         <div class="modal-a">
 
-
-
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -30,13 +28,65 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-default" Text="Enviar" OnClick="Button1_Click1" />
-                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default" Text="Cancelar" />
-                    <asp:HiddenField ID="hdf" runat="server" />
-                    <asp:HiddenField ID="hdf1" Value="" runat="server" />
+                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-default" Text="Enviar"/>
+                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default" Text="Cancelar"/>
+                    
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <div id='modalDetalhes' class='modal fade'>
+        <div class='modal-a'>
+            <div class='modal-content' style='width: 800px; height: auto;'>
+
+                <div class='modal-header' style='text-align: center !important;'>
+                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                    <h4 class='modal-title'>Título</h4>
+                </div>
+
+                <div class='modal-body'>
+                    <div class='row'>
+                        <div class='col-lg-12'>
+
+                            <div class='col-lg-6'>
+                                <b>Origem</b><br />
+                                Lorena
+                            </div>
+                            <div class='col-lg-6'>
+                                <b>Destino</b><br />
+                                Cunha
+                            </div>
+                            <br /><br /><br />
+                            <div class='col-lg-6'>
+                                <b>Data de Saída</b><br />
+                                11/12/2017<br />
+                                <br />
+                                <b>Hora da Saída</b><br />
+                                12:00
+                            </div>
+                            <div class='col-lg-6'>
+                                <b>Data de Chegada</b><br />
+                                01/01/2018<br />
+                                <br />
+                                <b>Hora da Chegada</b><br />
+                                5:00
+                            </div>
+                            <div class='col-lg-12' style="margin-top:20px;">
+                                <b>Lugares necessários</b><br />
+                                6
+                                <br /><br />
+                                <b>Mensagem</b><br />
+                                Boa tarde, gostaria de fechar uma van para prestar o Vestibular da Fatec de Guaratinguetá.
+                                <div style='margin-top: 50px;'></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 

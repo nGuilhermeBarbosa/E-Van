@@ -138,6 +138,7 @@
         </div>
         <div class="col-lg-4">
             <div class="serviceBox padding shadow" style="background: #ffd800;">
+                <asp:Literal ID="literalCompra" runat="server"></asp:Literal>
                 <span>Aqui entra detalhes da "compra" (somando o valor a ser pago para a plataforma)</span><br />
                 <asp:Button ID="btnComprar" runat="server" Text="Comprar" CssClass="btn btn-info" Style="float: right;" />
             </div>
