@@ -17,7 +17,9 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="title" style="margin-bottom: 10px;">Informação do Serviço</div>
+            <div class="title" style="margin-bottom: 10px;">
+                <span class="text-left glyphicon glyphicon-ok rightButton"><a href="pagamento.aspx/id=?">&nbsp;Confirmar Pagamento</a></span>
+                Informação do Serviço</div>
             <asp:Literal ID="lInfo" runat="server"></asp:Literal>
         </div>
     </div>

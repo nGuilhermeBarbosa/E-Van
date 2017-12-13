@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,7 +22,18 @@ public partial class pages_Selecionar_forma_de_pagamento : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if (Request.QueryString["ser"] != null)
+        {
+            if (!String.IsNullOrEmpty(Request.QueryString["ser"].ToString()))
+            {
+                DataSet codigo = new DataSet();
+                ser_servicosDB.SelectDetalhes(Convert.ToInt32(Request.QueryString["ser"]));
+                int a = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+                DataSet ds = mot_motoristaDB.SelectPETC(a);
+                foreach (DataRow dados in ds.Tables[0].Rows)
+                    literalCompra.Text = "<span>"+dados["ser_origem"]+"</span>";
+            }
+        }
     }
 
     protected void rbCartao_CheckedChanged(object sender, EventArgs e)

@@ -58,7 +58,7 @@
                                 <b>Destino</b><br />
                                 Cunha
                             </div>
-                            <br />
+                            <br /><br /><br />
                             <div class='col-lg-6'>
                                 <b>Data de Saída</b><br />
                                 11/12/2017<br />
@@ -73,10 +73,12 @@
                                 <b>Hora da Chegada</b><br />
                                 5:00
                             </div>
-                            <div class='col-lg-12'>
-                                <br />
+                            <div class='col-lg-12' style="margin-top:20px;">
+                                <b>Lugares necessários</b><br />
+                                6
+                                <br /><br />
                                 <b>Mensagem</b><br />
-                                Donec sit amet erat iaculis nunc fringilla laoreet vitae id orci.Ut elit orci, fermentum Cunhão luctus id, malesuada vitae.
+                                Boa tarde, gostaria de fechar uma van para prestar o Vestibular da Fatec de Guaratinguetá.
                                 <div style='margin-top: 50px;'></div>
                             </div>
 
