@@ -184,8 +184,6 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
 
                                 txr_transporte_recursosDB.Insert(txr);
                             }
-                            txtLugar.Text = "";
-                            txtModelo.Text = "";
                         }
                         else
                         {

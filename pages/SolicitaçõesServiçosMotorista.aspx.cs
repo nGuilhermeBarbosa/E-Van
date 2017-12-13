@@ -16,14 +16,13 @@ public partial class pages_SolicitaçõesServiçosMotorista : System.Web.UI.Page
 
     public void CarregarLiteral()
     {
-        DataSet ds = sol_solicitacaoDB.SelectAll();
+        DataSet ds = sol_solicitacaoDB.Select();
 
         foreach (DataRow dados in ds.Tables[0].Rows)
         {
             LSolicitacao.Text += "<div class='list-item'><div class='serviceBox shadow'> "
-                + "<div class='title'>"// + dados["pes_nome"]
-                                       //+ "<span class='text-right'>" + dados["sol_id"] + "</span>" 
-                 + "   <span class='text-right'><a href='#' data-toggle='modal' data-target='#meModal'><span class='glyphicon glyphicon-pencil'></span>&nbsp Proposta</a></span>" +
+                + "<div class='title'>" + dados["pes_nome"]
+                 + "   <span class='text-right'><a href='#' data-toggle='modal' data-target='#meModal'><span class='glyphicon glyphicon-pencil'></span>&nbsp Proposta</a><span> </ div >" + 
                  "</div>"
                 + "<div class='padding'>"
                 + "<p class='origem'><b>Origem</b>: " + dados["sol_origem"] + "</p>"

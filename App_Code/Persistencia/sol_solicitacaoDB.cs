@@ -106,7 +106,7 @@ public class sol_solicitacaoDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select * from sol_solicitacao";
+        string sql = "select pes_nome, sol_origem, sol_destino, sol_datainicio, sol_datafim from pes_pessoa pes inner join usu_usuario usu on pes.pes_id = usu.pes_id inner join pas_passageiro pas on pas.usu_id = usu.usu_id inner join sol_solicitacao sol on sol.pas_id = pas.pas_id";
 
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
