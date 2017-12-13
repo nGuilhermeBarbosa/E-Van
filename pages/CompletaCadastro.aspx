@@ -176,7 +176,7 @@
             <asp:Panel ID="panelFree" runat="server" Visible="true">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="serviceBox info padding Free" style="width: 96%; padding: 10px; text-align: center;">
+                        <div class="serviceBox info padding Free" style="width: 96%; padding: 10px; text-align: center; background:#384357; color:#fff; font-style:oblique;">
                             A conta gratuita oferece total acesso ao sistema, porém o usuário poderá realizar apenas 5 (cinco) publicações mensalmente.
                         </div>
                     </div>
@@ -185,20 +185,20 @@
             <asp:Panel ID="panelPremium" runat="server" Visible="false">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="serviceBox info padding Free" style="width: 96%; padding: 10px; text-align: center;">
+                        <div class="serviceBox info padding Free" style="width: 96%; padding: 10px; text-align: center; background:#384357; color:#fff; font-style:oblique;">
                             A conta premium oferece total acesso ao sistema com publicações ilimitadas.
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="serviceBox info padding Free" style="width: 96%; height: 50px; padding: 10px; text-align: center;">
+                        <div class="serviceBox info padding Free" style="width: 96%; height: 50px; padding: 10px; text-align: center; background:#384357; color:#fff; font-style:oblique;">
                             <asp:RadioButton ID="rbMensal" runat="server" AutoPostBack="true" CssClass="checkbox-inline" OnCheckedChanged="rbMensal_CheckedChanged"/>
                             Plano mensal de R$ 14,99.
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="serviceBox info padding Free" style="width: 96%; height: 50px; padding: 10px; text-align: center;">
+                        <div class="serviceBox info padding Free" style="width: 96%; height: 50px; padding: 10px; text-align: center; background:#384357; color:#fff; font-style:oblique;">
                             <asp:RadioButton ID="rbAnual" runat="server" AutoPostBack="true" CssClas="checkbox-inline" OnCheckedChanged="rbAnual_CheckedChanged"/>
                             Plano anual de R$ 99,99.
                         </div>
@@ -227,6 +227,7 @@
             </div>
             <br />
             <br />
+            Selecione uma imagem de cada documento (ARTESP e ANTT)
             <asp:FileUpload ID="fup" runat="server" AllowMultiple="true" />
             <br />
             <br />

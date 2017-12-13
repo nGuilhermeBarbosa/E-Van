@@ -19,9 +19,9 @@
             $('#termsOfUseModal').modal('show');
         }
         function openModalAt() {
-            $('#fbAt').modal('show'); 
-        }    
-    </script>  
+            $('#fbAt').modal('show');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
@@ -246,13 +246,19 @@
 
                     <asp:TextBox ID="txtSenha2" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control" required="required" placeholder="CPF" onkeyup="formataCPF(this,event);" MaxLength="14"></asp:TextBox><br />
-                    Data de Nascimento
+                    <div class="row">
+                        <div class="col-lg-6">
+                            Data de Nascimento
                     <asp:TextBox ID="txtData" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
-                    Sexo
+                        </div>
+                        <div class="col-lg-6">
+                            Sexo
                     <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown form-control">
                         <asp:ListItem Selected="True" Value="M">Masculino</asp:ListItem>
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-lg-8">
                             Cidade
@@ -296,14 +302,21 @@
 
                     <asp:TextBox ID="txtSenhaCM" runat="server" placeholder="Confirmação de Senha" CssClass="form-control" TextMode="Password" required="required"></asp:TextBox><br />
                     <asp:TextBox ID="txtCnpj" runat="server" placeholder="CNPJ" CssClass="form-control" required="required" onkeyup="formataCNPJ(this,event);" MaxLength="18"></asp:TextBox><br />
-                    Data de Nascimento
-                    <asp:TextBox ID="txtDataM" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
 
-                    Sexo
+                    <div class="row">
+                        <div class="col-lg-6">
+                            Data de Nascimento
+                    <asp:TextBox ID="txtDataM" runat="server" type="date" CssClass="form-control" required="required"></asp:TextBox>
+                        </div>
+                        <div class="col-lg-6">
+                            Sexo
                     <asp:DropDownList ID="ddlSexoM" runat="server" CssClass="dropdown form-control">
                         <asp:ListItem Selected="True" Value="M">Masculino</asp:ListItem>
                         <asp:ListItem Value="F">Feminino</asp:ListItem>
                     </asp:DropDownList><br />
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-sm-8">
                             Cidade
@@ -340,8 +353,10 @@
                 <br />
 
                 <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
-                <p id="feedback" style="display: none; color: #ff0000;">É necessário uma senha no mínimo boa para cadastrar-se no sistema.<br />
-                    Digite uma senha melhor.</p>
+                <p id="feedback" style="display: none; color: #ff0000;">
+                    É necessário uma senha no mínimo boa para cadastrar-se no sistema.<br />
+                    Digite uma senha melhor.
+                </p>
                 <asp:Button ID="btnCadastrar" ClientIDMode="Static" runat="server" Text="Cadastrar" CssClass="btn btn-info" OnClick="btnCadastrar_Click" />
             </div>
         </div>
