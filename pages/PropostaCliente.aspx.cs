@@ -10,11 +10,11 @@ public partial class pages_PropostaCliente : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.QueryString["mot"] != null)
+        if (Request.QueryString["pas"] != null)
         {
-            if (!String.IsNullOrEmpty(Request.QueryString["mot"].ToString()))
+            if (!String.IsNullOrEmpty(Request.QueryString["pas"].ToString()))
             {
-                CarregarVisualizar(Request.QueryString["mot"].ToString());
+                CarregarVisualizar(Request.QueryString["pas"].ToString());
             }
         }
     }

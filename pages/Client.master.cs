@@ -63,7 +63,7 @@ public partial class pages_Client : System.Web.UI.MasterPage
             DataSet data = sol_solicitacaoDB.Select(c);
             foreach (DataRow dados in data.Tables[0].Rows)
             {
-                Literal.Text += "<li><a href='PropostaCliente.aspx?mot="+dados["mot_id"]+"'>O Motorista " + dados["pes_nome"] + " mandou uma proposta</a></li><br/>";
+                Literal.Text += "<li><a href='PropostaCliente.aspx?pas="+dados["pas_id"]+"'>O Motorista " + dados["pes_nome"] + " mandou uma proposta</a></li><br/>";
             }
 
         }

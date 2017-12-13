@@ -69,7 +69,7 @@ public partial class pages_ServiceInfoMotorista : System.Web.UI.Page
 
                 "<div class='col-lg-4'>" +
                 "<div class='title'>Fotos do Veículo</div>" +
-                "<div class='photoGallery mainPhoto'><img id='myImg' src='../pg/uploads/" + dados["img_foto"] + "' alt='Trolltunga, Norway' width='380'>" +
+                "<div class='photoGallery mainPhoto'><img id='myImg' src='../pg/uploads/" + dados["img_foto"] + "' alt='Trolltunga, Norway' width='380px' height = '200px'>" +
                 "</div>" +
                 //"<div class='photoGallery mainPhoto'><img width='350px' src = '../pg/uploads/" + dados["img_foto"] + "'/></div>" +
                 //"<div class='galleryField'>" +
@@ -129,7 +129,7 @@ public partial class pages_ServiceInfoMotorista : System.Web.UI.Page
 
                 "<div class='col-lg-4'>" +
                 "<div class='title'>Fotos do Veículo</div>" +
-                "<div class='photoGallery mainPhoto'><img id='myImg' src='../pg/uploads/" + dados["img_foto"] + "' alt='Trolltunga, Norway' width='380'>" +
+                "<div class='photoGallery mainPhoto'><img id='myImg' src='../pg/uploads/" + dados["img_foto"] + "' alt='Trolltunga, Norway' width='380px' height = '200px'>" +
                 "</div>" +
                 //"<div class='photoGallery mainPhoto'><img width='350px' src = '../pg/uploads/" + dados["img_foto"] + "'/></div>" +
                 //"<div class='galleryField'>" +

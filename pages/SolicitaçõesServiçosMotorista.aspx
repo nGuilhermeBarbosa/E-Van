@@ -184,7 +184,7 @@
         <div class="list">
             <asp:Literal ID="LSolicitacao" runat="server">
             </asp:Literal>
-
+            <asp:HiddenField ID="hdf" runat="server" />
 
         </div>
 

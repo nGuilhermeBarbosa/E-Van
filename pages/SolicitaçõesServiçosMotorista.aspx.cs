@@ -46,30 +46,30 @@ public partial class pages_SolicitaçõesServiçosMotorista : System.Web.UI.Page
 
     }
 
-    protected void Button1_Click1(object sender, EventArgs e)
-    {
+    //protected void Button1_Click1(object sender, EventArgs e)
+    //{
 
-        hdf.Value = Session["value"].ToString();
+    //    hdf.Value = Session["value"].ToString();
 
-        DataSet codigo = new DataSet();
+    //    DataSet codigo = new DataSet();
 
-        codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
-        // Label1.Text = par;
+    //    codigo = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+    //    // Label1.Text = par;
 
-        int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
+    //    int c = Convert.ToInt32(codigo.Tables[0].Rows[0][0]);
 
-        sol_solicitacao sol = new sol_solicitacao();
+    //    sol_solicitacao sol = new sol_solicitacao();
 
-        sol.Sol_id = Convert.ToInt32(hdf1.Value);
+    //    sol.Sol_id = Convert.ToInt32(hdf1.Value);
 
-        mot_motorista mot = new mot_motorista();
-        mot.Mot_id = c;
+    //    mot_motorista mot = new mot_motorista();
+    //    mot.Mot_id = c;
 
-        som_solicitacaomotorista som = new som_solicitacaomotorista();
-        som.Sol_id = sol;
-        som.Mot_id = mot;
-        som.Som_proposta = Convert.ToDouble(txtProposta.Text);
-        som_solicitacaomotoristaDB.Insert(som);
-    }
+    //    som_solicitacaomotorista som = new som_solicitacaomotorista();
+    //    som.Sol_id = sol;
+    //    som.Mot_id = mot;
+    //    som.Som_proposta = Convert.ToDouble(txtProposta.Text);
+    //    som_solicitacaomotoristaDB.Insert(som);
+    //}
 
 }

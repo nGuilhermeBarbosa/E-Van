@@ -77,7 +77,7 @@ public class tra_transporteDB
         IDataAdapter objDataAdapter;
         //string sql = "select emp_nome as NOME, emp_rua as RUA from emp_empresa order by emp_nome";
         //string sql = "select emp_nome, emp_rua from emp_empresa order by emp_nome";
-        string sql = "select tra.tra_id, tra.tra_modelo from tra_transporte tra inner join txm_transporte_motorista txm inner join mot_motorista mot where txm.tra_id = tra.tra_id and txm.mot_id = ?id";
+        string sql = "select tra.tra_id, tra.tra_modelo from tra_transporte tra inner join txm_transporte_motorista txm on txm.tra_id = tra.tra_id inner join mot_motorista mot on txm.mot_id = mot.mot_id where mot.mot_id = ?id; ";
         objConexao = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConexao);
         objCommand.Parameters.Add(Mapped.Parameter("?id", id));
