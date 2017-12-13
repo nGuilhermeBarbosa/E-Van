@@ -51,10 +51,10 @@
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-bell"></span><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Sem notificações</a></li>
+                                    <asp:Literal ID="Literal" runat="server"></asp:Literal>
                                 </ul>
                             </li>
-
+                            <asp:HiddenField ID="hdf" runat="server" />
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user">&nbsp
                                     <asp:Label ID="lblSessao" runat="server" Text="---"></asp:Label></span><b class="caret"></b></a>

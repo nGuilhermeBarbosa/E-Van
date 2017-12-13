@@ -220,9 +220,9 @@
                     <asp:TextBox ID="txtEmailAlt" runat="server" CssClass="form-control" TextMode="Email" MaxLength="100" Visible="false" placeholder="Email Alternativo"></asp:TextBox>
                     <asp:Panel ID="pnl" runat="server"></asp:Panel>
                 </div>
-                <div class="col-lg-3">
+                <%--<div class="col-lg-3">
                     <asp:Button ID="btnAdicionar" runat="server" Text="+" CssClass="btn btn-link" Style="font-size: 22px; margin-top: 0.7em" />
-                </div>
+                </div>--%>
 
             </div>
             <br />

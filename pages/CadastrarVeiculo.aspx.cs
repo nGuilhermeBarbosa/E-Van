@@ -16,7 +16,7 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
             if (Session["nome"] != null)
             {
                 CarregarDDL();
-                
+
             }
         }
     }
@@ -27,7 +27,9 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
     {
 
         hdf.Value = Session["value"].ToString();
-
+        tra_transporte tra = new tra_transporte();
+        string arq;
+        string placa;
         string dir = Request.PhysicalApplicationPath + "pg\\uploads\\";
 
         if (!Directory.Exists(dir)) { Directory.CreateDirectory(dir); }
@@ -41,7 +43,7 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
             if (fup.HasFile)
             {
 
-                string arq = Path.GetFileName(flp.FileName);
+                arq = Path.GetFileName(flp.FileName);
                 string ext = Path.GetExtension(flp.FileName);
                 ext = ext.ToLower();
                 double ta = flp.ContentLength / 1024;
@@ -82,19 +84,18 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
 
                             imgOriginal.Dispose();
 
-                            
+
                             tve_tipoveiculo tve = new tve_tipoveiculo();
                             tve.Tve_id = Convert.ToInt32(ddlVeiculo.SelectedValue);
 
-                            tra_transporte tra = new tra_transporte();
+
                             tra.Tra_lugares = Convert.ToInt32(txtLugar.Text);
                             tra.Tra_modelo = txtModelo.Text;
                             tra.Tra_ano = Convert.ToInt32(txtAno.Text);
                             tra.Tra_placa = txtPlaca.Text;
                             tra.Tve_id = tve;
-                            string placa = txtPlaca.Text;
+                            placa = txtPlaca.Text;
                             tra_transporteDB.Insert(tra);
-
 
                             DataSet codigo = new DataSet();
                             codigo = tra_transporteDB.SelectLugar(placa);
@@ -105,17 +106,9 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
                             img.Tra_id = tra;
                             img_imagemveiculoDB.Insert(img);
 
-                            DataSet idMot = new DataSet();
-                            idMot = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
+                            
 
-                            mot_motorista mot = new mot_motorista();
-                            mot.Mot_id = Convert.ToInt32(idMot.Tables[0].Rows[0][0]);
-
-                            txm_transporte_motorista txm = new txm_transporte_motorista();
-                            txm.Mot_id = mot;
-                            txm.Tra_id = tra;
-
-                            txm_transporte_motoristaDB.Insert(txm);
+                            
 
                             if (cb1.Checked)
                             {
@@ -184,6 +177,8 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
 
                                 txr_transporte_recursosDB.Insert(txr);
                             }
+
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModalS();", true);
                         }
                         else
                         {
@@ -214,8 +209,16 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
 
         }
 
+        DataSet idMot = new DataSet();
+        idMot = mot_motoristaDB.SelectID(Convert.ToInt32(hdf.Value));
 
+        mot_motorista mot = new mot_motorista();
+        mot.Mot_id = Convert.ToInt32(idMot.Tables[0].Rows[0][0]);
 
+        txm_transporte_motorista txm = new txm_transporte_motorista();
+        txm.Mot_id = mot;
+        txm.Tra_id = tra;
+        txm_transporte_motoristaDB.Insert(txm);
     }
 
 
@@ -231,5 +234,5 @@ public partial class pages_CadastrarVeiculo : System.Web.UI.Page
         ddlVeiculo.DataBind();
         ddlVeiculo.Items.Insert(0, "Selecione");
     }
-    
+
 }

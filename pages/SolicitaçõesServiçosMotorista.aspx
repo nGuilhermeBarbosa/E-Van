@@ -25,14 +25,15 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <asp:TextBox ID="txtProposta" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtProposta" runat="server" CssClass="form-control" onkeyup="formataValor(this, Function);"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="Button1" runat="server" CssClass="btn btn-default" Text="Enviar" OnClick="Button1_Click1" />
-                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default" Text="Cancelar" OnClick="Button2_Click" />
-                    
+                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default" Text="Cancelar" />
+                    <asp:HiddenField ID="hdf" runat="server" />
+                    <asp:HiddenField ID="hdf1" Value="" runat="server" />
                 </div>
             </div>
 
